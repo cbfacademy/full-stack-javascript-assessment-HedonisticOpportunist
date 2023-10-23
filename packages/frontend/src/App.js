@@ -1,10 +1,11 @@
+import Header from "./components/Header";
 import React from "react";
 
 function App() {
   return (
     <div className="App">
-      <h1>Full Stack JavaScript</h1>
-      <p>Welcome to your final assessment 🚀</p>
+      <Header></Header>
+      <p>Welcome to the page!</p>
     </div>
   );
 }
