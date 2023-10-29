@@ -1,3 +1,4 @@
+import ArtsPage from "./pages/ArtPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CreditsPage from "./pages/CreditsPage";
 import Copyright from "./components/Copyright";
@@ -26,6 +27,7 @@ function App() {
           />
           <Route exact path="/credits" element={<CreditsPage></CreditsPage>} />
           <Route exact path="/games" element={<GamesPage></GamesPage>} />
+          <Route exact path="/art" element={<ArtsPage></ArtsPage>} />
           <Route exact path="/login" element={<LoginPage></LoginPage>} />
           <Route exact path="/sign-up" element={<SignupPage></SignupPage>} />
         </Routes>
