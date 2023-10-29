@@ -18,6 +18,9 @@ const Header = () => {
                 <Link to="/games">🐾Games</Link>
               </li>
               <li>
+                <Link to="/art">🐾Art</Link>
+              </li>
+              <li>
                 <Link to="/credits">🐾Credits</Link>
               </li>
               <li>
