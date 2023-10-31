@@ -11,6 +11,13 @@ import SignupPage from "./pages/SignupPage";
 import "./stylesheets/App.css";
 
 function App() {
+  const [data, setData] = React.useState(null);
+
+  React.useEffect(() => {
+    fetch("http://localhost:5000/api")
+      .then((res) => res.json())
+      .then((data) => setData(data.message));
+  }, []);
   return (
     <>
       <BrowserRouter>
@@ -21,6 +28,7 @@ function App() {
             element={
               <>
                 <Header />
+                <p>{!data ? "Loading..." : data}</p>
                 <LandingPage></LandingPage>
               </>
             }

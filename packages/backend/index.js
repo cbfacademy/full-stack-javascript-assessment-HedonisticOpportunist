@@ -10,7 +10,7 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-const uri = process.env.MONGO_URI; // Add your connection string from Atlas to your .env file. See https://docs.atlas.mongodb.com/getting-started/
+const uri = process.env.MONGO_URI;
 const client = new MongoClient(uri, {
   serverApi: {
     version: ServerApiVersion.v1,
@@ -19,17 +19,37 @@ const client = new MongoClient(uri, {
   },
 });
 
-client.connect((err) => {
-  if (err) {
-    console.error("Error connecting to MongoDB", err);
-    return;
-  }
-  console.log("Connected to MongoDB");
-  client.close();
-});
+// client.connect((err) => {
+//   if (err) {
+//     console.error("Error connecting to MongoDB", err);
+//     return;
+//   }
+//   console.log("Connected to MongoDB");
+//   client.close();
+// });
 
 app.get("/", (req, res) => {
-  res.send("Hello from the CBF Academy backend!");
+  res.send("Cats in space.");
+});
+
+app.get("/api", (req, res) => {
+  let ts = Date.now();
+
+  let date_ob = new Date(ts);
+  let date = date_ob.getDate();
+  let month = date_ob.getMonth() + 1;
+  let year = date_ob.getFullYear();
+
+  res.json({
+    message:
+      "Hello from the floating space cats. Today is: " +
+      year +
+      "-" +
+      month +
+      "-" +
+      date +
+      ".",
+  });
 });
 
 const PORT = process.env.PORT || 5000;
