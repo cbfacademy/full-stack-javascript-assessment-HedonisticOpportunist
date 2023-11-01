@@ -1,5 +1,5 @@
 import { Container, Col, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import HomeBreadcrumbs from "../components/HomeBreadcrumbs";
 
 const CreditsPage = () => {
   return (
@@ -10,11 +10,7 @@ const CreditsPage = () => {
           <h1>Credits</h1>
         </Col>
         <Col>
-          <ul className="breadcrumb">
-            <li>
-              <Link to="/">🐾Home</Link>
-            </li>
-          </ul>
+          <HomeBreadcrumbs></HomeBreadcrumbs>
         </Col>
         <Col>
           A project is never created in isolation; the following sources were
@@ -23,7 +19,7 @@ const CreditsPage = () => {
         <Col>
           <img
             className="mini-logo"
-            src="/cat_moon.jpg"
+            src="images/cat_moon.jpg"
             alt="A Cat and Its Moon"
           />
           The image of the cat on the moon was created by catalyststuff on
@@ -32,7 +28,7 @@ const CreditsPage = () => {
         <Col>
           <img
             className="mini-logo"
-            src="/cat_rocket.jpg"
+            src="images/cat_rocket.jpg"
             alt="A Cat and Its Rocket"
           />
           The image of the cat and a rocket was created by catalyststuff on

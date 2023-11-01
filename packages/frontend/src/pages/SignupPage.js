@@ -1,5 +1,5 @@
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import HomeBreadcrumbs from "../components/HomeBreadcrumbs";
 
 const SignupPage = () => {
   return (
@@ -10,11 +10,7 @@ const SignupPage = () => {
             <h1>Sign Up</h1>
           </Col>
           <Col>
-            <ul className="breadcrumb">
-              <li>
-                <Link to="/">🐾Home</Link>
-              </li>
-            </ul>
+            <HomeBreadcrumbs></HomeBreadcrumbs>
           </Col>
           <Col>
             <Form>

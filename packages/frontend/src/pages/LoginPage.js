@@ -1,4 +1,5 @@
 import { Button, Container, Col, Form, Row } from "react-bootstrap";
+import HomeBreadcrumbs from "../components/HomeBreadcrumbs";
 import { Link } from "react-router-dom";
 
 const LoginPage = () => {
@@ -10,14 +11,10 @@ const LoginPage = () => {
             <h1>Login</h1>
           </Col>
           <Col>
-            <Col>
-              <ul className="breadcrumb">
-                <li>
-                  <Link to="/">🐾Home</Link>
-                </li>
-              </ul>
-            </Col>
-            Don't have an account? Then,{" "}
+            <HomeBreadcrumbs></HomeBreadcrumbs>
+          </Col>
+          <Col>
+            Don't have an account? Then,
             <Link to="/sign-up"> please sign up.</Link>
           </Col>
           <Col>

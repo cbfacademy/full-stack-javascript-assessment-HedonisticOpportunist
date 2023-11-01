@@ -10,14 +10,14 @@ app.use(helmet());
 app.use(cors());
 app.use(express.json());
 
-const uri = process.env.MONGO_URI;
-const client = new MongoClient(uri, {
-  serverApi: {
-    version: ServerApiVersion.v1,
-    strict: true,
-    deprecationErrors: true,
-  },
-});
+// const uri = process.env.MONGO_URI;
+// const client = new MongoClient(uri, {
+//   serverApi: {
+//     version: ServerApiVersion.v1,
+//     strict: true,
+//     deprecationErrors: true,
+//   },
+// });
 
 // client.connect((err) => {
 //   if (err) {
@@ -29,10 +29,6 @@ const client = new MongoClient(uri, {
 // });
 
 app.get("/", (req, res) => {
-  res.send("Cats in space.");
-});
-
-app.get("/api", (req, res) => {
   let ts = Date.now();
 
   let date_ob = new Date(ts);
@@ -42,7 +38,7 @@ app.get("/api", (req, res) => {
 
   res.json({
     message:
-      "Hello from the floating space cats. Today is: " +
+      "Hello from the floating space cats. Today's date is: " +
       year +
       "-" +
       month +

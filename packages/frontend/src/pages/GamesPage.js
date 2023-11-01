@@ -1,5 +1,5 @@
 import { Card, Container, Col, Row } from "react-bootstrap";
-import { Link } from "react-router-dom";
+import HomeBreadcrumbs from "../components/HomeBreadcrumbs";
 
 const GamesPage = () => {
   return (
@@ -10,17 +10,11 @@ const GamesPage = () => {
             <h1>Games</h1>
           </Col>
           <Col>
-            <Col>
-              <ul className="breadcrumb">
-                <li>
-                  <Link to="/">🐾Home</Link>
-                </li>
-              </ul>
-            </Col>
+            <HomeBreadcrumbs></HomeBreadcrumbs>
           </Col>
           <Col>
-            <img src="/cat_moon.jpg" alt="A Cat and Its Moon" />
-            <img src="/cat_rocket.jpg" alt="A cat and Its Rocket" />
+            <img src="images/cat_moon.jpg" alt="A Cat and Its Moon" />
+            <img src="images/cat_rocket.jpg" alt="A cat and Its Rocket" />
           </Col>
           <Col>
             <Card style={{ width: "18rem" }}>
