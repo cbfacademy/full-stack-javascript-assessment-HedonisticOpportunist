@@ -6,15 +6,16 @@ const LandingPage = () => {
       <Container fluid>
         <Row>
           <Col>
-            <img src="/cat_moon.jpg" alt="A Cat and Its Moon" />
+            <img src="/images/cat_moon.jpg" alt="A Cat and Its Moon" />
+            <img src="images/cat_rocket.jpg" alt="A cat and Its Rocket" />
           </Col>
           <Col>
             <h2> Silly Games and ... Cats!</h2>
-            <p>This page is still being developed.</p>
-            <p>Come back later.</p>
-          </Col>
-          <Col>
-            <img src="/cat_rocket.jpg" alt="A cat and Its Rocket" />
+            <p>
+              <b>Space Cats </b> is your friendly haunt on the web for playing
+              or viewing cute and silly things.
+            </p>
+            <p>Feel free to explore ₍^._.^₎ 𐒡.</p>
           </Col>
         </Row>
       </Container>

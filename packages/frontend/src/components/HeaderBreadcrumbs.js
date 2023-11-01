@@ -1,7 +1,7 @@
 import { Container, Col, Row } from "react-bootstrap";
 import { Link } from "react-router-dom";
 
-const Header = () => {
+const HeaderBreadcrumbs = () => {
   return (
     <>
       <Container fluid>
@@ -34,4 +34,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default HeaderBreadcrumbs;

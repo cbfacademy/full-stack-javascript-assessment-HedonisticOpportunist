@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Space Cats",
+  "name": "Space Cats - A Game Web Application",
   "icons": [
     {
       "src": "favicon.ico",
@@ -9,12 +9,12 @@
     },
     {
       "src": "cat_moon.jpg",
-      "type": "image/png",
+      "type": "image/jpg",
       "sizes": "192x192"
     },
     {
       "src": "cat_rocket.jpg",
-      "type": "image/png",
+      "type": "image/jpg",
       "sizes": "512x512"
     }
   ],
