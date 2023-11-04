@@ -19,7 +19,7 @@ const GamesPage = () => {
           <Col>
             <Card style={{ width: "18rem" }}>
               <Card.Body>
-                <Card.Title>Card Title</Card.Title>
+                <Card.Title>Play the Gat Game</Card.Title>
                 <Card.Subtitle className="mb-2 text-muted">
                   Card Subtitle
                 </Card.Subtitle>
@@ -27,7 +27,7 @@ const GamesPage = () => {
                   Some quick example text to build on the card title and make up
                   the bulk of the card's content.
                 </Card.Text>
-                <Card.Link href="#">Card Link</Card.Link>
+                <Card.Link href="/cat-game">Play the Cat Game.</Card.Link>
               </Card.Body>
             </Card>
           </Col>

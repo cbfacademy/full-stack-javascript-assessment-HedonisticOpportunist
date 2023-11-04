@@ -24,7 +24,7 @@ const ArtsPage = () => {
                   A sketch made in p5.js.
                 </Card.Subtitle>
                 <Card.Text>Some stuff here.</Card.Text>
-                <Card.Link href="/space-art">View the Space Art.</Card.Link>
+                <Card.Link href="/">View the Space Art.</Card.Link>
               </Card.Body>
             </Card>
           </Col>
