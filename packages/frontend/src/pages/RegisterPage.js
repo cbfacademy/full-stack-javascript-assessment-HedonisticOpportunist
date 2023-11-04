@@ -1,36 +1,27 @@
 import axios from "axios";
-import { Button, Container, Col, Form, Row } from "react-bootstrap";
-import Cookies from "universal-cookie";
+import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import HomeBreadcrumbs from "../components/HomeBreadcrumbs";
-import { Link } from "react-router-dom";
 import { useState } from "react";
 
-const cookies = new Cookies();
-
-const LoginPage = () => {
+const RegisterPage = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [login, setLogin] = useState(false);
+  const [register, setRegister] = useState(false);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-
     const configuration = {
       method: "post",
-      url: "http://localhost:5000/login",
+      url: "http://localhost:5000/register",
       data: {
         email,
         password,
       },
     };
+
     axios(configuration)
       .then((result) => {
-        cookies.set("TOKEN", result.data.token, {
-          path: "/",
-        });
-        window.location.href = "/auth";
-
-        setLogin(true);
+        setRegister(true);
       })
       .catch((error) => {
         error = new Error();
@@ -42,14 +33,10 @@ const LoginPage = () => {
       <Container fluid>
         <Row>
           <Col>
-            <h1>Login</h1>
+            <h1>Register</h1>
           </Col>
           <Col>
             <HomeBreadcrumbs></HomeBreadcrumbs>
-          </Col>
-          <Col>
-            Don't have an account? Then,
-            <Link to="/register"> please sign up.</Link>
           </Col>
           <Col>
             <Form>
@@ -81,17 +68,15 @@ const LoginPage = () => {
                 onClick={(e) => handleSubmit(e)}
                 size="lg"
               >
-                🐾Login
+                🐾Register
               </Button>
             </Form>
           </Col>
           <Col>
-            {login ? (
-              <p className="text-success">
-                You have been logged in successfully.
-              </p>
+            {register ? (
+              <p className="text-success">You have registered successfully.</p>
             ) : (
-              <p className="text-danger">You are not logged in.</p>
+              <p className="text-danger">You have not been registered.</p>
             )}
           </Col>
         </Row>
@@ -100,4 +85,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default RegisterPage;
