@@ -13,8 +13,10 @@ const GamesPage = () => {
             <HomeBreadcrumbs></HomeBreadcrumbs>
           </Col>
           <Col>
-            <img src="images/cat_moon.jpg" alt="A Cat and Its Moon" />
-            <img src="images/cat_rocket.jpg" alt="A cat and Its Rocket" />
+            <img
+              src="images/cat_and_pink_moon.jpg"
+              alt="A Cat and a Pink Moon"
+            />
           </Col>
           <Col>
             <Card style={{ width: "18rem" }}>

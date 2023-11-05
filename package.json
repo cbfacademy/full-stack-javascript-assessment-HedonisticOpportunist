@@ -1,5 +1,5 @@
 {
-  "name": "space-cats-full-stack-app",
+  "name": "space-cats-full-stack",
   "version": "1.0.0",
   "private": true,
   "description": "",
@@ -22,16 +22,5 @@
   "bugs": {
     "url": "https://github.com/cbfacademy/full-stack-javascript/issues"
   },
-  "homepage": "https://github.com/cbfacademy/full-stack-javascript#readme",
-  "dependencies": {
-    "axios": "^1.6.0",
-    "bcrypt": "^5.1.1",
-    "cross-env": "^7.0.3",
-    "jsonwebtoken": "^9.0.2",
-    "mongoose": "^8.0.0",
-    "universal-cookie": "^6.1.1"
-  },
-  "devDependencies": {
-    "@babel/plugin-proposal-private-property-in-object": "^7.21.11"
-  }
+  "homepage": "https://github.com/cbfacademy/full-stack-javascript#readme"
 }

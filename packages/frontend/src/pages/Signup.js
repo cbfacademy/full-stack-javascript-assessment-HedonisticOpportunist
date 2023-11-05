@@ -3,29 +3,14 @@ import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import HomeBreadcrumbs from "../components/HomeBreadcrumbs";
 import { useState } from "react";
 
-const RegisterPage = () => {
+const SignupPage = () => {
+  const [username, setUserName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [register, setRegister] = useState(false);
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
-    const configuration = {
-      method: "post",
-      url: "http://localhost:5000/register",
-      data: {
-        email,
-        password,
-      },
-    };
-
-    axios(configuration)
-      .then((result) => {
-        setRegister(true);
-      })
-      .catch((error) => {
-        error = new Error();
-      });
+    alert("Submitted.");
   };
 
   return (
@@ -33,13 +18,27 @@ const RegisterPage = () => {
       <Container fluid>
         <Row>
           <Col>
-            <h1>Register</h1>
+            <h1>Sign Up</h1>
           </Col>
           <Col>
             <HomeBreadcrumbs></HomeBreadcrumbs>
           </Col>
           <Col>
             <Form>
+              <Form.Group
+                className="mb-3"
+                controlId="formBasicUserName"
+                required
+              >
+                <Form.Label>Username: </Form.Label>
+                <Form.Control
+                  type="username"
+                  value={username}
+                  onChange={(e) => setUserName(e.target.value)}
+                  placeholder="Enter email"
+                  required
+                />
+              </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address: </Form.Label>
                 <Form.Control
@@ -58,26 +57,18 @@ const RegisterPage = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Password"
-                  required
                 />
               </Form.Group>
               <Button
                 className="btn-grad"
                 variant="outline-dark"
                 type="submit"
-                onClick={(e) => handleSubmit(e)}
                 size="lg"
+                onClick={handleSubmit}
               >
                 🐾Register
               </Button>
             </Form>
-          </Col>
-          <Col>
-            {register ? (
-              <p className="text-success">You have registered successfully.</p>
-            ) : (
-              <p className="text-danger">You have not been registered.</p>
-            )}
           </Col>
         </Row>
       </Container>
@@ -85,4 +76,4 @@ const RegisterPage = () => {
   );
 };
 
-export default RegisterPage;
+export default SignupPage;
