@@ -8,7 +8,7 @@ import HeaderBreadcrumbs from "./components/HeaderBreadcrumbs";
 import LandingPage from "./pages/LandingPage";
 import LoginPage from "./pages/LoginPage";
 import React from "react";
-import RegisterPage from "./pages/RegisterPage";
+import SignupPage from "./pages/Signup";
 import "./stylesheets/App.css";
 
 function App() {
@@ -38,11 +38,7 @@ function App() {
           <Route exact path="/games" element={<GamesPage></GamesPage>} />
           <Route exact path="/art" element={<ArtsPage></ArtsPage>} />
           <Route exact path="/login" element={<LoginPage></LoginPage>} />
-          <Route
-            exact
-            path="/register"
-            element={<RegisterPage></RegisterPage>}
-          />
+          <Route exact path="/signup" element={<SignupPage></SignupPage>} />
           <Route exact path="/cat-game" element={<CatGame></CatGame>} />
         </Routes>
         <Copyright />

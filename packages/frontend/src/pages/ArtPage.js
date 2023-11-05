@@ -13,8 +13,7 @@ const ArtsPage = () => {
             <HomeBreadcrumbs></HomeBreadcrumbs>
           </Col>
           <Col>
-            <img src="images/cat_moon.jpg" alt="A Cat and Its Moon" />
-            <img src="images/cat_rocket.jpg" alt="A cat and Its Rocket" />
+            <img src="images/pink_astro_cat.jpg" alt="A Pink Astronaut Cat" />
           </Col>
           <Col>
             <Card style={{ width: "18rem" }}>
