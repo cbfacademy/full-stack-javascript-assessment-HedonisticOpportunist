@@ -69,6 +69,13 @@ img {
   width: 150px;
 }
 
+.card-img {
+  border-radius: 40%;
+  border: 1px solid #ddd;
+  padding: 0px;
+  width: 100px;
+}
+
 .mini-logo {
   border-radius: 70%;
   border: 1px solid #ddd;
