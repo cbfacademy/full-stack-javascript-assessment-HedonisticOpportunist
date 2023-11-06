@@ -1,4 +1,3 @@
-import axios from "axios";
 import { Button, Col, Container, Form, Row } from "react-bootstrap";
 import HomeBreadcrumbs from "../components/HomeBreadcrumbs";
 import { useState } from "react";
@@ -22,6 +21,12 @@ const SignupPage = () => {
           </Col>
           <Col>
             <HomeBreadcrumbs></HomeBreadcrumbs>
+          </Col>
+          <Col>
+            <img
+              src="images/cat_and_pink_moon.jpg"
+              alt="A Cat and a Pink Moon"
+            />
           </Col>
           <Col>
             <Form>

@@ -1,4 +1,4 @@
-import { Card, Container, Col, Row } from "react-bootstrap";
+import { Container, Col, Row } from "react-bootstrap";
 import HomeBreadcrumbs from "../components/HomeBreadcrumbs";
 
 const GamesPage = () => {
@@ -12,27 +12,7 @@ const GamesPage = () => {
           <Col>
             <HomeBreadcrumbs></HomeBreadcrumbs>
           </Col>
-          <Col>
-            <img
-              src="images/cat_and_pink_moon.jpg"
-              alt="A Cat and a Pink Moon"
-            />
-          </Col>
-          <Col>
-            <Card style={{ width: "18rem" }}>
-              <Card.Body>
-                <Card.Title>Play the Gat Game</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">
-                  Card Subtitle
-                </Card.Subtitle>
-                <Card.Text>
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </Card.Text>
-                <Card.Link href="/cat-game">Play the Cat Game.</Card.Link>
-              </Card.Body>
-            </Card>
-          </Col>
+          <Col>Work in Progress :3</Col>
         </Row>
       </Container>
     </>

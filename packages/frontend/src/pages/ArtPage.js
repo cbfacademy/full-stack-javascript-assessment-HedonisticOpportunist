@@ -1,4 +1,4 @@
-import { Card, Container, Col, Row } from "react-bootstrap";
+import { Container, Col, Row, Table } from "react-bootstrap";
 import HomeBreadcrumbs from "../components/HomeBreadcrumbs";
 
 const ArtsPage = () => {
@@ -13,19 +13,38 @@ const ArtsPage = () => {
             <HomeBreadcrumbs></HomeBreadcrumbs>
           </Col>
           <Col>
-            <img src="images/pink_astro_cat.jpg" alt="A Pink Astronaut Cat" />
-          </Col>
-          <Col>
-            <Card style={{ width: "18rem" }}>
-              <Card.Body>
-                <Card.Title>Space Art</Card.Title>
-                <Card.Subtitle className="mb-2 text-muted">
-                  A sketch made in p5.js.
-                </Card.Subtitle>
-                <Card.Text>Some stuff here.</Card.Text>
-                <Card.Link href="/">View the Space Art.</Card.Link>
-              </Card.Body>
-            </Card>
+            <Table responsive>
+              <thead>
+                <tr>
+                  <th>Floating Space Cat</th>
+                  <th>Many Cats</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td colSpan={2}>
+                    <img
+                      className="card-img"
+                      src="images/floating_cat.png"
+                      alt="A Cat and a Moon"
+                    />
+                    <a href="space-cat-art/floating-astro-cat/index.html">
+                      Move the floating space cat.
+                    </a>
+                  </td>
+                  <td colSpan={2}>
+                    <img
+                      className="card-img"
+                      src="images/floating_cat.png"
+                      alt="A Cat and a Moon"
+                    />
+                    <a href="space-cat-art/cat-filling-up-screen/index.html">
+                      Watch the scene fill up with many cats.
+                    </a>
+                  </td>
+                </tr>
+              </tbody>
+            </Table>
           </Col>
         </Row>
       </Container>

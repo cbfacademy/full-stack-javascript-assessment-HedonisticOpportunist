@@ -23,6 +23,9 @@ const LoginPage = () => {
             <HomeBreadcrumbs></HomeBreadcrumbs>
           </Col>
           <Col>
+            <img src="images/pink_astro_cat.jpg" alt="A Pink Astronaut Cat" />
+          </Col>
+          <Col>
             Already have an account? <Link to={"/signup"}>Sign up</Link>
           </Col>
           <Col>

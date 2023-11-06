@@ -1,6 +1,5 @@
 import ArtsPage from "./pages/ArtPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import CatGame from "./sketches/CatGame";
 import CreditsPage from "./pages/CreditsPage";
 import Copyright from "./components/Copyright";
 import GamesPage from "./pages/GamesPage";
@@ -23,6 +22,7 @@ function App() {
     <>
       <BrowserRouter>
         <Routes>
+          {/* Landing Page Layout */}
           <Route
             exact
             path="/"
@@ -34,12 +34,12 @@ function App() {
               </>
             }
           />
+          {/* Routes */}
           <Route exact path="/credits" element={<CreditsPage></CreditsPage>} />
           <Route exact path="/games" element={<GamesPage></GamesPage>} />
           <Route exact path="/art" element={<ArtsPage></ArtsPage>} />
           <Route exact path="/login" element={<LoginPage></LoginPage>} />
           <Route exact path="/signup" element={<SignupPage></SignupPage>} />
-          <Route exact path="/cat-game" element={<CatGame></CatGame>} />
         </Routes>
         <Copyright />
       </BrowserRouter>
