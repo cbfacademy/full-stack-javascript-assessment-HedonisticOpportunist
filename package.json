@@ -22,8 +22,5 @@
   "bugs": {
     "url": "https://github.com/cbfacademy/full-stack-javascript/issues"
   },
-  "homepage": "https://github.com/cbfacademy/full-stack-javascript#readme",
-  "dependencies": {
-    "react-toastify": "^9.1.3"
-  }
+  "homepage": "https://github.com/cbfacademy/full-stack-javascript#readme"
 }
