@@ -16,6 +16,8 @@ In _Space Cats_, MongoDB, a cross-platform NoSQL database, helps store data abou
 
 _Space Cats_ utilises p5.js – a JavaScript client-side library for creating graphic and interactive experiences [6]. It also uses Three.js – a cross-browser JavaScript library and application programming interface (API) to create and display animated 3D computer graphics [7].
 
+## AUTHENTICATION
+
 ### REFERENCES
 
 [1] https://react.dev/
@@ -31,3 +33,5 @@ _Space Cats_ utilises p5.js – a JavaScript client-side library for creating gr
 [6] https://p5js.org/
 
 [7] https://threejs.org/
+
+[8] https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/

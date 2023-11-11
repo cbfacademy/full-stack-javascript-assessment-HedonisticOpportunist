@@ -8,6 +8,15 @@ body {
   text-align: left;
 }
 
+/* HEADER */
+.header {
+  background-color: black;
+  padding: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* FOOTER */
 
 .footer {
@@ -28,6 +37,10 @@ h2 {
   padding: 20px;
 }
 
+.header-title {
+  color: ghostwhite;
+}
+
 /* LINKS */
 
 a {
@@ -40,7 +53,7 @@ a {
 ul.breadcrumb {
   padding: 10px 16px;
   list-style: none;
-  background-color: #eee;
+  background-color: black;
 }
 ul.breadcrumb li {
   display: inline;
@@ -52,7 +65,7 @@ ul.breadcrumb li + li:before {
   content: "/\00a0";
 }
 ul.breadcrumb li a {
-  color: #55277a;
+  color: ghostwhite;
   text-decoration: none;
 }
 ul.breadcrumb li a:hover {
@@ -62,18 +75,19 @@ ul.breadcrumb li a:hover {
 
 /* IMAGES */
 
+.headerlogo {
+  float: left;
+  overflow: hidden;
+  height: 70px;
+  padding-top: 35px;
+  align-items: center;
+}
+
 img {
   border-radius: 70%;
   border: 1px solid #ddd;
   padding: 5px;
   width: 150px;
-}
-
-.card-img {
-  border-radius: 40%;
-  border: 1px solid #ddd;
-  padding: 0px;
-  width: 100px;
 }
 
 .mini-logo {
