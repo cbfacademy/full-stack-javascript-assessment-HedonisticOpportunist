@@ -1,13 +1,24 @@
+import { Container, Col, Row } from "react-bootstrap";
+import Header from "./Header";
 import { Link } from "react-router-dom";
 
 const HomeBreadcrumbs = () => {
   return (
     <>
-      <ul className="breadcrumb">
-        <li>
-          <Link to="/">🐾Home</Link>
-        </li>
-      </ul>
+      <Container fluid>
+        <Row>
+          <Col>
+            <Header></Header>
+          </Col>
+          <Col>
+            <ul className="breadcrumb">
+              <li>
+                <Link to="/">🐾Home</Link>
+              </li>
+            </ul>
+          </Col>
+        </Row>
+      </Container>
     </>
   );
 };

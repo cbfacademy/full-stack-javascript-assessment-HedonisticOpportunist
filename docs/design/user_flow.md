@@ -16,7 +16,7 @@ The following image [1] displays the user flow when logged in.
 
 <img src="diagrams/logged_in.png" width="400" height="300">
 
-For the second stage, the assumption is that the user either has an account or wishes to create one to perform more involved actions – such as viewing their game score.
+For the second stage, the assumption is that the user either has an account or wishes to create one to perform more involved actions – such as uploading their work for review.
 
 ### REFERENCES
 

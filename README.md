@@ -2,7 +2,7 @@
 
 ## PURPOSE
 
-_Space Cats_ is a game web application similar to Newgrounds [1], where users can play games and view interactive art. Unlike Newgrounds, to play games or view art, the user would not require an account; however, to view their scores, leave a comment on the game or upload their work, they would have to sign up.
+_Space Cats_ is a game web application similar to Newgrounds [1], where users can play games and view interactive art. Unlike Newgrounds, to play games or view art, the user does not require an account; however, to upload their work for review, they must sign up.
 
 Ultimately, Space Cats aims to unite people who enjoy simple and cute games.
 

@@ -6,25 +6,30 @@ const CreditsPage = () => {
     <>
       <Container fluid>
         <Row>
-          {" "}
           <Col>
-            <h1>Credits</h1>
-          </Col>
-          <Col>
+            {/* BREADCRUMBS */}
             <HomeBreadcrumbs></HomeBreadcrumbs>
           </Col>
           <Col>
-            A project is never created in isolation; the following sources were
-            used to make the web application what it is today.
+            {/* PAGE TITLE */}
+            <h3>Credits</h3>
           </Col>
           <Col>
+            <p>
+              A project never lives in isolation; the following sources helped
+              make <i>Space Cats</i> what it is today.
+            </p>
+          </Col>
+          <Col>
+            {/* IMAGE CREDITS */}
             <img
               className="mini-logo"
               src="images/cat_moon.jpg"
               alt="A Cat and a Moon"
             />
-            The image of the cat on the moon was created by catalyststuff on
-            Freepik.
+            <a href="https://www.facebook.com/moshimoshicatalyst">
+              Credit: catalyststuff/moshimoshicatalyst.
+            </a>
           </Col>
           <Col>
             <img
@@ -32,8 +37,9 @@ const CreditsPage = () => {
               src="images/cat_rocket.jpg"
               alt="A Cat and a Rocket"
             />
-            The image of the cat and a rocket was created by catalyststuff on
-            Freepik.
+            <a href="https://www.facebook.com/moshimoshicatalyst">
+              Credit: catalyststuff/moshimoshicatalyst.
+            </a>
           </Col>
           <Col>
             <img
@@ -41,8 +47,7 @@ const CreditsPage = () => {
               src="images/pink_astro_cat.jpg"
               alt="A Pink Astronaut Cat"
             />
-            The image of the pink astronaut cat was created by storyset on
-            Freepik.
+            <a href="https://storyset.com/">Credit: storyset</a>
           </Col>
           <Col>
             <img
@@ -50,8 +55,9 @@ const CreditsPage = () => {
               src="images/cat_and_fish.jpg"
               alt="A Cat and a Fish"
             />
-            The image of the cat and a fish was created by catalyststuff on
-            Freepik.
+            <a href="https://www.facebook.com/moshimoshicatalyst">
+              Credit: catalyststuff/moshimoshicatalyst.
+            </a>
           </Col>
         </Row>
       </Container>

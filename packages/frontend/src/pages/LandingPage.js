@@ -1,11 +1,11 @@
 import { Card, Container, Col, Row } from "react-bootstrap";
-import SubscribeForm from "../components/SubscribeForm";
+import SubscribeForm from "../forms/SubscribeForm";
 import { useEffect, useState } from "react";
 
 const LandingPage = () => {
   const [data, setData] = useState(null);
 
-  // Display date and time
+  // Display Date and Time Function
   useEffect(() => {
     fetch("http://localhost:5000/")
       .then((res) => res.json())
@@ -16,29 +16,29 @@ const LandingPage = () => {
       <Container fluid>
         <Row>
           <Col>
-            {/* Landing Page Welcome Message */}
+            {/* WELCOME MESSAGE */}
             <p>{!data ? "ᓚᘏᗢ-…ᘛ⁐̤ᕐᐷ 🧀 Loading ..." : data}</p>
           </Col>
           <Col>
-            {/* Landing Page Images */}
+            {/* IMAGES */}
             <img src="/images/cat_moon.jpg" alt="A Cat and a Moon" />
             <img src="images/cat_rocket.jpg" alt="A Cat and a Rocket" />
           </Col>
           <Col>
-            {/* Landing Page Content */}
+            {/* MAIN CONTENT */}
             <Card>
               <Card.Body>
                 <h2> Silly Games and ... Cats!</h2>
                 <Card.Text>
                   <b>Space Cats </b> is your friendly haunt on the web for
-                  playing or viewing cute and silly things.
+                  playing silly games.
                 </Card.Text>
                 <Card.Text>Feel free to explore ₍^._.^₎ 𐒡</Card.Text>
               </Card.Body>
             </Card>
           </Col>
           <Col>
-            {/* Subscribe Form */}
+            {/* SUSCRIBE FORM */}
             <SubscribeForm></SubscribeForm>
           </Col>
         </Row>

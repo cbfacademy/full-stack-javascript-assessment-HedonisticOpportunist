@@ -7,12 +7,14 @@ const GamesPage = () => {
       <Container fluid>
         <Row>
           <Col>
-            <h1>Games</h1>
-          </Col>
-          <Col>
+            {/* BREADCRUMBS */}
             <HomeBreadcrumbs></HomeBreadcrumbs>
           </Col>
-          <Col>Work in Progress :3</Col>
+          <Col>
+            {/* PAGE TITLE */}
+            <h3>Games</h3>
+          </Col>
+          <Col>Work in Progress ^•ﻌ•^ฅ♡</Col>
         </Row>
       </Container>
     </>

@@ -5,7 +5,7 @@ const Copyright = () => {
   const [year] = useState(new Date().getFullYear());
   return (
     <>
-      <Container>
+      <Container fluid>
         <Row>
           <Col>
             <footer className="footer">

@@ -1,4 +1,4 @@
-import ArtsPage from "./pages/ArtPage";
+import InteractiveArtPage from "./pages/InteractiveArtPage";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import CreditsPage from "./pages/CreditsPage";
 import Copyright from "./components/Copyright";
@@ -9,6 +9,7 @@ import LoginPage from "./pages/LoginPage";
 import React from "react";
 import SignupPage from "./pages/SignupPage";
 import "./stylesheets/App.css";
+import UserDashboard from "./pages/UserDashboard";
 
 function App() {
   return (
@@ -20,19 +21,29 @@ function App() {
             path="/"
             element={
               <>
-                {/* Landing Page Layout */}
+                {/* HOMEPAGE LAYOUT */}
                 <HeaderBreadcrumbs />
                 <LandingPage></LandingPage>
               </>
             }
           />
-          {/* Routes */}
+          {/* ROUTES */}
           <Route exact path="/credits" element={<CreditsPage></CreditsPage>} />
+          <Route
+            exact
+            path="/dashboard"
+            element={<UserDashboard></UserDashboard>}
+          />
           <Route exact path="/games" element={<GamesPage></GamesPage>} />
-          <Route exact path="/art" element={<ArtsPage></ArtsPage>} />
+          <Route
+            exact
+            path="/art"
+            element={<InteractiveArtPage></InteractiveArtPage>}
+          />
           <Route exact path="/login" element={<LoginPage></LoginPage>} />
           <Route exact path="/signup" element={<SignupPage></SignupPage>} />
         </Routes>
+        {/* COPYRIGHT*/}
         <Copyright />
       </BrowserRouter>
     </>
