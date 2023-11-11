@@ -1,32 +1,30 @@
 import axios from "axios";
 import { Button, Container, Col, Form, Row } from "react-bootstrap";
 import HomeBreadcrumbs from "../components/HomeBreadcrumbs";
-import { Link, useNavigate } from "react-router-dom";
-import { ToastContainer, toast } from "react-toastify";
+import { Link } from "react-router-dom";
 import { useState } from "react";
 
 const LoginPage = () => {
-  const navigate = useNavigate();
-
   // States
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [hasLoggedIn, setLoginStatus] = useState(false);
+  const [message, setMessage] = useState("");
 
   // Toast Messages
-  const handleError = () =>
-    toast("👻 Error!", {
-      position: "bottom-left",
-      autoClose: 5000,
-      hideProgressBar: false,
-    });
-  const handleSuccess = () =>
-    toast("🦄 Success!", {
-      position: "bottom-left",
-      autoClose: 5000,
-      hideProgressBar: false,
-    });
+  const handleError = "👻 Error. Please try logging in again.";
+  const handleSuccess = "🦄 Success! You have been logged in.";
 
-  // Login
+  // Handle Message Function
+  const handleDisplayMessages = () => {
+    if (hasLoggedIn) {
+      setMessage(handleSuccess);
+    } else {
+      setMessage(handleError);
+    }
+  };
+
+  // Login Function
   const login = async () => {
     try {
       const { data } = await axios.post(
@@ -38,14 +36,11 @@ const LoginPage = () => {
         { withCredentials: true }
       );
       console.log(data);
-      const { success, message } = data;
+      const success = data;
       if (success) {
-        handleSuccess(message);
-        setTimeout(() => {
-          navigate("/");
-        }, 1000);
+        setLoginStatus(true);
       } else {
-        handleError(message);
+        setLoginStatus(false);
       }
     } catch (error) {
       console.log(error);
@@ -54,10 +49,11 @@ const LoginPage = () => {
     setPassword(password);
   };
 
-  // Submit
+  // Submit Function
   const handleSubmit = async (e) => {
     e.preventDefault();
     login();
+    handleDisplayMessages();
   };
 
   return (
@@ -68,6 +64,7 @@ const LoginPage = () => {
             <h1>Login</h1>
           </Col>
           <Col>
+            {/* Breadcrumbs */}
             <HomeBreadcrumbs></HomeBreadcrumbs>
           </Col>
           <Col>
@@ -79,6 +76,7 @@ const LoginPage = () => {
             </p>
           </Col>
           <Col>
+            {/* Login Form */}
             <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address: </Form.Label>
@@ -101,6 +99,7 @@ const LoginPage = () => {
                   required
                 />
               </Form.Group>
+              {/* Login Button */}
               <Button
                 className="btn-grad"
                 variant="outline-dark"
@@ -113,7 +112,8 @@ const LoginPage = () => {
             </Form>
           </Col>
           <Col>
-            <ToastContainer />
+            {/* Login Success Message */}
+            <p>{message}</p>
           </Col>
         </Row>
       </Container>

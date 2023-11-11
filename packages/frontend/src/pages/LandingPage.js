@@ -1,5 +1,5 @@
 import { Card, Container, Col, Row } from "react-bootstrap";
-import Subscribe from "../components/Subscribe";
+import SubscribeForm from "../components/SubscribeForm";
 import { useEffect, useState } from "react";
 
 const LandingPage = () => {
@@ -16,9 +16,11 @@ const LandingPage = () => {
       <Container fluid>
         <Row>
           <Col>
+            {/* Landing Page Welcome Message */}
             <p>{!data ? "ᓚᘏᗢ-…ᘛ⁐̤ᕐᐷ 🧀 Loading ..." : data}</p>
           </Col>
           <Col>
+            {/* Landing Page Images */}
             <img src="/images/cat_moon.jpg" alt="A Cat and a Moon" />
             <img src="images/cat_rocket.jpg" alt="A Cat and a Rocket" />
           </Col>
@@ -37,7 +39,7 @@ const LandingPage = () => {
           </Col>
           <Col>
             {/* Subscribe Form */}
-            <Subscribe></Subscribe>
+            <SubscribeForm></SubscribeForm>
           </Col>
         </Row>
       </Container>
