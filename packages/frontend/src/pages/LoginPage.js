@@ -1,15 +1,63 @@
+import axios from "axios";
 import { Button, Container, Col, Form, Row } from "react-bootstrap";
 import HomeBreadcrumbs from "../components/HomeBreadcrumbs";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { ToastContainer, toast } from "react-toastify";
 import { useState } from "react";
 
 const LoginPage = () => {
+  const navigate = useNavigate();
+
+  // States
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
+  // Toast Messages
+  const handleError = () =>
+    toast("👻 Error!", {
+      position: "bottom-left",
+      autoClose: 5000,
+      hideProgressBar: false,
+    });
+  const handleSuccess = () =>
+    toast("🦄 Success!", {
+      position: "bottom-left",
+      autoClose: 5000,
+      hideProgressBar: false,
+    });
+
+  // Login
+  const login = async () => {
+    try {
+      const { data } = await axios.post(
+        "http://localhost:5000/login",
+        {
+          email,
+          password,
+        },
+        { withCredentials: true }
+      );
+      console.log(data);
+      const { success, message } = data;
+      if (success) {
+        handleSuccess(message);
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
+      } else {
+        handleError(message);
+      }
+    } catch (error) {
+      console.log(error);
+    }
+    setEmail(email);
+    setPassword(password);
+  };
+
+  // Submit
   const handleSubmit = async (e) => {
     e.preventDefault();
-    alert("Submitted.");
+    login();
   };
 
   return (
@@ -26,7 +74,9 @@ const LoginPage = () => {
             <img src="images/pink_astro_cat.jpg" alt="A Pink Astronaut Cat" />
           </Col>
           <Col>
-            Already have an account? <Link to={"/signup"}>Sign up</Link>
+            <p>
+              Don't have an account? <Link to={"/signup"}>Signup</Link> /ᐠ.ꞈ.ᐟ\
+            </p>
           </Col>
           <Col>
             <Form>
@@ -61,6 +111,9 @@ const LoginPage = () => {
                 🐾Login
               </Button>
             </Form>
+          </Col>
+          <Col>
+            <ToastContainer />
           </Col>
         </Row>
       </Container>

@@ -1,26 +1,28 @@
-const authRoute = require("./routes/AuthRoute");
-const express = require("express");
-const mongoose = require("mongoose");
+const authRoute = require("./routes/AuthRoute.js");
+const { connectToMongoDB } = require("./database/ConnectToDB");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
-const app = express();
+const express = require("express");
 require("dotenv").config();
-const { getDate, welcomeMessage } = require("./util/HelperFunctions");
-const { MONGO_URL, PORT } = process.env;
+const { getDate, welcomeMessage } = require("./util/LandingPageMessages");
+const { PORT } = process.env;
+const app = express();
 
-mongoose
-  .connect(MONGO_URL)
-  .then(() => console.log("MongoDB is  connected successfully"))
-  .catch((err) => console.error(err));
+// Connect to the database
+connectToMongoDB();
 
-app.use(cors());
-
+// Set up third party middleware
+app.use(
+  cors({
+    origin: ["http://localhost:3000"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    credentials: true,
+  })
+);
 app.use(cookieParser());
-
 app.use(express.json());
 
-app.use("/", authRoute);
-
+// Routes
 app.get("/", (_request, response) => {
   response.json({
     message: welcomeMessage() + " " + getDate(),
@@ -30,6 +32,8 @@ app.get("/", (_request, response) => {
 app.get("/cors", (req, res) => {
   res.send("This has CORS enabled 🐈🐈");
 });
+
+app.use("/", authRoute);
 
 app.listen(PORT, () => {
   console.log(`Server is listening on port ${PORT}`);

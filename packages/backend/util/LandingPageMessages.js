@@ -13,7 +13,4 @@ function getDate() {
   return `Today's date is: ${year}-${month}-${date}.`;
 }
 
-module.exports = {
-  getDate,
-  welcomeMessage,
-};
+module.exports = { getDate, welcomeMessage };

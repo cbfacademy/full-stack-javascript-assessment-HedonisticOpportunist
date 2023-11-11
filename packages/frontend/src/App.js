@@ -7,29 +7,21 @@ import HeaderBreadcrumbs from "./components/HeaderBreadcrumbs";
 import LandingPage from "./pages/LandingPage";
 import LoginPage from "./pages/LoginPage";
 import React from "react";
-import SignupPage from "./pages/Signup";
+import SignupPage from "./pages/SignupPage";
 import "./stylesheets/App.css";
 
 function App() {
-  const [data, setData] = React.useState(null);
-
-  React.useEffect(() => {
-    fetch("http://localhost:5000/")
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
-  }, []);
   return (
     <>
       <BrowserRouter>
         <Routes>
-          {/* Landing Page Layout */}
           <Route
             exact
             path="/"
             element={
               <>
+                {/* Landing Page Layout */}
                 <HeaderBreadcrumbs />
-                <p>{!data ? "Loading..." : data}</p>
                 <LandingPage></LandingPage>
               </>
             }
