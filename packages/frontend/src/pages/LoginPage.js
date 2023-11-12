@@ -1,5 +1,6 @@
 import { Col, Container, Row } from "react-bootstrap";
 import HomeBreadcrumbs from "../components/HomeBreadcrumbs";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import LoginForm from "../forms/LoginForm";
 
@@ -17,7 +18,11 @@ const LoginPage = () => {
             <h3>Login</h3>
           </Col>
           <Col>
-            <img src="images/pink_astro_cat.jpg" alt="A Pink Astronaut Cat" />
+            <LazyLoadImage
+              className="image"
+              src="images/pink_astro_cat.jpg"
+              alt="A Pink Astronaut Cat"
+            />
           </Col>
           <Col>
             <p>

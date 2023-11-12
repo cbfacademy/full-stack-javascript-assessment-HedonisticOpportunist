@@ -18,6 +18,8 @@ _Space Cats_ utilises p5.js – a JavaScript client-side library for creating gr
 
 ## AUTHENTICATION
 
+To protect sensitive information and stop unauthorised users from accessing the dashboard, _Space Cats_ uses JWT (JSON Web Token)-based user authentication and authorisation [8].
+
 ### REFERENCES
 
 [1] https://react.dev/

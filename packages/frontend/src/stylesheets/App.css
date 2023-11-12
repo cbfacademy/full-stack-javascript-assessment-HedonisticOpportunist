@@ -9,6 +9,7 @@ body {
 }
 
 /* HEADER */
+/* @ https://stackoverflow.com/questions/59571603/move-image-next-to-header */
 .header {
   background-color: black;
   padding: 35px;
@@ -18,7 +19,6 @@ body {
 }
 
 /* FOOTER */
-
 .footer {
   position: fixed;
   left: 0;
@@ -31,7 +31,6 @@ body {
 }
 
 /* HEADINGS */
-
 h1,
 h2 {
   padding: 20px;
@@ -42,14 +41,12 @@ h2 {
 }
 
 /* LINKS */
-
 a {
   font-family: monospace;
   font-size: small;
 }
 
 /* BREAD CRUMBS*/
-
 ul.breadcrumb {
   padding: 10px 16px;
   list-style: none;
@@ -74,16 +71,7 @@ ul.breadcrumb li a:hover {
 }
 
 /* IMAGES */
-
-.headerlogo {
-  float: left;
-  overflow: hidden;
-  height: 70px;
-  padding-top: 35px;
-  align-items: center;
-}
-
-img {
+.image {
   border-radius: 70%;
   border: 1px solid #ddd;
   padding: 5px;
@@ -97,11 +85,8 @@ img {
   width: 60px;
 }
 
-/* BUTTONS *
-@ https://gradientbuttons.colorion.co/
-/
-*/
-
+/* BUTTONS */
+/* @ https://gradientbuttons.colorion.co */
 .btn-grad {
   background-image: linear-gradient(
     to right,
