@@ -18,6 +18,8 @@ const SignupForm = () => {
   const handleSuccess = "🦄🦄 Success! You have been signed up.";
 
   // SIGN UP FUNCTION
+  // Credit @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
+  // Any further modifications are mine and mine alone.
   const signup = async () => {
     try {
       const { data } = await axios.post(

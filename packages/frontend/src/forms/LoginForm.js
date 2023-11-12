@@ -17,6 +17,8 @@ const LoginForm = () => {
   const handleSuccess = "🐼🐼 Success! You have been logged in.";
 
   // LOGIN FUNCTION
+  // Credit @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
+  // Any further modifications are mine and mine alone.
   const login = async () => {
     try {
       const { data } = await axios.post(

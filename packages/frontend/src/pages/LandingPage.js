@@ -1,4 +1,5 @@
 import { Card, Container, Col, Row } from "react-bootstrap";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import SubscribeForm from "../forms/SubscribeForm";
 import { useEffect, useState } from "react";
 
@@ -21,8 +22,16 @@ const LandingPage = () => {
           </Col>
           <Col>
             {/* IMAGES */}
-            <img src="/images/cat_moon.jpg" alt="A Cat and a Moon" />
-            <img src="images/cat_rocket.jpg" alt="A Cat and a Rocket" />
+            <LazyLoadImage
+              className="image"
+              src="/images/cat_moon.jpg"
+              alt="A Cat and a Moon"
+            />
+            <LazyLoadImage
+              className="image"
+              src="images/cat_rocket.jpg"
+              alt="A Cat and a Rocket"
+            />
           </Col>
           <Col>
             {/* MAIN CONTENT */}

@@ -2,7 +2,10 @@ const User = require("../models/UserModel");
 const { createSecretToken } = require("../util/SecretToken");
 const bcrypt = require("bcryptjs");
 
-// SUSCRIBE
+// Credit @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
+// Any further modifications are mine and mine alone.
+
+// SUSCRIBE CONTROLLER
 module.exports.Suscribe = async (req, res, next) => {
   try {
     const { email } = req.body;
@@ -25,7 +28,7 @@ module.exports.Suscribe = async (req, res, next) => {
   }
 };
 
-// SIGN UP
+// SIGN UP CONTROLLER
 module.exports.Signup = async (req, res, next) => {
   try {
     const { email, password, username, createdAt } = req.body;
@@ -48,7 +51,7 @@ module.exports.Signup = async (req, res, next) => {
   }
 };
 
-// LOGIN
+// LOGIN CONTROLLER
 module.exports.Login = async (req, res, next) => {
   try {
     const { email, password } = req.body;

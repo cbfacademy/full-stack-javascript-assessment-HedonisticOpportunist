@@ -10,10 +10,11 @@ const UserDashboard = () => {
 
   // STATES
   const [cookies, removeCookie] = useCookies([]);
-  const [username, setUsername] = useState("");
   const [message, setMessage] = useState("");
 
   // VERIFY COOKIE FUNCTION
+  // Credit @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
+  // Any further modifications are mine and mine alone.
   useEffect(() => {
     const verifyCookie = async () => {
       if (!cookies.token) {
@@ -26,9 +27,8 @@ const UserDashboard = () => {
       );
 
       const { status, user } = data;
-      setUsername(user);
       return status
-        ? setMessage(`Hello ${username}`, {
+        ? setMessage(`Hello ${user}`, {
             position: "top-right",
           })
         : (removeCookie("token"), navigate("/login"));
@@ -37,6 +37,8 @@ const UserDashboard = () => {
   }, [cookies, navigate, removeCookie]);
 
   // LOGOUT FUNCTION
+  // Credit @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
+  // Any further modifications are mine and mine alone.
   function Logout() {
     removeCookie("token");
     navigate("/signup");
