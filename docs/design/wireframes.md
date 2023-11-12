@@ -10,6 +10,12 @@ The wireframe below shows the landing page [2].
 
 <img src="diagrams/landing_page.png" width="400" height="300">
 
+## BARE BONES WIREFRAME FOR USER DASHBOARD PAGE
+
+The wireframe below shows the user dashboard page [2].
+
+<img src="diagrams/dashboard.png" width="400" height="300">
+
 ### REFERENCES
 
 [1] https://www.experienceux.co.uk/faqs/what-is-wireframing/

@@ -2,23 +2,23 @@
 
 ## FRONTEND
 
-The front end of _Space Cats_ uses React - a library for web and native interfaces [1]. It also uses React Bootstrap [2] to create a better user experience without sacrificing custom CSS.
+The front end of _**Space Cats**_ uses React - a library for web and native interfaces [1]. It also uses _React Bootstrap_ [2] to create a better user experience without sacrificing custom CSS.
 
 ## BACKEND
 
-_Space Cats'_ back end engages Node.js, a cross-platform, open-source server environment [3].
+**Space Cats'** back end engages _Node.js_, a cross-platform, open-source server environment [3].
 
 ## DATABASE
 
-In _Space Cats_, MongoDB, a cross-platform NoSQL database, helps store data about user scores, among other uses [4]. The backend uses the mongoose library to help _Space Cats_ connect with MongoDB [5].
+In _**Space Cats**_, _MongoDB_, a cross-platform NoSQL database, helps store data about users [4]. The backend uses the _mongoose_ library to help _**Space Cats**_ connect with _MongoDB_ [5].
 
 ## GAMES AND ART
 
-_Space Cats_ utilises p5.js – a JavaScript client-side library for creating graphic and interactive experiences [6]. It also uses Three.js – a cross-browser JavaScript library and application programming interface (API) to create and display animated 3D computer graphics [7].
+**Space Cats** utilises _p5.js_ – a JavaScript client-side library for creating graphic and interactive experiences [6].
 
 ## AUTHENTICATION
 
-To protect sensitive information and stop unauthorised users from accessing the dashboard, _Space Cats_ uses JWT (JSON Web Token)-based user authentication and authorisation [8].
+To protect sensitive information and stop unauthorised users from accessing the dashboard, _**Space Cats**_ uses JWT (JSON Web Token)-based user authentication and authorisation, based on an implementation by FADAHUNSI SEYI SAMUEL @ freecodecamp. [7].
 
 ### REFERENCES
 
@@ -34,6 +34,4 @@ To protect sensitive information and stop unauthorised users from accessing the 
 
 [6] https://p5js.org/
 
-[7] https://threejs.org/
-
-[8] https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
+[7] https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/

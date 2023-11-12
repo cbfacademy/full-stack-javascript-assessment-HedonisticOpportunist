@@ -1,6 +1,6 @@
 import { Card, Container, Col, Row } from "react-bootstrap";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import SubscribeForm from "../forms/SubscribeForm";
+import SubscribeForm from "../components/forms/SubscribeForm";
 import { useEffect, useState } from "react";
 
 const LandingPage = () => {
