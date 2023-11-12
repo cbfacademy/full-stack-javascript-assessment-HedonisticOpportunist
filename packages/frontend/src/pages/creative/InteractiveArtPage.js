@@ -1,5 +1,5 @@
 import { Container, Col, Row } from "react-bootstrap";
-import HomeBreadcrumbs from "../components/HomeBreadcrumbs";
+import HomeBreadcrumbs from "../../components/navigation/HomeBreadcrumbs";
 
 const InteractiveArtPage = () => {
   return (
@@ -23,8 +23,8 @@ const InteractiveArtPage = () => {
             <h4>Floating Space Cat ♡</h4>
           </Col>
           <Col>
-            {/* GAME LINK AND DESCRIPTION */}
-            <a href="space-cat-art/floating-astro-cat/index.html">
+            {/* ART LINK AND DESCRIPTION */}
+            <a href="space-cats-art-and-games/floating-astro-cat/index.html">
               Move the floating space cat.
             </a>
             <p>
@@ -40,8 +40,8 @@ const InteractiveArtPage = () => {
             <h4>Many Cats ♡</h4>
           </Col>
           <Col>
-            {/* GAME LINK AND DESCRIPTION */}
-            <a href="space-cat-art/cat-filling-up-screen/index.html">
+            {/* ART LINK AND DESCRIPTION */}
+            <a href="space-cats-art-and-games/cat-filling-up-screen/index.html">
               Watch the scene fill up with many cats.
             </a>
             <p>

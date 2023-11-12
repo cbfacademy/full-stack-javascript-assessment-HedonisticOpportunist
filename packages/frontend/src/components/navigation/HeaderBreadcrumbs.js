@@ -1,5 +1,5 @@
 import { Container, Col, Row } from "react-bootstrap";
-import Header from "./Header";
+import Header from "../Header";
 import { Link } from "react-router-dom";
 
 const HeaderBreadcrumbs = () => {
@@ -20,7 +20,7 @@ const HeaderBreadcrumbs = () => {
                 <Link to="/games">🐾Games</Link>
               </li>
               <li>
-                <Link to="/art">🐾Interactive Art</Link>
+                <Link to="/interactive-art">🐾Interactive Art</Link>
               </li>
               <li>
                 <Link to="/credits">🐾Credits</Link>

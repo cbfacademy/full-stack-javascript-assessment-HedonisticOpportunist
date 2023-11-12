@@ -21,7 +21,6 @@ function preload() {
 function setup() {
   // Set up the canvas
   createCanvas(windowWidth, windowHeight);
-  noCursor();
 
   // Create a button that reloads the scene
   button = createButton("RELOAD ME");

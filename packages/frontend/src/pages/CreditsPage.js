@@ -1,5 +1,5 @@
 import { Container, Col, Row } from "react-bootstrap";
-import HomeBreadcrumbs from "../components/HomeBreadcrumbs";
+import HomeBreadcrumbs from "../components/navigation/HomeBreadcrumbs";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const CreditsPage = () => {

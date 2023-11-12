@@ -1,6 +1,6 @@
 import axios from "axios";
-import { Col, Container, Row } from "react-bootstrap";
-import HomeBreadcrumbs from "../components/HomeBreadcrumbs";
+import { Button, Col, Container, Row } from "react-bootstrap";
+import DashboardBreadcrumbs from "../../components/navigation/DashboardBreadcrumbs";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
@@ -50,7 +50,7 @@ const UserDashboard = () => {
         <Row>
           <Col>
             {/* BREADCRUMBS */}
-            <HomeBreadcrumbs></HomeBreadcrumbs>
+            <DashboardBreadcrumbs></DashboardBreadcrumbs>
           </Col>
           <Col>
             {/* PAGE TITLE */}
@@ -62,7 +62,15 @@ const UserDashboard = () => {
           </Col>
           <Col>
             {/* LOGOUT BUTTON */}
-            <button onClick={Logout}>LOGOUT</button>
+            <Button
+              className="btn-grad"
+              variant="outline-dark"
+              type="submit"
+              size="lg"
+              onClick={Logout}
+            >
+              LOGOUT
+            </Button>
           </Col>
         </Row>
       </Container>

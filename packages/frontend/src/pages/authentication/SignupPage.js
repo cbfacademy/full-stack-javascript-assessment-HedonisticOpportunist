@@ -1,10 +1,10 @@
 import { Col, Container, Row } from "react-bootstrap";
-import HomeBreadcrumbs from "../components/HomeBreadcrumbs";
+import HomeBreadcrumbs from "../../components/navigation/HomeBreadcrumbs";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
-import LoginForm from "../forms/LoginForm";
+import SignupForm from "../../components/forms/SignupForm";
 
-const LoginPage = () => {
+const SignupPage = () => {
   return (
     <>
       <Container fluid>
@@ -15,23 +15,23 @@ const LoginPage = () => {
           </Col>
           <Col>
             {/* PAGE TITLE */}
-            <h3>Login</h3>
+            <h3>Register</h3>
           </Col>
           <Col>
             <LazyLoadImage
               className="image"
-              src="images/pink_astro_cat.jpg"
-              alt="A Pink Astronaut Cat"
+              src="images/cat_and_fish.jpg"
+              alt="A Cat and a Fish"
             />
           </Col>
           <Col>
             <p>
-              Don't have an account? <Link to={"/signup"}>Signup</Link> /ᐠ.ꞈ.ᐟ\
+              Already have an account? <Link to={"/login"}>Login</Link> ♡🐾
             </p>
           </Col>
           <Col>
-            {/* LOGIN FORM */}
-            <LoginForm></LoginForm>
+            {/* SIGN UP FORM */}
+            <SignupForm></SignupForm>
           </Col>
         </Row>
       </Container>
@@ -39,4 +39,4 @@ const LoginPage = () => {
   );
 };
 
-export default LoginPage;
+export default SignupPage;
