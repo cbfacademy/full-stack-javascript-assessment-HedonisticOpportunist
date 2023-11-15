@@ -4,6 +4,7 @@ const cors = require("cors");
 const express = require("express");
 require("dotenv").config();
 const { getDate, welcomeMessage } = require("./util/LandingPageMessages");
+const logger = require("pino")();
 const { PORT } = process.env;
 const userRoute = require("./routes/UserRoute.js");
 const app = express();
@@ -35,5 +36,5 @@ app.use("/", userRoute);
 
 // LISTEN FUNCTION
 app.listen(PORT, () => {
-  console.log(`Server is listening on port ${PORT}`);
+  logger.info(`Server is listening on port ${PORT}`);
 });

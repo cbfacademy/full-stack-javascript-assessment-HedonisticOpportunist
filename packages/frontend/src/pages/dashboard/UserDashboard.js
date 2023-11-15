@@ -54,7 +54,7 @@ const UserDashboard = () => {
           </Col>
           <Col>
             {/* PAGE TITLE */}
-            <h3>User Dashboard</h3>
+            <h3>User Dashboard ᓚᘏᗢ</h3>
           </Col>
           <Col>
             {/* WELCOME MESSAGE */}

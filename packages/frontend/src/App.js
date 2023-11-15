@@ -8,8 +8,10 @@ import LandingPage from "./pages/LandingPage";
 import LoginPage from "./pages/authentication/LoginPage";
 import React from "react";
 import SignupPage from "./pages/authentication/SignupPage";
+import SuscribePage from "./pages/dashboard/SuscribePage";
 import "./stylesheets/App.css";
 import UserDashboard from "./pages/dashboard/UserDashboard";
+import UploadWorkPage from "./pages/dashboard/UploadWorkPage";
 
 function App() {
   return (
@@ -42,6 +44,16 @@ function App() {
           />
           <Route exact path="/login" element={<LoginPage></LoginPage>} />
           <Route exact path="/signup" element={<SignupPage></SignupPage>} />
+          <Route
+            exact
+            path="/suscribe"
+            element={<SuscribePage></SuscribePage>}
+          />
+          <Route
+            exact
+            path="/uploads"
+            element={<UploadWorkPage></UploadWorkPage>}
+          />
         </Routes>
         {/* COPYRIGHT*/}
         <Copyright />

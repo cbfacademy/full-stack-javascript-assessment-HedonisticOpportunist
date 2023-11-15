@@ -36,18 +36,12 @@ function setup() {
   mouse_y = 320;
   mouse_second_y = 580;
 
-  /*
-	 game score set to 0 so that player
-	 can start the game with a carte blanche
-	*/
+  // Game score set to 0 so that player can start the game with a carte blanche
   game_score = 0;
 
-  /*
-	 Initialise mice objects within the mouse array.
-	 The x position is different for each mouse while the y position remains static
-	 due to the mice staying on the ground.
-	*/
+  // Initialise mice objects within the mouse array.
   mice = [
+    // First set of mice
     {
       x_pos: 150,
       y_pos: mouse_y,
@@ -60,27 +54,51 @@ function setup() {
       x_pos: 340,
       y_pos: mouse_y,
     },
+    // Second set of mice
     {
-      x_pos: 200,
+      x_pos: 550,
+      y_pos: mouse_y,
+    },
+    {
+      x_pos: 600,
+      y_pos: mouse_y,
+    },
+    {
+      x_pos: 650,
+      y_pos: mouse_y,
+    },
+    // Third set of mice
+    {
+      x_pos: 150,
       y_pos: mouse_second_y,
     },
     {
-      x_pos: 350,
+      x_pos: 250,
       y_pos: mouse_second_y,
     },
+    {
+      x_pos: 340,
+      y_pos: mouse_second_y,
+    },
+    // Fourth set of mice
     {
       x_pos: 550,
       y_pos: mouse_second_y,
     },
+    {
+      x_pos: 700,
+      y_pos: mouse_second_y,
+    },
+    {
+      x_pos: 850,
+      y_pos: mouse_second_y,
+    },
   ];
 
-  /*
-		Initialise eyes for the wider mice eyes array.
-		The x position for each eye on the left side is incremented by
-		five, so that the eyes display properly for each side.
-		The y position for each eye remains static.
-	*/
+  // Initialise eyes for the wider mice eyes array.
+  // The x position for each eye on the left side is incremented by five, so that the eyes display properly for each side.
   eyes = [
+    // First set of mice
     {
       x_pos: 150,
       y_pos: mouse_y,
@@ -104,6 +122,81 @@ function setup() {
     {
       x_pos: 340 + 5,
       y_pos: mouse_y,
+    },
+    // Second set of mice
+    {
+      x_pos: 550,
+      y_pos: mouse_y,
+    },
+    {
+      x_pos: 550 + 5,
+      y_pos: mouse_y,
+    },
+    {
+      x_pos: 600,
+      y_pos: mouse_y,
+    },
+    {
+      x_pos: 600 + 5,
+      y_pos: mouse_y,
+    },
+    {
+      x_pos: 650,
+      y_pos: mouse_y,
+    },
+    {
+      x_pos: 650 + 5,
+      y_pos: mouse_y,
+    },
+    // Third set of mice
+    {
+      x_pos: 150,
+      y_pos: mouse_second_y,
+    },
+    {
+      x_pos: 150 + 5,
+      y_pos: mouse_second_y,
+    },
+    {
+      x_pos: 250,
+      y_pos: mouse_second_y,
+    },
+    {
+      x_pos: 250 + 5,
+      y_pos: mouse_second_y,
+    },
+    {
+      x_pos: 340,
+      y_pos: mouse_second_y,
+    },
+    {
+      x_pos: 340 + 5,
+      y_pos: mouse_second_y,
+    },
+    // Fourth set of mice
+    {
+      x_pos: 550,
+      y_pos: mouse_second_y,
+    },
+    {
+      x_pos: 550 + 5,
+      y_pos: mouse_second_y,
+    },
+    {
+      x_pos: 700,
+      y_pos: mouse_second_y,
+    },
+    {
+      x_pos: 700 + 5,
+      y_pos: mouse_second_y,
+    },
+    {
+      x_pos: 850,
+      y_pos: mouse_second_y,
+    },
+    {
+      x_pos: 850 + 5,
+      y_pos: mouse_second_y,
     },
   ];
 }
@@ -186,8 +279,7 @@ function draw() {
   textFont("Helvetica");
   text("Score: " + game_score, 300, 40);
 
-  // Move the character, ensuring that the
-  // character stays within the canvas
+  // Move the character, ensuring that the character stays within the canvas
   if (is_left) {
     if (cat_x > width * 0.2) {
       cat_x -= 10;
@@ -213,7 +305,6 @@ function draw() {
   }
 
   if (is_up) {
-    console.log(height);
     if (cat_y > height * 0.2) {
       cat_y -= 10;
     } else {
@@ -270,15 +361,13 @@ function mouseFound(mouse) {
   // Calculate distance based on the mouse and cat position(s)
   distance = int(dist(mouse.x_pos, mouse.y_pos, cat_x, cat_y));
 
-  // if distance is equal to twenty
-  // then increment the game score by one
+  // if distance is equal to twenty then increment the game score by one
   if (distance == 20) {
     game_score += 1;
   }
 
-  // reset the game score to 0 once
-  // the player hits 500
-  if (game_score == 500) {
+  // reset the game score to 0 once the player hits 10
+  if (game_score == 100) {
     game_score = 0;
     setup();
   }

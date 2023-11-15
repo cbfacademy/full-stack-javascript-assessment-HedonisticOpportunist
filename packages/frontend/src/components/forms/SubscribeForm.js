@@ -1,5 +1,6 @@
 import axios from "axios";
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
+import log from "loglevel";
 import { useState } from "react";
 
 const SubscribeForm = () => {
@@ -32,7 +33,7 @@ const SubscribeForm = () => {
         },
         { withCredentials: true }
       );
-      console.log(data);
+      log.info(data);
       const success = data;
       if (success) {
         setSubscribedState(true);
@@ -40,7 +41,7 @@ const SubscribeForm = () => {
         setSubscribedState(false);
       }
     } catch (error) {
-      console.log(error);
+      log.error(error);
     }
     setEmail(email);
   };
@@ -57,9 +58,6 @@ const SubscribeForm = () => {
       <Container fluid>
         <Row>
           <Col>
-            <Col>
-              <h3>Subscribe To Our Newsletter ᓚᘏᗢ</h3>
-            </Col>
             <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address: </Form.Label>
