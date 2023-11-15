@@ -15,7 +15,7 @@ const SignupPage = () => {
           </Col>
           <Col>
             {/* PAGE TITLE */}
-            <h3>Register</h3>
+            <h3>Register ᓚᘏᗢ</h3>
           </Col>
           <Col>
             <LazyLoadImage

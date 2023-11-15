@@ -1,5 +1,6 @@
 import axios from "axios";
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
+import log from "loglevel";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -31,7 +32,7 @@ const SignupForm = () => {
         },
         { withCredentials: true }
       );
-      console.log(data);
+      log.info(data);
       const { success } = data;
       if (success) {
         setMessage(handleSuccess);
@@ -42,7 +43,7 @@ const SignupForm = () => {
         setMessage(handleError);
       }
     } catch (error) {
-      console.log(error);
+      log.error(error);
     }
     setUserName(username);
     setEmail(email);

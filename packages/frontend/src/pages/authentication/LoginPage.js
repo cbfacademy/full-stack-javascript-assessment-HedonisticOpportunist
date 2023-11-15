@@ -15,7 +15,7 @@ const LoginPage = () => {
           </Col>
           <Col>
             {/* PAGE TITLE */}
-            <h3>Login</h3>
+            <h3>Login ᓚᘏᗢ</h3>
           </Col>
           <Col>
             <LazyLoadImage

@@ -13,7 +13,10 @@ const DashboardBreadcrumbs = () => {
           <Col>
             <ul className="breadcrumb">
               <li>
-                <Link to="/uploads">🐾Upload Your Work</Link>
+                <Link to="/uploads">🐾Upload Work</Link>
+              </li>
+              <li>
+                <Link to="/suscribe">🐾Suscribe To Our Newsletter</Link>
               </li>
             </ul>
           </Col>

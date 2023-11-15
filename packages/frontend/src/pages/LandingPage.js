@@ -1,6 +1,5 @@
 import { Card, Container, Col, Row } from "react-bootstrap";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import SubscribeForm from "../components/forms/SubscribeForm";
 import { useEffect, useState } from "react";
 
 const LandingPage = () => {
@@ -45,10 +44,6 @@ const LandingPage = () => {
                 <Card.Text>Feel free to explore ₍^._.^₎ 𐒡</Card.Text>
               </Card.Body>
             </Card>
-          </Col>
-          <Col>
-            {/* SUSCRIBE FORM */}
-            <SubscribeForm></SubscribeForm>
           </Col>
         </Row>
       </Container>
