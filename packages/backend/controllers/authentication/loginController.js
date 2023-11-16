@@ -1,13 +1,13 @@
-const { createSecretToken } = require("../../util/SecretToken");
+const { createSecretToken } = require("../../util/secretToken");
 const logger = require("pino")();
-const User = require("../../models/UserModel");
+const User = require("../../models/userModel");
 const bcrypt = require("bcryptjs");
 
 // Credit @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
 // Any further modifications are mine and mine alone.
 
 // LOGIN CONTROLLER
-module.exports.Login = async (req, res, next) => {
+module.exports.login = async (req, res, next) => {
   try {
     const { email, password } = req.body;
     if (!email || !password) {

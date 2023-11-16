@@ -1,12 +1,12 @@
-const { createSecretToken } = require("../../util/SecretToken");
+const { createSecretToken } = require("../../util/secretToken");
 const logger = require("pino")();
-const User = require("../../models/UserModel");
+const User = require("../../models/userModel");
 
 // Credit @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
 // Any further modifications are mine and mine alone.
 
 // SIGN UP CONTROLLER
-module.exports.Signup = async (req, res, next) => {
+module.exports.signup = async (req, res, next) => {
   try {
     const { email, password, username, createdAt } = req.body;
     const existingUser = await User.findOne({ email });

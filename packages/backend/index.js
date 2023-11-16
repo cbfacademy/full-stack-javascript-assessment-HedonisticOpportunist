@@ -1,13 +1,13 @@
-const { connectToMongoDB } = require("./database/ConnectToDB");
+const { connectToMongoDB } = require("./database/connectToDB");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const express = require("express");
 require("dotenv").config();
-const { getDate, welcomeMessage } = require("./util/LandingPageMessages");
+const { getDate, welcomeMessage } = require("./util/landingPageMessages");
 const logger = require("pino")();
 const { PORT } = process.env;
-const userRoute = require("./routes/UserRoute");
-const suscriberRoute = require("./routes/SuscriberRoute");
+const userRoute = require("./routes/userRoute");
+const suscriberRoute = require("./routes/suscriberRoute");
 const app = express();
 
 // Connect to the database
@@ -33,6 +33,7 @@ app.get("/", (_request, response) => {
   });
 });
 
+// SPECIFIC ROUTES
 app.use("/", userRoute);
 app.use("/", suscriberRoute);
 
