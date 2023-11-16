@@ -6,7 +6,8 @@ require("dotenv").config();
 const { getDate, welcomeMessage } = require("./util/LandingPageMessages");
 const logger = require("pino")();
 const { PORT } = process.env;
-const userRoute = require("./routes/UserRoute.js");
+const userRoute = require("./routes/UserRoute");
+const suscriberRoute = require("./routes/SuscriberRoute");
 const app = express();
 
 // Connect to the database
@@ -33,6 +34,7 @@ app.get("/", (_request, response) => {
 });
 
 app.use("/", userRoute);
+app.use("/", suscriberRoute);
 
 // LISTEN FUNCTION
 app.listen(PORT, () => {

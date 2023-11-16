@@ -33,8 +33,8 @@ const SignupForm = () => {
         { withCredentials: true }
       );
       log.info(data);
-      const { success } = data;
-      if (success) {
+      const { message, success } = data;
+      if (success || message.includes("success")) {
         setMessage(handleSuccess);
         setTimeout(() => {
           navigate("/dashboard");
@@ -54,6 +54,11 @@ const SignupForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     signup();
+
+    // Ensure validation fails if all the necessary fields are empty.
+    if (username === "" || email === "" || password === "") {
+      setMessage(handleError);
+    }
   };
 
   return (
@@ -94,6 +99,7 @@ const SignupForm = () => {
                   value={password}
                   onChange={(e) => setPassword(e.target.value)}
                   placeholder="Password"
+                  required
                 />
               </Form.Group>
               {/* SIGN UP BUTTON */}
@@ -104,7 +110,7 @@ const SignupForm = () => {
                 size="lg"
                 onClick={handleSubmit}
               >
-                🐾Register
+                🐾Sign Up
               </Button>
             </Form>
           </Col>

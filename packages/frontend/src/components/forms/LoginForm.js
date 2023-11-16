@@ -32,7 +32,7 @@ const LoginForm = () => {
       );
       log.info(data);
       const { message, success } = data;
-      if (success && message.includes("success")) {
+      if (success || message.includes("success")) {
         setMessage(handleSuccess);
         setTimeout(() => {
           navigate("/dashboard");
@@ -51,6 +51,11 @@ const LoginForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     login();
+
+    // Ensure validation fails if all the necessary fields are empty.
+    if (email === "" || password === "") {
+      setMessage(handleError);
+    }
   };
 
   return (

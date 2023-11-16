@@ -1,8 +1,8 @@
 import { Col, Container, Row } from "react-bootstrap";
 import ReturnToDashboardBreadcrumbs from "../../components/navigation/ReturnToDashboardBreadcrumbs";
-import UploadWorkForm from "../../components/forms/UploadWorkForm";
+import UnsuscribeForm from "../../components/forms/UnsuscribeForm";
 
-const UploadWorkPage = () => {
+const UnsuscribePage = () => {
   return (
     <>
       <Container fluid>
@@ -13,10 +13,14 @@ const UploadWorkPage = () => {
           </Col>
           <Col>
             {/* PAGE TITLE */}
-            <h3>Upload Work ᓚᘏᗢ</h3>
+            <h3>Unsuscribe From Our Internal Newsletter ᓚᘏᗢ</h3>
           </Col>
           <Col>
-            <UploadWorkForm></UploadWorkForm>
+            <p>We're sad to see you go! 🦊.</p>
+          </Col>
+          <Col>
+            {/* UNSUSCRIBE FORM */}
+            <UnsuscribeForm></UnsuscribeForm>
           </Col>
         </Row>
       </Container>
@@ -24,4 +28,4 @@ const UploadWorkPage = () => {
   );
 };
 
-export default UploadWorkPage;
+export default UnsuscribePage;
