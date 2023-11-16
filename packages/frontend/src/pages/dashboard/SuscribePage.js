@@ -1,4 +1,5 @@
 import { Col, Container, Row } from "react-bootstrap";
+import { Link } from "react-router-dom";
 import ReturnToDashboardBreadcrumbs from "../../components/navigation/ReturnToDashboardBreadcrumbs";
 import SubscribeForm from "../../components/forms/SubscribeForm";
 
@@ -13,7 +14,7 @@ const SuscribePage = () => {
           </Col>
           <Col>
             {/* PAGE TITLE */}
-            <h3>Subscribe To Our Newsletter ᓚᘏᗢ</h3>
+            <h3>Subscribe To Our Internal Newsletter ᓚᘏᗢ</h3>
           </Col>
           <Col>
             <p>
@@ -22,7 +23,16 @@ const SuscribePage = () => {
             </p>
           </Col>
           <Col>
-            <p>Of course, you are welcome to unsubscribe at any time.</p>
+            <p>
+              You can subscribe using the email you signed up with or another
+              one. It's up to you!
+            </p>
+          </Col>
+          <Col>
+            <p>
+              Of course, you are welcome to{" "}
+              <Link to={"/unsuscribe"}>unsubscribe at any time</Link>.
+            </p>
           </Col>
           <Col>
             {/* SUSCRIBE FORM */}

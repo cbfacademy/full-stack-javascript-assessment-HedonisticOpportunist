@@ -3,21 +3,21 @@ import { Button, Form, Container, Col, Row } from "react-bootstrap";
 import log from "loglevel";
 import { useState } from "react";
 
-const SubscribeForm = () => {
+const UnsuscribeForm = () => {
   // STATES
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
   // TOAST MESSAGES
-  const handleError = "💀💀 Error. Please try suscribing again.";
+  const handleError = "🖤🖤 Error. Please try unsuscribing again.";
   const handleSuccess =
-    "🎃🎃 Success! You are now subscribed to our newsletter.";
+    "🦉🦉 Success! You are no longer suscribed to our newsletter.";
 
-  // SUSCRIBE FUNCTION
-  const suscribe = async () => {
+  // UNSUSCRIBE FUNCTION
+  const unsuscribe = async () => {
     try {
-      const { data } = await axios.post(
-        "http://localhost:5000/suscribe",
+      const { data } = await axios.delete(
+        "http://localhost:5000/delete",
         {
           email,
         },
@@ -39,7 +39,7 @@ const SubscribeForm = () => {
   // SUBMIT FUNCTION
   const handleSubmit = async (e) => {
     e.preventDefault();
-    suscribe();
+    unsuscribe();
 
     // Ensure validation fails if all the necessary fields are empty.
     if (email === "") {
@@ -71,7 +71,7 @@ const SubscribeForm = () => {
               size="lg"
               onClick={handleSubmit}
             >
-              🐾Suscribe to our newsletter.
+              🐾Unsuscribe from our newsletter.
             </Button>
           </Col>
           <Col>
@@ -84,4 +84,4 @@ const SubscribeForm = () => {
   );
 };
 
-export default SubscribeForm;
+export default UnsuscribeForm;

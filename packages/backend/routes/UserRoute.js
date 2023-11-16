@@ -1,6 +1,5 @@
-const { Login } = require("../controllers/LoginController");
-const { Signup } = require("../controllers/SignupController");
-const { Suscribe } = require("../controllers/SuscribeController");
+const { Login } = require("../controllers/authenticate/LoginController");
+const { Signup } = require("../controllers/authenticate/SignupController");
 const { userVerification } = require("../middleware/UserMiddleware");
 const router = require("express").Router();
 
@@ -8,7 +7,6 @@ const router = require("express").Router();
 // Any further modifications are mine and mine alone.
 
 // POST ROUTES
-router.post("/suscribe", Suscribe);
 router.post("/signup", Signup);
 router.post("/login", Login);
 router.post("/dashboard", userVerification);
