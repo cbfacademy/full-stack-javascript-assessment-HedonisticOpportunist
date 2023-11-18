@@ -24,7 +24,7 @@ const UnsuscribeForm = () => {
         { withCredentials: true }
       );
       log.info(data);
-      const [message, success] = data;
+      const { message, success } = data;
       if (success || message.includes("success")) {
         setMessage(handleSuccess);
       } else {
@@ -64,7 +64,7 @@ const UnsuscribeForm = () => {
                 />
               </Form.Group>
             </Form>
-            {/* SUSCRIBE BUTTON */}
+            {/* UNSUSCRIBE BUTTON */}
             <Button
               className="btn-grad"
               variant="outline-dark"

@@ -5,9 +5,11 @@ const express = require("express");
 require("dotenv").config();
 const { getDate, welcomeMessage } = require("./util/landingPageMessages");
 const logger = require("pino")();
+const path = require("path");
 const { PORT } = process.env;
 const userRoute = require("./routes/userRoute");
 const suscriberRoute = require("./routes/suscriberRoute");
+const imageUploadRoute = require("./routes/imageUploadRoute");
 const app = express();
 
 // Connect to the database
@@ -15,7 +17,7 @@ connectToMongoDB();
 
 // THIRD PARTY MIDDLEWARE
 // Credit @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
-// Any further modifications are mine and mine alone.
+// Any further modifications and errors are mine and mine alone.
 app.use(
   cors({
     origin: ["http://localhost:3000"],
@@ -36,6 +38,8 @@ app.get("/", (_request, response) => {
 // SPECIFIC ROUTES
 app.use("/", userRoute);
 app.use("/", suscriberRoute);
+app.use("/", imageUploadRoute);
+app.use("/uploads", express.static(path.join(__dirname, "./uploads/")));
 
 // LISTEN FUNCTION
 app.listen(PORT, () => {

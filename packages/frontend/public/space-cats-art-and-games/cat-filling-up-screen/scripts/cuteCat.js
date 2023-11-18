@@ -1,6 +1,6 @@
 let cuteCats;
 
-function preload() {
+function preloadCuteCat() {
   cuteCats = [];
 
   // Fill up the previously empty cuteCats array with individual cute cats
@@ -18,28 +18,11 @@ function preload() {
   }
 }
 
-function setup() {
-  // Set up the canvas
-  createCanvas(windowWidth, windowHeight);
-
-  // Create a button that reloads the scene
-  button = createButton("RELOAD ME");
-  button.position(150, 150);
-  button.mousePressed(reloadScene);
-}
-
-function draw() {
-  background(0, 0, 0);
-
+function drawCuteCats() {
   /* Inspired by: 
     @ https://editor.p5js.org/KevinWorkman/sketches/XklOOiqXa
     */
   for (let i = 0; i < cuteCats.length; i++) {
     cuteCats[i];
   }
-}
-
-// * INDIVIDUAL FUNCTIONS *//
-function reloadScene() {
-  window.location.reload();
 }

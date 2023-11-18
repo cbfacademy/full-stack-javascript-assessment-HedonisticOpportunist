@@ -4,7 +4,7 @@ const { userVerification } = require("../middleware/userMiddleware");
 const router = require("express").Router();
 
 // Credit @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
-// Any further modifications are mine and mine alone.
+// Any further modifications and errors are mine and mine alone.
 
 // POST ROUTES
 router.post("/signup", signup);
