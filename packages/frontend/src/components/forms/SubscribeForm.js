@@ -24,7 +24,7 @@ const SubscribeForm = () => {
         { withCredentials: true }
       );
       log.info(data);
-      const [message, success] = data;
+      const { message, success } = data;
       if (success || message.includes("success")) {
         setMessage(handleSuccess);
       } else {

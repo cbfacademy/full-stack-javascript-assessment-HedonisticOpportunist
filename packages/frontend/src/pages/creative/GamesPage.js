@@ -24,7 +24,7 @@ const GamesPage = () => {
           </Col>
           <Col>
             {/* GAME LINK AND DESCRIPTION */}
-            <a href="space-cats-art-and-games/chase-ball-game/index.html">
+            <a href="space-cats-art-and-games/chase-mouse-game/index.html">
               Catch the mice.
             </a>
             <p>WIP. Feel free to play the game, but be aware of bugs 🐛🐛.</p>
