@@ -26,7 +26,7 @@ const HeaderBreadcrumbs = () => {
                 <Link to="/credits">🐾Credits</Link>
               </li>
               <li>
-                <Link to="/login">🐾Login</Link>
+                <Link to="/login">🐾Login | Signup</Link>
               </li>
             </ul>
           </Col>

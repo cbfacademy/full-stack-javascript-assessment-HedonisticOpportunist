@@ -9,6 +9,7 @@ const suscriberSchema = new mongoose.Schema({
     match: [/.+\@.+\..+/, "Your email address should be valid."],
     unique: [true, "Your email address should be unique."],
   },
+
   createdAt: {
     type: Date,
     default: new Date(),

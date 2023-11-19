@@ -14,6 +14,10 @@ The library [2] had too much of a learning curve.
 
 Another library [3] that ended up being too much of a hassle for _**Space Cats**_.
 
+## REDUX
+
+_Redux_ [4] proved complex/unwieldy for _**Space Cats**_.
+
 ### REFERENCES
 
 [1] https://threejs.org/
@@ -21,3 +25,5 @@ Another library [3] that ended up being too much of a hassle for _**Space Cats**
 [2] https://www.npmjs.com/package/@p5-wrapper/react
 
 [3] https://docs.pmnd.rs/react-three-fiber/getting-started/introduction
+
+[4] https://redux.js.org/
