@@ -26,9 +26,9 @@ const SubscribeForm = () => {
       log.info(data);
       const { message, success } = data;
       if (success || message.includes("success")) {
-        setMessage(handleSuccess);
-      } else {
         setMessage(handleError);
+      } else {
+        setMessage(handleSuccess);
       }
     } catch (error) {
       log.error(error);
@@ -36,13 +36,12 @@ const SubscribeForm = () => {
     setEmail(email);
   };
 
-  // SUBMIT FUNCTION
-  const handleSubmit = async (e) => {
+  // SUBMIT SUSCRIBE FUNCTION
+  const handleSuscribe = async (e) => {
     e.preventDefault();
     suscribe();
-
     // Ensure validation fails if all the necessary fields are empty.
-    if (email === "") {
+    if (email === "" || !email.includes("@")) {
       setMessage(handleError);
     }
   };
@@ -68,8 +67,8 @@ const SubscribeForm = () => {
             <Button
               className="btn-grad"
               variant="outline-dark"
-              size="lg"
-              onClick={handleSubmit}
+              size="sm"
+              onClick={handleSuscribe}
             >
               🐾Suscribe to our newsletter.
             </Button>

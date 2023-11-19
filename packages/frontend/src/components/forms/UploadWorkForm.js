@@ -5,7 +5,7 @@ import React, { useState } from "react";
 
 const UploadWorkForm = () => {
   // STATES
-  const [file, setFile] = useState(null);
+  const [uploadedFile, setUploadedFile] = useState("");
   const [message, setMessage] = useState("");
 
   // TOAST MESSAGES
@@ -14,18 +14,15 @@ const UploadWorkForm = () => {
 
   // HANDLE FILE CHANGE FUNCTION
   const handleFileChange = (e) => {
-    setFile(e.target.files[0]);
+    setUploadedFile(e.target.value);
   };
 
   // HANDLE SUBMIT FUNCTION
-  // @ https://cloudinary.com/blog/guest_post/upload-images-to-cloudinary-with-node-js-and-react
-  // https://codewithsudeep.com/sudeep/javascript/mern-stack/how-to-upload-file-using-mern-stack/
-  // Any modications and errors are mine and mine alone
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
       const formData = new FormData();
-      formData.append("file", file);
+      console.log(formData);
 
       // Post the data to backend
       await axios.post("http://localhost:5000/fileupload", formData);
@@ -38,7 +35,7 @@ const UploadWorkForm = () => {
     }
 
     // Ensure validation fails if all the necessary fields are empty.
-    if (file === "") {
+    if (uploadedFile === "") {
       setMessage(handleError);
     }
   };
@@ -58,6 +55,8 @@ const UploadWorkForm = () => {
                   className="file-input"
                   size="lg"
                   accept="image/*"
+                  name="uploadedFile"
+                  value={uploadedFile}
                   encType="multipart/form-data"
                   onChange={handleFileChange}
                 />
