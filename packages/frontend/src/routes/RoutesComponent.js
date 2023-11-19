@@ -8,7 +8,6 @@ import LoginPage from "../pages/authentication/LoginPage";
 import SignupPage from "../pages/authentication/SignupPage";
 import SuscribePage from "../pages/dashboard/SuscribePage";
 import UserDashboard from "../pages/dashboard/UserDashboard";
-import UnsuscribePage from "../pages/dashboard/UnsuscribePage";
 import UploadWorkPage from "../pages/dashboard/UploadWorkPage";
 
 const RoutesComponent = () => {
@@ -46,11 +45,6 @@ const RoutesComponent = () => {
           exact
           path="/uploads"
           element={<UploadWorkPage></UploadWorkPage>}
-        />
-        <Route
-          exact
-          path="/unsuscribe"
-          element={<UnsuscribePage></UnsuscribePage>}
         />
       </Routes>
     </>

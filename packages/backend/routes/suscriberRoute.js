@@ -1,6 +1,3 @@
-const {
-  deleteSuscriber,
-} = require("../controllers/suscrptions/deleteSuscriberController");
 const { suscribe } = require("../controllers/suscrptions/suscriberController");
 const router = require("express").Router();
 
@@ -9,8 +6,5 @@ const router = require("express").Router();
 
 // POST ROUTES
 router.post("/suscribe", suscribe);
-
-// DELETE ROUTES
-router.delete("/delete", deleteSuscriber);
 
 module.exports = router;
