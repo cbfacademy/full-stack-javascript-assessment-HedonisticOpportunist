@@ -1,4 +1,4 @@
-import { Container, Col, Row } from "react-bootstrap";
+import { Card, Container, Col, Row } from "react-bootstrap";
 import HomeBreadcrumbs from "../../components/navigation/HomeBreadcrumbs";
 
 const InteractiveArtPage = () => {
@@ -11,44 +11,68 @@ const InteractiveArtPage = () => {
             <HomeBreadcrumbs></HomeBreadcrumbs>
           </Col>
           <Col>
-            {/* PAGE TITLE */}
-            <h3>Interactive Art</h3>
-            <p>Find an assortment of interactive art pieces below. </p>
+            <Card>
+              <Card.Body>
+                <Card.Title>
+                  {/* PAGE TITLE */}
+                  <h3>Interactive Art</h3>
+                </Card.Title>
+                <Card.Text>
+                  Find an assortment of interactive art pieces below.
+                </Card.Text>
+                <Card.Text>
+                  Please be aware that the interactive art loads on a new page.
+                  To return to the homepage, hit the browser's back button.
+                </Card.Text>
+              </Card.Body>
+            </Card>
           </Col>
           <Col>
             {/* DIVIDER */}
             <hr className="divider"></hr>
           </Col>
           <Col>
-            <h4>Floating Space Cat ♡</h4>
-          </Col>
-          <Col>
-            {/* ART LINK AND DESCRIPTION */}
-            <a href="space-cats-art-and-games/floating-astro-cat/index.html">
-              Move the floating space cat.
-            </a>
-            <p>
-              Move an image of a space cat using your mouse coordinates. Hit the
-              browser back button to return to the main page.{" "}
-            </p>
+            <Card>
+              <Card.Body>
+                <Card.Title>
+                  {/* GAME TITLE */}
+                  <h4>Floating Space Cat ♡</h4>
+                </Card.Title>
+                <Card.Text>
+                  {/* ART LINK AND DESCRIPTION */}
+                  <a href="space-cats-art-and-games/floating-astro-cat/index.html">
+                    Move the floating space cat.
+                  </a>
+                </Card.Text>
+                <Card.Text>
+                  Move an image of a space cat using your mouse coordinates.
+                </Card.Text>
+              </Card.Body>
+            </Card>
           </Col>
           <Col>
             {/* DIVIDER */}
             <hr className="divider"></hr>
           </Col>
           <Col>
-            <h4>Many Cats ♡</h4>
-          </Col>
-          <Col>
-            {/* ART LINK AND DESCRIPTION */}
-            <a href="space-cats-art-and-games/cat-filling-up-screen/index.html">
-              Watch the scene fill up with many cats.
-            </a>
-            <p>
-              Watch the scene fill up with the same cat image across a screen --
-              click 'Reload' to see it happen again.
-            </p>
-            <p>Exit the scene by clicking on the browser's 'back' button.</p>
+            <Card>
+              <Card.Body>
+                <Card.Title>
+                  {/* GAME TITLE */}
+                  <h4>Many Cats ♡</h4>
+                </Card.Title>
+                <Card.Text>
+                  {/* ART LINK AND DESCRIPTION */}
+                  <a href="space-cats-art-and-games/cat-filling-up-screen/index.html">
+                    Watch the scene fill up with many cats.
+                  </a>
+                </Card.Text>
+                <Card.Text>
+                  Watch the scene fill up with the same cat image across a
+                  screen -- click 'Reload' to see it happen again.
+                </Card.Text>
+              </Card.Body>
+            </Card>
           </Col>
         </Row>
       </Container>

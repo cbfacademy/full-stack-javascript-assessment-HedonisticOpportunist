@@ -1,8 +1,7 @@
-import axios from "axios";
 import { Button, Container, Col, Form, Row } from "react-bootstrap";
-import log from "loglevel";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
+import { login } from "../../services/authentication/authServices";
 
 const LoginForm = () => {
   // NAVIGATE TO DASHBOARD
@@ -17,31 +16,16 @@ const LoginForm = () => {
   const handleError = "🐢🐢 Error. Please try logging in again.";
   const handleSuccess = "🐼🐼 Success! You have been logged in.";
 
-  // LOGIN FUNCTION
-  // Credit @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
-  // Any further modifications and errors are mine and mine alone.
-  const login = async () => {
-    try {
-      const { data } = await axios.post(
-        "http://localhost:5000/login",
-        {
-          email,
-          password,
-        },
-        { withCredentials: true }
-      );
-      log.info(data);
-      const { message, success } = data;
-      if (success || message.includes("success")) {
-        setMessage(handleSuccess);
-        setTimeout(() => {
-          navigate("/dashboard");
-        }, 1000);
-      } else {
-        setMessage(handleError);
-      }
-    } catch (error) {
-      log.error(error);
+  // HANDLE LOGIN FUNCTION
+  const handleLogin = async () => {
+    let response = await login(email, password);
+    if (response) {
+      setMessage(handleSuccess);
+      setTimeout(() => {
+        navigate("/dashboard");
+      }, 1000);
+    } else {
+      setMessage(handleError);
     }
     setEmail(email);
     setPassword(password);
@@ -50,9 +34,7 @@ const LoginForm = () => {
   // SUBMIT FUNCTION
   const handleSubmit = async (e) => {
     e.preventDefault();
-    login();
-
-    // Ensure validation fails if all the necessary fields are empty.
+    handleLogin();
     if (email === "" || password === "") {
       setMessage(handleError);
     }

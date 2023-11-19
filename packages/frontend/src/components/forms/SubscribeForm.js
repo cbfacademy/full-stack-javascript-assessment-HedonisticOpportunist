@@ -1,6 +1,5 @@
-import axios from "axios";
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
-import log from "loglevel";
+import { suscribe } from "../../services/suscriptions/suscribeServices";
 import { useState } from "react";
 
 const SubscribeForm = () => {
@@ -13,25 +12,13 @@ const SubscribeForm = () => {
   const handleSuccess =
     "🎃🎃 Success! You are now subscribed to our newsletter.";
 
-  // SUSCRIBE FUNCTION
-  const suscribe = async () => {
-    try {
-      const { data } = await axios.post(
-        "http://localhost:5000/suscribe",
-        {
-          email,
-        },
-        { withCredentials: true }
-      );
-      log.info(data);
-      const { message, success } = data;
-      if (success || message.includes("success")) {
-        setMessage(handleSuccess);
-      } else {
-        setMessage(handleError);
-      }
-    } catch (error) {
-      log.error(error);
+  // HANDLE SUSCRIBE FUNCTION
+  const handleSuscribeResponse = async () => {
+    let response = await suscribe(email);
+    if (response) {
+      setMessage(handleSuccess);
+    } else {
+      setMessage(handleError);
     }
     setEmail(email);
   };
@@ -39,10 +26,8 @@ const SubscribeForm = () => {
   // SUBMIT SUSCRIBE FUNCTION
   const handleSuscribe = async (e) => {
     e.preventDefault();
-    suscribe();
-
-    // Ensure validation fails if all the necessary fields are empty.
-    if (email === "" || !email.includes("@")) {
+    handleSuscribeResponse();
+    if (email === "" || !email.includes("@") || email === null) {
       setMessage(handleError);
     }
   };

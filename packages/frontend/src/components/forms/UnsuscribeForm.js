@@ -1,12 +1,10 @@
-import axios from "axios";
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
-import log from "loglevel";
+import { unsuscribe } from "../../services/suscriptions/suscribeServices";
 import { useState } from "react";
 
 const UnsuscribeForm = () => {
   // STATES
-  const [email, setEmail] = useState([]);
-  const [userEmail, setUserEmail] = useState("");
+  const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
   // TOAST MESSAGES
@@ -14,54 +12,22 @@ const UnsuscribeForm = () => {
   const handleSuccess =
     "🦉🦉 Success! You are no longer suscribed to our newsletter.";
 
-  // GET SUSCRIBERS FUNCTION
-  const getSuscribers = async () => {
-    try {
-      const { data } = await axios.get("http://localhost:5000/suscribers", {
-        withCredentials: true,
-      });
-
-      // Filter suscribers by email and then further by the userEmail
-      for (let i = 0; i < data.suscribers.length; i++) {
-        let foundMail = data.suscribers[i]["email"];
-
-        if (foundMail == userEmail) {
-          setEmail(foundMail);
-        }
-      }
-    } catch (error) {
-      log.error(error);
-    }
-  };
-
   // UNSUSCRIBE FUNCTION
-  const unsuscribe = async () => {
-    try {
-      getSuscribers();
-      const { data } = await axios.delete(
-        "http://localhost:5000/delete/:" + email,
-        { withCredentials: true }
-      );
-      log.info(data.data);
-      const { message, success } = data;
-      if (success || message.includes("success")) {
-        setMessage(handleSuccess);
-      } else {
-        setMessage(handleError);
-      }
-    } catch (error) {
-      log.error(error);
+  const handleUnsuscribe = async () => {
+    let response = await unsuscribe(email);
+    if (response) {
+      setMessage(handleSuccess);
+    } else {
+      setMessage(handleError);
     }
-    setEmail(userEmail);
+    setEmail(email);
   };
 
   // SUBMIT FUNCTION
   const handleSubmit = async (e) => {
     e.preventDefault();
-    unsuscribe();
-
-    // Ensure validation fails if all the necessary fields are empty.
-    if (userEmail === "") {
+    handleUnsuscribe();
+    if (email === "" || !email.includes("@") || email === null) {
       setMessage(handleError);
     }
   };
@@ -76,10 +42,10 @@ const UnsuscribeForm = () => {
                 <Form.Label>Email address: </Form.Label>
                 <Form.Control
                   type="email"
-                  value={userEmail}
+                  value={email}
                   placeholder="Enter email"
                   required
-                  onChange={(e) => setUserEmail(e.target.value)}
+                  onChange={(e) => setEmail(e.target.value)}
                 />
               </Form.Group>
             </Form>

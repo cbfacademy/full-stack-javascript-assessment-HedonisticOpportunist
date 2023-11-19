@@ -1,4 +1,4 @@
-import { Col, Container, Row } from "react-bootstrap";
+import { Card, Col, Container, Row } from "react-bootstrap";
 import HomeBreadcrumbs from "../../components/navigation/HomeBreadcrumbs";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
@@ -14,10 +14,15 @@ const SignupPage = () => {
             <HomeBreadcrumbs></HomeBreadcrumbs>
           </Col>
           <Col>
-            {/* PAGE TITLE */}
-            <h3>Register ᓚᘏᗢ</h3>
+            <Card.Body>
+              <Card.Title>
+                {/* PAGE TITLE */}
+                <h3>Register ᓚᘏᗢ</h3>
+              </Card.Title>
+            </Card.Body>
           </Col>
           <Col>
+            {/* CAT IMAGE */}
             <LazyLoadImage
               className="image"
               src="images/cat_and_fish.jpg"
@@ -25,9 +30,26 @@ const SignupPage = () => {
             />
           </Col>
           <Col>
-            <p>
-              Already have an account? <Link to={"/login"}>Login</Link> ♡🐾
-            </p>
+            <Card>
+              <Card.Body>
+                <Card.Text>
+                  {/* MAIN CONTENT */}
+                  Already have an account?
+                </Card.Text>
+                <Card.Text>
+                  <Link to={"/login"}>Login</Link> ♡🐾
+                </Card.Text>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            {/* DIVIDER */}
+            <hr className="dashed"></hr>
+          </Col>
+          <Col>
+            <Card.Body>
+              <Card.Title>Sign Up Here: ♫₊˚.🎧 ✩｡</Card.Title>
+            </Card.Body>
           </Col>
           <Col>
             {/* SIGN UP FORM */}

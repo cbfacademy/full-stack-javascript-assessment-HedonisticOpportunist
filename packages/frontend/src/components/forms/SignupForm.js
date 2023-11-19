@@ -1,6 +1,5 @@
-import axios from "axios";
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
-import log from "loglevel";
+import { signup } from "../../services/authentication/authServices";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -18,32 +17,16 @@ const SignupForm = () => {
   const handleError = "👻👻Error. Please try signing up again.";
   const handleSuccess = "🦄🦄 Success! You have been signed up.";
 
-  // SIGN UP FUNCTION
-  // Credit @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
-  // Any further modifications and errors are mine and mine alone.
-  const signup = async () => {
-    try {
-      const { data } = await axios.post(
-        "http://localhost:5000/signup",
-        {
-          username,
-          email,
-          password,
-        },
-        { withCredentials: true }
-      );
-      log.info(data);
-      const { message, success } = data;
-      if (success || message.includes("success")) {
-        setMessage(handleSuccess);
-        setTimeout(() => {
-          navigate("/dashboard");
-        }, 1000);
-      } else {
-        setMessage(handleError);
-      }
-    } catch (error) {
-      log.error(error);
+  // HANDLE SIGN UP FUNCTION
+  const handleSignup = async () => {
+    let response = await signup(username, email, password);
+    if (response) {
+      setMessage(handleSuccess);
+      setTimeout(() => {
+        navigate("/dashboard");
+      }, 1000);
+    } else {
+      setMessage(handleError);
     }
     setUserName(username);
     setEmail(email);
@@ -53,9 +36,7 @@ const SignupForm = () => {
   // SUBMIT FUNCTION
   const handleSubmit = async (e) => {
     e.preventDefault();
-    signup();
-
-    // Ensure validation fails if all the necessary fields are empty.
+    handleSignup();
     if (username === "" || email === "" || password === "") {
       setMessage(handleError);
     }
