@@ -7,6 +7,7 @@ const userSchema = new mongoose.Schema({
   username: {
     type: String,
     required: [true, "Your username is required"],
+    unique: [true, "Your email address should be unique"],
   },
   email: {
     type: String,
@@ -17,6 +18,7 @@ const userSchema = new mongoose.Schema({
   password: {
     type: String,
     required: [true, "Your password is required"],
+    unique: [true, "Your password should be unique"],
   },
   createdAt: {
     type: Date,

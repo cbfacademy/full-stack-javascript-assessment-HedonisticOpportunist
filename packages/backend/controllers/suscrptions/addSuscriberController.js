@@ -5,18 +5,18 @@ const Suscriber = require("../../models/suscriberModel");
 // Any further modifications and errors are mine and mine alone.
 
 // SUSCRIBE CONTROLLER
-module.exports.suscribe = async (req, res, next) => {
+module.exports.addSuscriber = async (req, res, next) => {
   try {
-    const { email } = req.body;
-
     // Check for existing suscribers
+    const { email, createdAt } = req.body;
     const existingSuscriber = await Suscriber.findOne({ email });
+
     if (existingSuscriber) {
-      return res.json({ message: "User already suscribed." });
+      return res.json({ message: "User already exists." });
     }
 
-    // Create a new suscriber
-    const suscriber = await Suscriber.create({ email });
+    // Create new suscriber
+    const suscriber = await Suscriber.create({ email, createdAt });
     res.status(201).json({
       message: "User suscribed successfully.",
       success: true,

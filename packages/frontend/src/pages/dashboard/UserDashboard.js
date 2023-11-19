@@ -28,7 +28,7 @@ const UserDashboard = () => {
 
       const { status, user } = data;
       return status
-        ? setMessage(`Hello ${user}`, {
+        ? setMessage(`Hello ${user}. Welcome to the dashboard!`, {
             position: "top-right",
           })
         : (removeCookie("token"), navigate("/login"));

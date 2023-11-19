@@ -26,9 +26,9 @@ const SubscribeForm = () => {
       log.info(data);
       const { message, success } = data;
       if (success || message.includes("success")) {
-        setMessage(handleError);
-      } else {
         setMessage(handleSuccess);
+      } else {
+        setMessage(handleError);
       }
     } catch (error) {
       log.error(error);
@@ -40,6 +40,7 @@ const SubscribeForm = () => {
   const handleSuscribe = async (e) => {
     e.preventDefault();
     suscribe();
+
     // Ensure validation fails if all the necessary fields are empty.
     if (email === "" || !email.includes("@")) {
       setMessage(handleError);

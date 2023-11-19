@@ -5,7 +5,9 @@ const { MONGO_URL } = process.env;
 
 function connectToMongoDB() {
   mongoose
-    .connect(MONGO_URL)
+    .connect(MONGO_URL, {
+      autoIndex: true,
+    })
     .then(() =>
       logger.info("Success! A connection with MongoDB has been established.")
     )
