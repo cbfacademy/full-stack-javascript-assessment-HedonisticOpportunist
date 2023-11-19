@@ -22,7 +22,6 @@ const UploadWorkForm = () => {
     e.preventDefault();
     try {
       const formData = new FormData();
-      console.log(formData);
 
       // Post the data to backend
       await axios.post("http://localhost:5000/fileupload", formData);

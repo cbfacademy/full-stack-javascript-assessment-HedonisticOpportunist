@@ -1,6 +1,7 @@
 import axios from "axios";
-import { Button, Col, Container, Row } from "react-bootstrap";
+import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import DashboardBreadcrumbs from "../../components/navigation/DashboardBreadcrumbs";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
@@ -53,12 +54,33 @@ const UserDashboard = () => {
             <DashboardBreadcrumbs></DashboardBreadcrumbs>
           </Col>
           <Col>
-            {/* PAGE TITLE */}
-            <h3>User Dashboard ᓚᘏᗢ</h3>
+            <Card>
+              <Card.Body>
+                <Card.Title>
+                  {/* PAGE TITLE */}
+                  <h3>User Dashboard ᓚᘏᗢ</h3>
+                </Card.Title>
+              </Card.Body>
+            </Card>
           </Col>
           <Col>
-            {/* WELCOME MESSAGE */}
-            <p>{message}</p>
+            {/* CAT IMAGE */}
+            <LazyLoadImage
+              className="image"
+              src="images/cat_scientist.jpg"
+              alt="A Cat Scientist"
+            />
+          </Col>
+          <Col>
+            <Card>
+              <Card.Body>
+                <Card.Title>
+                  {/* WELCOME MESSAGE */}
+                  <h4>{message}</h4>
+                </Card.Title>
+                <Card.Text>It's good to see you again.</Card.Text>
+              </Card.Body>
+            </Card>
           </Col>
           <Col>
             {/* LOGOUT BUTTON */}

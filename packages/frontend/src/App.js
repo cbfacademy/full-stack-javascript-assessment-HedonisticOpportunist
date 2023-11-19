@@ -1,7 +1,7 @@
 import { BrowserRouter } from "react-router-dom";
-import Copyright from "./components/Copyright";
+import Copyright from "./components/ui/Copyright";
 import React from "react";
-import RoutesComponent from "./routes/RoutesComponent";
+import RoutesComponent from "./components/routes/RoutesComponent";
 import "./stylesheets/App.css";
 function App() {
   return (
