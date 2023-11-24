@@ -6,24 +6,31 @@ const logger = require("pino")();
 // Any further modifications and errors are mine and mine alone.
 
 // Set up Multer
+const storageEngine = multer.diskStorage({
+  destination: "./public/uploads/",
+  filename: function (file, callback) {
+    callback(
+      null,
+      file.fieldname + "-" + Date.now() + path.extname(file.originalname)
+    );
+  },
+});
+
+// File filter for Multer
+const fileFilter = (file, callback) => {
+  let pattern = /jpg|png|svg/;
+
+  if (pattern.test(path.extname(file.originalname))) {
+    callback(null, true);
+  } else {
+    callback("Error: Not a valid file.");
+  }
+};
+
+// Initialize Multer
 const upload = multer({
-  storage: multer.diskStorage({
-    destination(cb) {
-      cb(null, "./files");
-    },
-    filename(file, cb) {
-      cb(null, `${new Date().getTime()}_${file.originalname}`);
-    },
-  }),
-  limits: {
-    fileSize: 1000000,
-  },
-  fileFilter(file, cb) {
-    if (!file.originalname.match(/\.(jpeg|jpg|png|)$/)) {
-      return cb(new Error("Only upload files with jpg, jpeg, and png format."));
-    }
-    cb(undefined, true);
-  },
+  storage: storageEngine,
+  fileFilter: fileFilter,
 });
 
 // UPLOAD IMAGE CONTROLLER
@@ -33,12 +40,16 @@ const upload = multer({
       // Get file and save it accordingly
       const { title, description } = req.body;
       const { path, mimetype } = req.file;
+
+      // Create new file
       const file = new File({
         title,
         description,
         file_path: path,
         file_mimetype: mimetype,
       });
+
+      // Save the file
       await file.save();
       res.send("File uploaded successfully.");
       next();

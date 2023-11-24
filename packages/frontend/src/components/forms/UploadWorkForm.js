@@ -20,18 +20,18 @@ const UploadWorkForm = () => {
   // Any errors are mine and mine alone.
   const handleSubmit = async (e) => {
     e.preventDefault();
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("title", title);
-    formData.append("description", description);
-    let response = await upload(formData);
+    // const formData = new FormData();
+    // formData.append("file", file);
+    // formData.append("title", title);
+    // formData.append("description", description);
+    // let response = await upload(formData);
 
-    if (response) {
-      // Post a success message if everything went well
-      setMessage(messageConstants.UPLOAD_SUCCEDSS);
-    } else {
-      setMessage(messageConstants.UPLOAD_ERROR);
-    }
+    // if (response) {
+    //   // Post a success message if everything went well
+    //   setMessage(messageConstants.UPLOAD_SUCCEDSS);
+    // } else {
+    //   setMessage(messageConstants.UPLOAD_ERROR);
+    // }
 
     // Ensure validation fails if all the necessary fields are empty.
     if (file === "" || description === "" || title === "") {

@@ -21,7 +21,8 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "__credit_comment__": "https://dev.to/bytebodger/how-i-fixed-the-unexpected-token-error-in-jest-4o1",
+    "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!@toolz/allow-react)/\" --env=jsdom --coverage",
     "eject": "react-scripts eject",
     "proxy": "http://localhost:5000"
   },

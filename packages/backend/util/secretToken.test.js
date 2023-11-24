@@ -1,5 +1,7 @@
 const { createSecretToken } = require("./secretToken");
 
-test("expect createSecretToken to not be null", () => {
-  expect(createSecretToken()).not.toBeNull();
+describe("Getting a secret token.", () => {
+  it("Expect createSecretToken not to return null.", () => {
+    expect(createSecretToken()).not.toBeNull();
+  });
 });
