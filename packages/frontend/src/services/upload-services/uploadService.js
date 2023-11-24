@@ -10,10 +10,12 @@ export async function upload(formData) {
     // Post the data to backend
     const { data } = await axios.post(
       "http://localhost:5000/uploads",
+      formData,
       {
-        formData,
-      },
-      { withCredentials: true }
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      }
     );
     return await handleResponse(data);
   } catch (error) {
