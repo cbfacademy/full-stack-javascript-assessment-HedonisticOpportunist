@@ -1,5 +1,6 @@
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
-import { signup } from "../../services/authentication/authServices";
+import { messageConstants } from "../../constants/messageConstants";
+import { signup } from "../../services/authentication-services/authenticationService";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 
@@ -13,20 +14,16 @@ const SignupForm = () => {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
-  // TOAST MESSAGES
-  const handleError = "👻👻Error. Please try signing up again.";
-  const handleSuccess = "🦄🦄 Success! You have been signed up.";
-
   // HANDLE SIGN UP FUNCTION
   const handleSignup = async () => {
     let response = await signup(username, email, password);
     if (response) {
-      setMessage(handleSuccess);
+      setMessage(messageConstants.SIGN_UP_SUCCESS);
       setTimeout(() => {
         navigate("/dashboard");
       }, 1000);
     } else {
-      setMessage(handleError);
+      setMessage(messageConstants.SIGN_UP_ERROR);
     }
     setUserName(username);
     setEmail(email);
@@ -38,7 +35,7 @@ const SignupForm = () => {
     e.preventDefault();
     handleSignup();
     if (username === "" || email === "" || password === "") {
-      setMessage(handleError);
+      setMessage(messageConstants.SIGN_UP_ERROR);
     }
   };
 

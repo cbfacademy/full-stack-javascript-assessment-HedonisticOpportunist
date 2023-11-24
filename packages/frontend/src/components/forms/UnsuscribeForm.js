@@ -1,5 +1,6 @@
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
-import { unsuscribe } from "../../services/suscriptions/suscribeServices";
+import { messageConstants } from "../../constants/messageConstants";
+import { unsuscribe } from "../../services/suscriptions-services/suscribeServices";
 import { useState } from "react";
 
 const UnsuscribeForm = () => {
@@ -7,18 +8,13 @@ const UnsuscribeForm = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  // TOAST MESSAGES
-  const handleError = "🖤🖤 Error. Please try unsuscribing again.";
-  const handleSuccess =
-    "🦉🦉 Success! You are no longer suscribed to our newsletter.";
-
   // UNSUSCRIBE FUNCTION
   const handleUnsuscribe = async () => {
     let response = await unsuscribe(email);
     if (response) {
-      setMessage(handleSuccess);
+      setMessage(messageConstants.UNSUSCRIBE_SUCCESS);
     } else {
-      setMessage(handleError);
+      setMessage(messageConstants.UNSUSCRIBE_ERROR);
     }
     setEmail(email);
   };
@@ -28,7 +24,7 @@ const UnsuscribeForm = () => {
     e.preventDefault();
     handleUnsuscribe();
     if (email === "" || !email.includes("@") || email === null) {
-      setMessage(handleError);
+      setMessage(messageConstants.UNSUSCRIBE_ERROR);
     }
   };
 

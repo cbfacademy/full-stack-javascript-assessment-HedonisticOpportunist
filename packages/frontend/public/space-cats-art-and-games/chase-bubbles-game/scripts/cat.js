@@ -1,5 +1,4 @@
 // CLASS CAT
-
 class Cat {
   constructor() {
     this.x = 100;
@@ -9,28 +8,20 @@ class Cat {
 
   // MOVE CAT CHARACTER FUNCTION
   moveCat(direction) {
-    // Move the character, ensuring that the character stays within the canvas
     if (direction === "LEFT") {
-      if (this.x > width * 0.2) {
-        this.x -= 10 * this.speed;
-      }
+      this.x -= 10 * this.speed;
     }
 
     if (direction === "RIGHT") {
-      if (this.x < width * 0.8) {
-        this.x += 10 * this.speed;
-      }
+      this.x += 10 * this.speed;
     }
 
     if (direction === "DOWN") {
-      if (this.y < height * 0.9) {
-        this.y += 10 * this.speed;
-      }
+      this.y += 10 * this.speed;
     }
+
     if (direction === "UP") {
-      if (this.y > height * 0.2) {
-        this.y -= 10 * this.speed;
-      }
+      this.y -= 10 * this.speed;
     }
   }
 

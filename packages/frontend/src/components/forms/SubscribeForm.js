@@ -1,5 +1,6 @@
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
-import { suscribe } from "../../services/suscriptions/suscribeServices";
+import { messageConstants } from "../../constants/messageConstants";
+import { suscribe } from "../../services/suscriptions-services/suscribeServices";
 import { useState } from "react";
 
 const SubscribeForm = () => {
@@ -7,18 +8,13 @@ const SubscribeForm = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  // TOAST MESSAGES
-  const handleError = "💀💀 Error. Please try suscribing again.";
-  const handleSuccess =
-    "🎃🎃 Success! You are now subscribed to our newsletter.";
-
   // HANDLE SUSCRIBE FUNCTION
   const handleSuscribeResponse = async () => {
     let response = await suscribe(email);
     if (response) {
-      setMessage(handleSuccess);
+      setMessage(messageConstants.SUSCRIBE_SUCCESS);
     } else {
-      setMessage(handleError);
+      setMessage(messageConstants.SUSCRIBE_ERROR);
     }
     setEmail(email);
   };
@@ -28,7 +24,7 @@ const SubscribeForm = () => {
     e.preventDefault();
     handleSuscribeResponse();
     if (email === "" || !email.includes("@") || email === null) {
-      setMessage(handleError);
+      setMessage(messageConstants.SUSCRIBE_ERROR);
     }
   };
 

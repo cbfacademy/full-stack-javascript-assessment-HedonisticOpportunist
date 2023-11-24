@@ -1,12 +1,20 @@
+// CLASS VARIABLES
+let spaceCat;
+
+// PRELOAD FUNCTION
 function preload() {
-  preloadSpaceCat();
+  // Set up space cat
+  spaceCat = new SpaceCat();
+  spaceCat.preloadSpaceCat();
 }
 
+// SETUP FUNCTION
 function setup() {
   setUpGame();
 }
 
+// DRAW FUNCTION
 function draw() {
-  drawGalaxy();
-  drawSpaceCat();
+  galaxy.drawGalaxy();
+  spaceCat.drawSpaceCat();
 }

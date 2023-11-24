@@ -16,7 +16,9 @@ class Bubble {
     this.colour.g = random(0, 255);
     this.colour.b = random(0, 255);
 
+    // Size
     this.radius = 10;
+    this.size = random(this.radius - 5, 30);
     this.touched = false;
   }
 
@@ -42,7 +44,7 @@ class Bubble {
       fill("ghostwhite");
     } else {
       fill(this.colour.r, this.colour.g, this.colour.b); // Generate random colours
-      circle(this.x, this.y, this.radius * 2);
+      circle(this.x, this.y, this.size * 2); // Generate randomly sized circles
     }
   }
 }

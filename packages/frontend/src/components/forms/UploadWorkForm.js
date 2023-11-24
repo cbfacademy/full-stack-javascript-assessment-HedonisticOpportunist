@@ -1,16 +1,14 @@
-import axios from "axios";
 import { Button, Container, Col, Form, Row } from "react-bootstrap";
-import log from "loglevel";
+import { messageConstants } from "../../constants/messageConstants";
 import React, { useState } from "react";
+import { upload } from "../../services/upload-services/uploadService";
 
 const UploadWorkForm = () => {
   // STATES
-  const [uploadedFile, setUploadedFile] = useState("");
+  const [file, setUploadedFile] = useState("");
   const [message, setMessage] = useState("");
-
-  // TOAST MESSAGES
-  const handleError = "*ੈ♡⸝⸝🪐༘⋆ Error. Please try uploading your file again.";
-  const handleSuccess = "🦢🦢 Success! Your file has been uploaded.";
+  const [title, setTitle] = useState("");
+  const [description, setDescription] = useState("");
 
   // HANDLE FILE CHANGE FUNCTION
   const handleFileChange = (e) => {
@@ -18,24 +16,26 @@ const UploadWorkForm = () => {
   };
 
   // HANDLE SUBMIT FUNCTION
+  // @ https://github.com/myogeshchavan97/react-upload-download-files/blob/master/src/components/App.js
+  // Any errors are mine and mine alone.
   const handleSubmit = async (e) => {
     e.preventDefault();
-    try {
-      const formData = new FormData();
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("title", title);
+    formData.append("description", description);
+    let response = await upload(formData);
 
-      // Post the data to backend
-      await axios.post("http://localhost:5000/fileupload", formData);
-
+    if (response) {
       // Post a success message if everything went well
-      setMessage(handleSuccess);
-    } catch (error) {
-      setMessage(handleError);
-      log.error(error.message);
+      setMessage(messageConstants.UPLOAD_SUCCEDSS);
+    } else {
+      setMessage(messageConstants.UPLOAD_ERROR);
     }
 
     // Ensure validation fails if all the necessary fields are empty.
-    if (uploadedFile === "") {
-      setMessage(handleError);
+    if (file === "" || description === "" || title === "") {
+      setMessage(messageConstants.UPLOAD_ERROR);
     }
   };
 
@@ -49,18 +49,43 @@ const UploadWorkForm = () => {
                 <Form.Label>
                   <p> Upload Your Work ^•^* </p>
                 </Form.Label>
+                <Form.Group controlId="title">
+                  {/* SET TITLE */}
+                  <Form.Control
+                    type="text"
+                    name="title"
+                    value={title}
+                    placeholder="Enter title"
+                    onChange={(e) => setTitle(e.target.value)}
+                    required
+                  />
+                </Form.Group>
+                {/* SET DESCRIPTION */}
+                <Form.Group controlId="description">
+                  <Form.Control
+                    type="text"
+                    name="description"
+                    value={description}
+                    placeholder="Enter description"
+                    onChange={(e) => setDescription(e.target.value)}
+                    required
+                  />
+                </Form.Group>
+                {/* UPLOAD FILE */}
                 <Form.Control
                   type="file"
                   className="file-input"
                   size="lg"
                   accept="image/*"
-                  name="uploadedFile"
-                  value={uploadedFile}
+                  name="file"
+                  value={file}
                   encType="multipart/form-data"
                   onChange={handleFileChange}
                 />
               </Form.Group>
             </Form>
+          </Col>
+          <Col>
             {/* UPLOAD WORK BUTTON */}
             <Button
               className="btn-grad"
