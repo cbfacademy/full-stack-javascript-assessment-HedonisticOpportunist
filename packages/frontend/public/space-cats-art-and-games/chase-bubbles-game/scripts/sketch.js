@@ -1,10 +1,10 @@
+// SETUP FUNCTION
 function setup() {
   setUpGame();
 }
 
 // DRAW FUNCTION
 function draw() {
-  console.log(score);
   background(0, 0, 0);
   noStroke();
 
@@ -20,6 +20,9 @@ function draw() {
     score = bubbles[i].checkBubblesIfTouched(cat.x, cat.y, score);
     bubbles[i].displayBubbles();
   }
+
+  // End game
+  game_score_display.endGame(score);
 }
 
 // KEY PRESSED FUNCTION

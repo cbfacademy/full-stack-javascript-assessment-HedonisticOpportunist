@@ -42,6 +42,26 @@ const GamesPage = () => {
               </Card.Body>
             </Card>
           </Col>
+          <Col>
+            {/* DIVIDER */}
+            <hr className="divider"></hr>
+          </Col>
+          <Card>
+            <Card.Body>
+              <Card.Title>
+                {/* GAME TITLE */}
+                <h4>Space Bubble Shooter Game ♡ (WIP)</h4>
+              </Card.Title>
+              <Card.Text>
+                {/* GAME LINK AND DESCRIPTION */}
+                <a href="space-cats-art-and-games/space-bubbles-shooter-game/index.html">
+                  Shoot the bubbles.
+                </a>
+              </Card.Text>
+              <Card.Text>Shoot the bubbles.</Card.Text>
+            </Card.Body>
+          </Card>
+          <Col></Col>
         </Row>
       </Container>
     </>

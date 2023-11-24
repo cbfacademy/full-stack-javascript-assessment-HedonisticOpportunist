@@ -1,7 +1,8 @@
 import { Button, Container, Col, Form, Row } from "react-bootstrap";
+import { messageConstants } from "../../constants/messageConstants";
+import { login } from "../../services/authentication-services/authenticationService";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
-import { login } from "../../services/authentication/authServices";
 
 const LoginForm = () => {
   // NAVIGATE TO DASHBOARD
@@ -12,20 +13,16 @@ const LoginForm = () => {
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
 
-  // TOAST MESSAGES
-  const handleError = "🐢🐢 Error. Please try logging in again.";
-  const handleSuccess = "🐼🐼 Success! You have been logged in.";
-
   // HANDLE LOGIN FUNCTION
   const handleLogin = async () => {
     let response = await login(email, password);
     if (response) {
-      setMessage(handleSuccess);
+      setMessage(messageConstants.LOGIN_SUCCESS);
       setTimeout(() => {
         navigate("/dashboard");
       }, 1000);
     } else {
-      setMessage(handleError);
+      setMessage(messageConstants.LOGIN_ERROR);
     }
     setEmail(email);
     setPassword(password);
@@ -36,7 +33,7 @@ const LoginForm = () => {
     e.preventDefault();
     handleLogin();
     if (email === "" || password === "") {
-      setMessage(handleError);
+      setMessage(messageConstants.LOGIN_ERROR);
     }
   };
 

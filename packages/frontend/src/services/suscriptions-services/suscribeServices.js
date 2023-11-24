@@ -1,5 +1,5 @@
 import axios from "axios";
-import { handleResponse } from "../helpers/helpers";
+import { handleResponse } from "../helpers/serviceHelpers";
 import log from "loglevel";
 
 export async function suscribe(email) {

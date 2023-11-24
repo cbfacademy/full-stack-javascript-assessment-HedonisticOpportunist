@@ -12,6 +12,15 @@ class GameScore {
 
     textSize(this.size);
     textFont("Helvetica");
-    text("Bubbles Collected: " + game_score, this.x, this.y);
+    text("Catch ten bubbles!", this.x, this.y);
+    text("Bubbles Caught: " + game_score, this.x, this.y + 25);
+  }
+
+  endGame(score) {
+    if (score === 10) {
+      // Reset score to zero
+      score = 0;
+      setUpGame();
+    }
   }
 }

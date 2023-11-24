@@ -7,12 +7,6 @@ let is_right;
 let is_down;
 let is_up;
 
-// COLLISION DETECTION VARIABLES
-let scroll_position;
-let game_char_x;
-let game_char_y;
-let floor_pos_y;
-
 // GAME SCORE
 let score;
 
@@ -42,7 +36,7 @@ function setUpGame() {
   // Set up bubbles
   bubbles = [];
 
-  for (let i = 0; i < 20; i++) {
+  for (let i = 0; i < 80; i++) {
     bubbles.push(new Bubble(random(0, windowWidth), random(0, windowHeight)));
   }
 
