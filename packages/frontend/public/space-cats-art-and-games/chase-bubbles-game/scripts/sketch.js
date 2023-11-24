@@ -4,11 +4,22 @@ function setup() {
 
 // DRAW FUNCTION
 function draw() {
-  drawStars();
-  drawCatCharacter();
-  drawMouseCharacter();
-  moveCatCharacter();
-  drawGameScore();
+  console.log(score);
+  background(0, 0, 0);
+  noStroke();
+
+  // DRAW ITEMS
+  stars.drawStars();
+
+  game_score_display.drawGameScore(score);
+  cat.drawCatCharacter();
+
+  // Draw bubbles
+  for (i = 0; i < bubbles.length; i++) {
+    bubbles[i].moveBubbles();
+    score = bubbles[i].checkBubblesIfTouched(cat.x, cat.y, score);
+    bubbles[i].displayBubbles();
+  }
 }
 
 // KEY PRESSED FUNCTION
@@ -16,21 +27,25 @@ function keyPressed() {
   // if this key is pressed, then the cat moves to the left
   if (keyCode == 37) {
     is_left = true;
+    cat.moveCat("LEFT");
   }
 
   // if this key is pressed, then the cat moves to the right
   if (keyCode == 39) {
     is_right = true;
+    cat.moveCat("RIGHT");
   }
 
   // if this key is pressed, then the cat moves down
   if (keyCode == 40) {
     is_down = true;
+    cat.moveCat("DOWN");
   }
 
   // if this key is pressed, then the cat moves up
   if (keyCode == 38) {
     is_up = true;
+    cat.moveCat("UP");
   }
 }
 
@@ -49,27 +64,5 @@ function keyReleased() {
 
   if (keyCode == 38) {
     is_up = false;
-  }
-}
-
-// FOUND MOUSE FUNCTION
-function mouseFound(mouse) {
-  let distance;
-
-  // Calculate distance based on the mouse and cat position(s)
-  distance = int(dist(mouse.x_pos, mouse.y_pos, cat_x, cat_y));
-
-  // If distance is equal to twenty then increment the game score by one
-  // Set isFound to true
-  if (distance == 20) {
-    game_score += 1;
-    isFound = true;
-  }
-
-  // Reset the game score once the mice have been found
-  if (mouseFound == 10 || isFound) {
-    game_score = 0;
-    isFound = false;
-    setup();
   }
 }

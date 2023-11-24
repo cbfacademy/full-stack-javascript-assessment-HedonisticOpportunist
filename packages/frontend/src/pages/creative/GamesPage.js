@@ -30,17 +30,15 @@ const GamesPage = () => {
               <Card.Body>
                 <Card.Title>
                   {/* GAME TITLE */}
-                  <h4>Chase Ball Game ♡</h4>
+                  <h4>Chase Bubbles Game ♡</h4>
                 </Card.Title>
                 <Card.Text>
                   {/* GAME LINK AND DESCRIPTION */}
-                  <a href="space-cats-art-and-games/chase-mouse-game/index.html">
-                    Catch the mice.
+                  <a href="space-cats-art-and-games/chase-bubbles-game/index.html">
+                    Catch the bubbles.
                   </a>
                 </Card.Text>
-                <Card.Text>
-                  WIP. Feel free to play the game, but be aware of bugs 🐛🐛.
-                </Card.Text>
+                <Card.Text>Try and catch ten bubbles 🫧.</Card.Text>
               </Card.Body>
             </Card>
           </Col>
