@@ -1,5 +1,8 @@
 // CLASS CAT
+// BASED ON OlD WORK, ORIGINALLY POSTED HERE: https://github.com/HedonisticOpportunist/Cats-in-Neath/blob/master/scripts/sketch.js
+// FURTHER IMPLEMENTATION IDEAS: https://github.com/HedonisticOpportunist/Game-Project-V2
 class Cat {
+  // CONSTRUCTOR
   constructor() {
     this.x = 100;
     this.y = 100;
@@ -25,6 +28,7 @@ class Cat {
     }
   }
 
+  // DRAW CAT
   drawCatCharacter() {
     // DRAW THE CAT'S FACE
     fill("#faf3dd");
@@ -59,5 +63,25 @@ class Cat {
     vertex(this.x + 25, this.y + 15);
     vertex(this.x + 10, this.y + 15);
     endShape();
+  }
+
+  // DEAL WITH EDGES
+  // @Credit: https://github.com/Gregory-Eales/uol-graphics-programming/blob/master/Asteroid-Game-Clone/spaceship.js
+  dealWithEdges() {
+    if (this.x < 0) {
+      this.x = width;
+    }
+
+    if (this.x > width) {
+      this.x = 0;
+    }
+
+    if (this.y < 0) {
+      this.y = height;
+    }
+
+    if (this.y > height) {
+      this.y = 0;
+    }
   }
 }

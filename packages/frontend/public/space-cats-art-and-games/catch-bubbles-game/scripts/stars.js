@@ -3,10 +3,12 @@
 // https://editor.p5js.org/ag3439/sketches/Skgh1ZQtQ
 
 class Stars {
+  // CONSTRUCTOR
   constructor() {
     this.galaxy = {};
   }
 
+  // DRAW STARS
   drawStars() {
     this.galaxy = {
       locationX: random(width),

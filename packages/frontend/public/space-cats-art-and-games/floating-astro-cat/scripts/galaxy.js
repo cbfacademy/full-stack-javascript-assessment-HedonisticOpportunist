@@ -3,10 +3,12 @@
 // https://editor.p5js.org/ag3439/sketches/Skgh1ZQtQ
 
 class Galaxy {
+  // CONSTRUCTOR
   constructor() {
     this.galaxy = {};
   }
 
+  // DRAW GALAXY
   drawGalaxy() {
     background(0, 0, 35, 25);
     this.galaxy = {

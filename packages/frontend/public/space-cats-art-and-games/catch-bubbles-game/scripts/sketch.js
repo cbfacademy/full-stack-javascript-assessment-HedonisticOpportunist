@@ -11,8 +11,12 @@ function draw() {
   // DRAW ITEMS
   stars.drawStars();
 
+  // Draw game score
   game_score_display.drawGameScore(score);
+
+  // Draw cat character
   cat.drawCatCharacter();
+  cat.dealWithEdges();
 
   // Draw bubbles
   for (i = 0; i < bubbles.length; i++) {

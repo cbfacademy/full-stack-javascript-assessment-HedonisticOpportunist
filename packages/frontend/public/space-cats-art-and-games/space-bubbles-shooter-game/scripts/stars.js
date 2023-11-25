@@ -1,11 +1,13 @@
-// STARS BACKGROUND CLASS
+// STARS CLASS
 // @ Credit: https://editor.p5js.org/jesse_harding/sketches/0szF7gcAx
-class StarsBackground {
+class Stars {
+  // CONSTRUCTOR
   constructor() {
     this.stars = [];
-    this.numStars = 400;
+    this.numStars = 600;
   }
 
+  // SETUP STARS
   setUpStars() {
     // Set up stars
     for (let i = 0; i < this.numStars; i++) {
@@ -13,6 +15,7 @@ class StarsBackground {
     }
   }
 
+  // DRAW STARS
   drawStars() {
     background(0, 0, 0);
     noStroke();

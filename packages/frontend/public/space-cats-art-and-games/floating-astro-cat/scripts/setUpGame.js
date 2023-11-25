@@ -1,6 +1,7 @@
 // CLASS OBJECTS
 let galaxy;
 
+// SET UP GAME
 function setUpGame() {
   createCanvas(windowWidth, windowHeight);
   noCursor();

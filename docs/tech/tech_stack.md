@@ -16,6 +16,8 @@ In _**Space Cats**_, _MongoDB_, a cross-platform NoSQL database, helps store dat
 
 **Space Cats** utilises _p5.js_ – a JavaScript client-side library for creating graphic and interactive experiences [6].
 
+More about the [art](art.md), while information about the games [can be found here](games.md).
+
 ## AUTHENTICATION
 
 To protect sensitive information and stop unauthorised users from accessing the dashboard, _**Space Cats**_ uses JWT (JSON Web Token)-based user authentication and authorisation, based on an implementation by FADAHUNSI SEYI SAMUEL @ freecodecamp. [7].
