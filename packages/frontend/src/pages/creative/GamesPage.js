@@ -34,7 +34,7 @@ const GamesPage = () => {
                 </Card.Title>
                 <Card.Text>
                   {/* GAME LINK AND DESCRIPTION */}
-                  <a href="space-cats-art-and-games/chase-bubbles-game/index.html">
+                  <a href="space-cats-art-and-games/catch-bubbles-game/index.html">
                     Catch the bubbles.
                   </a>
                 </Card.Text>
@@ -50,7 +50,7 @@ const GamesPage = () => {
             <Card.Body>
               <Card.Title>
                 {/* GAME TITLE */}
-                <h4>Space Bubble Shooter Game ♡ (WIP)</h4>
+                <h4>Space Bubble Shooter Game ♡</h4>
               </Card.Title>
               <Card.Text>
                 {/* GAME LINK AND DESCRIPTION */}
@@ -58,7 +58,7 @@ const GamesPage = () => {
                   Shoot the bubbles.
                 </a>
               </Card.Text>
-              <Card.Text>Shoot the bubbles.</Card.Text>
+              <Card.Text>Shoot or catch twenty bubbles 🫧👾.</Card.Text>
             </Card.Body>
           </Card>
           <Col></Col>

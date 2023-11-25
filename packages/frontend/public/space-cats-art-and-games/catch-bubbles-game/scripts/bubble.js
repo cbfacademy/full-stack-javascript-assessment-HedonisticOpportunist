@@ -3,12 +3,13 @@
 // Any modification and errors are mine and mine alone.
 
 class Bubble {
+  // CONSTRUCTOR
   constructor(x, y) {
     // Coordinates
     this.x = x;
     this.y = y;
-    this.x_offset = random(0, 1000);
-    this.y_offset = random(0, 1000);
+    this.xOffset = random(0, 1000);
+    this.yOffset = random(0, 1000);
 
     // Colours
     this.colour = { r: 0, g: 0, b: 0 };
@@ -22,14 +23,16 @@ class Bubble {
     this.touched = false;
   }
 
+  // MOVE BUBBLES
   moveBubbles() {
-    this.x_offset += 0.01;
-    this.y_offset += 0.01;
+    this.xOffset += 0.01;
+    this.yOffset += 0.01;
 
-    this.x = noise(this.x_offset) * width;
-    this.y = noise(this.y_offset) * height;
+    this.x = noise(this.xOffset) * width;
+    this.y = noise(this.yOffset) * height;
   }
 
+  // CHECK CONTACT
   checkBubblesIfTouched(x, y, score) {
     const distance = dist(x, y, this.x, this.y);
     if (distance < this.radius) {
@@ -39,6 +42,7 @@ class Bubble {
     return score;
   }
 
+  // DISPLAY BUBBLES
   displayBubbles() {
     if (this.touched) {
       fill("ghostwhite");
