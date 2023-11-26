@@ -1,60 +1,30 @@
 const File = require("../../models/uploadFileModel");
-const multer = require("multer");
 const logger = require("pino")();
 
-// @Credit: https://github.com/myogeshchavan97/react-upload-download-files/blob/master/server/routes/file.js
+// @Credit: @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
 // Any further modifications and errors are mine and mine alone.
 
-// Set up Multer
-const storageEngine = multer.diskStorage({
-  destination: "./public/uploads/",
-  filename: function (file, callback) {
-    callback(
-      null,
-      file.fieldname + "-" + Date.now() + path.extname(file.originalname)
-    );
-  },
-});
+// UPLOAD IMAGE CONTROLLER
+module.exports.uploadFile = async (req, res, next) => {
+  try {
+    const { file, title, description, createdAt } = req.body;
+    const existingFile = await File.findOne({ file });
 
-// File filter for Multer
-const fileFilter = (file, callback) => {
-  let pattern = /jpg|png|svg/;
+    // Search for existing files
+    if (existingFile) {
+      return res.json({ message: "File already exists." });
+    }
 
-  if (pattern.test(path.extname(file.originalname))) {
-    callback(null, true);
-  } else {
-    callback("Error: Not a valid file.");
+    // Create a new file
+    const newFile = await File.create({ file, title, description, createdAt });
+    res.status(201).json({
+      message: "Files created successfully.",
+      success: true,
+      newFile,
+    });
+    next();
+  } catch (error) {
+    logger.error(error);
+    res.status(500).send(error.message);
   }
 };
-
-// Initialize Multer
-const upload = multer({
-  storage: storageEngine,
-  fileFilter: fileFilter,
-});
-
-// UPLOAD IMAGE CONTROLLER
-(module.exports.uploadFile = upload.single("file")),
-  async (req, res, next) => {
-    try {
-      // Get file and save it accordingly
-      const { title, description } = req.body;
-      const { path, mimetype } = req.file;
-
-      // Create new file
-      const file = new File({
-        title,
-        description,
-        file_path: path,
-        file_mimetype: mimetype,
-      });
-
-      // Save the file
-      await file.save();
-      res.send("File uploaded successfully.");
-      next();
-    } catch (error) {
-      logger.error(error);
-      res.status(500).send(error.message);
-    }
-  };

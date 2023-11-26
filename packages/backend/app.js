@@ -3,7 +3,6 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 const express = require("express");
 const { getDate, welcomeMessage } = require("./util/landingPageMessages");
-const path = require("path");
 const userRoute = require("./routes/userRoute");
 const suscriberRoute = require("./routes/suscriberRoute");
 const uploadFileRoute = require("./routes/fileUploadRoute");
@@ -24,7 +23,6 @@ app.use(
 );
 app.use(cookieParser());
 app.use(express.json());
-app.use(express.static(path.join(__dirname, "..", "build")));
 
 // HOMEPAGE GET ROUTE
 app.get("/", (_request, response) => {
