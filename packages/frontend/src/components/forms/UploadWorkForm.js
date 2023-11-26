@@ -79,7 +79,6 @@ const UploadWorkForm = () => {
                   accept="image/*"
                   name="file"
                   value={file}
-                  encType="multipart/form-data"
                   onChange={handleFileChange}
                 />
               </Form.Group>
