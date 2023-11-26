@@ -6,7 +6,7 @@ import log from "loglevel";
 export async function upload(title, description, url) {
   try {
     const { data } = await axios.post(
-      "http://localhost:5000/uploads",
+      process.env.REACT_APP_DEPLOYED_URL + "/uploads",
       {
         title,
         description,
