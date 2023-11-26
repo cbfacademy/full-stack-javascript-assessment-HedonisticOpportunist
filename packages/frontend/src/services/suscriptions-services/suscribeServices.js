@@ -5,7 +5,7 @@ import log from "loglevel";
 export async function suscribe(email) {
   try {
     const { data } = await axios.post(
-      process.env.REACT_APP_DEPLOYED_URL + "/suscribe",
+      "https://space-cats-backend.onrender.com/suscribe",
       {
         email,
       },
@@ -21,7 +21,7 @@ export async function unsuscribe(userEmail) {
   try {
     let email = await getSuscribers(userEmail);
     const { data } = await axios.delete(
-      process.env.REACT_APP_DEPLOYED_URL + "/delete/:" + email,
+      "https://space-cats-backend.onrender.com/delete/:" + email,
       { withCredentials: true }
     );
     return handleResponse(data);

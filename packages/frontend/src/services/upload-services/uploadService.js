@@ -6,7 +6,7 @@ import log from "loglevel";
 export async function upload(title, description, url) {
   try {
     const { data } = await axios.post(
-      process.env.REACT_APP_DEPLOYED_URL + "/uploads",
+      "https://space-cats-backend.onrender.com/uploads",
       {
         title,
         description,

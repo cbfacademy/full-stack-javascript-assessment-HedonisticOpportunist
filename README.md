@@ -14,7 +14,7 @@ WEB SERVER URL: https://space-cats-backend.onrender.com ✔️
 
 # FRONTEND DEPLOYMENT
 
-STATIC SITE URL:
+STATIC SITE URL: https://space-cats.vercel.app/ ✔️
 
 ## OTHER DOCUMENTATION
 
