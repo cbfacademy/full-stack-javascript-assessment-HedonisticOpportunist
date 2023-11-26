@@ -23,8 +23,5 @@
   "bugs": {
     "url": "https://github.com/cbfacademy/full-stack-javascript/issues"
   },
-  "homepage": "https://github.com/cbfacademy/full-stack-javascript#readme",
-  "engines": {
-    "node": ">=18.18.0 <19.0.0"
-  }
+  "homepage": "https://github.com/cbfacademy/full-stack-javascript#readme"
 }
