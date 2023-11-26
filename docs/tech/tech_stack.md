@@ -16,7 +16,7 @@ In _**Space Cats**_, _MongoDB_, a cross-platform NoSQL database, helps store dat
 
 **Space Cats** utilises _p5.js_ – a JavaScript client-side library for creating graphic and interactive experiences [6].
 
-More about [art facts are listed in the following file](creative/art.md), while information about the games [can be found here](creative/games.md).
+More [art facts are listed in the following file](creative/art.md), while information about the games [can be found here](creative/games.md).
 
 ## AUTHENTICATION
 
