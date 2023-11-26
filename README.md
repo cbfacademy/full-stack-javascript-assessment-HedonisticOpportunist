@@ -6,19 +6,21 @@ _**Space Cats**_ is a game web application similar to _Newgrounds_ [1], where us
 
 Ultimately, _**Space Cats**_ aims to unite people who enjoy simple and cute games.
 
-# DEPLOYMENT
+# BACKEND DEPLOYMENT
 
 _**Space Cats**_ uses _render_ for deployment [2], taking advantage of its free service tier [3].
 
 WEB SERVER URL: https://space-cats-backend.onrender.com ✔️
 
-STATIC SITE URL: https://space-cats-frontend.onrender.com ❌
+# FRONTEND DEPLOYMENT
+
+STATIC SITE URL:
 
 ## OTHER DOCUMENTATION
 
 [User workflow documentation.](docs/design/user_flow.md)
 
-[Wireframes documentation.](docs/design/wireframes.md)
+[Wireframe documentation.](docs/design/wireframes.md)
 
 [Tech stack documentation.](docs/tech/tech_stack.md)
 
