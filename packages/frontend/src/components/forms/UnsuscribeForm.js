@@ -22,9 +22,10 @@ const UnsuscribeForm = () => {
   // SUBMIT FUNCTION
   const handleSubmit = async (e) => {
     e.preventDefault();
-    handleUnsuscribe();
     if (email === "" || !email.includes("@") || email === null) {
       setMessage(messageConstants.UNSUSCRIBE_ERROR);
+    } else {
+      handleUnsuscribe();
     }
   };
 

@@ -8,14 +8,14 @@ const Suscriber = require("../../models/suscriberModel");
 module.exports.deleteSuscriber = async (req, res, next) => {
   try {
     const { email } = req.params;
-
     let alteredMail = email.replace(":", "");
     alteredMail = alteredMail.trim();
 
     // Delete existing suscribers
     const existingSuscriber = await Suscriber.findOneAndDelete({
-      email: alteredMail,
+      email: { $eq: alteredMail },
     });
+
     res.status(201).json({
       message: "Suscriber deleted successfully.",
       success: true,

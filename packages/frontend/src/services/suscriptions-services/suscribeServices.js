@@ -19,7 +19,7 @@ export async function suscribe(email) {
 
 export async function unsuscribe(userEmail) {
   try {
-    let email = getSuscribers(userEmail);
+    let email = await getSuscribers(userEmail);
     const { data } = await axios.delete(
       "http://localhost:5000/delete/:" + email,
       { withCredentials: true }

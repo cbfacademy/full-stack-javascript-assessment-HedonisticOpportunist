@@ -33,9 +33,10 @@ const SignupForm = () => {
   // SUBMIT FUNCTION
   const handleSubmit = async (e) => {
     e.preventDefault();
-    handleSignup();
     if (username === "" || email === "" || password === "") {
       setMessage(messageConstants.SIGN_UP_ERROR);
+    } else {
+      handleSignup();
     }
   };
 
