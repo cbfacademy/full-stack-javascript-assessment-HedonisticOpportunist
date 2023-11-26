@@ -16,7 +16,7 @@ STATIC SITE URL: https://space-cats-frontend.onrender.com ❌
 
 ## OTHER DOCUMENTATION
 
-[User journies documentation.](docs/design/user_flow.md)
+[User workflow documentation.](docs/design/user_flow.md)
 
 [Wireframes documentation.](docs/design/wireframes.md)
 
