@@ -17,8 +17,11 @@ STATIC SITE URL: https://space-cats-frontend.onrender.com ❌
 ## OTHER DOCUMENTATION
 
 [User journies documentation.](docs/design/user_flow.md)
+
 [Wireframes documentation.](docs/design/wireframes.md)
+
 [Space Cats' tech stack documentation](docs/tech/tech_stack.md)
+
 [Testing documentation](docs/tech/discarded_tech.md)
 
 ## REFERENCES
