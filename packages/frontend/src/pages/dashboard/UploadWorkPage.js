@@ -16,7 +16,7 @@ const UploadWorkPage = () => {
               <Card.Body>
                 <Card.Title>
                   {/* PAGE TITLE */}
-                  <h3>Upload Work ᓚᘏᗢ</h3>
+                  <h3>Upload Link to Your Interactive Art / Game ᓚᘏᗢ</h3>
                 </Card.Title>
               </Card.Body>
             </Card>

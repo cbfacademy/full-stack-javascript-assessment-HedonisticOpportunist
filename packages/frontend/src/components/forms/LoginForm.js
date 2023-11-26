@@ -31,9 +31,10 @@ const LoginForm = () => {
   // SUBMIT FUNCTION
   const handleSubmit = async (e) => {
     e.preventDefault();
-    handleLogin();
     if (email === "" || password === "") {
       setMessage(messageConstants.LOGIN_ERROR);
+    } else {
+      handleLogin();
     }
   };
 

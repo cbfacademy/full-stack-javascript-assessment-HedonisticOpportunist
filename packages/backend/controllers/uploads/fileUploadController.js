@@ -7,20 +7,20 @@ const logger = require("pino")();
 // UPLOAD IMAGE CONTROLLER
 module.exports.uploadFile = async (req, res, next) => {
   try {
-    const { file, title, description, createdAt } = req.body;
-    const existingFile = await File.findOne({ file });
+    // Check for existing files
+    const { title, description, url, createdAt } = req.body;
+    const existingFile = await File.findOne({ url });
 
-    // Search for existing files
     if (existingFile) {
       return res.json({ message: "File already exists." });
     }
 
-    // Create a new file
-    const newFile = await File.create({ file, title, description, createdAt });
+    // Create new file
+    const file = await File.create({ title, description, url, createdAt });
     res.status(201).json({
-      message: "Files created successfully.",
+      message: "File added successfully.",
       success: true,
-      newFile,
+      file,
     });
     next();
   } catch (error) {

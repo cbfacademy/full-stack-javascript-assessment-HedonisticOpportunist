@@ -22,9 +22,10 @@ const SubscribeForm = () => {
   // SUBMIT SUSCRIBE FUNCTION
   const handleSuscribe = async (e) => {
     e.preventDefault();
-    handleSuscribeResponse();
     if (email === "" || !email.includes("@") || email === null) {
       setMessage(messageConstants.SUSCRIBE_ERROR);
+    } else {
+      handleSuscribeResponse();
     }
   };
 

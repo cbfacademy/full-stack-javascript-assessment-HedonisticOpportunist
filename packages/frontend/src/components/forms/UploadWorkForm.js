@@ -5,37 +5,32 @@ import { upload } from "../../services/upload-services/uploadService";
 
 const UploadWorkForm = () => {
   // STATES
-  const [file, setUploadedFile] = useState("");
   const [message, setMessage] = useState("");
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
+  const [url, setURL] = useState("");
 
-  // HANDLE FILE CHANGE FUNCTION
-  const handleFileChange = (e) => {
-    setUploadedFile(e.target.value);
-  };
-
-  // HANDLE SUBMIT FUNCTION
-  // @ https://github.com/myogeshchavan97/react-upload-download-files/blob/master/src/components/App.js
-  // Any errors are mine and mine alone.
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    const formData = new FormData();
-    formData.append("file", file);
-    formData.append("title", title);
-    formData.append("description", description);
-    let response = await upload(formData);
-
+  // HANDLE UPLOAD FUNCTION
+  const handleUpload = async () => {
+    let response = await upload(title, description, url);
     if (response) {
       // Post a success message if everything went well
       setMessage(messageConstants.UPLOAD_SUCCEDSS);
     } else {
       setMessage(messageConstants.UPLOAD_ERROR);
     }
+    setTitle(title);
+    setDescription(description);
+    setURL(url);
+  };
 
-    // Ensure validation fails if all the necessary fields are empty.
-    if (file === "" || description === "" || title === "") {
+  // HANDLE SUBMIT FUNCTION
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    if (description === "" || title === "" || url === "") {
       setMessage(messageConstants.UPLOAD_ERROR);
+    } else {
+      handleUpload();
     }
   };
 
@@ -50,6 +45,7 @@ const UploadWorkForm = () => {
                   <p> Upload Your Work ^•^* </p>
                 </Form.Label>
                 <Form.Group controlId="title">
+                  <Form.Label>Title: </Form.Label>
                   {/* SET TITLE */}
                   <Form.Control
                     type="text"
@@ -62,6 +58,7 @@ const UploadWorkForm = () => {
                 </Form.Group>
                 {/* SET DESCRIPTION */}
                 <Form.Group controlId="description">
+                  <Form.Label>Description: </Form.Label>
                   <Form.Control
                     type="text"
                     name="description"
@@ -71,16 +68,18 @@ const UploadWorkForm = () => {
                     required
                   />
                 </Form.Group>
-                {/* UPLOAD FILE */}
-                <Form.Control
-                  type="file"
-                  className="file-input"
-                  size="lg"
-                  accept="image/*"
-                  name="file"
-                  value={file}
-                  onChange={handleFileChange}
-                />
+                {/* SET URL */}
+                <Form.Group controlId="url">
+                  <Form.Label>URL: </Form.Label>
+                  <Form.Control
+                    type="text"
+                    name="url"
+                    value={url}
+                    placeholder="Enter url"
+                    onChange={(e) => setURL(e.target.value)}
+                    required
+                  />
+                </Form.Group>
               </Form.Group>
             </Form>
           </Col>
