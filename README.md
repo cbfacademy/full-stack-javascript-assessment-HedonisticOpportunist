@@ -20,9 +20,9 @@ STATIC SITE URL: https://space-cats-frontend.onrender.com ❌
 
 [Wireframes documentation.](docs/design/wireframes.md)
 
-[Space Cats' tech stack documentation](docs/tech/tech_stack.md)
+[Tech stack documentation.](docs/tech/tech_stack.md)
 
-[Testing documentation](docs/tech/discarded_tech.md)
+[Testing documentation.](docs/tech/discarded_tech.md)
 
 ## REFERENCES
 
