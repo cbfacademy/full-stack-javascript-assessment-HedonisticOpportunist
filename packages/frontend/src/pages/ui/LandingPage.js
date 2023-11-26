@@ -8,7 +8,7 @@ const LandingPage = () => {
 
   // Display Date and Time Function
   useEffect(() => {
-    fetch("http://localhost:5000/")
+    fetch(process.env.REACT_APP_DEPLOYED_URL)
       .then((res) => res.json())
       .then((data) => setData(data.message));
   }, []);

@@ -8,7 +8,7 @@ import log from "loglevel";
 export async function login(email, password) {
   try {
     const { data } = await axios.post(
-      "http://localhost:5000/login",
+      process.env.REACT_APP_DEPLOYED_URL + "/login",
       {
         email,
         password,
@@ -28,7 +28,7 @@ export async function login(email, password) {
 export async function signup(username, email, password) {
   try {
     const { data } = await axios.post(
-      "http://localhost:5000/signup",
+      process.env.REACT_APP_DEPLOYED_URL + "/signup",
       {
         username,
         email,

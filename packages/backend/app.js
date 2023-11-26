@@ -7,6 +7,8 @@ const userRoute = require("./routes/userRoute");
 const suscriberRoute = require("./routes/suscriberRoute");
 const uploadFileRoute = require("./routes/fileUploadRoute");
 const app = express();
+require("dotenv").config();
+const { DEPLOYED_REACT_URL } = process.env;
 
 // Connect to the database
 connectToMongoDB();
@@ -16,7 +18,7 @@ connectToMongoDB();
 // Any further modifications and errors are mine and mine alone.
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: [DEPLOYED_REACT_URL],
     methods: ["GET", "POST", "PUT", "DELETE"],
     credentials: true,
   })

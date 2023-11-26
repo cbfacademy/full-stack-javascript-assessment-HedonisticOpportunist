@@ -22,7 +22,7 @@ const UserDashboard = () => {
         navigate("/login");
       }
       const { data } = await axios.post(
-        "http://localhost:5000/dashboard",
+        process.env.REACT_APP_DEPLOYED_URL + "/dashboard",
         {},
         { withCredentials: true }
       );

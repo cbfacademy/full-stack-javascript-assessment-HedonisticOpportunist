@@ -5,7 +5,7 @@ import log from "loglevel";
 export async function suscribe(email) {
   try {
     const { data } = await axios.post(
-      "http://localhost:5000/suscribe",
+      process.env.REACT_APP_DEPLOYED_URL + "/suscribe",
       {
         email,
       },
@@ -21,7 +21,7 @@ export async function unsuscribe(userEmail) {
   try {
     let email = await getSuscribers(userEmail);
     const { data } = await axios.delete(
-      "http://localhost:5000/delete/:" + email,
+      process.env.REACT_APP_DEPLOYED_URL + "/delete/:" + email,
       { withCredentials: true }
     );
     return handleResponse(data);
@@ -33,9 +33,12 @@ export async function unsuscribe(userEmail) {
 // GET SUSCRIBERS FUNCTION
 async function getSuscribers(email) {
   try {
-    const { data } = await axios.get("http://localhost:5000/suscribers", {
-      withCredentials: true,
-    });
+    const { data } = await axios.get(
+      process.env.REACT_APP_DEPLOYED_URL + "/suscribers",
+      {
+        withCredentials: true,
+      }
+    );
     return filterAndReturnEmail(data, email);
   } catch (error) {
     log.error(error);
