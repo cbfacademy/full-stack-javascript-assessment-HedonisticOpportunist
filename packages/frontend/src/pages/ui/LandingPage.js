@@ -8,7 +8,7 @@ const LandingPage = () => {
 
   // Display Date and Time Function
   useEffect(() => {
-    fetch("https://space-cats-backend.onrender.com")
+    fetch("https://space-cats-backend-server.vercel.app/")
       .then((res) => res.json())
       .then((data) => setData(data.message));
   }, []);
