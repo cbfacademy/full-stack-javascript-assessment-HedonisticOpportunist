@@ -5,7 +5,7 @@ import log from "loglevel";
 export async function suscribe(email) {
   try {
     const { data } = await axios.post(
-      "https://space-cats-backend.onrender.com/suscribe",
+      "https://space-cats-backend-server.vercel.app/suscribe",
       {
         email,
       },
@@ -21,7 +21,7 @@ export async function unsuscribe(userEmail) {
   try {
     let email = await getSuscribers(userEmail);
     const { data } = await axios.delete(
-      "https://space-cats-backend.onrender.com/delete/:" + email,
+      "https://space-cats-backend-server.vercel.app/delete/:" + email,
       { withCredentials: true }
     );
     return handleResponse(data);

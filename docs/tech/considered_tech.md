@@ -18,11 +18,15 @@ Similarly to _Three.js_ [1], _react-three_fiber_ [4] comes with a steep learning
 
 ## REDUX
 
-_Redux_ [5] is an intricate and daunting library that -- while not fully incoporated within the project -- did inspire the creation of a _constants_ and _services_ directory within the _frontend_ package.
+_Redux_ [5] is an intricate and daunting library that, while not fully incorporated within the project, inspired the creation of a _constants_ and _services_ directory within the _frontend_ package.
 
 ## NETLIFY
 
 _Netlify_ [6] seemed like a natural choice for hosting the front end; however, creating an account proved annoying due to suspension after sign-up and needing an identity verification to reactivate it.
+
+## render
+
+_render_ [7] was the initial choice for deployment, but _Vercel_ [8] proved to be a better alternative.
 
 ### REFERENCES
 
@@ -37,3 +41,7 @@ _Netlify_ [6] seemed like a natural choice for hosting the front end; however, c
 [5] https://redux.js.org/
 
 [6] https://www.netlify.com/
+
+[7] https://dashboard.render.com/
+
+[8] https://vercel.com
