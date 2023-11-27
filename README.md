@@ -10,13 +10,13 @@ Ultimately, _**Space Cats**_ aims to unite people who enjoy simple and cute game
 
 _**Space Cats**_ uses _Vercel.js_ for deployment [2].
 
-WEB SERVER URL: https://space-cats-backend-server.vercel.app/
+WEB SERVER URL: https://space-cats-backend-server.vercel.app/ ✔️
 
 # FRONTEND DEPLOYMENT
 
-STATIC SITE URL: https://space-cats.vercel.app/ ✔️
+STATIC SITE URL: https://space-cats.vercel.app/ ✔️ However, CORS-Policy is blocking the backend and frontend from communicating. 
 
-## OTHER DOCUMENTATION
+# OTHER DOCUMENTATION
 
 [User Workflow](docs/design/user_flow.md)
 
