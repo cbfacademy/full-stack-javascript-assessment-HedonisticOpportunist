@@ -46,8 +46,7 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@babel/plugin-transform-private-property-in-object": "^7.22.11",
-    "netlify-cli": "^17.7.0"
+    "@babel/plugin-transform-private-property-in-object": "^7.22.11"
   },
   "engines": {
     "node": ">=18.18.0 <19.0.0"

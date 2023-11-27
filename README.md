@@ -6,11 +6,11 @@ _**Space Cats**_ is a game web application similar to _Newgrounds_ [1], where us
 
 Ultimately, _**Space Cats**_ aims to unite people who enjoy simple and cute games.
 
-# BACKEND DEPLOYMENT
+# DEPLOYMENT
 
-_**Space Cats**_ uses _render_ for deployment [2], taking advantage of its free service tier [3].
+_**Space Cats**_ uses _Vercel.js_ for deployment [2].
 
-WEB SERVER URL: https://space-cats-backend.onrender.com ✔️
+WEB SERVER URL:
 
 # FRONTEND DEPLOYMENT
 
@@ -18,18 +18,22 @@ STATIC SITE URL: https://space-cats.vercel.app/ ✔️
 
 ## OTHER DOCUMENTATION
 
-[User workflow documentation.](docs/design/user_flow.md)
+[User Workflow](docs/design/user_flow.md)
 
-[Wireframe documentation.](docs/design/wireframes.md)
+[Wireframes](docs/design/wireframes.md)
 
-[Tech stack documentation.](docs/tech/tech_stack.md)
+[Tech Stack](docs/tech/tech_stack.md)
 
-[Testing documentation.](docs/tech/discarded_tech.md)
+[Games](docs/tech/creative/games.md)
+
+[Interactive Art](docs/tech/creative/art.md)
+
+[Considered Tech Stack](docs/tech/considered_tech.md)
+
+[Testing](docs/tech/testing/testing.md)
 
 ## REFERENCES
 
 [1] https://www.newgrounds.com/
 
-[2] https://render.com/
-
-[3] https://dev.to/kunalukey/how-to-setup-and-deploy-a-mern-stack-project-for-free-5acl
+[2] https://vercel.com/
