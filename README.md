@@ -10,7 +10,7 @@ Ultimately, _**Space Cats**_ aims to unite people who enjoy simple and cute game
 
 _**Space Cats**_ uses _Vercel.js_ for deployment [2].
 
-WEB SERVER URL:
+WEB SERVER URL: https://space-cats-backend-server.vercel.app/
 
 # FRONTEND DEPLOYMENT
 
