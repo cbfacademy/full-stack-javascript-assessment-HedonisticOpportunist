@@ -14,7 +14,7 @@ WEB SERVER URL: https://space-cats-backend-server.vercel.app/ ✔️
 
 # FRONTEND DEPLOYMENT
 
-STATIC SITE URL: https://space-cats.vercel.app/ ✔️ However, CORS-Policy is blocking the backend and frontend from communicating. 
+STATIC SITE URL: https://space-cats.vercel.app/ ✔️
 
 # OTHER DOCUMENTATION
 
