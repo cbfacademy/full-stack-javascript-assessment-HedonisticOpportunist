@@ -6,7 +6,7 @@ import log from "loglevel";
 export async function upload(title, description, url) {
   try {
     const { data } = await axios.post(
-      "https://space-cats-backend.onrender.com/uploads",
+      "https://space-cats-backend-server.vercel.app/uploads",
       {
         title,
         description,
