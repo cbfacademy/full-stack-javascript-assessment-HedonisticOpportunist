@@ -9,7 +9,7 @@ jobs:
     # Run workflow on the latest version of Ubuntu
     runs-on: ubuntu-latest
   #Adding Continuous Integration
-  steps:
+    steps:
     - name: Checkout code
       uses: actions/checkout@v2
     - name: Set up Node.js
