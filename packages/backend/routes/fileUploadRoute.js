@@ -1,3 +1,4 @@
+const cors = require("cors");
 const router = require("express").Router();
 const { uploadFile } = require("../controllers/uploads/fileUploadController");
 
@@ -5,6 +6,7 @@ const { uploadFile } = require("../controllers/uploads/fileUploadController");
 // Any further modifications and errors are mine and mine alone.
 
 // POST ROUTES
+router.options("*", cors());
 router.post("/uploads", uploadFile);
 
 module.exports = router;

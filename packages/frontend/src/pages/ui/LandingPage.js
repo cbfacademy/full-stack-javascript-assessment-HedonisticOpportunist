@@ -1,6 +1,7 @@
 import { Card, Container, Col, Row } from "react-bootstrap";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
+import { prodUrlConstants } from "../../constants/prodUrlConstants";
 import { useEffect, useState } from "react";
 
 const LandingPage = () => {
@@ -8,7 +9,7 @@ const LandingPage = () => {
 
   // Display Date and Time Function
   useEffect(() => {
-    fetch("https://space-cats-backend-server.vercel.app/")
+    fetch(prodUrlConstants.MAIN_ENDPOINT)
       .then((res) => res.json())
       .then((data) => setData(data.message));
   }, []);

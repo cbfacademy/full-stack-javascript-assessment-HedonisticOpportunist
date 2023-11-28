@@ -11,6 +11,8 @@ module.exports.login = async (req, res, next) => {
   try {
     // Check that the email and password fields are populated
     const { email, password } = req.body;
+
+    // Check if the email and password were provided
     if (!email || !password) {
       return res.json({
         message: "The email and password fields are required.",
@@ -35,6 +37,8 @@ module.exports.login = async (req, res, next) => {
       withCredentials: true,
       httpOnly: false,
     });
+
+    // Indicate that the action was a success
     res
       .status(201)
       .json({ message: "User logged in successfully.", success: true });

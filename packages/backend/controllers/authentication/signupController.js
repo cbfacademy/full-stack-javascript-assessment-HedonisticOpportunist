@@ -12,6 +12,8 @@ module.exports.signup = async (req, res, next) => {
 
     // Check that the user does not already exist
     const existingUser = await User.findOne({ email });
+
+    // Check if the user exists
     if (existingUser) {
       return res.json({ message: "User already exists." });
     }
@@ -25,6 +27,8 @@ module.exports.signup = async (req, res, next) => {
       withCredentials: true,
       httpOnly: false,
     });
+
+    // Indicate that the action was a success
     res
       .status(201)
       .json({ message: "User signed in successfully.", success: true, user });

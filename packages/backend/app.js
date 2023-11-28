@@ -14,19 +14,13 @@ connectToMongoDB();
 // THIRD PARTY MIDDLEWARE
 // Credit @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
 // Any further modifications and errors are mine and mine alone.
-app.use(
-  cors({
-    origin: ["https://space-cats.vercel.app/"],
-    methods: ["GET", "POST", "PUT", "DELETE"],
-    credentials: true,
-  })
-);
+app.use(cors());
 app.use(cookieParser());
 app.use(express.json());
 
 // HOMEPAGE GET ROUTE
-app.get("/", (_request, response) => {
-  response.json({
+app.get("/", (res, req) => {
+  res.json({
     message: welcomeMessage() + " " + getDate(),
   });
 });

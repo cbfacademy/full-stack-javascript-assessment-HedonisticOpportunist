@@ -8,19 +8,19 @@ jobs:
   build:
     # Run workflow on the latest version of Ubuntu
     runs-on: ubuntu-latest
-  #Adding Continuous Integration
+    #Adding Continuous Integration
     steps:
-    - name: Checkout code
-      uses: actions/checkout@v2
-    - name: Set up Node.js
-      uses: actions/setup-node@v2
-      with:
-        node-version: "18"
-    - name: Install dependencies
-      run: |
-        cd full-stack-javascript-assessment-HedonisticOpportunist
-        npm install
-    - name: Run Jest tests
-      run: |
-        cd full-stack-javascript-assessment-HedonisticOpportunist
-        npm test
+      - name: Checkout code
+        uses: actions/checkout@v2
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: "18"
+      - name: Install dependencies
+        run: |
+          cd packages/backend/
+          npm install
+      - name: Run Jest tests
+        run: |
+          cd packages/backend
+          npm test
