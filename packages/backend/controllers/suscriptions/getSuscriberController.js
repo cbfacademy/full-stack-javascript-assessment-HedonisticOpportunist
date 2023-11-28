@@ -7,7 +7,10 @@ const Suscribers = require("../../models/suscriberModel");
 // SUSCRIBE CONTROLLER
 module.exports.getSuscribers = async (req, res, next) => {
   try {
+    // Look for suscribers
     const suscribers = await Suscribers.find(req.body);
+
+    // Indicate that the action was a success
     res.status(201).json({
       message: "Users retrieved successfully.",
       success: true,

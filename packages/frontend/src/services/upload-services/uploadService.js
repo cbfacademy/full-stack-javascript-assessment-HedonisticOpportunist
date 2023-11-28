@@ -1,12 +1,13 @@
 import axios from "axios";
 import { handleResponse } from "../helpers/serviceHelpers";
 import log from "loglevel";
+import { prodUrlConstants } from "../../constants/prodUrlConstants";
 
 // UPLOAD FUNCTION
 export async function upload(title, description, url) {
   try {
     const { data } = await axios.post(
-      "https://space-cats-backend-server.vercel.app/uploads",
+      prodUrlConstants.UPLOAD_ENDPOINT,
       {
         title,
         description,

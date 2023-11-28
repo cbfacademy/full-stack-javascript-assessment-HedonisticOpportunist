@@ -1,6 +1,7 @@
 import axios from "axios";
 import { handleResponse } from "../helpers/serviceHelpers";
 import log from "loglevel";
+import { prodUrlConstants } from "../../constants/prodUrlConstants";
 
 // LOGIN FUNCTION
 // Credit @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
@@ -8,7 +9,7 @@ import log from "loglevel";
 export async function login(email, password) {
   try {
     const { data } = await axios.post(
-      "https://space-cats-backend-server.vercel.app/login",
+      prodUrlConstants.LOGIN_ENDPOINT,
       {
         email,
         password,
@@ -28,7 +29,7 @@ export async function login(email, password) {
 export async function signup(username, email, password) {
   try {
     const { data } = await axios.post(
-      "https://space-cats-backend-server.vercel.app/signup",
+      prodUrlConstants.SIGN_UP_ENDPOINT,
       {
         username,
         email,

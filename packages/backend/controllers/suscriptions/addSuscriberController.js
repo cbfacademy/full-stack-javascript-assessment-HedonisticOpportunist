@@ -11,12 +11,15 @@ module.exports.addSuscriber = async (req, res, next) => {
     const { email, createdAt } = req.body;
     const existingSuscriber = await Suscriber.findOne({ email });
 
+    // Check if the user exists
     if (existingSuscriber) {
       return res.json({ message: "User already exists." });
     }
 
     // Create new suscriber
     const suscriber = await Suscriber.create({ email, createdAt });
+
+    // Indicate that the action was a success
     res.status(201).json({
       message: "User suscribed successfully.",
       success: true,

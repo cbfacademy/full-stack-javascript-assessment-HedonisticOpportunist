@@ -1,3 +1,4 @@
+const cors = require("cors");
 const { login } = require("../controllers/authentication/loginController");
 const { signup } = require("../controllers/authentication/signupController");
 const { userVerification } = require("../middleware/userMiddleware");
@@ -7,6 +8,7 @@ const router = require("express").Router();
 // Any further modifications and errors are mine and mine alone.
 
 // POST ROUTES
+router.options("*", cors());
 router.post("/signup", signup);
 router.post("/login", login);
 router.post("/dashboard", userVerification);
