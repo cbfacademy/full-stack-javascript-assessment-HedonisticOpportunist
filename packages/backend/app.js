@@ -16,9 +16,9 @@ connectToMongoDB();
 // Any further modifications and errors are mine and mine alone.
 app.use(
   cors({
-    origin: ["http://localhost:3000"],
+    origin: ["https://space-cats.vercel.app/"],
     methods: ["GET", "POST", "PUT", "DELETE"],
-    preflightContinue: true,
+    preflightContinue: false,
     credentials: true,
   })
 );
