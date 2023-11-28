@@ -14,7 +14,14 @@ connectToMongoDB();
 // THIRD PARTY MIDDLEWARE
 // Credit @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
 // Any further modifications and errors are mine and mine alone.
-app.use(cors());
+app.use(
+  cors({
+    origin: ["http://localhost:3000"],
+    methods: ["GET", "POST", "PUT", "DELETE"],
+    preflightContinue: true,
+    credentials: true,
+  })
+);
 app.use(cookieParser());
 app.use(express.json());
 
