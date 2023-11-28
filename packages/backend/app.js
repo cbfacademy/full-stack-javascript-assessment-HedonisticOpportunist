@@ -19,8 +19,8 @@ app.use(cookieParser());
 app.use(express.json());
 
 // HOMEPAGE GET ROUTE
-app.get("/", (req, res) => {
-  res.json({
+app.get("/", (_request, response) => {
+  response.json({
     message: welcomeMessage() + " " + getDate(),
   });
 });
