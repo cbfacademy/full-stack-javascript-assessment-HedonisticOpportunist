@@ -2,6 +2,8 @@ import axios from "axios";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import DashboardBreadcrumbs from "../../components/navigation/DashboardBreadcrumbs";
 import { LazyLoadImage } from "react-lazy-load-image-component";
+import { localUrlConstants } from "../../constants/localUrlConstant";
+import { prodUrlConstants } from "../../constants/prodUrlConstants";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { useCookies } from "react-cookie";
@@ -21,12 +23,16 @@ const UserDashboard = () => {
       if (!cookies.token) {
         navigate("/login");
       }
+      // Define the main url depending on dot env setitngs
+      const mainUrl =
+        process.env.REACT_APP_ENV === "production"
+          ? prodUrlConstants.MAIN_ENDPOINT
+          : localUrlConstants.MAIN_ENDPOINT;
       const { data } = await axios.post(
-        process.env.REACT_APP_DEPLOYED_URL + "/dashboard",
+        mainUrl + "/dashboard",
         {},
         { withCredentials: true }
       );
-
       const { status, user } = data;
       return status
         ? setMessage(`Hello ${user}. Welcome to the dashboard!`, {

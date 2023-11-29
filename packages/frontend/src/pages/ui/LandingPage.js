@@ -1,17 +1,19 @@
 import { Card, Container, Col, Row } from "react-bootstrap";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
-import { prodUrlConstants } from "../../constants/prodUrlConstants";
+import { getWelcomeMessage } from "../../services/ui/uiServices";
 import { useEffect, useState } from "react";
 
 const LandingPage = () => {
   const [data, setData] = useState(null);
 
-  // Display Date and Time Function
+  // Declare async function to set data
+  async function fetchData() {
+    const message = await getWelcomeMessage();
+    setData(message);
+  }
   useEffect(() => {
-    fetch(prodUrlConstants.MAIN_ENDPOINT)
-      .then((res) => res.json())
-      .then((data) => setData(data.message));
+    fetchData();
   }, []);
   return (
     <>

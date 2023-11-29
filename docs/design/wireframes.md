@@ -20,4 +20,4 @@ The wireframe below shows the user dashboard page [2].
 
 [1] https://www.experienceux.co.uk/faqs/what-is-wireframing/
 
-[2] https://app.moqups.com
+[2] https://en.wikipedia.org/wiki/Microsoft_Paint

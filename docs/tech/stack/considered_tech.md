@@ -1,4 +1,4 @@
-# 🐈‍⬛ SPACE CATS - BACKEND | FRONT END | DEPLOYMENT TOOLS THAT WERE CONSIDERED
+# 🐈‍⬛ SPACE CATS - TOOLS THAT WERE CONSIDERED
 
 These libraries will be revisited for later purposes, though ❥.
 
