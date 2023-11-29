@@ -18,7 +18,7 @@ app.use(
   cors({
     origin: ["https://space-cats.vercel.app"],
     methods: ["GET", "POST", "PUT", "DELETE", "OPTIONS"],
-    preflightContinue: false,
+    preflightContinue: true,
     credentials: true,
   })
 );
