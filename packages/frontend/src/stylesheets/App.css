@@ -21,6 +21,16 @@ body {
   justify-content: center;
 }
 
+/* DASHBOARD HEADER */
+/* @ https://stackoverflow.com/questions/59571603/move-image-next-to-header */
+.dashboard-header {
+  background-color: #27374d;
+  padding: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 /* FOOTER */
 .footer {
   position: fixed;

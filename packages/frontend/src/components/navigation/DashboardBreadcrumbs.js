@@ -1,5 +1,5 @@
 import { Container, Col, Row } from "react-bootstrap";
-import Header from "../ui/Header";
+import DashboardHeader from "../ui/DashboardHeader";
 import { Link } from "react-router-dom";
 
 const DashboardBreadcrumbs = () => {
@@ -8,7 +8,7 @@ const DashboardBreadcrumbs = () => {
       <Container fluid>
         <Row>
           <Col>
-            <Header></Header>
+            <DashboardHeader></DashboardHeader>
           </Col>
           <Col>
             <ul className="breadcrumb">

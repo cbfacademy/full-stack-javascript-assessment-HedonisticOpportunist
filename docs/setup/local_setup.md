@@ -1,0 +1,59 @@
+# 🐈‍⬛ SPACE CATS - LOCAL SETUP
+
+**_Space Cats_** is set up to deploy the application locally or via a hosting service.
+
+This behaviour is dictated by .env files in both the _frontend_ and _backend_ packages.
+
+## 🐈‍⬛ SPACE CATS - BACKEND ENVIRONMENT VARIABLES
+
+Create a .env file in the root of the _backend_ directory and set the following variables:
+
+```
+NODE_ENV=production
+
+FRONTEND_PROD_URL=https://space-cats.vercel.app
+
+FRONTEND_LOCAL_URL=http://localhost:3000
+```
+
+The application will run locally if the _NODE_ENV_ variable does not equal _production_.
+
+It would help if you also assigned values for the variables _PORT_, _TOKEN_KEY_ and _MONGO_URL_.
+
+## 🐈‍⬛ SPACE CATS - FRONTEND ENVIRONMENT VARIABLES
+
+Create a .env file in the root of the _frontend_ directory and set the following variable:
+
+```
+REACT_APP_ENV=production
+```
+
+The application will run locally if the _REACT_APP_ENV_ variable does not equal _production_.
+
+## 🐈‍⬛ SPACE CATS - BUILDING THE APPLICATION
+
+To build the _backend_ from the _root_ directory, type in:
+
+```
+npm run start:backend
+```
+
+Likewise, to build the _frontend_ from the _root_ directory, use the command:
+
+```
+npm run start:backend
+```
+
+## 🐈‍⬛ SPACE CATS - BUILDING THE APPLICATION
+
+To run the _backend_ tests from the _root_ directory:
+
+```
+npm run test:backend
+```
+
+Likewise, to run the _frontend_ tests from the _root_ directory:
+
+```
+npm run test:frontend
+```
