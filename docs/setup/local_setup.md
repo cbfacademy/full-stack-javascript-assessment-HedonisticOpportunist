@@ -6,7 +6,7 @@ This behaviour is dictated by .env files in both the _frontend_ and _backend_ pa
 
 ## 🐈‍⬛ SPACE CATS - BACKEND ENVIRONMENT VARIABLES
 
-Create a .env file in the root of the _backend_ directory and set the following variables:
+Create a _.env_ file in the root of the _backend_ directory and set the following variables:
 
 ```
 NODE_ENV=production
@@ -44,7 +44,7 @@ Likewise, to build the _frontend_ from the _root_ directory, use the command:
 npm run start:backend
 ```
 
-## 🐈‍⬛ SPACE CATS - BUILDING THE APPLICATION
+## 🐈‍⬛ SPACE CATS - TESTING THE APPLICATION
 
 To run the _backend_ tests from the _root_ directory:
 
