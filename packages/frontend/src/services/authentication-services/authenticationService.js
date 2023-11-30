@@ -8,7 +8,7 @@ import log from "loglevel";
 // Any further modifications and errors are mine and mine alone.
 export async function login(email, password) {
   try {
-    const loginUrl = getURL(loginUrl, "LOGIN");
+    const loginUrl = getURL("LOGIN");
     const { data } = await axios.post(
       loginUrl,
       {
@@ -29,7 +29,7 @@ export async function login(email, password) {
 // Any further modifications and errors are mine and mine alone.
 export async function signup(username, email, password) {
   try {
-    const signUpUrl = getURL(signUpUrl, "SIGNUP");
+    const signUpUrl = getURL("SIGNUP");
     const { data } = await axios.post(
       signUpUrl,
       {

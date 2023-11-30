@@ -2,8 +2,6 @@ import axios from "axios";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import DashboardBreadcrumbs from "../../components/navigation/DashboardBreadcrumbs";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { localUrlConstants } from "../../constants/localUrlConstant";
-import { prodUrlConstants } from "../../constants/prodUrlConstants";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import { getURL } from "../../services/helpers/urlHelpers";
@@ -24,7 +22,7 @@ const UserDashboard = () => {
       if (!cookies.token) {
         navigate("/login");
       }
-      const dashboardUrl = getURL(dashboardUrl, "VIEW_DASHBOARD");
+      const dashboardUrl = getURL("VIEW_DASHBOARD");
       const { data } = await axios.post(
         dashboardUrl,
         {},
