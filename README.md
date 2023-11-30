@@ -8,11 +8,13 @@ Ultimately, _**Space Cats**_ aims to unite people who enjoy simple and cute game
 
 ## DEPLOYMENT
 
-_**Space Cats**_ uses _Vercel.js_ for deployment [2].
+_**Space Cats**_ uses _render_ for frontend deployment [2].
 
-WEB SERVER URL: https://space-cats-backend-server.vercel.app/ ✔️
+WEB SERVER URL: https://space-cats-backend-rfpo.onrender.com ✔️
 
 ## FRONTEND DEPLOYMENT
+
+_**Space Cats**_ uses _Vercel_ for frontend deployment [3].
 
 STATIC SITE URL: https://space-cats.vercel.app/ ✔️
 
@@ -46,4 +48,6 @@ STATIC SITE URL: https://space-cats.vercel.app/ ✔️
 
 [1] https://www.newgrounds.com/
 
-[2] https://vercel.com/
+[2] https://dashboard.render.com/
+
+[3] https://vercel.com/

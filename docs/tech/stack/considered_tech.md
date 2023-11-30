@@ -24,10 +24,6 @@ _Redux_ [5] is an intricate and daunting library that, while not fully incorpora
 
 _Netlify_ [6] seemed like a natural choice for hosting the front end; however, creating an account proved annoying due to suspension after sign-up and needing an identity verification to reactivate it.
 
-## render
-
-_render_ [7] was the initial choice for deployment, but _Vercel_ [8] proved to be a better alternative.
-
 ### REFERENCES
 
 [1] https://threejs.org/
@@ -41,7 +37,3 @@ _render_ [7] was the initial choice for deployment, but _Vercel_ [8] proved to b
 [5] https://redux.js.org/
 
 [6] https://www.netlify.com/
-
-[7] https://dashboard.render.com/
-
-[8] https://vercel.com
