@@ -14,4 +14,7 @@ export const prodUrlConstants = {
 
   // UPLOAD ENDPOINTS
   UPLOAD_ENDPOINT: "https://space-cats-backend-server.vercel.app/uploads",
+
+  // DASHBOARD ENDPOINT
+  DASHBOARD_ENDPOINT: "https://space-cats-backend-server.vercel.app/dashboard",
 };

@@ -6,6 +6,7 @@ import { localUrlConstants } from "../../constants/localUrlConstant";
 import { prodUrlConstants } from "../../constants/prodUrlConstants";
 import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { getURL } from "../../services/helpers/urlHelpers";
 import { useCookies } from "react-cookie";
 
 const UserDashboard = () => {
@@ -23,13 +24,9 @@ const UserDashboard = () => {
       if (!cookies.token) {
         navigate("/login");
       }
-      // Define the main url depending on dot env setitngs
-      const mainUrl =
-        process.env.REACT_APP_ENV === "production"
-          ? prodUrlConstants.MAIN_ENDPOINT
-          : localUrlConstants.MAIN_ENDPOINT;
+      const dashboardUrl = getURL(dashboardUrl, "VIEW_DASHBOARD");
       const { data } = await axios.post(
-        mainUrl + "/dashboard",
+        dashboardUrl,
         {},
         { withCredentials: true }
       );

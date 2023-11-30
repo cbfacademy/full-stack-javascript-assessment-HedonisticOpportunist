@@ -13,4 +13,7 @@ export const localUrlConstants = {
 
   // UPLOAD ENDPOINTS
   UPLOAD_ENDPOINT: "http://localhost:5000/uploads",
+
+  // DASHBOARD ENDPOINT
+  DASHBOARD_ENDPOINT: "http://localhost:5000/dashboard",
 };
