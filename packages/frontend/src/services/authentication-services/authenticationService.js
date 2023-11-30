@@ -1,19 +1,14 @@
 import axios from "axios";
 import { handleResponse } from "../helpers/serviceHelpers";
+import { getURL } from "../helpers/urlHelpers";
 import log from "loglevel";
-import { localUrlConstants } from "../../constants/localUrlConstant";
-import { prodUrlConstants } from "../../constants/prodUrlConstants";
 
 // LOGIN FUNCTION
 // Credit @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
 // Any further modifications and errors are mine and mine alone.
 export async function login(email, password) {
   try {
-    // Define the login url depending on dot env setitngs
-    const loginUrl =
-      process.env.REACT_APP_ENV === "production"
-        ? prodUrlConstants.LOGIN_ENDPOINT
-        : localUrlConstants.LOGIN_ENDPOINT;
+    const loginUrl = getURL(loginUrl, "LOGIN");
     const { data } = await axios.post(
       loginUrl,
       {
@@ -34,11 +29,7 @@ export async function login(email, password) {
 // Any further modifications and errors are mine and mine alone.
 export async function signup(username, email, password) {
   try {
-    // Define the sign up url depending on dot env setitngs
-    const signUpUrl =
-      process.env.REACT_APP_ENV === "production"
-        ? prodUrlConstants.SIGN_UP_ENDPOINT
-        : localUrlConstants.SIGN_UP_ENDPOINT;
+    const signUpUrl = getURL(signUpUrl, "SIGNUP");
     const { data } = await axios.post(
       signUpUrl,
       {
