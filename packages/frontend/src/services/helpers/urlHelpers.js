@@ -1,7 +1,9 @@
 import { localUrlConstants } from "../../constants/localUrlConstant";
 import { prodUrlConstants } from "../../constants/prodUrlConstants";
 
-export function getURL(url, userAction) {
+export function getURL(userAction) {
+  let url = "";
+
   if (userAction === "VIEW_MESSAGE") {
     url =
       process.env.REACT_APP_ENV === "production"

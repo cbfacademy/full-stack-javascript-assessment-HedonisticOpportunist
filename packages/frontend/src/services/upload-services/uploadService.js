@@ -6,7 +6,7 @@ import log from "loglevel";
 // UPLOAD FUNCTION
 export async function upload(title, description, url) {
   try {
-    const uploadUrl = getURL(uploadUrl, "UPLOAD");
+    const uploadUrl = getURL("UPLOAD");
     const { data } = await axios.post(
       uploadUrl,
       {

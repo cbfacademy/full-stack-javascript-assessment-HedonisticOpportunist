@@ -5,7 +5,7 @@ import log from "loglevel";
 
 export async function suscribe(email) {
   try {
-    const suscribeUrl = getURL(suscribeUrl, "SUSCRIBE");
+    const suscribeUrl = getURL("SUSCRIBE");
     const { data } = await axios.post(
       suscribeUrl,
       {
@@ -21,7 +21,7 @@ export async function suscribe(email) {
 
 export async function unsuscribe(userEmail) {
   try {
-    const unsuscribeUrl = getURL(unsuscribeUrl, "UNSUSCRIBE");
+    const unsuscribeUrl = getURL("UNSUSCRIBE");
     let email = await getSuscribers(userEmail);
     const { data } = await axios.delete(unsuscribeUrl + email, {
       withCredentials: true,
@@ -35,7 +35,7 @@ export async function unsuscribe(userEmail) {
 // GET SUSCRIBERS FUNCTION
 async function getSuscribers(email) {
   try {
-    const getSuscribersUrl = getURL(getSuscribers, "GET_SUSCRIBERS");
+    const getSuscribersUrl = getURL("GET_SUSCRIBERS");
     const { data } = await axios.get(getSuscribersUrl);
     return filterAndReturnEmail(data, email);
   } catch (error) {
