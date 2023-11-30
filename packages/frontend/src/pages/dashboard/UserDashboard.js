@@ -26,9 +26,14 @@ const UserDashboard = () => {
       const { data } = await axios.post(
         dashboardUrl,
         {},
-        { withCredentials: true }
+        {
+          withCredentials: true,
+          credentials: "include",
+        }
       );
       const { status, user } = data;
+      console.log(data);
+      console.log(status);
       return status
         ? setMessage(`Hello ${user}. Welcome to the dashboard!`, {
             position: "top-right",

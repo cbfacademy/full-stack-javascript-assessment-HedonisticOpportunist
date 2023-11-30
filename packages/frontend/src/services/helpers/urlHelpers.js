@@ -6,56 +6,56 @@ export function getURL(userAction) {
 
   if (userAction === "VIEW_MESSAGE") {
     url =
-      process.env.REACT_APP_ENV === "production"
+      process.env.REACT_APP_ENV === "PRODUCTION"
         ? prodUrlConstants.MAIN_ENDPOINT
         : localUrlConstants.MAIN_ENDPOINT;
   }
 
   if (userAction === "LOGIN") {
     url =
-      process.env.REACT_APP_ENV === "production"
+      process.env.REACT_APP_ENV === "PRODUCTION"
         ? prodUrlConstants.LOGIN_ENDPOINT
         : localUrlConstants.LOGIN_ENDPOINT;
   }
 
   if (userAction === "SIGNUP") {
     url =
-      process.env.REACT_APP_ENV === "production"
+      process.env.REACT_APP_ENV === "PRODUCTION"
         ? prodUrlConstants.SIGN_UP_ENDPOINT
         : localUrlConstants.SIGN_UP_ENDPOINT;
   }
 
   if (userAction === "SUSCRIBE") {
     url =
-      process.env.REACT_APP_ENV === "production"
+      process.env.REACT_APP_ENV === "PRODUCTION"
         ? prodUrlConstants.SUSCRIBE_ENDPOINT
         : localUrlConstants.SUSCRIBE_ENDPOINT;
   }
 
   if (userAction === "UNSUSCRIBE") {
     url =
-      process.env.REACT_APP_ENV === "production"
+      process.env.REACT_APP_ENV === "PRODUCTION"
         ? prodUrlConstants.UNSUSCRIBE_ENDPOINT
         : localUrlConstants.UNSUSCRIBE_ENDPOINT;
   }
 
   if (userAction === "GET_SUSCRIBERS") {
     url =
-      process.env.REACT_APP_ENV === "production"
+      process.env.REACT_APP_ENV === "PRODUCTION"
         ? prodUrlConstants.GET_SUSCRIBERS_ENDPOINT
         : localUrlConstants.GET_SUSCRIBERS_ENDPOINT;
   }
 
   if (userAction === "UPLOAD") {
     url =
-      process.env.REACT_APP_ENV === "production"
+      process.env.REACT_APP_ENV === "PRODUCTION"
         ? prodUrlConstants.UPLOAD_ENDPOINT
         : localUrlConstants.UPLOAD_ENDPOINT;
   }
 
   if (userAction === "VIEW_DASHBOARD") {
     url =
-      process.env.REACT_APP_ENV === "production"
+      process.env.REACT_APP_ENV === "PRODUCTION"
         ? prodUrlConstants.DASHBOARD_ENDPOINT
         : localUrlConstants.DASHBOARD_ENDPOINT;
   }

@@ -1,6 +1,7 @@
 const { connectToMongoDB } = require("./database/connectToDB");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
+require("dotenv").config();
 const express = require("express");
 require("dotenv").config();
 const { getDate, welcomeMessage } = require("./util/landingPageMessages");
@@ -12,6 +13,12 @@ const app = express();
 // Connect to the database
 connectToMongoDB();
 
+// Get the origin from the .env file
+originUrl =
+  process.env.NODE_ENV === "PRODUCTION"
+    ? process.env.FRONTEND_PROD_URL
+    : process.env.FRONTEND_LOCAL_URL;
+
 // THIRD PARTY MIDDLEWARE
 // Credit @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
 // Any further modifications and errors are mine and mine alone.
@@ -20,7 +27,7 @@ app.use(
     credentials: true,
     preflightContinue: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
-    origin: true,
+    origin: originUrl,
   })
 );
 app.use(cookieParser());

@@ -9,7 +9,7 @@ This behaviour is dictated by .env files in both the _frontend_ and _backend_ pa
 Create a _.env_ file in the root of the _backend_ directory and set the following variables:
 
 ```
-NODE_ENV=production
+NODE_ENV=PRODUCTION
 
 FRONTEND_PROD_URL=https://space-cats.vercel.app
 
@@ -25,7 +25,7 @@ It would help if you also assigned values for the variables _PORT_, _TOKEN_KEY_ 
 Create a .env file in the root of the _frontend_ directory and set the following variable:
 
 ```
-REACT_APP_ENV=production
+REACT_APP_ENV=PRODUCTION
 ```
 
 The application will run locally if the _REACT_APP_ENV_ variable does not equal _production_.
