@@ -9,6 +9,7 @@
   "headers": [
     {
       "headers": [
+         "source": "/(.*)",
         {
           "key": "Access-Control-Allow-Credentials",
           "value": "true"
