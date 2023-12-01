@@ -40,7 +40,9 @@ export async function unsuscribe(userEmail) {
 async function getSuscribers(email) {
   try {
     const getSuscribersUrl = getURL("GET_SUSCRIBERS");
-    const { data } = await axios.get(getSuscribersUrl);
+    const { data } = await axios.get(getSuscribersUrl, {
+      withCredentials: true,
+    });
     return filterAndReturnEmail(data, email);
   } catch (error) {
     log.error(error);

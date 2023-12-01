@@ -18,10 +18,6 @@ In _**Space Cats**_, _MongoDB_, a cross-platform NoSQL database, helps store dat
 
 More [art facts are listed in the following file](creative/art.md), while information about the games [can be found here](creative/games.md).
 
-## AUTHENTICATION
-
-To protect sensitive information and stop unauthorised users from accessing the dashboard, _**Space Cats**_ uses JWT (JSON Web Token)-based user authentication and authorisation, based on an implementation by FADAHUNSI SEYI SAMUEL @ freecodecamp. [7].
-
 ### REFERENCES
 
 [1] https://react.dev/
@@ -35,5 +31,3 @@ To protect sensitive information and stop unauthorised users from accessing the 
 [5] https://www.npmjs.com/package//mongoose
 
 [6] https://p5js.org/
-
-[7] https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
