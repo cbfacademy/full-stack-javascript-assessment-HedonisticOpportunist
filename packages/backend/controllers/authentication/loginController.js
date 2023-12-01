@@ -3,7 +3,7 @@ const logger = require("pino")();
 const User = require("../../models/userModel");
 const bcrypt = require("bcryptjs");
 
-// Credit @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
+// Credit: @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
 // Any further modifications and errors are mine and mine alone.
 
 // LOGIN CONTROLLER
@@ -34,11 +34,9 @@ module.exports.login = async (req, res, next) => {
     // Create a secret token
     const token = createSecretToken(user._id);
     res.cookie("token", token, {
-      withCredentials: true,
-      secure: true,
-      httpOnly: false,
-      sessionStorage: user,
-      sameSite: "lax",
+      path: "/",
+      maxAge: 24 * 60 * 60 * 1000,
+      httpOnly: true,
     });
 
     // Indicate that the action was a success

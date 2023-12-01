@@ -15,7 +15,7 @@ const UploadWorkForm = () => {
     let response = await upload(title, description, url);
     if (response) {
       // Post a success message if everything went well
-      setMessage(messageConstants.UPLOAD_SUCCEDSS);
+      setMessage(messageConstants.UPLOAD_SUCCESS);
     } else {
       setMessage(messageConstants.UPLOAD_ERROR);
     }

@@ -1,4 +1,4 @@
-// HELPER FUNCTIONS //
+// SERIVCE HELPERS //
 
 export async function handleResponse(responseData) {
   // Flag that checks if response was successful or not

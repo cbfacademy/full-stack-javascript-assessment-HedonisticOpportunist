@@ -1,8 +1,11 @@
+// SUSCRIBER SERVICE //
+
 import axios from "axios";
 import { handleResponse } from "../helpers/serviceHelpers";
 import { getURL } from "../helpers/urlHelpers";
 import log from "loglevel";
 
+// SUSCRIBE FUNCTION
 export async function suscribe(email) {
   try {
     const suscribeUrl = getURL("SUSCRIBE");
@@ -19,6 +22,7 @@ export async function suscribe(email) {
   }
 }
 
+// UNSUSCRIBE FUNCTION
 export async function unsuscribe(userEmail) {
   try {
     const unsuscribeUrl = getURL("UNSUSCRIBE");

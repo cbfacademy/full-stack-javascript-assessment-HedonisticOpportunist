@@ -1,3 +1,5 @@
+// URL HELPERS //
+
 import { localUrlConstants } from "../../constants/localUrlConstant";
 import { prodUrlConstants } from "../../constants/prodUrlConstants";
 
@@ -53,11 +55,25 @@ export function getURL(userAction) {
         : localUrlConstants.UPLOAD_ENDPOINT;
   }
 
-  if (userAction === "VIEW_DASHBOARD") {
+  if (userAction === "DASHBOARD") {
     url =
       process.env.REACT_APP_ENV === "PRODUCTION"
         ? prodUrlConstants.DASHBOARD_ENDPOINT
         : localUrlConstants.DASHBOARD_ENDPOINT;
+  }
+
+  if (userAction === "LOGOUT") {
+    url =
+      process.env.REACT_APP_ENV === "PRODUCTION"
+        ? prodUrlConstants.LOGOUT_ENDPOINT
+        : localUrlConstants.LOGOUT_ENDPOINT;
+  }
+
+  if (userAction === "AUTO_LOGIN") {
+    url =
+      process.env.REACT_APP_ENV === "PRODUCTION"
+        ? prodUrlConstants.AUTO_LOGIN_ENDPOINT
+        : localUrlConstants.AUTO_LOGIN_ENDPOINT;
   }
 
   return url;

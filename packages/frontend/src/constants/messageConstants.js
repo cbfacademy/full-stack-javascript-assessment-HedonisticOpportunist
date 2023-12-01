@@ -18,5 +18,13 @@ export const messageConstants = {
 
   // UPLOAD TOAST MESSAGES
   UPLOAD_ERROR: "*ੈ♡⸝⸝🪐༘⋆ Error. Please try uploading your file again.",
-  UPLOAD_SUCCEDSS: "🦢🦢 Success! Your file has been uploaded.",
+  UPLOAD_SUCCESS: "🦢🦢 Success! Your file has been uploaded.",
+
+  // LOGOUT TOAST MESSAGES
+  LOGOUT_ERROR: "🧸🧸 Error. Please try logging out again.",
+  LOGOUT_SUCCESS: "♪♪ Success! You have logged out successfully.",
+
+  // AUTO LOGIN TOAST MESSAGES
+  AUTO_LOGIN_ERROR: "❥❥ Error. Please login.",
+  AUTO_LOGIN_SUCCESS: "🎸🎸 Success! You are logged in.",
 };

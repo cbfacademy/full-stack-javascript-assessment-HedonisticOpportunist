@@ -16,6 +16,9 @@ const DashboardBreadcrumbs = () => {
                 <Link to="/uploads">🐾Upload Link To Art | Games</Link>
               </li>
               <li>
+                <Link to="/files">🐾View Uploaded Work</Link>
+              </li>
+              <li>
                 <Link to="/suscribe">
                   🐾Suscribe | Unsuscribe To Newsletter
                 </Link>

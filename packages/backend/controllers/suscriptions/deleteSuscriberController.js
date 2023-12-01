@@ -1,7 +1,7 @@
 const logger = require("pino")();
 const Suscriber = require("../../models/suscriberModel");
 
-// Credit @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
+// Credit: @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
 // Any further modifications and errors are mine and mine alone.
 
 // DELETE SUSCRIBE CONTROLLER
