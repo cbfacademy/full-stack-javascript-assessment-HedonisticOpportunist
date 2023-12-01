@@ -18,17 +18,21 @@ FRONTEND_LOCAL_URL=http://localhost:3000
 
 The application will run locally if the _NODE_ENV_ variable does not equal _production_.
 
-It would help if you also assigned values for the variables _PORT_, _TOKEN_KEY_ and _MONGO_URL_.
+It would help if you also assigned values for the variables _PORT_, _TOKEN_KEY_ and _MONGO_URL_. They are required for the application to run seamlessly.
 
 ## 🐈‍⬛ SPACE CATS - FRONTEND ENVIRONMENT VARIABLES
 
-Create a .env file in the root of the _frontend_ directory and set the following variable:
+Create a .env file in the root of the _frontend_ directory and set the following variables:
 
 ```
+REACT_BACK_END_URL=https://space-cats-production.up.railway.app
+
 REACT_APP_ENV=PRODUCTION
 ```
 
 The application will run locally if the _REACT_APP_ENV_ variable does not equal _production_.
+
+If the web server URL does not work, please use [backup web server](deployments.md) instead.
 
 ## 🐈‍⬛ SPACE CATS - BUILDING THE APPLICATION
 
