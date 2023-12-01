@@ -17,4 +17,10 @@ export const prodUrlConstants = {
 
   // DASHBOARD ENDPOINT
   DASHBOARD_ENDPOINT: "https://space-cats-backend-rfpo.onrender.com/dashboard",
+
+  // LOGOUT ENDPOINT
+  LOGOUT_ENDPOINT: "https://space-cats-backend-rfpo.onrender.com/logout",
+
+  // AUTO LOGIN ENDPOINT
+  AUTO_LOGIN_ENDPOINT: "https://space-cats-backend-rfpo.onrender.com/autoLogin",
 };

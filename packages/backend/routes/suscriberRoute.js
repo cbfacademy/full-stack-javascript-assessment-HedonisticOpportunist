@@ -9,7 +9,7 @@ const {
   getSuscribers,
 } = require("../controllers/suscriptions/getSuscriberController");
 
-// Credit @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
+// Credit: @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
 // Any further modifications and errors are mine and mine alone.
 
 // GET ROUTES

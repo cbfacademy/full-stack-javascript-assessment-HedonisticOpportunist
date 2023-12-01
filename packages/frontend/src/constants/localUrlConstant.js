@@ -16,4 +16,10 @@ export const localUrlConstants = {
 
   // DASHBOARD ENDPOINT
   DASHBOARD_ENDPOINT: "http://localhost:5000/dashboard",
+
+  // LOGOUT ENDPOINT
+  LOGOUT_ENDPOINT: "http://localhost:5000/logout",
+
+  // AUTO LOGIN ENDPOINT
+  AUTO_LOGIN_ENDPOINT: "http://localhost:5000/autoLogin",
 };

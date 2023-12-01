@@ -9,6 +9,7 @@ import SignupPage from "../../pages/authentication/SignupPage";
 import SuscribePage from "../../pages/dashboard/SuscribePage";
 import UserDashboard from "../../pages/dashboard/UserDashboard";
 import UnsuscribePage from "../../pages/dashboard/UnsuscribePage";
+import UploadedFilesPage from "../../pages/dashboard/UploadedFilesPage";
 import UploadWorkPage from "../../pages/dashboard/UploadWorkPage";
 
 const RoutesComponent = () => {
@@ -42,6 +43,11 @@ const RoutesComponent = () => {
         <Route exact path="/login" element={<LoginPage></LoginPage>} />
         <Route exact path="/signup" element={<SignupPage></SignupPage>} />
         <Route exact path="/suscribe" element={<SuscribePage></SuscribePage>} />
+        <Route
+          exact
+          path="/files"
+          element={<UploadedFilesPage></UploadedFilesPage>}
+        />
         <Route
           exact
           path="/uploads"

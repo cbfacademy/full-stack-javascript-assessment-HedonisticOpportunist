@@ -1,55 +1,49 @@
-import axios from "axios";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import DashboardBreadcrumbs from "../../components/navigation/DashboardBreadcrumbs";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { useEffect, useState } from "react";
+import { messageConstants } from "../../constants/messageConstants";
+import {
+  getUserName,
+  logout,
+} from "../../services/authentication-services/authenticationService";
+import React, { useState } from "react";
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { getURL } from "../../services/helpers/urlHelpers";
-import { useCookies } from "react-cookie";
 
 const UserDashboard = () => {
   const navigate = useNavigate();
 
   // STATES
-  const [cookies, removeCookie] = useCookies([]);
-  const [message, setMessage] = useState("");
+  const [logoutMessage, setLogoutMessage] = useState("");
+  const [username, setUsername] = useState("");
 
-  // VERIFY COOKIE FUNCTION
-  // Credit @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
-  // Any further modifications are mine and mine alone.
   useEffect(() => {
-    const verifyCookie = async () => {
-      if (!cookies.token) {
-        navigate("/login");
-      }
-      const dashboardUrl = getURL("VIEW_DASHBOARD");
-      const { data } = await axios.post(
-        dashboardUrl,
-        {},
-        {
-          withCredentials: true,
-          credentials: "include",
-        }
-      );
-      const { status, user } = data;
-      console.log(data);
-      console.log(status);
-      return status
-        ? setMessage(`Hello ${user}. Welcome to the dashboard!`, {
-            position: "top-right",
-          })
-        : (removeCookie("token"), navigate("/login"));
-    };
-    verifyCookie();
-  }, [cookies, navigate, removeCookie]);
+    async function getUser() {
+      setUsername(await getUserName());
+    }
+    getUser();
+  }, []);
 
-  // LOGOUT FUNCTION
-  // Credit @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
+  // HANDLE LOGOUT FUNCTION
+  // Credit: @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
   // Any further modifications are mine and mine alone.
-  function Logout() {
-    removeCookie("token");
-    navigate("/signup");
-  }
+  const handleLogout = async () => {
+    let response = await logout();
+    if (response) {
+      setLogoutMessage(messageConstants.LOGOUT_SUCCESS);
+      setTimeout(() => {
+        navigate("/");
+      }, 1000);
+    } else {
+      setLogoutMessage(messageConstants.LOGOUT_ERROR);
+    }
+  };
+
+  // HANDLE SUBMIT FUNCTION
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    handleLogout();
+  };
 
   return (
     <>
@@ -82,7 +76,7 @@ const UserDashboard = () => {
               <Card.Body>
                 <Card.Title>
                   {/* WELCOME MESSAGE */}
-                  <h4>{message}</h4>
+                  <h4>Welcome {username}!</h4>
                 </Card.Title>
                 <Card.Text>It's good to see you again.</Card.Text>
               </Card.Body>
@@ -95,10 +89,14 @@ const UserDashboard = () => {
               variant="outline-dark"
               type="submit"
               size="lg"
-              onClick={Logout}
+              onClick={handleSubmit}
             >
               LOGOUT
             </Button>
+          </Col>
+          <Col>
+            {/* LOGOUT STATUS MESSAGE */}
+            <p>{logoutMessage}</p>
           </Col>
         </Row>
       </Container>

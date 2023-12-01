@@ -20,7 +20,7 @@ originUrl =
     : process.env.FRONTEND_LOCAL_URL;
 
 // THIRD PARTY MIDDLEWARE
-// Credit @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
+// Credit: @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
 // Any further modifications and errors are mine and mine alone.
 app.use(
   cors({
@@ -28,6 +28,12 @@ app.use(
     preflightContinue: true,
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     origin: originUrl,
+    allowedHeaders: [
+      "set-cookie",
+      "Content-Type",
+      "Access-Control-Allow-Origin",
+      "Access-Control-Allow-Credentials",
+    ],
   })
 );
 app.use(cookieParser());
