@@ -55,6 +55,13 @@ export function getURL(userAction) {
         : localUrlConstants.UPLOAD_ENDPOINT;
   }
 
+  if (userAction === "GET_FILES") {
+    url =
+      process.env.REACT_APP_ENV === "PRODUCTION"
+        ? prodUrlConstants.GET_FILES_ENDPOINT
+        : localUrlConstants.GET_FILES_ENDPOINT;
+  }
+
   if (userAction === "DASHBOARD") {
     url =
       process.env.REACT_APP_ENV === "PRODUCTION"

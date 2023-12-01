@@ -13,6 +13,7 @@ export const prodUrlConstants = {
 
   // UPLOAD ENDPOINTS
   UPLOAD_ENDPOINT: process.env.REACT_APP_BACKEND_URL + "/uploads",
+  GET_FILES_ENDPOINT: process.env.REACT_APP_BACKEND_URL + "/files",
 
   // DASHBOARD ENDPOINT
   DASHBOARD_ENDPOINT: process.env.REACT_APP_BACKEND_URL + "/dashboard",

@@ -23,3 +23,13 @@ export async function upload(title, description, url) {
     log.error(error);
   }
 }
+
+export async function getFiles() {
+  try {
+    const getFilesUrl = getURL("GET_FILES");
+    const { data } = await axios.get(getFilesUrl, { withCredentials: true });
+    return await handleResponse(data);
+  } catch (error) {
+    log.error(error);
+  }
+}
