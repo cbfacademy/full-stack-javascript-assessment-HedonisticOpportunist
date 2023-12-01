@@ -6,17 +6,11 @@ _**Space Cats**_ is a game web application similar to _Newgrounds_ [1], where us
 
 Ultimately, _**Space Cats**_ aims to unite people who enjoy simple and cute games.
 
-## DEPLOYMENT
+## DEPLOYMENT - MAIN URL
 
-_**Space Cats**_ uses _render_ for frontend deployment [2].
+URL: https://space-cats.vercel.app/
 
-WEB SERVER URL: https://space-cats-backend-rfpo.onrender.com ✔️
-
-## FRONTEND DEPLOYMENT
-
-_**Space Cats**_ uses _Vercel_ for frontend deployment [3].
-
-STATIC SITE URL: https://space-cats.vercel.app/ ✔️
+[Other Deployments](docs/setup/deployments.md)
 
 ## OTHER DOCUMENTATION
 
@@ -47,7 +41,3 @@ STATIC SITE URL: https://space-cats.vercel.app/ ✔️
 ### REFERENCES
 
 [1] https://www.newgrounds.com/
-
-[2] https://dashboard.render.com/
-
-[3] https://vercel.com/

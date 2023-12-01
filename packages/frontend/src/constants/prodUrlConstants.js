@@ -1,26 +1,25 @@
 export const prodUrlConstants = {
   // MAIN ENDPOINT
-  MAIN_ENDPOINT: "https://space-cats-backend-rfpo.onrender.com",
+  MAIN_ENDPOINT: `${REACT_BACKEND_URL}`,
 
   // AUTHENTICATION ENDPOINTS
-  LOGIN_ENDPOINT: "https://space-cats-backend-rfpo.onrender.com/login",
-  SIGN_UP_ENDPOINT: "https://space-cats-backend-rfpo.onrender.com/signup",
+  LOGIN_ENDPOINT: `${REACT_BACKEND_URL}/login`,
+  SIGN_UP_ENDPOINT: `${REACT_BACKEND_URL}/signup`,
 
   // SUSCRIBER ENDPOINTS
-  SUSCRIBE_ENDPOINT: "https://space-cats-backend-rfpo.onrender.com/suscribe",
-  UNSUSCRIBE_ENDPOINT: "https://space-cats-backend-rfpo.onrender.com/delete/:",
-  GET_SUSCRIBERS_ENDPOINT:
-    "https://space-cats-backend-rfpo.onrender.com/suscribers",
+  SUSCRIBE_ENDPOINT: `${REACT_BACKEND_URL}/suscribe`,
+  UNSUSCRIBE_ENDPOINT: `${REACT_BACKEND_URL}/delete/:`,
+  GET_SUSCRIBERS_ENDPOINT: `${REACT_BACKEND_URL}/suscribers`,
 
   // UPLOAD ENDPOINTS
-  UPLOAD_ENDPOINT: "https://space-cats-backend-rfpo.onrender.com/uploads",
+  UPLOAD_ENDPOINT: `${REACT_BACKEND_URL}/uploads`,
 
   // DASHBOARD ENDPOINT
-  DASHBOARD_ENDPOINT: "https://space-cats-backend-rfpo.onrender.com/dashboard",
+  DASHBOARD_ENDPOINT: `${REACT_BACKEND_URL}/dashboard"`,
 
   // LOGOUT ENDPOINT
-  LOGOUT_ENDPOINT: "https://space-cats-backend-rfpo.onrender.com/logout",
+  LOGOUT_ENDPOINT: `${REACT_BACKEND_URL}/logout`,
 
   // AUTO LOGIN ENDPOINT
-  AUTO_LOGIN_ENDPOINT: "https://space-cats-backend-rfpo.onrender.com/autoLogin",
+  AUTO_LOGIN_ENDPOINT: `${REACT_BACKEND_URL}/autoLogin`,
 };
