@@ -85,7 +85,7 @@ export async function getUserName() {
     const { user } = data;
 
     if (user === null || user === undefined) {
-      user = "User";
+      return "User";
     }
     return user;
   } catch (error) {
