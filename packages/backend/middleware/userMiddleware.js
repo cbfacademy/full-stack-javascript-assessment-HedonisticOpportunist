@@ -2,10 +2,13 @@ require("dotenv").config();
 const jwt = require("jsonwebtoken");
 const User = require("../models/userModel");
 
-// Credit: @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
+// Credit: @ https://github.com/itsrakeshhq/productivity-app/blob/main/server/middleware/auth.js
 // Any further modifications are mine and mine alone.
 module.exports.userVerification = (req, res) => {
-  const token = req.cookies.token;
+  const token = String(req.headers.authorization)
+    .replace(/^bearer|^jwt/i, "")
+    .replace(/^\s+|\s+$/gi, "");
+
   if (!token) {
     return res.json({ status: false });
   }

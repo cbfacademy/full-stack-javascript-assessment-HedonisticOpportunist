@@ -23,15 +23,15 @@ module.exports.signup = async (req, res, next) => {
 
     // Create a secret token
     const token = createSecretToken(user._id);
-    res.cookie("token", token, {
-      withCredentials: true,
-      httpOnly: false,
-    });
+
+    // Save the user token
+    // Credit: @ https://www.section.io/engineering-education/how-to-build-authentication-api-with-jwt-token-in-nodejs/
+    user.token = token;
 
     // Indicate that the action was a success
     res
       .status(201)
-      .json({ message: "User signed in successfully.", success: true, user });
+      .json({ message: "User signed in successfully.", success: true, token });
     next();
   } catch (error) {
     logger.error(error);

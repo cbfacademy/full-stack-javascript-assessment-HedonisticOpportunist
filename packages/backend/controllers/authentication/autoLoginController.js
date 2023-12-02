@@ -5,10 +5,11 @@ const logger = require("pino")();
 
 module.exports.autoLogin = async (req, res, next) => {
   try {
-    // Get the cookie from the request headers
+    // Get the token from the request headers
+    const token = req.headers.token;
 
-    // Indicate an error if there is no cookie
-    if (!cookie || cookie === null) {
+    // Indicate an error if there is no token
+    if (!token || token === null || token === undefined) {
       return res.json({ message: "User is not logged in." });
     }
 
