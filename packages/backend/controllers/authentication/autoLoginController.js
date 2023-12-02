@@ -6,7 +6,6 @@ const logger = require("pino")();
 module.exports.autoLogin = async (req, res, next) => {
   try {
     // Get the cookie from the request headers
-    const cookie = req.headers.cookie;
 
     // Indicate an error if there is no cookie
     if (!cookie || cookie === null) {

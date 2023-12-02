@@ -83,6 +83,10 @@ export async function getUserName() {
       { withCredentials: true }
     );
     const { user } = data;
+
+    if (user === null || user === undefined) {
+      user = "User";
+    }
     return user;
   } catch (error) {
     log.error(error);
