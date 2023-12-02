@@ -2,6 +2,7 @@ const bcrypt = require("bcryptjs");
 const mongoose = require("mongoose");
 
 // Credit @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
+//
 // Any further modifications and errors are mine and mine alone.
 const userSchema = new mongoose.Schema({
   username: {
@@ -24,6 +25,7 @@ const userSchema = new mongoose.Schema({
     type: Date,
     default: new Date(),
   },
+  token: { type: String },
 });
 
 // HASH PASSWORD
