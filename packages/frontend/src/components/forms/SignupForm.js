@@ -17,7 +17,7 @@ const SignupForm = () => {
   // HANDLE SIGN UP FUNCTION
   const handleSignup = async () => {
     let response = await signup(username, email, password);
-    if (response) {
+    if (response.success) {
       setMessage(messageConstants.SIGN_UP_SUCCESS);
       setTimeout(() => {
         navigate("/dashboard");
@@ -28,6 +28,9 @@ const SignupForm = () => {
     setUserName(username);
     setEmail(email);
     setPassword(password);
+
+    //Credit: @ https://medium.com/@furqanistic/decoding-jwt-secure-authentication-in-mern-applications-23cd7141e2f
+    localStorage.setItem("token", response.token);
   };
 
   // SUBMIT FUNCTION
