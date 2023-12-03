@@ -16,7 +16,7 @@ module.exports.uploadFile = async (req, res, next) => {
     res.status(201).json({
       message: "File added successfully.",
       success: true,
-      file,
+      file: file,
     });
     next();
   } catch (error) {

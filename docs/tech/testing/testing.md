@@ -12,7 +12,7 @@ Writing tests for the backend proved difficult due to needing more clarity on ho
 
 # 🐈‍⬛ SPACE CATS - FRONTEND TESTING
 
-The front end uses the _react testing library_ [4].
+The front end uses _cypress_ for component testing [4].
 
 ### REFERENCES
 
@@ -22,4 +22,4 @@ The front end uses the _react testing library_ [4].
 
 [3] https://www.npmjs.com/package/supertest
 
-[4] https://testing-library.com/docs/react-testing-library/intro/
+[4] https://docs.cypress.io/guides/getting-started/installing-cypress

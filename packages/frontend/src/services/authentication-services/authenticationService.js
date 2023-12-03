@@ -1,5 +1,5 @@
 import axios from "axios";
-import { getToken, handleResponse } from "../helpers/serviceHelpers";
+import { handleResponse, getResponseData } from "../helpers/serviceHelpers";
 import { getURL } from "../helpers/urlHelpers";
 import log from "loglevel";
 
@@ -17,7 +17,7 @@ export async function login(email, password) {
       },
       { withCredentials: true }
     );
-    return await getToken(data);
+    return await getResponseData(data);
   } catch (error) {
     log.error(error);
   }
@@ -38,7 +38,7 @@ export async function signup(username, email, password) {
       },
       { withCredentials: true }
     );
-    return await getToken(data);
+    return await getResponseData(data);
   } catch (error) {
     log.error(error);
   }
