@@ -1,7 +1,7 @@
 // UPLOAD SERVICE //
 
 import axios from "axios";
-import { handleResponse } from "../helpers/serviceHelpers";
+import { handleResponse, getResponseData } from "../helpers/serviceHelpers";
 import { getURL } from "../helpers/urlHelpers";
 import log from "loglevel";
 
@@ -28,7 +28,7 @@ export async function getFiles() {
   try {
     const getFilesUrl = getURL("GET_FILES");
     const { data } = await axios.get(getFilesUrl, { withCredentials: true });
-    return await handleResponse(data);
+    return await getResponseData(data);
   } catch (error) {
     log.error(error);
   }

@@ -35,7 +35,7 @@ const GamesPage = () => {
                 <Card.Text>
                   {/* GAME LINK AND DESCRIPTION */}
                   <a href="space-cats-art-and-games/catch-bubbles-game/index.html">
-                    Catch the bubbles.
+                    Catch bubbles.
                   </a>
                 </Card.Text>
                 <Card.Text>Try and catch ten bubbles 🫧.</Card.Text>
@@ -55,7 +55,7 @@ const GamesPage = () => {
               <Card.Text>
                 {/* GAME LINK AND DESCRIPTION */}
                 <a href="space-cats-art-and-games/space-bubbles-shooter-game/index.html">
-                  Shoot the bubbles.
+                  Shoot at bubbles.
                 </a>
               </Card.Text>
               <Card.Text>Shoot or catch twenty bubbles 🫧👾.</Card.Text>

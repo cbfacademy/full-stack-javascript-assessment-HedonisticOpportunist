@@ -11,7 +11,7 @@ module.exports.getFiles = async (req, res, next) => {
     res.status(201).json({
       message: "Files retrieved successfully.",
       success: true,
-      files,
+      files: files,
     });
     next();
   } catch (error) {

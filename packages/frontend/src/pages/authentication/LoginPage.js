@@ -37,7 +37,7 @@ const LoginPage = () => {
                 {/* MAIN CONTENT */}
                 <Card.Text>Don't have an account?</Card.Text>
                 <Card.Text>
-                  <Link to={"/signup"}>Signup</Link> =ᗢ=
+                  <Link to={"/signup"}>Sign up</Link> =ᗢ=
                 </Card.Text>
               </Card.Body>
             </Card>

@@ -1,7 +1,23 @@
 import { Card, Col, Container, Row, Table } from "react-bootstrap";
+import { getFiles } from "../../services/upload-services/uploadService";
 import ReturnToDashboardBreadcrumbs from "../../components/navigation/ReturnToDashboardBreadcrumbs";
+import { useEffect, useState } from "react";
 
 const UploadedFilesPage = () => {
+  // STATES
+  const [data, setData] = useState([]);
+
+  useEffect(() => {
+    async function getFileData() {
+      let data = await getFiles();
+      if (data.success) {
+        console.log(data.files);
+        setData(data.files);
+      }
+    }
+    getFileData();
+  }, []);
+
   return (
     <>
       <Container fluid>
@@ -25,30 +41,19 @@ const UploadedFilesPage = () => {
             <Table striped bordered hover>
               <thead>
                 <tr>
-                  <th>#</th>
                   <th>Title</th>
                   <th>Description</th>
                   <th>Link</th>
                 </tr>
               </thead>
               <tbody>
-                <tr>
-                  <td>1</td>
-                  <td>Mark</td>
-                  <td>Otto</td>
-                  <td>@mdo</td>
-                </tr>
-                <tr>
-                  <td>2</td>
-                  <td>Jacob</td>
-                  <td>Thornton</td>
-                  <td>@fat</td>
-                </tr>
-                <tr>
-                  <td>3</td>
-                  <td colSpan={2}>Larry the Bird</td>
-                  <td>@twitter</td>
-                </tr>
+                {data.map((item, index) => (
+                  <tr key={index}>
+                    <td>{item.title}</td>
+                    <td>{item.description}</td>
+                    <td>{item.url}</td>
+                  </tr>
+                ))}
               </tbody>
             </Table>
           </Col>

@@ -22,4 +22,4 @@ jobs:
       - name: Run Cypress Component Tests
         run: |
           cd packages/frontend
-          npm run cy:run
+          npm run cy:run-component-tests

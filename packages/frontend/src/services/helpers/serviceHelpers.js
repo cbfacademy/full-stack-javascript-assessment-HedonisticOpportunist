@@ -9,7 +9,7 @@ export async function handleResponse(responseData) {
   return responseFlag;
 }
 
-export async function getToken(responseData) {
+export async function getResponseData(responseData) {
   if (handleResponse(responseData)) {
     return responseData;
   }
