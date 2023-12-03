@@ -30,7 +30,11 @@ app.use(
     origin: originUrl,
     allowedHeaders: [
       "set-cookie",
+      "X-Api-Key",
+      "X-Requested-With",
       "Content-Type",
+      "Accept", 
+      "Authorization",
       "Access-Control-Allow-Origin",
       "Access-Control-Allow-Credentials",
     ],
