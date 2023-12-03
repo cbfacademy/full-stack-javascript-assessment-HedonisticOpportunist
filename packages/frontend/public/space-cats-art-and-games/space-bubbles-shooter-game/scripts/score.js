@@ -1,3 +1,4 @@
+// GAME SCORE CLASS //
 class GameScore {
   // CONSTRUCTOR
   constructor() {
@@ -15,7 +16,7 @@ class GameScore {
     textSize(this.size);
     textFont("Helvetica");
     text("Shoot or catch twenty bubbles!", this.x, this.y);
-    text("Bubbles Caught/ Shot: " + game_score, this.x, this.y + 25);
+    text("Bubbles Caught / Shot: " + game_score, this.x, this.y + 25);
   }
 
   // END GAME

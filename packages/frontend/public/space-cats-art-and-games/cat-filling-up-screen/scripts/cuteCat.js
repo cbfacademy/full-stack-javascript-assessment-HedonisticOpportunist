@@ -1,4 +1,4 @@
-// CUTE CATS CLASS
+// CUTE CATS CLASS //
 class CuteCats {
   // CONSTRUCTOR
   constructor() {

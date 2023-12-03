@@ -1,4 +1,4 @@
-name: Build and Deploy Space Cats Backend
+name: Build and Deploy Space Cats Frontend
 on:
   push:
     branches:
@@ -17,9 +17,9 @@ jobs:
           node-version: "18"
       - name: Install Dependencies
         run: |
-          cd packages/backend/
+          cd packages/frontend/
           npm install
-      - name: Run Jest Tests
+      - name: Run Cypress Component Tests
         run: |
-          cd packages/backend
-          npm test
+          cd packages/frontend
+          npm cy:run

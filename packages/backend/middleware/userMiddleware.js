@@ -5,7 +5,7 @@ const User = require("../models/userModel");
 // Credit: @ https://medium.com/@furqanistic/decoding-jwt-secure-authentication-in-mern-applications-23cd7141e2f
 // Any further modifications are mine and mine alone.
 module.exports.userVerification = (req, res) => {
-  const token = req.headers.authorization;
+  const token = req.body.headers["Authorization"];
   if (!token) {
     return res.json({ status: false });
   }
@@ -18,7 +18,6 @@ module.exports.userVerification = (req, res) => {
   });
 };
 
-// Get the user name
 async function getUserName(res, data) {
   const user = await User.findById(data.id);
   if (user) return res.json({ status: true, user: user.username });

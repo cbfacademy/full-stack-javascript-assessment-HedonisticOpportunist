@@ -1,25 +1,22 @@
 const logger = require("pino")();
-const Suscriber = require("../../models/suscriberModel");
+const Subscriber = require("../../models/subscriberModel");
 
 // Credit: @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
 // Any further modifications and errors are mine and mine alone.
 
-// DELETE SUSCRIBE CONTROLLER
-module.exports.deleteSuscriber = async (req, res, next) => {
+// DELETE SUBSCRIBER CONTROLLER //
+module.exports.deleteSubscriber = async (req, res, next) => {
   try {
     const { email } = req.params;
     let alteredMail = email.replace(":", "");
     alteredMail = alteredMail.trim();
-
-    // Delete existing suscribers
-    const existingSuscriber = await Suscriber.findOneAndDelete({
+    const existingSubscriber = await Subscriber.findOneAndDelete({
       email: { $eq: alteredMail },
     });
-
     res.status(201).json({
-      message: "Suscriber deleted successfully.",
+      message: "Subscriber deleted successfully.",
       success: true,
-      existingSuscriber,
+      existingSubscriber,
     });
     next();
   } catch (error) {

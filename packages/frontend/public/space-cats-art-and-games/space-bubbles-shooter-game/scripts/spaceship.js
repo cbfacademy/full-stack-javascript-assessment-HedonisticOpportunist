@@ -1,5 +1,5 @@
-// SPACESHIP CLASS
-// @Credit: https://linz.coderdojo.net/uebungsanleitungen/programmieren/web/space-shooter-mit-p5js/ (German)
+// SPACESHIP CLASS //
+// Credit: @ https://linz.coderdojo.net/uebungsanleitungen/programmieren/web/space-shooter-mit-p5js/ (German)
 // Any modifications and errors are mine and mine alone.
 
 class SpaceShip {
@@ -11,13 +11,13 @@ class SpaceShip {
     this.speed = 5;
     this.rotation = 0;
     this.imgSize = 100;
-    this.imgUrl = "../images/player.png"; //@ https://opengameart.org/content/colorized-boss-sprites
+    this.imgUrl = "../images/player.png"; // @ https://opengameart.org/content/colorized-boss-sprites
     this.bullets = new Bullets();
   }
 
   // PRELOAD SPACE SHIP
   preloadSpaceShip() {
-    // Create an image and determine its size and styling
+    // Create an image and determine its size and style
     this.spaceShip = createImg(this.imgUrl);
     this.spaceShip.size(this.imgSize, this.imgSize);
     this.spaceShip.style("border-radius", "50%");

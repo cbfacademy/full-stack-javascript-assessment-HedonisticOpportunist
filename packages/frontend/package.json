@@ -23,7 +23,8 @@
     "__credit_comment__": "https://dev.to/bytebodger/how-i-fixed-the-unexpected-token-error-in-jest-4o1",
     "test": "react-scripts test --transformIgnorePatterns \"node_modules/(?!@toolz/allow-react)/\" --env=jsdom --coverage",
     "eject": "react-scripts eject",
-    "proxy": "http://localhost:5000"
+    "cypress:open": "cypress open",
+    "cy:run": "cypress run --component"
   },
   "eslintConfig": {
     "extends": [
@@ -45,7 +46,8 @@
   },
   "devDependencies": {
     "@babel/plugin-proposal-private-property-in-object": "^7.21.11",
-    "@babel/plugin-transform-private-property-in-object": "^7.22.11"
+    "@babel/plugin-transform-private-property-in-object": "^7.22.11",
+    "cypress": "^13.6.0"
   },
   "engines": {
     "node": ">=18.18.0 <19.0.0"

@@ -1,4 +1,4 @@
-// CLASS CAT
+// CLASS CAT //
 // BASED ON OlD WORK, ORIGINALLY POSTED HERE: https://github.com/HedonisticOpportunist/Cats-in-Neath/blob/master/scripts/sketch.js
 // FURTHER IMPLEMENTATION IDEAS: https://github.com/HedonisticOpportunist/Game-Project-V2
 class Cat {

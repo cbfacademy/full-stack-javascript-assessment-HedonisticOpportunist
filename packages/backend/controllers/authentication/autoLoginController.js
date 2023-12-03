@@ -3,20 +3,14 @@ const logger = require("pino")();
 // Credit: @ https://blog.reactplay.io/persistent-log-in-using-cookies-in-react
 // Any errors are mine and mine alone
 
+// AUTO LOGIN CONTROLLER //
 module.exports.autoLogin = async (req, res, next) => {
   try {
-    // Get the token from the request headers
-    const token = req.headers.token;
-
-    // Indicate an error if there is no token
+    const token = req.body.headers["Authorization"];
     if (!token || token === null || token === undefined) {
       return res.json({ message: "User is not logged in." });
     }
-
-    // Indicate that the action was a success
-    res
-      .status(201)
-      .json({ message: "User signed out successfully.", success: true });
+    res.status(201).json({ message: "User logged in.", success: true });
     next();
   } catch (error) {
     logger.error(error);

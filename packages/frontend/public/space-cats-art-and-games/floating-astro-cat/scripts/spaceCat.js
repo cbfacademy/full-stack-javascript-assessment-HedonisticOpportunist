@@ -1,4 +1,4 @@
-// SPACE CAT CLASS
+// SPACE CAT CLASS //
 class SpaceCat {
   // CONSTRUCTOR
   constructor() {
@@ -9,7 +9,7 @@ class SpaceCat {
 
   // PRELOAD SPACE CAT
   preloadSpaceCat() {
-    // Create an image and determine its size and styling
+    // Create an image and determine its size and style
     this.spaceCat = createImg(this.imgUrl);
     this.spaceCat.size(this.imgSize, this.imgSize);
     this.spaceCat.style("border-radius", "50%");

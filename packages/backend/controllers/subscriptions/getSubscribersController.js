@@ -1,20 +1,17 @@
 const logger = require("pino")();
-const Suscribers = require("../../models/suscriberModel");
+const Subscribers = require("../../models/subscriberModel");
 
 // Credit: @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
 // Any further modifications and errors are mine and mine alone.
 
-// SUSCRIBE CONTROLLER
-module.exports.getSuscribers = async (req, res, next) => {
+// GET SUBSCRIBERS CONTROLLER //
+module.exports.getSubscribers = async (req, res, next) => {
   try {
-    // Look for suscribers
-    const suscribers = await Suscribers.find(req.body);
-
-    // Indicate that the action was a success
+    const subscribers = await Subscribers.find(req.body);
     res.status(201).json({
       message: "Users retrieved successfully.",
       success: true,
-      suscribers,
+      subscribers,
     });
     next();
   } catch (error) {

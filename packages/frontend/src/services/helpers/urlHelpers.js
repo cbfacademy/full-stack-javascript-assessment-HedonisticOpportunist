@@ -27,25 +27,25 @@ export function getURL(userAction) {
         : localUrlConstants.SIGN_UP_ENDPOINT;
   }
 
-  if (userAction === "SUSCRIBE") {
+  if (userAction === "SUBSCRIBE") {
     url =
       process.env.REACT_APP_ENV === "PRODUCTION"
-        ? prodUrlConstants.SUSCRIBE_ENDPOINT
-        : localUrlConstants.SUSCRIBE_ENDPOINT;
+        ? prodUrlConstants.SUBSCRIBE_ENDPOINT
+        : localUrlConstants.SUBSCRIBE_ENDPOINT;
   }
 
-  if (userAction === "UNSUSCRIBE") {
+  if (userAction === "UNSUBSCRIBE") {
     url =
       process.env.REACT_APP_ENV === "PRODUCTION"
-        ? prodUrlConstants.UNSUSCRIBE_ENDPOINT
-        : localUrlConstants.UNSUSCRIBE_ENDPOINT;
+        ? prodUrlConstants.UNSUBSCRIBE_ENDPOINT
+        : localUrlConstants.UNSUBSCRIBE_ENDPOINT;
   }
 
-  if (userAction === "GET_SUSCRIBERS") {
+  if (userAction === "GET_SUBSCRIBERS") {
     url =
       process.env.REACT_APP_ENV === "PRODUCTION"
-        ? prodUrlConstants.GET_SUSCRIBERS_ENDPOINT
-        : localUrlConstants.GET_SUSCRIBERS_ENDPOINT;
+        ? prodUrlConstants.GET_SUBSCRIBERS_ENDPOINT
+        : localUrlConstants.GET_SUBSCRIBERS_ENDPOINT;
   }
 
   if (userAction === "UPLOAD") {

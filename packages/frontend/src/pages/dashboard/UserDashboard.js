@@ -3,7 +3,7 @@ import DashboardBreadcrumbs from "../../components/navigation/DashboardBreadcrum
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { messageConstants } from "../../constants/messageConstants";
 import {
-  getUserName,
+  getUserData,
   logout,
 } from "../../services/authentication-services/authenticationService";
 import React, { useState } from "react";
@@ -19,10 +19,17 @@ const UserDashboard = () => {
 
   useEffect(() => {
     async function getUser() {
-      setUsername(await getUserName());
+      let data = await getUserData();
+      if (data.status) {
+        setUsername(data.user);
+      } else {
+        setTimeout(() => {
+          navigate("/");
+        }, 1000);
+      }
     }
     getUser();
-  }, []);
+  }, [navigate]);
 
   // HANDLE LOGOUT FUNCTION
   // Credit: @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/

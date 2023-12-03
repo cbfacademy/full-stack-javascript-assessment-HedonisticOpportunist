@@ -1,6 +1,6 @@
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
 import { messageConstants } from "../../constants/messageConstants";
-import { suscribe } from "../../services/suscriptions-services/suscribeServices";
+import { subscribe } from "../../services/subscription-services/subscribersService";
 import { useState } from "react";
 
 const SubscribeForm = () => {
@@ -8,24 +8,24 @@ const SubscribeForm = () => {
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  // HANDLE SUSCRIBE FUNCTION
-  const handleSuscribeResponse = async () => {
-    let response = await suscribe(email);
+  // HANDLE SUBSCRIBE FUNCTION
+  const handleSubscribeResponse = async () => {
+    let response = await subscribe(email);
     if (response) {
-      setMessage(messageConstants.SUSCRIBE_SUCCESS);
+      setMessage(messageConstants.SUBSCRIBE_SUCCESS);
     } else {
-      setMessage(messageConstants.SUSCRIBE_ERROR);
+      setMessage(messageConstants.SUBSCRIBE_ERROR);
     }
     setEmail(email);
   };
 
-  // SUBMIT SUSCRIBE FUNCTION
-  const handleSuscribe = async (e) => {
+  // SUBMIT SUBSCRIBE FUNCTION
+  const handleSubscribe = async (e) => {
     e.preventDefault();
     if (email === "" || !email.includes("@") || email === null) {
-      setMessage(messageConstants.SUSCRIBE_ERROR);
+      setMessage(messageConstants.SUBSCRIBE_ERROR);
     } else {
-      handleSuscribeResponse();
+      handleSubscribeResponse();
     }
   };
 
@@ -46,18 +46,18 @@ const SubscribeForm = () => {
                 />
               </Form.Group>
             </Form>
-            {/* SUSCRIBE BUTTON */}
+            {/* SUBSCRIBE BUTTON */}
             <Button
               className="btn-grad"
               variant="outline-dark"
               size="sm"
-              onClick={handleSuscribe}
+              onClick={handleSubscribe}
             >
               🐾Suscribe to our newsletter.
             </Button>
           </Col>
           <Col>
-            {/* DISPLAY SUSCRIBE STATUS*/}
+            {/* DISPLAY SUBSCRIBE STATUS*/}
             <p>{message}</p>
           </Col>
         </Row>

@@ -1,6 +1,6 @@
-// STARS CLASS
-//  /* @ Credit for the stars:
-// https://editor.p5js.org/ag3439/sketches/Skgh1ZQtQ
+// STARS CLASS //
+// Credit for the stars:
+// @ https://editor.p5js.org/ag3439/sketches/Skgh1ZQtQ
 
 class Stars {
   // CONSTRUCTOR

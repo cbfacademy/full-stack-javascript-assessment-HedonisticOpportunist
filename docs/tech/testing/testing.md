@@ -2,7 +2,7 @@
 
 A significant portion of testing for this project was carried out manually, using tools such as _Chrome Dev Tools_.
 
-The driving force behind this decision was the lack of familiarity with _Jest_ [2] and API testing.
+The driving force behind this decision was the need for more familiarity with _Jest_ [2] and API testing.
 
 # 🐈‍⬛ SPACE CATS - BACKEND TESTING
 

@@ -1,4 +1,4 @@
-// RELOAD BUTTON CLASS
+// RELOAD BUTTON CLASS //
 class ReloadButton {
   // CONSTRUCTOR
   constructor() {
