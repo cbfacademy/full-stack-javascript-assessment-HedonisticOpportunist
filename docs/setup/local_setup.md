@@ -2,7 +2,7 @@
 
 **_Space Cats_** is set up to deploy the application locally or via a hosting service.
 
-This behaviour is dictated by .env files in both the _frontend_ and _backend_ packages.
+_.env_ files in both the _frontend_ and _backend_ packages ditate the behaviour of **_Space Cat_**.
 
 ## 🐈‍⬛ SPACE CATS - BACKEND ENVIRONMENT VARIABLES
 
@@ -18,11 +18,13 @@ FRONTEND_LOCAL_URL=http://localhost:3000
 
 The application will run locally if the _NODE_ENV_ variable does not equal _production_.
 
-It would help if you also assigned values for the variables _PORT_, _TOKEN_KEY_ and _MONGO_URL_. They are required for the application to run seamlessly.
+It would help if you also assigned values for the variables _PORT_, _TOKEN_KEY_ and _MONGO_URL_.
+
+They are required for the application to run seamlessly.
 
 ## 🐈‍⬛ SPACE CATS - FRONTEND ENVIRONMENT VARIABLES
 
-Create a .env file in the root of the _frontend_ directory and set the following variables:
+Create a _.env_ file in the root of the _frontend_ directory and set the following variables:
 
 ```
 REACT_BACK_END_URL=https://space-cats-production.up.railway.app

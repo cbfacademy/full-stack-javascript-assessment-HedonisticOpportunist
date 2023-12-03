@@ -6,10 +6,10 @@ export const prodUrlConstants = {
   LOGIN_ENDPOINT: process.env.REACT_APP_BACKEND_URL + "/login",
   SIGN_UP_ENDPOINT: process.env.REACT_APP_BACKEND_URL + "/signup",
 
-  // SUSCRIBER ENDPOINTS
-  SUSCRIBE_ENDPOINT: process.env.REACT_APP_BACKEND_URL + "/suscribe",
-  UNSUSCRIBE_ENDPOINT: process.env.REACT_APP_BACKEND_URL + "/delete/:",
-  GET_SUSCRIBERS_ENDPOINT: process.env.REACT_APP_BACKEND_URL + "/suscribers",
+  // SUBSCRIBER ENDPOINTS
+  SUBSCRIBE_ENDPOINT: process.env.REACT_APP_BACKEND_URL + "/subscribe",
+  UNSUBSCRIBE_ENDPOINT: process.env.REACT_APP_BACKEND_URL + "/delete/:",
+  GET_SUBSCRIBERS_ENDPOINT: process.env.REACT_APP_BACKEND_URL + "/subscribers",
 
   // UPLOAD ENDPOINTS
   UPLOAD_ENDPOINT: process.env.REACT_APP_BACKEND_URL + "/uploads",

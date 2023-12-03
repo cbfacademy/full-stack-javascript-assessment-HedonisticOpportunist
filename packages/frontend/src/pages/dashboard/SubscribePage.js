@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import ReturnToDashboardBreadcrumbs from "../../components/navigation/ReturnToDashboardBreadcrumbs";
 import SubscribeForm from "../../components/forms/SubscribeForm";
 
-const SuscribePage = () => {
+const SubscribePage = () => {
   return (
     <>
       <Container fluid>
@@ -28,8 +28,8 @@ const SuscribePage = () => {
                 one. It's up to you!
               </Card.Text>
               <Card.Text>
-                <Link to="/unsuscribe">
-                  Of course, you are welcome to unsuscribe at any time ♡🐾.
+                <Link to="/unsubscribe">
+                  Of course, you are welcome to unsubscribe at any time ♡🐾.
                 </Link>
               </Card.Text>
             </Card.Body>
@@ -58,4 +58,4 @@ const SuscribePage = () => {
   );
 };
 
-export default SuscribePage;
+export default SubscribePage;

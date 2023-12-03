@@ -1,8 +1,8 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
 import ReturnToDashboardBreadcrumbs from "../../components/navigation/ReturnToDashboardBreadcrumbs";
-import UnsuscribeForm from "../../components/forms/UnsuscribeForm";
+import UnsubscribeForm from "../../components/forms/UnsubscribeForm";
 
-const UnsuscribePage = () => {
+const UnsubscribePage = () => {
   return (
     <>
       <Container fluid>
@@ -16,7 +16,7 @@ const UnsuscribePage = () => {
               <Card.Body>
                 <Card.Title>
                   {/* PAGE TITLE */}
-                  <h3>Unsuscribe From Our Internal Newsletter ᓚᘏᗢ</h3>
+                  <h3>Unsubscribe From Our Internal Newsletter ᓚᘏᗢ</h3>
                 </Card.Title>
                 <Card.Text>We're sad to see you go! 🦊.</Card.Text>
               </Card.Body>
@@ -30,15 +30,15 @@ const UnsuscribePage = () => {
             <Card>
               <Card.Body>
                 <Card.Title>
-                  {/* UNSUSCRIBE FORM TITLE */}
-                  <h4>Unsuscribe From Our Internal Newsletter ᓚᘏᗢ</h4>
+                  {/* UNSUBSCRIBE FORM TITLE */}
+                  <h4>Unsubscribe From Our Internal Newsletter ᓚᘏᗢ</h4>
                 </Card.Title>
               </Card.Body>
             </Card>
           </Col>
           <Col>
-            {/* UNSUSCRIBE FORM */}
-            <UnsuscribeForm></UnsuscribeForm>
+            {/* UNSUBSCRIBE FORM */}
+            <UnsubscribeForm></UnsubscribeForm>
           </Col>
         </Row>
       </Container>
@@ -46,4 +46,4 @@ const UnsuscribePage = () => {
   );
 };
 
-export default UnsuscribePage;
+export default UnsubscribePage;

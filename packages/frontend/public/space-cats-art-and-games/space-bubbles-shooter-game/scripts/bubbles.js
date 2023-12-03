@@ -1,6 +1,6 @@
-// BUBBLES CLASS
-// @ https://deepgram.com/learn/p5js-game-logic
-// Any modification and errors are mine and mine alone.
+// BUBBLES CLASS //
+// Credit: @ https://deepgram.com/learn/p5js-game-logic
+// Any modifications and errors are mine and mine alone.
 
 class Bubble {
   // CONSTRUCTOR

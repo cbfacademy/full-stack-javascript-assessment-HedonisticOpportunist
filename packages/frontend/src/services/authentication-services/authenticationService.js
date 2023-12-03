@@ -57,32 +57,9 @@ export async function logout() {
   }
 }
 
-// AUTO LOGIN FUNCTION
-// Credit: @ https://blog.reactplay.io/persistent-log-in-using-cookies-in-react
-// Any further modifications and errors are mine and mine alone.
-export async function autoLogin() {
-  try {
-    const autoLoginUrl = getURL("AUTO_LOGIN");
-    const token = localStorage.getItem("token");
-    const { data } = await axios.get(
-      autoLoginUrl,
-      {
-        headers: {
-          Authorization: `Bearer ${token}`,
-        },
-      },
-      { withCredentials: true }
-    );
-    return await handleResponse(data);
-  } catch (error) {
-    log.error(error);
-  }
-}
-
 // CHECK USER VERIFIED
-// Credit: @ https://blog.reactplay.io/persistent-log-in-using-cookies-in-react
 // Any further modifications and errors are mine and mine alone.
-export async function getUserName() {
+export async function getUserData() {
   try {
     const dashboardUrl = getURL("DASHBOARD");
     const token = localStorage.getItem("token");
@@ -90,17 +67,12 @@ export async function getUserName() {
       dashboardUrl,
       {
         headers: {
-          Authorization: `Bearer ${token}`,
+          Authorization: `${token}`,
         },
       },
       { withCredentials: true }
     );
-    const { user } = data;
-
-    if (user === null || user === undefined) {
-      return "User";
-    }
-    return user;
+    return data;
   } catch (error) {
     log.error(error);
   }

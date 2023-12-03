@@ -1,6 +1,6 @@
-// GALAXY CLASS
-//* @ Credit for the stars:
-// https://editor.p5js.org/ag3439/sketches/Skgh1ZQtQ
+// GALAXY CLASS //
+//Credit for the stars:
+// @ https://editor.p5js.org/ag3439/sketches/Skgh1ZQtQ
 
 class Galaxy {
   // CONSTRUCTOR

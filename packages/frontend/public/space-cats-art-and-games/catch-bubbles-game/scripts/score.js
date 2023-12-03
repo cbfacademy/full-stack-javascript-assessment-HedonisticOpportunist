@@ -1,3 +1,4 @@
+// GAME SCORE CLASS //
 class GameScore {
   // CONSTRUCTOR
   constructor() {

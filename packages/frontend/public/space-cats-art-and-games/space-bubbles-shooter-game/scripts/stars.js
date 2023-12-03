@@ -1,5 +1,5 @@
-// STARS CLASS
-// @ Credit: https://editor.p5js.org/jesse_harding/sketches/0szF7gcAx
+// STARS CLASS //
+// Credit: @ https://editor.p5js.org/jesse_harding/sketches/0szF7gcAx
 class Stars {
   // CONSTRUCTOR
   constructor() {

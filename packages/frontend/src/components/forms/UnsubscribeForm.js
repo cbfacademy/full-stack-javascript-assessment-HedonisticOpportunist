@@ -1,20 +1,20 @@
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
 import { messageConstants } from "../../constants/messageConstants";
-import { unsuscribe } from "../../services/suscriptions-services/suscribeServices";
+import { unsubscribe } from "../../services/subscription-services/subscribersService";
 import { useState } from "react";
 
-const UnsuscribeForm = () => {
+const UnsubscribeForm = () => {
   // STATES
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  // UNSUSCRIBE FUNCTION
-  const handleUnsuscribe = async () => {
-    let response = await unsuscribe(email);
+  // UNSUBSCRIBE FUNCTION
+  const handleUnsubscribe = async () => {
+    let response = await unsubscribe(email);
     if (response) {
-      setMessage(messageConstants.UNSUSCRIBE_SUCCESS);
+      setMessage(messageConstants.UNSUBSCRIBE_SUCCESS);
     } else {
-      setMessage(messageConstants.UNSUSCRIBE_ERROR);
+      setMessage(messageConstants.UNSUBSCRIBE_ERROR);
     }
     setEmail(email);
   };
@@ -23,9 +23,9 @@ const UnsuscribeForm = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     if (email === "" || !email.includes("@") || email === null) {
-      setMessage(messageConstants.UNSUSCRIBE_ERROR);
+      setMessage(messageConstants.UNSUBSCRIBE_ERROR);
     } else {
-      handleUnsuscribe();
+      handleUnsubscribe();
     }
   };
 
@@ -46,18 +46,18 @@ const UnsuscribeForm = () => {
                 />
               </Form.Group>
             </Form>
-            {/* UNSUSCRIBE BUTTON */}
+            {/* UNSUBSCRIBE BUTTON */}
             <Button
               className="btn-grad"
               variant="outline-dark"
               size="lg"
               onClick={handleSubmit}
             >
-              🐾Unsuscribe from our newsletter.
+              🐾Unsubscribe from our newsletter.
             </Button>
           </Col>
           <Col>
-            {/* DISPLAY UNSUSCRIBE STATUS*/}
+            {/* DISPLAY UNSUBSCRIBE STATUS*/}
             <p>{message}</p>
           </Col>
         </Row>
@@ -66,4 +66,4 @@ const UnsuscribeForm = () => {
   );
 };
 
-export default UnsuscribeForm;
+export default UnsubscribeForm;

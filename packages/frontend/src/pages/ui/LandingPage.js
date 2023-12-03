@@ -7,7 +7,6 @@ import { useEffect, useState } from "react";
 const LandingPage = () => {
   const [data, setData] = useState(null);
 
-  // Declare async function to set data
   async function fetchData() {
     const message = await getWelcomeMessage();
     setData(message);

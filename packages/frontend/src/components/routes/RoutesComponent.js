@@ -6,9 +6,9 @@ import InteractiveArtPage from "../../pages/creative/InteractiveArtPage";
 import LandingPage from "../../pages/ui/LandingPage";
 import LoginPage from "../../pages/authentication/LoginPage";
 import SignupPage from "../../pages/authentication/SignupPage";
-import SuscribePage from "../../pages/dashboard/SuscribePage";
+import SubscribePage from "../../pages/dashboard/SubscribePage";
 import UserDashboard from "../../pages/dashboard/UserDashboard";
-import UnsuscribePage from "../../pages/dashboard/UnsuscribePage";
+import UnsubscribePage from "../../pages/dashboard/UnsubscribePage";
 import UploadedFilesPage from "../../pages/dashboard/UploadedFilesPage";
 import UploadWorkPage from "../../pages/dashboard/UploadWorkPage";
 
@@ -42,7 +42,11 @@ const RoutesComponent = () => {
         />
         <Route exact path="/login" element={<LoginPage></LoginPage>} />
         <Route exact path="/signup" element={<SignupPage></SignupPage>} />
-        <Route exact path="/suscribe" element={<SuscribePage></SuscribePage>} />
+        <Route
+          exact
+          path="/subscribe"
+          element={<SubscribePage></SubscribePage>}
+        />
         <Route
           exact
           path="/files"
@@ -55,8 +59,8 @@ const RoutesComponent = () => {
         />
         <Route
           exact
-          path="/unsuscribe"
-          element={<UnsuscribePage></UnsuscribePage>}
+          path="/unsubscribe"
+          element={<UnsubscribePage></UnsubscribePage>}
         />
       </Routes>
     </>

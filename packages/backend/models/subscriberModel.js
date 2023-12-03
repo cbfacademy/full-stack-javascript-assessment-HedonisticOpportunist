@@ -2,7 +2,7 @@ const mongoose = require("mongoose");
 
 // Credit @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
 // Any further modifications and errors are mine and mine alone.
-const suscriberSchema = new mongoose.Schema({
+const subscriberSchema = new mongoose.Schema({
   email: {
     type: String,
     required: [true, "Your email address is required"],
@@ -16,4 +16,4 @@ const suscriberSchema = new mongoose.Schema({
   },
 });
 
-module.exports = mongoose.model("Suscriber", suscriberSchema);
+module.exports = mongoose.model("Subscriber", subscriberSchema);

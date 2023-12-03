@@ -1,5 +1,6 @@
 // BULLETS CLASS
 // @Credit: https://github.com/Gregory-Eales/uol-graphics-programming/blob/master/Asteroid-Game-Clone/sketch.js
+// The above is based on a university module that UoL offers (https://github.com/world-class/REPL/tree/master/modules/level-5/cm-2030-graphics-programming)
 // Any modifications and errors are mine and mine alone.
 
 class Bullets {

@@ -19,8 +19,8 @@ const DashboardBreadcrumbs = () => {
                 <Link to="/files">🐾View Uploaded Work</Link>
               </li>
               <li>
-                <Link to="/suscribe">
-                  🐾Suscribe | Unsuscribe To Newsletter
+                <Link to="/subscribe">
+                  🐾 Subscribe | Unsubscribe To Newsletter
                 </Link>
               </li>
             </ul>

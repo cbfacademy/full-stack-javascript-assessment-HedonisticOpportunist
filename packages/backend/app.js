@@ -6,14 +6,11 @@ const express = require("express");
 require("dotenv").config();
 const { getDate, welcomeMessage } = require("./util/landingPageMessages");
 const userRoute = require("./routes/userRoute");
-const suscriberRoute = require("./routes/suscriberRoute");
+const subscriberRoute = require("./routes/subscriberRoute");
 const uploadFileRoute = require("./routes/fileUploadRoute");
 const app = express();
 
-// Connect to the database
 connectToMongoDB();
-
-// Get the origin from the .env file
 originUrl =
   process.env.NODE_ENV === "PRODUCTION"
     ? process.env.FRONTEND_PROD_URL
@@ -29,11 +26,10 @@ app.use(
     methods: ["GET", "POST", "PUT", "PATCH", "DELETE", "OPTIONS"],
     origin: originUrl,
     allowedHeaders: [
-      "set-cookie",
       "X-Api-Key",
       "X-Requested-With",
       "Content-Type",
-      "Accept", 
+      "Accept",
       "Authorization",
       "Access-Control-Allow-Origin",
       "Access-Control-Allow-Credentials",
@@ -50,9 +46,9 @@ app.get("/", (_request, response) => {
   });
 });
 
-// USER || SUSCRIBER || UPLOAD ROUTES
+// USER || SUBSCIBER || UPLOAD ROUTES
 app.use("/", userRoute);
-app.use("/", suscriberRoute);
+app.use("/", subscriberRoute);
 app.use("/", uploadFileRoute);
 
 module.exports = app;

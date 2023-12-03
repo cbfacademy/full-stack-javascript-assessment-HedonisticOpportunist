@@ -18,7 +18,7 @@ let game_score_display;
 function setUpGame() {
   createCanvas(windowWidth, windowHeight);
 
-  // Game score set to 0 so that player can start the game with a carte blanche
+  // Game score is set to 0 so that the player can start the game with a carte blanche
   score = 0;
 
   // Set frame rate
@@ -40,7 +40,7 @@ function setUpGame() {
   // Set up stars
   stars = new Stars();
 
-  // Set up cat
+  // Set up a new cat instance
   cat = new Cat();
 
   // Set up game score display

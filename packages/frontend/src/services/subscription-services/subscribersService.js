@@ -1,16 +1,16 @@
-// SUSCRIBER SERVICE //
+// SUBSCRIBER SERVICE //
 
 import axios from "axios";
 import { handleResponse } from "../helpers/serviceHelpers";
 import { getURL } from "../helpers/urlHelpers";
 import log from "loglevel";
 
-// SUSCRIBE FUNCTION
-export async function suscribe(email) {
+// SUBSCRIBE FUNCTION
+export async function subscribe(email) {
   try {
-    const suscribeUrl = getURL("SUSCRIBE");
+    const subscribeUrl = getURL("SUBSCRIBE");
     const { data } = await axios.post(
-      suscribeUrl,
+      subscribeUrl,
       {
         email,
       },
@@ -22,12 +22,12 @@ export async function suscribe(email) {
   }
 }
 
-// UNSUSCRIBE FUNCTION
-export async function unsuscribe(userEmail) {
+// UNSUBSCRIBE FUNCTION
+export async function unsubscribe(userEmail) {
   try {
-    const unsuscribeUrl = getURL("UNSUSCRIBE");
-    let email = await getSuscribers(userEmail);
-    const { data } = await axios.delete(unsuscribeUrl + email, {
+    const unsubscribeURL = getURL("UNSUBSCRIBE");
+    let email = await getSubscribers(userEmail);
+    const { data } = await axios.delete(unsubscribeURL + email, {
       withCredentials: true,
     });
     return handleResponse(data);
@@ -36,11 +36,11 @@ export async function unsuscribe(userEmail) {
   }
 }
 
-// GET SUSCRIBERS FUNCTION
-async function getSuscribers(email) {
+// GET SUBSCRIBERS FUNCTION
+async function getSubscribers(email) {
   try {
-    const getSuscribersUrl = getURL("GET_SUSCRIBERS");
-    const { data } = await axios.get(getSuscribersUrl, {
+    const getSubscribersUrl = getURL("GET_SUBSCRIBERS");
+    const { data } = await axios.get(getSubscribersUrl, {
       withCredentials: true,
     });
     return filterAndReturnEmail(data, email);
@@ -49,11 +49,11 @@ async function getSuscribers(email) {
   }
 }
 
-// FILTER OUT AND RETURN EMAIL
+// FILTER OUT AND RETURN EMAIL FUNCTION
 function filterAndReturnEmail(data, userEmail) {
   let matchedEmail = "";
-  for (let i = 0; i < data.suscribers.length; i++) {
-    let foundMail = data.suscribers[i]["email"];
+  for (let i = 0; i < data.subscribers.length; i++) {
+    let foundMail = data.subscribers[i]["email"];
     if (foundMail === userEmail) {
       matchedEmail = foundMail;
     }
