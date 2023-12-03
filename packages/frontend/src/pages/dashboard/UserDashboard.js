@@ -31,6 +31,7 @@ const UserDashboard = () => {
     let response = await logout();
     if (response) {
       setLogoutMessage(messageConstants.LOGOUT_SUCCESS);
+      localStorage.removeItem("token");
       setTimeout(() => {
         navigate("/");
       }, 1000);

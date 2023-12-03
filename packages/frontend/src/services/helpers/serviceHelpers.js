@@ -13,3 +13,9 @@ export async function handleResponse(responseData) {
   }
   return responseFlag;
 }
+
+export async function getToken(responseData) {
+  if (handleResponse(responseData)) {
+    return responseData;
+  }
+}

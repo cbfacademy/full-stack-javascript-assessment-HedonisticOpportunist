@@ -1,5 +1,5 @@
 import axios from "axios";
-import { handleResponse } from "../helpers/serviceHelpers";
+import { getToken, handleResponse } from "../helpers/serviceHelpers";
 import { getURL } from "../helpers/urlHelpers";
 import log from "loglevel";
 
@@ -17,8 +17,7 @@ export async function login(email, password) {
       },
       { withCredentials: true }
     );
-
-    return await handleResponse(data);
+    return await getToken(data);
   } catch (error) {
     log.error(error);
   }
@@ -39,7 +38,7 @@ export async function signup(username, email, password) {
       },
       { withCredentials: true }
     );
-    return await handleResponse(data);
+    return await getToken(data);
   } catch (error) {
     log.error(error);
   }
@@ -64,7 +63,16 @@ export async function logout() {
 export async function autoLogin() {
   try {
     const autoLoginUrl = getURL("AUTO_LOGIN");
-    const { data } = await axios.get(autoLoginUrl, { withCredentials: true });
+    const token = localStorage.getItem("token");
+    const { data } = await axios.get(
+      autoLoginUrl,
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      },
+      { withCredentials: true }
+    );
     return await handleResponse(data);
   } catch (error) {
     log.error(error);
@@ -77,9 +85,14 @@ export async function autoLogin() {
 export async function getUserName() {
   try {
     const dashboardUrl = getURL("DASHBOARD");
+    const token = localStorage.getItem("token");
     const { data } = await axios.post(
       dashboardUrl,
-      {},
+      {
+        headers: {
+          Authorization: `Bearer ${token}`,
+        },
+      },
       { withCredentials: true }
     );
     const { user } = data;
