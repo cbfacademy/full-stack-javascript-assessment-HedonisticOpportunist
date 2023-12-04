@@ -1,4 +1,5 @@
 import { Card, Col, Container, Row, Table } from "react-bootstrap";
+import DeleteFileForm from "../../components/forms/DeleteFileForm";
 import { getFiles } from "../../services/upload-services/uploadService";
 import ReturnToDashboardBreadcrumbs from "../../components/navigation/ReturnToDashboardBreadcrumbs";
 import { useEffect, useState } from "react";
@@ -11,7 +12,6 @@ const UploadedFilesPage = () => {
     async function getFileData() {
       let data = await getFiles();
       if (data.success) {
-        console.log(data.files);
         setData(data.files);
       }
     }
@@ -33,12 +33,13 @@ const UploadedFilesPage = () => {
                   {/* PAGE TITLE */}
                   <h3>Uploaded Files ᓚᘏᗢ</h3>
                 </Card.Title>
-                <Card.Text>View uploaded files here🦊.</Card.Text>
+                <Card.Text>View uploaded files here 🐅.</Card.Text>
               </Card.Body>
             </Card>
           </Col>
           <Col>
-            <Table striped bordered hover>
+            {/* TABLE */}
+            <Table striped="columns">
               <thead>
                 <tr>
                   <th>Title</th>
@@ -49,13 +50,30 @@ const UploadedFilesPage = () => {
               <tbody>
                 {data.map((item, index) => (
                   <tr key={index}>
-                    <td>{item.title}</td>
-                    <td>{item.description}</td>
-                    <td>{item.url}</td>
+                    <td colSpan={2}>{item.title}</td>
+                    <td colSpan={2}>{item.description}</td>
+                    <td colSpan={2}>{item.url}</td>
                   </tr>
                 ))}
               </tbody>
             </Table>
+          </Col>
+          <Col>
+            {/* DIVIDER */}
+            <hr className="dashed"></hr>
+          </Col>
+          <Col>
+            <Card>
+              <Card.Body>
+                <Card.Title>
+                  {/* PAGE TITLE */}
+                  <h4>Delete Link to Your Interactive Art / Game ᓚᘏᗢ</h4>
+                </Card.Title>
+              </Card.Body>
+            </Card>
+          </Col>
+          <Col>
+            <DeleteFileForm></DeleteFileForm>
           </Col>
         </Row>
       </Container>

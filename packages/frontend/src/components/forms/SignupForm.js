@@ -59,7 +59,7 @@ const SignupForm = () => {
                   type="username"
                   value={username}
                   onChange={(e) => setUserName(e.target.value)}
-                  placeholder="Enter username"
+                  placeholder="Username"
                   required
                 />
               </Form.Group>
@@ -69,7 +69,7 @@ const SignupForm = () => {
                   type="email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  placeholder="Enter email"
+                  placeholder="Email"
                   required
                 />
               </Form.Group>

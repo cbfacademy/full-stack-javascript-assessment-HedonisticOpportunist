@@ -2,26 +2,26 @@ import React from "react";
 import UploadWorkForm from "./UploadWorkForm";
 
 describe("<UploadWorkForm />", () => {
-  it("renders the Upload Work Form component", () => {
+  it("renders the UploadWorkForm component", () => {
     cy.mount(<UploadWorkForm />);
   });
 
-  it("contains the title label", () => {
+  it("renders the Title' label text", () => {
     cy.mount(<UploadWorkForm />);
     cy.contains("label", "Title");
   });
 
-  it("contains the description label", () => {
+  it("renders the 'Description' label text", () => {
     cy.mount(<UploadWorkForm />);
     cy.contains("label", "Description");
   });
 
-  it("contains the URL label", () => {
+  it("renders the 'URL' label text", () => {
     cy.mount(<UploadWorkForm />);
     cy.contains("label", "URL");
   });
 
-  it("contains the 'Upload Work' button text", () => {
+  it("renders the 'Upload Work' button text", () => {
     cy.mount(<UploadWorkForm />);
     cy.contains("button", "🐾Upload Work.");
   });

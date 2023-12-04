@@ -16,7 +16,7 @@ module.exports.deleteSubscriber = async (req, res, next) => {
     res.status(201).json({
       message: "Subscriber deleted successfully.",
       success: true,
-      existingSubscriber,
+      subscriber: existingSubscriber,
     });
     next();
   } catch (error) {

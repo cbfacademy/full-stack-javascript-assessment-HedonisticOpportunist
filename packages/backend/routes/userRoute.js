@@ -1,6 +1,3 @@
-const {
-  autoLogin,
-} = require("../controllers/authentication/autoLoginController");
 const { login } = require("../controllers/authentication/loginController");
 const { logout } = require("../controllers/authentication/logoutController");
 const { signup } = require("../controllers/authentication/signupController");
@@ -11,7 +8,6 @@ const router = require("express").Router();
 // Any further modifications and errors are mine and mine alone.
 
 // GET ROUTES
-router.get("/autoLogin", autoLogin);
 router.get("/logout", logout);
 
 // POST ROUTES

@@ -2,26 +2,26 @@ import React from "react";
 import SignupPage from "./SignupPage";
 
 describe("<SignupPage />", () => {
-  it("renders the Sign Up Page component", () => {
+  it("renders the SignupPage component", () => {
     cy.mount(<SignupPage />);
   });
 
-  it("contains the 'register' h3 header", () => {
+  it("renders the 'Register' h3 header", () => {
     cy.mount(<SignupPage />);
     cy.contains("h3", "Register ᓚᘏᗢ");
   });
 
-  it("contains the 'already have an account?' text", () => {
+  it("renders the 'already have an account?' text", () => {
     cy.mount(<SignupPage />);
     cy.contains("p", "Already have an account?");
   });
 
-  it("contains the 'login' link", () => {
+  it("renders the 'Login' link text", () => {
     cy.mount(<SignupPage />);
     cy.contains("a", "Login");
   });
 
-  it("contains the 'sign up here' div", () => {
+  it("renders the 'Sign Up Here' div text", () => {
     cy.mount(<SignupPage />);
     cy.contains("div", "Sign Up Here: ♫₊˚.🎧 ✩｡");
   });

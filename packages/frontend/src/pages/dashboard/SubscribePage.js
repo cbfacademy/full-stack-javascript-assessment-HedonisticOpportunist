@@ -42,14 +42,14 @@ const SubscribePage = () => {
             <Card>
               <Card.Body>
                 <Card.Title>
-                  {/* SUSCRIBE FORM TITLE */}
-                  <h4>Suscribe To Our Internal Newsletter ᓚᘏᗢ</h4>
+                  {/* SUBSCRIBE FORM TITLE */}
+                  <h4>Subscribe To Our Internal Newsletter ᓚᘏᗢ</h4>
                 </Card.Title>
               </Card.Body>
             </Card>
           </Col>
           <Col>
-            {/* SUSCRIBE FORM */}
+            {/* SUBSCRIBE FORM */}
             <SubscribeForm></SubscribeForm>
           </Col>
         </Row>

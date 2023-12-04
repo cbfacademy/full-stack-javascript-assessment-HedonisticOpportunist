@@ -1,4 +1,5 @@
 const router = require("express").Router();
+const { deleteFile } = require("../controllers/uploads/deleteFileController");
 const { getFiles } = require("../controllers/uploads/getFilesController");
 const { uploadFile } = require("../controllers/uploads/fileUploadController");
 
@@ -10,5 +11,8 @@ router.get("/files", getFiles);
 
 // POST ROUTES
 router.post("/uploads", uploadFile);
+
+// DELETE ROUTES
+router.delete("/delete", deleteFile);
 
 module.exports = router;

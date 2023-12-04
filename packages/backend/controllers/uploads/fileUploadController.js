@@ -4,7 +4,7 @@ const logger = require("pino")();
 // @Credit: @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
 // Any further modifications and errors are mine and mine alone.
 
-// UPLOAD IMAGE CONTROLLER //
+// UPLOAD FILE CONTROLLER //
 module.exports.uploadFile = async (req, res, next) => {
   try {
     const { title, description, url, createdAt } = req.body;
