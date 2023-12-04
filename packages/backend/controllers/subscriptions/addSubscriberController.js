@@ -16,7 +16,7 @@ module.exports.addSubscriber = async (req, res, next) => {
     res.status(201).json({
       message: "User subscribed successfully.",
       success: true,
-      subscriber,
+      subscriber: subscriber,
     });
     next();
   } catch (error) {

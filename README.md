@@ -30,6 +30,8 @@ URL: https://space-cats.vercel.app/
 
 🦄 [Considered Tech Stack](docs/tech/stack/considered_tech.md)
 
+#### CHALLENGES
+
 🦄 [Authentication Challenges](docs/tech/authentication/authentication.md)
 
 #### TESTING

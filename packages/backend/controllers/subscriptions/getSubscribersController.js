@@ -11,7 +11,7 @@ module.exports.getSubscribers = async (req, res, next) => {
     res.status(201).json({
       message: "Users retrieved successfully.",
       success: true,
-      subscribers,
+      subscribers: subscribers,
     });
     next();
   } catch (error) {

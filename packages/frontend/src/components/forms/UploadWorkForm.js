@@ -50,7 +50,7 @@ const UploadWorkForm = () => {
                     type="text"
                     name="title"
                     value={title}
-                    placeholder="Enter title"
+                    placeholder="Title"
                     onChange={(e) => setTitle(e.target.value)}
                     required
                   />
@@ -62,7 +62,7 @@ const UploadWorkForm = () => {
                     type="text"
                     name="description"
                     value={description}
-                    placeholder="Enter description"
+                    placeholder="Description"
                     onChange={(e) => setDescription(e.target.value)}
                     required
                   />
@@ -74,7 +74,7 @@ const UploadWorkForm = () => {
                     type="text"
                     name="url"
                     value={url}
-                    placeholder="Enter url"
+                    placeholder="Url"
                     onChange={(e) => setURL(e.target.value)}
                     required
                   />

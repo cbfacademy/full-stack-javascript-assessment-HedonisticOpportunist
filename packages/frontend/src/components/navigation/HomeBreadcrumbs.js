@@ -13,7 +13,7 @@ const HomeBreadcrumbs = () => {
           <Col>
             <ul className="breadcrumb">
               <li>
-                <Link to="/">🐾 Return to Homepage</Link>
+                <Link to="/">🐾Return to Homepage</Link>
               </li>
             </ul>
           </Col>

@@ -4,7 +4,7 @@ const Files = require("../../models/uploadFileModel");
 // Credit: @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
 // Any further modifications and errors are mine and mine alone.
 
-// FILES CONTROLLER //
+// GET FILES CONTROLLER //
 module.exports.getFiles = async (req, res, next) => {
   try {
     const files = await Files.find(req.body);

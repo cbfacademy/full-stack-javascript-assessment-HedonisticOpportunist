@@ -2,26 +2,26 @@ import React from "react";
 import SignupForm from "./SignupForm";
 
 describe("<SignupForm />", () => {
-  it("renders the Signup Form component", () => {
+  it("renders the SignupForm component", () => {
     cy.mount(<SignupForm />);
   });
 
-  it("contains the username label", () => {
+  it("renders the 'Username' label text", () => {
     cy.mount(<SignupForm />);
     cy.contains("label", "Username");
   });
 
-  it("contains the email address label", () => {
+  it("renders the 'Email Address' label text", () => {
     cy.mount(<SignupForm />);
     cy.contains("label", "Email address");
   });
 
-  it("contains the password label", () => {
+  it("renders the 'Password' label text", () => {
     cy.mount(<SignupForm />);
     cy.contains("label", "Password");
   });
 
-  it("contains the 'Sign Up' button text", () => {
+  it("renders the 'Sign Up' button text", () => {
     cy.mount(<SignupForm />);
     cy.contains("button", "🐾Sign Up");
   });

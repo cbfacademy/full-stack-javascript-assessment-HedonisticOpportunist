@@ -2,7 +2,7 @@ import React from "react";
 import InteractiveArtPage from "./InteractiveArtPage";
 
 describe("<InteractiveArtPage />", () => {
-  it("renders the Interactive Art Page component", () => {
+  it("renders the InteractiveArtPage component", () => {
     cy.mount(<InteractiveArtPage />);
   });
 
@@ -11,12 +11,12 @@ describe("<InteractiveArtPage />", () => {
     cy.contains("h3", "Interactive Art");
   });
 
-  it("contains the 'find an assortment of interactive art' text", () => {
+  it("renders the 'Find an assortment of interactive art...' text", () => {
     cy.mount(<InteractiveArtPage />);
     cy.contains("p", "Find an assortment of interactive art pieces below.");
   });
 
-  it("contains the 'please be aware' text", () => {
+  it("renders the 'Please be aware...' text", () => {
     cy.mount(<InteractiveArtPage />);
     cy.contains(
       "p",
@@ -24,17 +24,17 @@ describe("<InteractiveArtPage />", () => {
     );
   });
 
-  it("contains the 'Floating Space Cat' h4 header", () => {
+  it("renders the 'Floating Space Cat' h4 header", () => {
     cy.mount(<InteractiveArtPage />);
     cy.contains("h4", "Floating Space Cat ♡");
   });
 
-  it("contains the 'Floating Space Cat' link text", () => {
+  it("renders the 'Floating Space Cat' link text", () => {
     cy.mount(<InteractiveArtPage />);
     cy.contains("a", "Move the floating space cat.");
   });
 
-  it("contains the 'Floating Space Cat' description text", () => {
+  it("renders the 'Floating Space Cat' description text", () => {
     cy.mount(<InteractiveArtPage />);
     cy.contains(
       "p",
@@ -42,17 +42,17 @@ describe("<InteractiveArtPage />", () => {
     );
   });
 
-  it("contains the 'Many Cats' h4 header", () => {
+  it("renders the 'Many Cats' h4 header", () => {
     cy.mount(<InteractiveArtPage />);
     cy.contains("h4", "Many Cats ♡");
   });
 
-  it("contains the 'Many Cats' link text", () => {
+  it("renders the 'Many Cats' link text", () => {
     cy.mount(<InteractiveArtPage />);
     cy.contains("a", "Watch the scene fill up with many cats.");
   });
 
-  it("contains the 'Many Cats' description text", () => {
+  it("renders the 'Many Cats' description text", () => {
     cy.mount(<InteractiveArtPage />);
     cy.contains(
       "p",
