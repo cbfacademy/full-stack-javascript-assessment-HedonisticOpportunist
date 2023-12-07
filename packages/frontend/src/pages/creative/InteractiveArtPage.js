@@ -1,5 +1,6 @@
 import { Card, Container, Col, Row } from "react-bootstrap";
 import HomeBreadcrumbs from "../../components/navigation/HomeBreadcrumbs";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const InteractiveArtPage = () => {
   return (
@@ -21,8 +22,8 @@ const InteractiveArtPage = () => {
                   Find an assortment of interactive art pieces below.
                 </Card.Text>
                 <Card.Text>
-                  Please be aware that the interactive art loads on a new page.
-                  To return to the homepage, hit the browser's back button.
+                  So that you know, the interactive art loads on a new page. To
+                  return to the homepage, hit the browser's back button.
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -39,12 +40,17 @@ const InteractiveArtPage = () => {
                   <h4>Floating Space Cat ♡</h4>
                 </Card.Title>
                 <Card.Text>
-                  {/* ART LINK AND DESCRIPTION */}
+                  {/* CAT IMAGE AND LINK */}
                   <a href="space-cats-art-and-games/floating-astro-cat/index.html">
-                    Move the floating space cat.
+                    <LazyLoadImage
+                      className="mini-logo"
+                      src="images/cat.png"
+                      alt="A Cat"
+                    />
                   </a>
                 </Card.Text>
                 <Card.Text>
+                  {/* DESCRIPTION */}
                   Move an image of a space cat using your mouse coordinates.
                 </Card.Text>
               </Card.Body>
@@ -62,12 +68,17 @@ const InteractiveArtPage = () => {
                   <h4>Many Cats ♡</h4>
                 </Card.Title>
                 <Card.Text>
-                  {/* ART LINK AND DESCRIPTION */}
+                  {/* CAT IMAGE AND LINK */}
                   <a href="space-cats-art-and-games/cat-filling-up-screen/index.html">
-                    Watch the scene fill up with many cats.
+                    <LazyLoadImage
+                      className="mini-logo"
+                      src="images/unicorn.png"
+                      alt="A Cat"
+                    />
                   </a>
                 </Card.Text>
                 <Card.Text>
+                  {/* DESCRIPTION */}
                   Watch the scene fill up with the same cat image across a
                   screen -- click 'Reload' to see it happen again.
                 </Card.Text>
