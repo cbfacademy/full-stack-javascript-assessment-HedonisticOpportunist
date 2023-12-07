@@ -1,28 +1,28 @@
 import { Card, Container, Col, Row } from "react-bootstrap";
-import HomeBreadcrumbs from "../../components/navigation/HomeBreadcrumbs";
+import CreditsBreadcrumbs from "../../../components/navigation/CreditsBreadcrumbs";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
-const CreditsPage = () => {
+const ImageCreditsPage = () => {
   return (
     <>
       <Container fluid>
         <Row>
           <Col>
             {/* BREADCRUMBS */}
-            <HomeBreadcrumbs></HomeBreadcrumbs>
+            <CreditsBreadcrumbs></CreditsBreadcrumbs>
           </Col>
           <Col>
             <Card>
               <Card.Body>
                 <Card.Title>
                   {/* PAGE TITLE */}
-                  <h3>Credits</h3>
+                  <h3>Image Credits Page</h3>
                 </Card.Title>
                 {/* MAIN CONTENT */}
                 <Card.Text>
-                  A project never lives in isolation; the following images
-                  helped make <i>Space Cats</i> the bright and happy place it is
-                  now.
+                  The following page displays the images used throughout the
+                  main pages of
+                  <i> Space Cats</i>.
                 </Card.Text>
               </Card.Body>
             </Card>
@@ -30,10 +30,6 @@ const CreditsPage = () => {
           <Col>
             <Card>
               <Card.Body>
-                <Card.Title>
-                  {/* IMAGE CREDITS */}
-                  <h4>Image Credits</h4>
-                </Card.Title>
                 <Card.Text>
                   {/* IMAGE */}
                   <LazyLoadImage
@@ -85,18 +81,6 @@ const CreditsPage = () => {
                   />
                   <a href="https://logo.com/">Credit: LOGO.</a>
                 </Card.Text>
-                <Card.Text>
-                  {/* IMAGE */}
-
-                  <LazyLoadImage
-                    className="mini-logo"
-                    src="images/cat_scientist.jpg"
-                    alt="A Cat Scientist"
-                  />
-                  <a href="https://www.facebook.com/Freepik/">
-                    Credit: freepik.
-                  </a>
-                </Card.Text>
               </Card.Body>
             </Card>
           </Col>
@@ -106,4 +90,4 @@ const CreditsPage = () => {
   );
 };
 
-export default CreditsPage;
+export default ImageCreditsPage;

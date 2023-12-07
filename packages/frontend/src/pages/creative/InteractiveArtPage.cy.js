@@ -16,22 +16,17 @@ describe("<InteractiveArtPage />", () => {
     cy.contains("p", "Find an assortment of interactive art pieces below.");
   });
 
-  it("renders the 'Please be aware...' text", () => {
+  it("renders the 'So that you know...' text", () => {
     cy.mount(<InteractiveArtPage />);
     cy.contains(
       "p",
-      "Please be aware that the interactive art loads on a new page. To return to the homepage, hit the browser's back button."
+      "So that you know, the interactive art loads on a new page. To return to the homepage, hit the browser's back button."
     );
   });
 
   it("renders the 'Floating Space Cat' h4 header", () => {
     cy.mount(<InteractiveArtPage />);
     cy.contains("h4", "Floating Space Cat ♡");
-  });
-
-  it("renders the 'Floating Space Cat' link text", () => {
-    cy.mount(<InteractiveArtPage />);
-    cy.contains("a", "Move the floating space cat.");
   });
 
   it("renders the 'Floating Space Cat' description text", () => {
@@ -45,11 +40,6 @@ describe("<InteractiveArtPage />", () => {
   it("renders the 'Many Cats' h4 header", () => {
     cy.mount(<InteractiveArtPage />);
     cy.contains("h4", "Many Cats ♡");
-  });
-
-  it("renders the 'Many Cats' link text", () => {
-    cy.mount(<InteractiveArtPage />);
-    cy.contains("a", "Watch the scene fill up with many cats.");
   });
 
   it("renders the 'Many Cats' description text", () => {

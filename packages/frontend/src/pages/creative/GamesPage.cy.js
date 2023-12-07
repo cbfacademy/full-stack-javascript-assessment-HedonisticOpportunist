@@ -11,19 +11,22 @@ describe("<GamesPage />", () => {
     cy.contains("h3", "Games");
   });
 
-  it("renders the 'Find a collection of games...' text", () => {
+  it("renders the 'You can find a...' text", () => {
     cy.mount(<GamesPage />);
-    cy.contains("p", "Find a collection of games below.");
+    cy.contains("p", "You can find a collection of games below.");
+  });
+
+  it("renders the 'The games load on a new page...' text", () => {
+    cy.mount(<GamesPage />);
+    cy.contains(
+      "p",
+      "The games load on a new page. To return to the homepage, hit the browser's back button."
+    );
   });
 
   it("renders the 'Chase Bubbles Games' h4 header", () => {
     cy.mount(<GamesPage />);
     cy.contains("h4", "Chase Bubbles Game ♡");
-  });
-
-  it("renders the 'Chase Bubbles Games' link text", () => {
-    cy.mount(<GamesPage />);
-    cy.contains("a", "Catch bubbles.");
   });
 
   it("renders the 'Chase Bubbles Games' description text", () => {
@@ -34,11 +37,6 @@ describe("<GamesPage />", () => {
   it("renders the 'Space Bubble Shooter Game' h4 header", () => {
     cy.mount(<GamesPage />);
     cy.contains("h4", "Space Bubble Shooter Game ♡");
-  });
-
-  it("renders the 'Space Bubble Shooter Game' link text", () => {
-    cy.mount(<GamesPage />);
-    cy.contains("a", "Shoot at bubbles");
   });
 
   it("renders the 'Space Bubble Shooter Game' description text", () => {
