@@ -1,26 +1,26 @@
+const hostUrl = "http://localhost:5000";
+
 export const localUrlConstants = {
   // MAIN ENDPOINT
-  MAIN_ENDPOINT: "http://localhost:5000",
+  MAIN_ENDPOINT: hostUrl,
 
   // AUTHENTICATION ENDPOINTS
-  LOGIN_ENDPOINT: "http://localhost:5000/login",
-  SIGN_UP_ENDPOINT: "https://localhost:5000/signup",
+  LOGIN_ENDPOINT: hostUrl + "/login",
+  SIGN_UP_ENDPOINT: hostUrl + "/signup",
 
   // SUBSCRIBER ENDPOINTS
-  SUBSCRIBE_ENDPOINT: "http://localhost:5000/subscribe",
-  UNSUBSCRIBE_ENDPOINT: "http://localhost:5000/delete/:",
-  GET_SUBSCRIBERS_ENDPOINT: "http://localhost:5000/subscribers",
+  SUBSCRIBE_ENDPOINT: hostUrl + "/subscribe",
+  UNSUBSCRIBE_ENDPOINT: hostUrl + "/delete/:",
+  GET_SUBSCRIBERS_ENDPOINT: hostUrl + "/subscribers",
 
   // UPLOAD ENDPOINTS
-  UPLOAD_ENDPOINT: "http://localhost:5000/uploads",
-  GET_FILES_ENDPOINT: "http://localhost:5000/files",
+  UPLOAD_ENDPOINT: hostUrl + "/uploads",
+  GET_FILES_ENDPOINT: hostUrl + "/files",
+  DELETE_FILE_ENDPOINT: hostUrl + "/delete:",
 
   // DASHBOARD ENDPOINT
-  DASHBOARD_ENDPOINT: "http://localhost:5000/dashboard",
+  DASHBOARD_ENDPOINT: hostUrl + "/dashboard",
 
   // LOGOUT ENDPOINT
-  LOGOUT_ENDPOINT: "http://localhost:5000/logout",
-
-  // AUTO LOGIN ENDPOINT
-  AUTO_LOGIN_ENDPOINT: "http://localhost:5000/autoLogin",
+  LOGOUT_ENDPOINT: hostUrl + "/logout",
 };

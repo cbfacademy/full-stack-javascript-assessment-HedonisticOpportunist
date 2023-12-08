@@ -1,19 +1,19 @@
 import { Container, Col, Row } from "react-bootstrap";
-import Header from "../ui/Header";
+import DashboardHeader from "../../ui/dashboard/DashboardHeader";
 import { Link } from "react-router-dom";
 
-const HomeBreadcrumbs = () => {
+const ReturnToDashboardBreadcrumbs = () => {
   return (
     <>
       <Container fluid>
         <Row>
           <Col>
-            <Header></Header>
+            <DashboardHeader></DashboardHeader>
           </Col>
           <Col>
             <ul className="breadcrumb">
               <li>
-                <Link to="/">🐾Return to Homepage</Link>
+                <Link to="/dashboard">👾Return to Dashboard</Link>
               </li>
             </ul>
           </Col>
@@ -23,4 +23,4 @@ const HomeBreadcrumbs = () => {
   );
 };
 
-export default HomeBreadcrumbs;
+export default ReturnToDashboardBreadcrumbs;

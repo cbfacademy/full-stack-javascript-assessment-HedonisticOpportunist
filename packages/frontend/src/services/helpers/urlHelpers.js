@@ -1,5 +1,4 @@
 // URL HELPERS //
-
 import { localUrlConstants } from "../../constants/localUrlConstant";
 import { prodUrlConstants } from "../../constants/prodUrlConstants";
 
@@ -60,6 +59,13 @@ export function getURL(userAction) {
       process.env.REACT_APP_ENV === "PRODUCTION"
         ? prodUrlConstants.GET_FILES_ENDPOINT
         : localUrlConstants.GET_FILES_ENDPOINT;
+  }
+
+  if (userAction === "DELETE_FILES") {
+    url =
+      process.env.REACT_APP_ENV === "PRODUCTION"
+        ? prodUrlConstants.DELETE_FILE_ENDPOINT
+        : localUrlConstants.DELETE_FILE_ENDPOINT;
   }
 
   if (userAction === "DASHBOARD") {

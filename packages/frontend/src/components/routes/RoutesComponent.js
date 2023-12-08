@@ -1,13 +1,13 @@
 import ArtsCreditsPage from "../../pages/ui/credits/creative/ArtsCreditPage";
-import CreditsPage from "../../pages/ui/credits/CreditsPage";
+import CreditsPage from "../../pages/ui/credits/main/CreditsPage";
 import DashboardCreditsPage from "../../pages/ui/credits/dashboard/DashboardCreditsPage";
 import { Routes, Route } from "react-router-dom";
 import GamesPage from "../../pages/creative/GamesPage";
 import GamePageCredits from "../../pages/ui/credits/creative/GameCreditsPage";
-import HeaderBreadcrumbs from "../navigation/HeaderBreadcrumbs";
-import ImageCreditsPage from "../../pages/ui/credits/ImageCreditsPage";
+import HeaderBreadcrumbs from "../navigation/home/HeaderBreadcrumbs";
+import ImageCreditsPage from "../../pages/ui/credits/main/ImageCreditsPage";
 import InteractiveArtPage from "../../pages/creative/InteractiveArtPage";
-import LandingPage from "../../pages/ui/LandingPage";
+import LandingPage from "../../pages/ui/main/LandingPage";
 import LoginPage from "../../pages/authentication/LoginPage";
 import SignupPage from "../../pages/authentication/SignupPage";
 import SubscribePage from "../../pages/dashboard/subscriptions/SubscribePage";

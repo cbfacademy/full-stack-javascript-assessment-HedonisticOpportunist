@@ -1,13 +1,13 @@
 const {
   addSubscriber,
-} = require("../controllers/subscriptions/addSubscriberController");
+} = require("../../controllers/subscriptions/addSubscriberController");
 const router = require("express").Router();
 const {
   deleteSubscriber,
-} = require("../controllers/subscriptions/deleteSubscriberController");
+} = require("../../controllers/subscriptions/deleteSubscriberController");
 const {
   getSubscribers,
-} = require("../controllers/subscriptions/getSubscribersController");
+} = require("../../controllers/subscriptions/getSubscribersController");
 
 // Credit: @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
 // Any further modifications and errors are mine and mine alone.

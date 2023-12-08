@@ -1,5 +1,5 @@
 import { Container, Col, Row } from "react-bootstrap";
-import DashboardHeader from "../ui/DashboardHeader";
+import DashboardHeader from "../../ui/dashboard/DashboardHeader";
 import { Link } from "react-router-dom";
 
 const DashboardBreadcrumbs = () => {

@@ -1,5 +1,5 @@
 import { Card, Container, Col, Row } from "react-bootstrap";
-import HomeBreadcrumbs from "../../../components/navigation/HomeBreadcrumbs";
+import HomeBreadcrumbs from "../../../../components/navigation/home/HomeBreadcrumbs";
 import { Link } from "react-router-dom";
 
 const CreditsPage = () => {
@@ -26,7 +26,10 @@ const CreditsPage = () => {
                 </Card.Text>
                 <Card.Text>
                   Other credits -- related to code and assets used within the
-                  art/games -- can be found in the project's documentation.
+                  art/games --{" "}
+                  <a href="https://github.com/HedonisticOpportunist/Space-Cats/blob/main/README.md">
+                    can be found in the project's documentation.
+                  </a>
                 </Card.Text>
               </Card.Body>
             </Card>

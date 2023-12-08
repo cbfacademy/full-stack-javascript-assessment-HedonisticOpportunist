@@ -5,9 +5,9 @@ require("dotenv").config();
 const express = require("express");
 require("dotenv").config();
 const { getDate, welcomeMessage } = require("./util/landingPageMessages");
-const userRoute = require("./routes/userRoute");
-const subscriberRoute = require("./routes/subscriberRoute");
-const uploadFileRoute = require("./routes/fileUploadRoute");
+const userRoute = require("./routes/users/userRoute");
+const subscriberRoute = require("./routes/subscriptions/subscriberRoute");
+const uploadFileRoute = require("./routes/uploads/fileUploadRoute");
 const app = express();
 
 connectToMongoDB();

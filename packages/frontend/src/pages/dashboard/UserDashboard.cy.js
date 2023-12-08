@@ -21,6 +21,14 @@ describe("<UserDashboard />", () => {
     cy.contains("p", "It's good to see you again.");
   });
 
+  it("renders the 'Carry out...' text", () => {
+    cy.mount(<UserDashboard />);
+    cy.contains(
+      "p",
+      "Carry out actions like uploading links to your work or subscribing to our newsletter."
+    );
+  });
+
   it.skip("renders the 'Logout' button text", () => {
     cy.mount(<UserDashboard />);
     cy.contains("button", "🐻‍❄️Logout");

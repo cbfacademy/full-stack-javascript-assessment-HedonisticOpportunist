@@ -1,7 +1,7 @@
 import { Card, Container, Col, Row } from "react-bootstrap";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
-import { getWelcomeMessage } from "../../services/ui/uiServices";
+import { getWelcomeMessage } from "../../../services/ui/uiServices";
 import { useEffect, useState } from "react";
 
 const LandingPage = () => {
