@@ -13,7 +13,7 @@ const ReturnToDashboardBreadcrumbs = () => {
           <Col>
             <ul className="breadcrumb">
               <li>
-                <Link to="/dashboard">🐾Return to Dashboard</Link>
+                <Link to="/dashboard">👾Return to Dashboard</Link>
               </li>
             </ul>
           </Col>

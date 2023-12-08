@@ -1,7 +1,8 @@
 import { Card, Col, Container, Row, Table } from "react-bootstrap";
-import DeleteFileForm from "../../components/forms/DeleteFileForm";
-import { getFiles } from "../../services/upload-services/uploadService";
-import ReturnToDashboardBreadcrumbs from "../../components/navigation/ReturnToDashboardBreadcrumbs";
+import DeleteFileForm from "../../../components/forms/upload/DeleteFileForm";
+import { getFiles } from "../../../services/upload-services/uploadService";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import ReturnToDashboardBreadcrumbs from "../../../components/navigation/ReturnToDashboardBreadcrumbs";
 import { useEffect, useState } from "react";
 
 const UploadedFilesPage = () => {
@@ -36,6 +37,14 @@ const UploadedFilesPage = () => {
                 <Card.Text>View uploaded files here 🐅.</Card.Text>
               </Card.Body>
             </Card>
+          </Col>
+          <Col>
+            {/* CAT IMAGE */}
+            <LazyLoadImage
+              className="mini-logo"
+              src="images/pencil_cat.png"
+              alt="A Pencil Cat"
+            />
           </Col>
           <Col>
             {/* TABLE */}

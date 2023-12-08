@@ -8,16 +8,16 @@ describe("<DashboardBreadcrumbs />", () => {
 
   it("renders the link text for the 'Upload Link / Games' navigation", () => {
     cy.mount(<DashboardBreadcrumbs />);
-    cy.contains("a", "🐾Upload Link To Art | Games");
+    cy.contains("a", "👾Upload Link To Art | Games");
   });
 
   it("renders the link text for the 'View | Delete Uploaded Work' navigation", () => {
     cy.mount(<DashboardBreadcrumbs />);
-    cy.contains("a", "🐾View | Delete Uploaded Work");
+    cy.contains("a", "👾View | Delete Uploaded Work");
   });
 
   it("renders the link text for the 'Subscribe | Unsubscribe To Newsletter' navigation", () => {
     cy.mount(<DashboardBreadcrumbs />);
-    cy.contains("a", "🐾 Subscribe | Unsubscribe To Newsletter");
+    cy.contains("a", "👾Subscribe | Unsubscribe To Newsletter");
   });
 });

@@ -6,7 +6,7 @@ describe("<UploadWorkForm />", () => {
     cy.mount(<UploadWorkForm />);
   });
 
-  it("renders the Title' label text", () => {
+  it("renders the 'Title' label text", () => {
     cy.mount(<UploadWorkForm />);
     cy.contains("label", "Title");
   });
@@ -23,6 +23,6 @@ describe("<UploadWorkForm />", () => {
 
   it("renders the 'Upload Work' button text", () => {
     cy.mount(<UploadWorkForm />);
-    cy.contains("button", "🐾Upload Work.");
+    cy.contains("button", "🐻‍❄️Upload Work.");
   });
 });

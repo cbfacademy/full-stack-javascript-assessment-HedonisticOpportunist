@@ -1,5 +1,5 @@
 import { Card, Container, Col, Row } from "react-bootstrap";
-import CreditsBreadcrumbs from "../../../components/navigation/CreditsBreadcrumbs";
+import CreditsBreadcrumbs from "../../../../components/navigation/CreditsBreadcrumbs";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const ArtsCreditsPage = () => {

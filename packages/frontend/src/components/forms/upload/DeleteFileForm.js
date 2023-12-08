@@ -24,7 +24,7 @@ const DeleteFileForm = () => {
             </Form>
             {/* DELETE FILES BUTTON */}
             <Button className="btn-grad" variant="outline-dark" size="lg">
-              🐾 Delete Files
+              🐻‍❄️Delete Files
             </Button>
           </Col>
           <Col>

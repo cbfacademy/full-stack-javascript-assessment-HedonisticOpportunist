@@ -1,6 +1,6 @@
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
-import { messageConstants } from "../../constants/messageConstants";
-import { signup } from "../../services/authentication-services/authenticationService";
+import { messageConstants } from "../../../constants/messageConstants";
+import { signup } from "../../../services/authentication-services/authenticationService";
 import { useNavigate } from "react-router-dom";
 import { useState } from "react";
 

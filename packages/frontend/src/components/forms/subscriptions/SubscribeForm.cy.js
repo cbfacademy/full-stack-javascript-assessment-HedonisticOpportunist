@@ -13,6 +13,6 @@ describe("<SubscribeForm />", () => {
 
   it("renders the 'Subscribe' button text", () => {
     cy.mount(<SubscribeForm />);
-    cy.contains("button", "🐾Suscribe to our newsletter.");
+    cy.contains("button", "🐻‍❄️Suscribe to our newsletter.");
   });
 });

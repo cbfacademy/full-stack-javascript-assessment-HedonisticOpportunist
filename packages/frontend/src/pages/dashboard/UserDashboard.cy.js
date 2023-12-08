@@ -23,6 +23,6 @@ describe("<UserDashboard />", () => {
 
   it.skip("renders the 'Logout' button text", () => {
     cy.mount(<UserDashboard />);
-    cy.contains("button", "Logout");
+    cy.contains("button", "🐻‍❄️Logout");
   });
 });

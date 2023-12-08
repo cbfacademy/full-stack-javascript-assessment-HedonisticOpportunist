@@ -99,7 +99,7 @@ const UserDashboard = () => {
               size="lg"
               onClick={handleSubmit}
             >
-              LOGOUT
+              🐻‍❄️LOGOUT
             </Button>
           </Col>
           <Col>

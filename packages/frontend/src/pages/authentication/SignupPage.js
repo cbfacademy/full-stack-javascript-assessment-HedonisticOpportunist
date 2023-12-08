@@ -2,7 +2,7 @@ import { Card, Col, Container, Row } from "react-bootstrap";
 import HomeBreadcrumbs from "../../components/navigation/HomeBreadcrumbs";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
-import SignupForm from "../../components/forms/SignupForm";
+import SignupForm from "../../components/forms/authentication/SignupForm";
 
 const SignupPage = () => {
   return (
@@ -20,14 +20,6 @@ const SignupPage = () => {
                 <h3>Register ᓚᘏᗢ</h3>
               </Card.Title>
             </Card.Body>
-          </Col>
-          <Col>
-            {/* CAT IMAGE */}
-            <LazyLoadImage
-              className="image"
-              src="images/cat_and_fish.jpg"
-              alt="A Cat and a Fish"
-            />
           </Col>
           <Col>
             <Card>
@@ -48,7 +40,15 @@ const SignupPage = () => {
           </Col>
           <Col>
             <Card.Body>
-              <Card.Title>Sign Up Here: ♫₊˚.🎧 ✩｡</Card.Title>
+              <h4>Sign Up Here: ♫₊˚.🎧 ✩｡</h4>
+              <Card.Title>
+                {/* CAT IMAGE */}
+                <LazyLoadImage
+                  className="image"
+                  src="images/cat_and_fish.jpg"
+                  alt="A Cat and a Fish"
+                />
+              </Card.Title>
             </Card.Body>
           </Col>
           <Col>

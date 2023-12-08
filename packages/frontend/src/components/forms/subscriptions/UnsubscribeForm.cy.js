@@ -13,6 +13,6 @@ describe("<UnsubscribeForm />", () => {
 
   it("renders the 'Unsubscribe' button text", () => {
     cy.mount(<UnsubscribeForm />);
-    cy.contains("button", "🐾Unsubscribe from our newsletter.");
+    cy.contains("button", "🐻‍❄️Unsubscribe from our newsletter.");
   });
 });
