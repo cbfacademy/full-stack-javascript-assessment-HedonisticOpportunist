@@ -1,5 +1,5 @@
 const logger = require("pino")();
-const Subscribers = require("../../models/subscriberModel");
+const Subscribers = require("../../models/subscriptions/subscriberModel");
 
 // Credit: @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
 // Any further modifications and errors are mine and mine alone.

@@ -2,7 +2,7 @@ import { Card, Col, Container, Row, Table } from "react-bootstrap";
 import DeleteFileForm from "../../../components/forms/upload/DeleteFileForm";
 import { getFiles } from "../../../services/upload-services/uploadService";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import ReturnToDashboardBreadcrumbs from "../../../components/navigation/ReturnToDashboardBreadcrumbs";
+import ReturnToDashboardBreadcrumbs from "../../../components/navigation/dashboard/ReturnToDashboardBreadcrumbs";
 import { useEffect, useState } from "react";
 
 const UploadedFilesPage = () => {
@@ -34,7 +34,7 @@ const UploadedFilesPage = () => {
                   {/* PAGE TITLE */}
                   <h3>Uploaded Files ᓚᘏᗢ</h3>
                 </Card.Title>
-                <Card.Text>View uploaded files here 🐅.</Card.Text>
+                <Card.Text>View uploaded or delete files here 🐅.</Card.Text>
               </Card.Body>
             </Card>
           </Col>
@@ -51,9 +51,9 @@ const UploadedFilesPage = () => {
             <Table striped="columns">
               <thead>
                 <tr>
-                  <th>Title</th>
-                  <th>Description</th>
-                  <th>Link</th>
+                  <th>|Title|</th>
+                  <th>|Description|</th>
+                  <th>|Link|</th>
                 </tr>
               </thead>
               <tbody>
@@ -76,7 +76,7 @@ const UploadedFilesPage = () => {
               <Card.Body>
                 <Card.Title>
                   {/* PAGE TITLE */}
-                  <h4>Delete Link to Your Interactive Art / Game ᓚᘏᗢ</h4>
+                  <h4>Title to Your Interactive Art / Game ᓚᘏᗢ</h4>
                 </Card.Title>
               </Card.Body>
             </Card>

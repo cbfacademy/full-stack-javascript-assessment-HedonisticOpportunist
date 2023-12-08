@@ -1,5 +1,5 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
-import HomeBreadcrumbs from "../../components/navigation/HomeBreadcrumbs";
+import HomeBreadcrumbs from "../../components/navigation/home/HomeBreadcrumbs";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import LoginForm from "../../components/forms/authentication/LoginForm";

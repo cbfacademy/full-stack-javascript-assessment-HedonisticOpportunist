@@ -1,5 +1,4 @@
 // SUBSCRIBER SERVICE //
-
 import axios from "axios";
 import { handleResponse } from "../helpers/serviceHelpers";
 import { getURL } from "../helpers/urlHelpers";

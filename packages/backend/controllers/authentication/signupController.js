@@ -1,6 +1,6 @@
 const { createSecretToken } = require("../../util/secretToken");
 const logger = require("pino")();
-const User = require("../../models/userModel");
+const User = require("../../models/user/userModel");
 
 // Credit: @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
 // Any further modifications and errors are mine and mine alone.

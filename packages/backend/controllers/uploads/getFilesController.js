@@ -1,5 +1,5 @@
 const logger = require("pino")();
-const Files = require("../../models/uploadFileModel");
+const Files = require("../../models/uploads/uploadFileModel");
 
 // Credit: @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
 // Any further modifications and errors are mine and mine alone.

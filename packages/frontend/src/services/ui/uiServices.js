@@ -1,5 +1,4 @@
 // UI SERVICE //
-
 import axios from "axios";
 import { getURL } from "../helpers/urlHelpers";
 import log from "loglevel";

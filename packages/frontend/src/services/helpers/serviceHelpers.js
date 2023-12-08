@@ -1,5 +1,4 @@
 // SERVICE HELPERS //
-
 export async function handleResponse(responseData) {
   let responseFlag = false;
   const { message, success } = responseData;

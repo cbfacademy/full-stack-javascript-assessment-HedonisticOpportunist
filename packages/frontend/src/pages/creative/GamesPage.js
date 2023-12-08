@@ -1,5 +1,5 @@
 import { Card, Container, Col, Row } from "react-bootstrap";
-import HomeBreadcrumbs from "../../components/navigation/HomeBreadcrumbs";
+import HomeBreadcrumbs from "../../components/navigation/home/HomeBreadcrumbs";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const GamesPage = () => {

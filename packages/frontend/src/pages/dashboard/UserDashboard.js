@@ -1,5 +1,5 @@
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
-import DashboardBreadcrumbs from "../../components/navigation/DashboardBreadcrumbs";
+import DashboardBreadcrumbs from "../../components/navigation/dashboard/DashboardBreadcrumbs";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { messageConstants } from "../../constants/messageConstants";
 import {
@@ -87,6 +87,10 @@ const UserDashboard = () => {
                   <h4>Welcome {username}!</h4>
                 </Card.Title>
                 <Card.Text>It's good to see you again.</Card.Text>
+                <Card.Text>
+                  Carry out actions like uploading links to your work or
+                  subscribing to our newsletter.
+                </Card.Text>
               </Card.Body>
             </Card>
           </Col>

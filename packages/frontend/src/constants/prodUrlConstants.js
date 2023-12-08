@@ -14,13 +14,11 @@ export const prodUrlConstants = {
   // UPLOAD ENDPOINTS
   UPLOAD_ENDPOINT: process.env.REACT_APP_BACKEND_URL + "/uploads",
   GET_FILES_ENDPOINT: process.env.REACT_APP_BACKEND_URL + "/files",
+  DELETE_FILE_ENDPOINT: process.env.REACT_APP_BACKEND_URL + "/delete:",
 
   // DASHBOARD ENDPOINT
   DASHBOARD_ENDPOINT: process.env.REACT_APP_BACKEND_URL + "/dashboard",
 
   // LOGOUT ENDPOINT
   LOGOUT_ENDPOINT: process.env.REACT_APP_BACKEND_URL + "/logout",
-
-  // AUTO LOGIN ENDPOINT
-  AUTO_LOGIN_ENDPOINT: process.env.REACT_APP_BACKEND_URL + "/autoLogin",
 };

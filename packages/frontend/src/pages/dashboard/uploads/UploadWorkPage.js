@@ -1,6 +1,6 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import ReturnToDashboardBreadcrumbs from "../../../components/navigation/ReturnToDashboardBreadcrumbs";
+import ReturnToDashboardBreadcrumbs from "../../../components/navigation/dashboard/ReturnToDashboardBreadcrumbs";
 import UploadWorkForm from "../../../components/forms/upload/UploadWorkForm";
 
 const UploadWorkPage = () => {

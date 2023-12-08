@@ -13,26 +13,26 @@ describe("<UploadedFilesPage />", () => {
 
   it("renders the 'View uploaded ...' text", () => {
     cy.mount(<UploadedFilesPage />);
-    cy.contains("p", "View uploaded files here 🐅.");
+    cy.contains("p", "View uploaded or delete files here 🐅.");
   });
 
   it("renders the 'Title' column", () => {
     cy.mount(<UploadedFilesPage />);
-    cy.contains("th", "Title");
+    cy.contains("th", "|Title|");
   });
 
   it("renders the 'Description' column", () => {
     cy.mount(<UploadedFilesPage />);
-    cy.contains("th", "Description");
+    cy.contains("th", "|Description|");
   });
 
   it("renders the 'Link' column", () => {
     cy.mount(<UploadedFilesPage />);
-    cy.contains("th", "Link");
+    cy.contains("th", "|Link|");
   });
 
-  it("renders the 'Delete Link to Your Interactive Art / Game' h4 header", () => {
+  it("renders the 'Title to Your Interactive Art / Game' h4 header", () => {
     cy.mount(<UploadedFilesPage />);
-    cy.contains("h4", "Delete Link to Your Interactive Art / Game ᓚᘏᗢ");
+    cy.contains("h4", "Title to Your Interactive Art / Game ᓚᘏᗢ");
   });
 });

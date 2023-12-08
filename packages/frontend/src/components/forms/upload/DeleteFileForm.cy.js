@@ -6,9 +6,9 @@ describe("<DeleteFileForm />", () => {
     cy.mount(<DeleteFileForm />);
   });
 
-  it("renders the 'Uploaded Work Link' label text", () => {
+  it("renders the 'Uploaded Work Title' label text", () => {
     cy.mount(<DeleteFileForm />);
-    cy.contains("label", "Uploaded Work Link");
+    cy.contains("label", "Uploaded Work Title");
   });
 
   it("renders the 'Delete Files' button text", () => {

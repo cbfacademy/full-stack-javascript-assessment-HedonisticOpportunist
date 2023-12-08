@@ -1,4 +1,4 @@
-const File = require("../../models/uploadFileModel");
+const File = require("../../models/uploads/uploadFileModel");
 const logger = require("pino")();
 
 // @Credit: @ https://www.freecodecamp.org/news/how-to-secure-your-mern-stack-application/
@@ -7,9 +7,11 @@ const logger = require("pino")();
 // DELETE FILE CONTROLLER //
 module.exports.deleteFile = async (req, res, next) => {
   try {
-    const { url } = req.body;
+    const { title } = req.params;
+    let alteredTitle = title.replace(":", "");
+    alteredTitle = alteredTitle.trim();
     const existingFile = await File.findOneAndDelete({
-      url,
+      title: { $eq: alteredTitle },
     });
     res.status(201).json({
       message: "File deleted successfully.",
