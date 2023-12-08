@@ -1,31 +1,31 @@
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
-import { messageConstants } from "../../constants/messageConstants";
-import { subscribe } from "../../services/subscription-services/subscribersService";
+import { messageConstants } from "../../../constants/messageConstants";
+import { unsubscribe } from "../../../services/subscription-services/subscribersService";
 import { useState } from "react";
 
-const SubscribeForm = () => {
+const UnsubscribeForm = () => {
   // STATES
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
 
-  // HANDLE SUBSCRIBE FUNCTION
-  const handleSubscribeResponse = async () => {
-    let response = await subscribe(email);
+  // UNSUBSCRIBE FUNCTION
+  const handleUnsubscribe = async () => {
+    let response = await unsubscribe(email);
     if (response) {
-      setMessage(messageConstants.SUBSCRIBE_SUCCESS);
+      setMessage(messageConstants.UNSUBSCRIBE_SUCCESS);
     } else {
-      setMessage(messageConstants.SUBSCRIBE_ERROR);
+      setMessage(messageConstants.UNSUBSCRIBE_ERROR);
     }
     setEmail(email);
   };
 
-  // SUBMIT SUBSCRIBE FUNCTION
-  const handleSubscribe = async (e) => {
+  // SUBMIT FUNCTION
+  const handleSubmit = async (e) => {
     e.preventDefault();
     if (email === "" || !email.includes("@") || email === null) {
-      setMessage(messageConstants.SUBSCRIBE_ERROR);
+      setMessage(messageConstants.UNSUBSCRIBE_ERROR);
     } else {
-      handleSubscribeResponse();
+      handleUnsubscribe();
     }
   };
 
@@ -46,18 +46,18 @@ const SubscribeForm = () => {
                 />
               </Form.Group>
             </Form>
-            {/* SUBSCRIBE BUTTON */}
+            {/* UNSUBSCRIBE BUTTON */}
             <Button
               className="btn-grad"
               variant="outline-dark"
-              size="sm"
-              onClick={handleSubscribe}
+              size="lg"
+              onClick={handleSubmit}
             >
-              🐾Suscribe to our newsletter.
+              🐻‍❄️Unsubscribe from our newsletter.
             </Button>
           </Col>
           <Col>
-            {/* DISPLAY SUBSCRIBE STATUS*/}
+            {/* DISPLAY UNSUBSCRIBE STATUS*/}
             <p>{message}</p>
           </Col>
         </Row>
@@ -66,4 +66,4 @@ const SubscribeForm = () => {
   );
 };
 
-export default SubscribeForm;
+export default UnsubscribeForm;

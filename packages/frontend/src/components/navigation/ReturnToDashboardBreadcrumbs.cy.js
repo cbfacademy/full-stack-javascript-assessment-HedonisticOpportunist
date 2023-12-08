@@ -8,6 +8,6 @@ describe("<ReturnToDashboardBreadcrumbs />", () => {
 
   it("renders the 'Return to Dashboard' link text", () => {
     cy.mount(<ReturnToDashboardBreadcrumbs />);
-    cy.contains("a", "🐾Return to Dashboard");
+    cy.contains("a", "👾Return to Dashboard");
   });
 });

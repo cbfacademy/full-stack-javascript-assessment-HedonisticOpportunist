@@ -1,6 +1,7 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
-import ReturnToDashboardBreadcrumbs from "../../components/navigation/ReturnToDashboardBreadcrumbs";
-import UnsubscribeForm from "../../components/forms/UnsubscribeForm";
+import { LazyLoadImage } from "react-lazy-load-image-component";
+import ReturnToDashboardBreadcrumbs from "../../../components/navigation/ReturnToDashboardBreadcrumbs";
+import UnsubscribeForm from "../../../components/forms/subscriptions/UnsubscribeForm";
 
 const UnsubscribePage = () => {
   return (
@@ -33,6 +34,14 @@ const UnsubscribePage = () => {
                   {/* UNSUBSCRIBE FORM TITLE */}
                   <h4>Unsubscribe From Our Internal Newsletter ᓚᘏᗢ</h4>
                 </Card.Title>
+                <Col>
+                  {/* CAT IMAGE */}
+                  <LazyLoadImage
+                    className="mini-logo"
+                    src="images/black_cat.png"
+                    alt="A Black Cat"
+                  />
+                </Col>
               </Card.Body>
             </Card>
           </Col>

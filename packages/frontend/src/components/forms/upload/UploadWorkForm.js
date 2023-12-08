@@ -1,7 +1,7 @@
 import { Button, Container, Col, Form, Row } from "react-bootstrap";
-import { messageConstants } from "../../constants/messageConstants";
+import { messageConstants } from "../../../constants/messageConstants";
 import React, { useState } from "react";
-import { upload } from "../../services/upload-services/uploadService";
+import { upload } from "../../../services/upload-services/uploadService";
 
 const UploadWorkForm = () => {
   // STATES
@@ -40,9 +40,6 @@ const UploadWorkForm = () => {
           <Col>
             <Form>
               <Form.Group controlId="formFileLg" className="mb-3">
-                <Form.Label>
-                  <p> Upload Your Work ^•^* </p>
-                </Form.Label>
                 <Form.Group controlId="title">
                   <Form.Label>Title: </Form.Label>
                   {/* SET TITLE */}
@@ -90,7 +87,7 @@ const UploadWorkForm = () => {
               size="lg"
               onClick={handleSubmit}
             >
-              🐾Upload Work.
+              🐻‍❄️Upload Work.
             </Button>
           </Col>
           <Col>

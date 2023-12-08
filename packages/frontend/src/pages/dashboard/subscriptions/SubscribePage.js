@@ -1,7 +1,8 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
-import ReturnToDashboardBreadcrumbs from "../../components/navigation/ReturnToDashboardBreadcrumbs";
-import SubscribeForm from "../../components/forms/SubscribeForm";
+import ReturnToDashboardBreadcrumbs from "../../../components/navigation/ReturnToDashboardBreadcrumbs";
+import SubscribeForm from "../../../components/forms/subscriptions/SubscribeForm";
 
 const SubscribePage = () => {
   return (
@@ -45,6 +46,14 @@ const SubscribePage = () => {
                   {/* SUBSCRIBE FORM TITLE */}
                   <h4>Subscribe To Our Internal Newsletter ᓚᘏᗢ</h4>
                 </Card.Title>
+                <Col>
+                  {/* CAT IMAGE */}
+                  <LazyLoadImage
+                    className="mini-logo"
+                    src="images/black_cat.png"
+                    alt="A Black Cat"
+                  />
+                </Col>
               </Card.Body>
             </Card>
           </Col>

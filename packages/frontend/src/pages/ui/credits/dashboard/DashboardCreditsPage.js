@@ -1,5 +1,5 @@
 import { Card, Container, Col, Row } from "react-bootstrap";
-import CreditsBreadcrumbs from "../../../components/navigation/CreditsBreadcrumbs";
+import CreditsBreadcrumbs from "../../../../components/navigation/CreditsBreadcrumbs";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const DashboardCreditsPage = () => {
@@ -37,6 +37,39 @@ const DashboardCreditsPage = () => {
                   />
                   <a href="https://www.facebook.com/Freepik/">
                     Credit: freepik.
+                  </a>
+                </Card.Text>
+                <Card.Text>
+                  {/* IMAGE */}
+                  <LazyLoadImage
+                    className="mini-logo"
+                    src="images/laptop_cat.png"
+                    alt="A Laptop Cat"
+                  />
+                  <a href="https://www.facebook.com/Freepik/">
+                    Credit: freepik.
+                  </a>
+                </Card.Text>
+                <Card.Text>
+                  {/* IMAGE */}
+                  <LazyLoadImage
+                    className="mini-logo"
+                    src="images/black_cat.png"
+                    alt="A Black Cat"
+                  />
+                  <a href="https://www.facebook.com/Freepik/">
+                    Credit: smashicons.
+                  </a>
+                </Card.Text>
+                <Card.Text>
+                  {/* IMAGE */}
+                  <LazyLoadImage
+                    className="mini-logo"
+                    src="images/pencil_cat.png"
+                    alt="A Pencil Cat"
+                  />
+                  <a href="https://www.facebook.com/Freepik/">
+                    Credit: smashicons.
                   </a>
                 </Card.Text>
               </Card.Body>

@@ -1,20 +1,20 @@
-import ArtsCreditsPage from "../../pages/ui/credits/ArtsCreditPage";
+import ArtsCreditsPage from "../../pages/ui/credits/creative/ArtsCreditPage";
 import CreditsPage from "../../pages/ui/credits/CreditsPage";
-import DashboardCreditsPage from "../../pages/ui/credits/DashboardCreditsPage";
+import DashboardCreditsPage from "../../pages/ui/credits/dashboard/DashboardCreditsPage";
 import { Routes, Route } from "react-router-dom";
 import GamesPage from "../../pages/creative/GamesPage";
-import GamePageCredits from "../../pages/ui/credits/GameCreditsPage";
+import GamePageCredits from "../../pages/ui/credits/creative/GameCreditsPage";
 import HeaderBreadcrumbs from "../navigation/HeaderBreadcrumbs";
 import ImageCreditsPage from "../../pages/ui/credits/ImageCreditsPage";
 import InteractiveArtPage from "../../pages/creative/InteractiveArtPage";
 import LandingPage from "../../pages/ui/LandingPage";
 import LoginPage from "../../pages/authentication/LoginPage";
 import SignupPage from "../../pages/authentication/SignupPage";
-import SubscribePage from "../../pages/dashboard/SubscribePage";
+import SubscribePage from "../../pages/dashboard/subscriptions/SubscribePage";
 import UserDashboard from "../../pages/dashboard/UserDashboard";
-import UnsubscribePage from "../../pages/dashboard/UnsubscribePage";
-import UploadedFilesPage from "../../pages/dashboard/UploadedFilesPage";
-import UploadWorkPage from "../../pages/dashboard/UploadWorkPage";
+import UnsubscribePage from "../../pages/dashboard/subscriptions/UnsubscribePage";
+import UploadedFilesPage from "../../pages/dashboard/uploads/UploadedFilesPage";
+import UploadWorkPage from "../../pages/dashboard/uploads/UploadWorkPage";
 
 const RoutesComponent = () => {
   return (
