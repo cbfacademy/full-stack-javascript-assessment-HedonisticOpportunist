@@ -1,13 +1,21 @@
-const request = require("supertest");
 const app = require("./app");
+const request = require("supertest");
 
-describe("Test the get app of the server.", () => {
-  it.skip("It should response the welcome to SpaceCats GET method", (done) => {
-    request(app)
-      .get("/")
-      .then((response) => {
-        expect(response.statusCode).toBe(200);
-        done();
-      });
+const createRequester = () => {
+  return request(app);
+};
+
+describe("Test the server.", () => {
+  beforeEach(() => jest.resetModules());
+
+  it("should return a valid response when the get method is called", async () => {
+    const requester = createRequester();
+    const response = await requester.get("/");
+    expect(response.status).toEqual(200);
+    expect(response.type).toEqual(expect.stringContaining("json"));
+    expect(response.body).toEqual({
+      message:
+        "Hello and welcome from the floating space cats. Today's date is: 2023-12-9.",
+    });
   });
 });
