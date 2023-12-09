@@ -1,6 +1,10 @@
 // UPLOAD SERVICE //
 import axios from "axios";
-import { handleResponse, getResponseData } from "../helpers/serviceHelpers";
+import {
+  filterAndReturn,
+  handleResponse,
+  getResponseData,
+} from "../helpers/serviceHelpers";
 import { getURL } from "../helpers/urlHelpers";
 import log from "loglevel";
 
@@ -42,6 +46,7 @@ export async function deleteFile(userTitle) {
     const { data } = await axios.delete(deleteFileUrl + title, {
       withCredentials: true,
     });
+    console.log(data);
     return await handleResponse(data);
   } catch (error) {
     log.error(error);
@@ -55,20 +60,8 @@ async function getFileToDelete(title) {
     const { data } = await axios.get(getFilesUrl, {
       withCredentials: true,
     });
-    return filterAndReturnTitle(data, title);
+    return filterAndReturn(data.files, title, "title");
   } catch (error) {
     log.error(error);
   }
-}
-
-// FILTER OUT AND RETURN TITLE FUNCTION
-function filterAndReturnTitle(data, title) {
-  let matchedTitle = "";
-  for (let i = 0; i < data.files.length; i++) {
-    let foundTitle = data.files[i]["title"];
-    if (foundTitle === title) {
-      matchedTitle = foundTitle;
-    }
-  }
-  return matchedTitle;
 }

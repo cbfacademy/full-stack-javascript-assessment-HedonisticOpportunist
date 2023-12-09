@@ -15,4 +15,9 @@ describe("<DeleteFileForm />", () => {
     cy.mount(<DeleteFileForm />);
     cy.contains("button", "🐻‍❄️Delete Files");
   });
+
+  it("renders the 'Reload Page' button text", () => {
+    cy.mount(<DeleteFileForm />);
+    cy.contains("button", "🐻‍❄️Reload Page");
+  });
 });

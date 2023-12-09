@@ -6,6 +6,11 @@ describe("<DashboardBreadcrumbs />", () => {
     cy.mount(<DashboardBreadcrumbs />);
   });
 
+  it("renders the link text for the 'Change User Setting' navigation", () => {
+    cy.mount(<DashboardBreadcrumbs />);
+    cy.contains("a", "👾Change User Settings");
+  });
+
   it("renders the link text for the 'Upload Link / Games' navigation", () => {
     cy.mount(<DashboardBreadcrumbs />);
     cy.contains("a", "👾Upload Link To Art | Games");

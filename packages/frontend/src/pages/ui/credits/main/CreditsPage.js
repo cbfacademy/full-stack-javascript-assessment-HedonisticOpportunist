@@ -25,8 +25,12 @@ const CreditsPage = () => {
                   now.
                 </Card.Text>
                 <Card.Text>
+                  Some of the images on the main section of <i>Space Cats</i>{" "}
+                  may be reused on the <i>Dashboard</i> page ❤.
+                </Card.Text>
+                <Card.Text>
                   Other credits -- related to code and assets used within the
-                  art/games --{" "}
+                  art/games --
                   <a href="https://github.com/HedonisticOpportunist/Space-Cats/blob/main/README.md">
                     can be found in the project's documentation.
                   </a>

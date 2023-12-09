@@ -17,14 +17,14 @@ export const messageConstants = {
     "🦉🦉 Success! You are no longer subscribed to our newsletter.",
 
   // UPLOAD TOAST MESSAGES
-  UPLOAD_ERROR: "*ੈ♡⸝⸝🪐༘⋆ Error. Please try uploading your file again.",
+  UPLOAD_ERROR: "🪐🪐Error. Please try uploading your file again.",
   UPLOAD_SUCCESS: "🦢🦢 Success! Your file has been uploaded.",
 
   // DELETE FILE TOAST MESSAGES
-  DELETE_FILE_ERROR: "*⋆˚🐾˖° Error. Please try deleting your file again.",
-  DELETE_FILE_SUCCESS: "◕⩊◕ Success! Your file has been deleted.",
+  DELETE_FILE_ERROR: "🦭🦭 Error. Please try deleting your file again.",
+  DELETE_FILE_SUCCESS: "🐧🐧 Success! Your file has been deleted.",
 
   // LOGOUT TOAST MESSAGES
   LOGOUT_ERROR: "🧸🧸 Error. Please try logging out again.",
-  LOGOUT_SUCCESS: "♪♪ Success! You have logged out successfully.",
+  LOGOUT_SUCCESS: "❄️❄️Success! You have logged out successfully.",
 };
