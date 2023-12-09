@@ -1,18 +1,20 @@
 # 🐈‍⬛ SPACE CATS - TESTING
 
-A significant portion of testing for this project was carried out manually, using tools such as _Chrome Dev Tools_.
+_**Space Cats**_ contains backend unit tests, along with component and end-to-end frontend testing.
 
-The driving force behind this decision was the need for more familiarity with _Jest_ [2] and API testing.
+# 🐈‍⬛ SPACE CATS - MANUAL TESTING
+
+A significant portion of testing for this project was carried out manually, using tools such as _Chrome Dev Tools_ [1].
+
+Manual testing was helpful for ad-hoc verification and understanding how the codebase worked.
 
 # 🐈‍⬛ SPACE CATS - BACKEND TESTING
 
-Most tests for the back end use _Jest_ [2], although the _app.test_js_ file also engages in _supertest_ [3].
-
-Writing tests for the backend proved difficult due to needing more clarity on how to write test code.
+The main test is _app.test_js_ file, which utilises _Jest_ [2] and _supertest_ [3].
 
 # 🐈‍⬛ SPACE CATS - FRONTEND TESTING
 
-The front end uses _cypress_ for component testing [4].
+The front end uses _cypress_ for component and end-to-end testing [4].
 
 ### REFERENCES
 
