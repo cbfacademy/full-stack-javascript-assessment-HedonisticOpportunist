@@ -17,13 +17,13 @@ const HeaderBreadcrumbs = () => {
                 <Link to="/">🐾Home</Link>
               </li>
               <li>
+                <Link to="/credits">🐾Credits</Link>
+              </li>
+              <li>
                 <Link to="/games">🐾Games</Link>
               </li>
               <li>
                 <Link to="/interactive-art">🐾Interactive Art</Link>
-              </li>
-              <li>
-                <Link to="/credits">🐾Credits</Link>
               </li>
               <li>
                 <Link to="/login">🐾Login | Signup</Link>

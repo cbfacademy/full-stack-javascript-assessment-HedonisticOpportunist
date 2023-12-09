@@ -38,8 +38,8 @@ const UnsubscribePage = () => {
                   {/* CAT IMAGE */}
                   <LazyLoadImage
                     className="mini-logo"
-                    src="images/black_cat.png"
-                    alt="A Black Cat"
+                    src="images/cat_moon.jpg"
+                    alt="A Cat and Its Moon"
                   />
                 </Col>
               </Card.Body>

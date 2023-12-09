@@ -78,8 +78,6 @@ const UploadWorkForm = () => {
                 </Form.Group>
               </Form.Group>
             </Form>
-          </Col>
-          <Col>
             {/* UPLOAD WORK BUTTON */}
             <Button
               className="btn-grad"

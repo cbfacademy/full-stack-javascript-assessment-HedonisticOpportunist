@@ -1,4 +1,4 @@
-import { Button, Form, Container, Col, Row } from "react-bootstrap";
+import { Button, Container, Col, Form, Row } from "react-bootstrap";
 import { messageConstants } from "../../../constants/messageConstants";
 import { signup } from "../../../services/authentication-services/authenticationService";
 import { useNavigate } from "react-router-dom";
@@ -73,7 +73,6 @@ const SignupForm = () => {
                   required
                 />
               </Form.Group>
-
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password: </Form.Label>
                 <Form.Control

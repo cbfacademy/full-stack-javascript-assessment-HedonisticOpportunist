@@ -1,11 +1,11 @@
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
-import DashboardBreadcrumbs from "../../components/navigation/dashboard/DashboardBreadcrumbs";
+import DashboardBreadcrumbs from "../../../components/navigation/dashboard/DashboardBreadcrumbs";
 import { LazyLoadImage } from "react-lazy-load-image-component";
-import { messageConstants } from "../../constants/messageConstants";
+import { messageConstants } from "../../../constants/messageConstants";
 import {
   getUserData,
   logout,
-} from "../../services/authentication-services/authenticationService";
+} from "../../../services/authentication-services/authenticationService";
 import React, { useState } from "react";
 import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";

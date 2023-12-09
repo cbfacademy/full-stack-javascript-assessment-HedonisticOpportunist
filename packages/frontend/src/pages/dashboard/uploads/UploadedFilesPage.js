@@ -39,14 +39,6 @@ const UploadedFilesPage = () => {
             </Card>
           </Col>
           <Col>
-            {/* CAT IMAGE */}
-            <LazyLoadImage
-              className="mini-logo"
-              src="images/pencil_cat.png"
-              alt="A Pencil Cat"
-            />
-          </Col>
-          <Col>
             {/* TABLE */}
             <Table striped="columns">
               <thead>
@@ -78,10 +70,19 @@ const UploadedFilesPage = () => {
                   {/* PAGE TITLE */}
                   <h4>Title to Your Interactive Art / Game ᓚᘏᗢ</h4>
                 </Card.Title>
+                <Card.Text>
+                  {/* CAT IMAGE */}
+                  <LazyLoadImage
+                    className="mini-logo"
+                    src="images/pencil_cat.png"
+                    alt="A Pencil Cat"
+                  />
+                </Card.Text>
               </Card.Body>
             </Card>
           </Col>
           <Col>
+            {/* DELETE FIlE FORM */}
             <DeleteFileForm></DeleteFileForm>
           </Col>
         </Row>

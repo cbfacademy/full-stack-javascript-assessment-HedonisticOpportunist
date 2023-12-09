@@ -1,6 +1,6 @@
 // SUBSCRIBER SERVICE //
 import axios from "axios";
-import { handleResponse } from "../helpers/serviceHelpers";
+import { filterAndReturn, handleResponse } from "../helpers/serviceHelpers";
 import { getURL } from "../helpers/urlHelpers";
 import log from "loglevel";
 
@@ -42,20 +42,8 @@ async function getSubscribers(email) {
     const { data } = await axios.get(getSubscribersUrl, {
       withCredentials: true,
     });
-    return filterAndReturnEmail(data, email);
+    return filterAndReturn(data.subscribers, email, "email");
   } catch (error) {
     log.error(error);
   }
-}
-
-// FILTER OUT AND RETURN EMAIL FUNCTION
-function filterAndReturnEmail(data, userEmail) {
-  let matchedEmail = "";
-  for (let i = 0; i < data.subscribers.length; i++) {
-    let foundMail = data.subscribers[i]["email"];
-    if (foundMail === userEmail) {
-      matchedEmail = foundMail;
-    }
-  }
-  return matchedEmail;
 }

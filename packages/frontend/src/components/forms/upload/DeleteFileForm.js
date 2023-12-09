@@ -1,6 +1,7 @@
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
 import { deleteFile } from "../../../services/upload-services/uploadService";
 import { messageConstants } from "../../../constants/messageConstants";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useState } from "react";
 
 const DeleteFileForm = () => {
@@ -22,7 +23,7 @@ const DeleteFileForm = () => {
   // RELOAD PAGE
   // Credit: @ https://upmostly.com/tutorials/how-to-refresh-a-page-or-component-in-react
   function refreshPage() {
-    window.location.reload(true);
+    document.location.reload();
   }
 
   // HANDLE SUBMIT FUNCTION
@@ -32,7 +33,6 @@ const DeleteFileForm = () => {
       setMessage(messageConstants.DELETE_FILE_ERROR);
     } else {
       handleDelete();
-      refreshPage();
     }
   };
 
@@ -53,6 +53,8 @@ const DeleteFileForm = () => {
                 />
               </Form.Group>
             </Form>
+          </Col>
+          <Col>
             {/* DELETE FILES BUTTON */}
             <Button
               className="btn-grad"
@@ -61,6 +63,25 @@ const DeleteFileForm = () => {
               onClick={handleSubmit}
             >
               🐻‍❄️Delete Files
+            </Button>
+          </Col>
+          <Col>
+            {/* CAT IMAGE */}
+            <LazyLoadImage
+              className="mini-logo"
+              src="images/pink_astro_cat.jpg"
+              alt="A Pink Astronaut Cat"
+            />
+          </Col>
+          <Col>
+            {/* RELOAD PAGE BUTTON */}
+            <Button
+              className="btn-grad"
+              variant="outline-dark"
+              size="lg"
+              onClick={refreshPage}
+            >
+              🐻‍❄️Reload Page
             </Button>
           </Col>
           <Col>
