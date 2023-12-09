@@ -19,12 +19,17 @@ describe("<CreditsPage />", () => {
     );
   });
 
-  it("renders the 'Other credits...' text", () => {
+  it("renders the 'Other credits...' partialtext", () => {
     cy.mount(<CreditsPage />);
     cy.contains(
       "p",
-      "Other credits -- related to code and assets used within the art/games -- can be found in the project's documentation."
+      "Other credits -- related to code and assets used within the art/games --"
     );
+  });
+
+  it("renders the 'can be found...' partial link text", () => {
+    cy.mount(<CreditsPage />);
+    cy.contains("a", "can be found in the project's documentation.");
   });
 
   it("renders the link text for the 'Interactive Art Image Credits' navigation", () => {
