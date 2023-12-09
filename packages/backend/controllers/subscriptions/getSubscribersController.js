@@ -9,7 +9,7 @@ module.exports.getSubscribers = async (req, res, next) => {
   try {
     const subscribers = await Subscribers.find(req.body);
     res.status(201).json({
-      message: "Users retrieved successfully.",
+      message: "Subscribers retrieved successfully.",
       success: true,
       subscribers: subscribers,
     });
