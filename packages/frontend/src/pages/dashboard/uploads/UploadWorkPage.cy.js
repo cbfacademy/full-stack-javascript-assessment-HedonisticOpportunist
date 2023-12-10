@@ -6,7 +6,7 @@ describe("<UploadWorkPage />", () => {
     cy.mount(<UploadWorkPage />);
   });
 
-  it("renders the 'Upload Link to Your Interactive Art / Game' h3 heading", () => {
+  it("renders the 'Upload Link to Your Interactive Art / Game' h3 header", () => {
     cy.mount(<UploadWorkPage />);
     cy.contains("h3", "Upload Link to Your Interactive Art / Game ᓚᘏᗢ");
   });
@@ -24,7 +24,7 @@ describe("<UploadWorkPage />", () => {
     );
   });
 
-  it("renders the 'Upload Your Work' h4 heading", () => {
+  it("renders the 'Upload Your Work' h4 header", () => {
     cy.mount(<UploadWorkPage />);
     cy.contains("h4", "Upload Your Work ^•^*");
   });

@@ -1,6 +1,6 @@
 # 🐈‍⬛ SPACE CATS - TESTING
 
-_**Space Cats**_ contains backend unit tests, along with component and end-to-end frontend testing.
+_**Space Cats**_ contains backend integration tests, along with component and end-to-end frontend testing.
 
 # 🐈‍⬛ SPACE CATS - MANUAL TESTING
 
@@ -10,7 +10,7 @@ Manual testing was helpful for ad-hoc verification and understanding how the cod
 
 # 🐈‍⬛ SPACE CATS - BACKEND TESTING
 
-The main test is _app.test_js_ file, which utilises _Jest_ [2] and _supertest_ [3].
+The main (integration) test is _app.test_js_ file, which utilises _Jest_ [2] and _supertest_ [3].
 
 # 🐈‍⬛ SPACE CATS - FRONTEND TESTING
 

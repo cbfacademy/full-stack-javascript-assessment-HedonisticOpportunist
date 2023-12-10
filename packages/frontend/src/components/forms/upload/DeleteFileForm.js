@@ -20,12 +20,6 @@ const DeleteFileForm = () => {
     setTitle(title);
   };
 
-  // RELOAD PAGE
-  // Credit: @ https://upmostly.com/tutorials/how-to-refresh-a-page-or-component-in-react
-  function refreshPage() {
-    document.location.reload();
-  }
-
   // HANDLE SUBMIT FUNCTION
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -72,17 +66,6 @@ const DeleteFileForm = () => {
               src="images/pink_astro_cat.jpg"
               alt="A Pink Astronaut Cat"
             />
-          </Col>
-          <Col>
-            {/* RELOAD PAGE BUTTON */}
-            <Button
-              className="btn-grad"
-              variant="outline-dark"
-              size="lg"
-              onClick={refreshPage}
-            >
-              🐻‍❄️Reload Page
-            </Button>
           </Col>
           <Col>
             {/* DISPLAY FILE DELETED STATUS*/}

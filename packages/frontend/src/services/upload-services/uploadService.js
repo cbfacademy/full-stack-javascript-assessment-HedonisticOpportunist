@@ -46,7 +46,6 @@ export async function deleteFile(userTitle) {
     const { data } = await axios.delete(deleteFileUrl + title, {
       withCredentials: true,
     });
-    console.log(data);
     return await handleResponse(data);
   } catch (error) {
     log.error(error);

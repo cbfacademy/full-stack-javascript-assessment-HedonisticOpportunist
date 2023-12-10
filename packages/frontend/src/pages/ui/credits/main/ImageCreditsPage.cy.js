@@ -6,7 +6,7 @@ describe("<ImageCreditsPage />", () => {
     cy.mount(<ImageCreditsPage />);
   });
 
-  it("renders the 'Image Credits Page' h3 heading", () => {
+  it("renders the 'Image Credits Page' h3 header", () => {
     cy.mount(<ImageCreditsPage />);
     cy.contains("h3", "Image Credits Page");
   });
