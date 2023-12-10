@@ -1,4 +1,4 @@
-const app = require("./app");
+const app = require("../../app");
 const request = require("supertest");
 
 const createRequester = () => {
@@ -14,9 +14,16 @@ describe("Testing the Space Cats backend server.", () => {
     const response = await requester.get("/");
     expect(response.status).toEqual(200);
     expect(response.type).toEqual(expect.stringContaining("json"));
+
+    // Get current year, month and day
+    let date_now = Date.now();
+    let current_date = new Date(date_now);
+    let date = current_date.getDate();
+    let month = current_date.getMonth() + 1;
+    let year = current_date.getFullYear();
+
     expect(response.body).toEqual({
-      message:
-        "Hello and welcome from the floating space cats. Today's date is: 2023-12-9.",
+      message: `Hello and welcome from the floating space cats. Today's date is: ${year}-${month}-${date}.`,
     });
   });
 
@@ -90,6 +97,14 @@ describe("Testing the Space Cats backend server.", () => {
     const requester = createRequester();
     const response = await requester.post("/uploads");
     expect(response.status).toEqual(500);
+    expect(response.body).toEqual(expect.objectContaining({}));
+  });
+
+  // DELETE APP ROUTES
+  it("should return a valid response when the post add subscriber method is called with no credentials", async () => {
+    const requester = createRequester();
+    const response = await requester.delete("/delete/:email");
+    expect(response.status).toEqual(201);
     expect(response.body).toEqual(expect.objectContaining({}));
   });
 });
