@@ -6,9 +6,9 @@ describe("<DashboardBreadcrumbs />", () => {
     cy.mount(<DashboardBreadcrumbs />);
   });
 
-  it("renders the link text for the 'Change User Setting' navigation", () => {
+  it("renders the link text for the 'Delete Uploaded Work' navigation", () => {
     cy.mount(<DashboardBreadcrumbs />);
-    cy.contains("a", "👾Change User Settings");
+    cy.contains("a", "👾Delete Uploaded Work");
   });
 
   it("renders the link text for the 'Upload Link / Games' navigation", () => {
@@ -16,9 +16,9 @@ describe("<DashboardBreadcrumbs />", () => {
     cy.contains("a", "👾Upload Link To Art | Games");
   });
 
-  it("renders the link text for the 'View | Delete Uploaded Work' navigation", () => {
+  it("renders the link text for the 'View Uploaded Work' navigation", () => {
     cy.mount(<DashboardBreadcrumbs />);
-    cy.contains("a", "👾View | Delete Uploaded Work");
+    cy.contains("a", "👾View Uploaded Work");
   });
 
   it("renders the link text for the 'Subscribe | Unsubscribe To Newsletter' navigation", () => {

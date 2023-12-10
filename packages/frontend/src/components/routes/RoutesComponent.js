@@ -1,7 +1,7 @@
 import ArtsCreditsPage from "../../pages/ui/credits/creative/ArtsCreditPage";
-import ChangeUserSettingsPage from "../../pages/dashboard/user/ChangeUserSettingsPage";
 import CreditsPage from "../../pages/ui/credits/main/CreditsPage";
 import DashboardCreditsPage from "../../pages/ui/credits/dashboard/DashboardCreditsPage";
+import DeleupteUploadedWorkPage from "../../pages/dashboard/uploads/DeleteUploadedWorkPage";
 import { Routes, Route } from "react-router-dom";
 import GamesPage from "../../pages/creative/GamesPage";
 import GamePageCredits from "../../pages/ui/credits/creative/GameCreditsPage";
@@ -39,11 +39,6 @@ const RoutesComponent = () => {
           element={<ArtsCreditsPage></ArtsCreditsPage>}
         />
         {/* INDIVIDUAL ROUTES */}
-        <Route
-          exact
-          path="/change-user-settings"
-          element={<ChangeUserSettingsPage></ChangeUserSettingsPage>}
-        />
         <Route exact path="/credits" element={<CreditsPage></CreditsPage>} />
         <Route
           exact
@@ -59,6 +54,11 @@ const RoutesComponent = () => {
           exact
           path="/dashboard-image-credits"
           element={<DashboardCreditsPage></DashboardCreditsPage>}
+        />
+        <Route
+          exact
+          path="/delete"
+          element={<DeleupteUploadedWorkPage></DeleupteUploadedWorkPage>}
         />
         <Route
           exact

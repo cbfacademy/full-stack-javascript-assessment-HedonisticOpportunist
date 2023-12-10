@@ -13,7 +13,7 @@ describe("<UploadedFilesPage />", () => {
 
   it("renders the 'View uploaded ...' text", () => {
     cy.mount(<UploadedFilesPage />);
-    cy.contains("p", "View uploaded or delete files here 🐅.");
+    cy.contains("p", "View uploaded files here 🐍.");
   });
 
   it("renders the 'Title' column", () => {
@@ -29,10 +29,5 @@ describe("<UploadedFilesPage />", () => {
   it("renders the 'Link' column", () => {
     cy.mount(<UploadedFilesPage />);
     cy.contains("th", "|Link|");
-  });
-
-  it("renders the 'Title to Your Interactive Art / Game' h4 header", () => {
-    cy.mount(<UploadedFilesPage />);
-    cy.contains("h4", "Title to Your Interactive Art / Game ᓚᘏᗢ");
   });
 });
