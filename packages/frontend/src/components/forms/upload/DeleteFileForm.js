@@ -1,7 +1,6 @@
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
 import { deleteFile } from "../../../services/upload-services/uploadService";
 import { messageConstants } from "../../../constants/messageConstants";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { useState } from "react";
 
 const DeleteFileForm = () => {
@@ -58,14 +57,6 @@ const DeleteFileForm = () => {
             >
               🐻‍❄️Delete Files
             </Button>
-          </Col>
-          <Col>
-            {/* CAT IMAGE */}
-            <LazyLoadImage
-              className="mini-logo"
-              src="images/pink_astro_cat.jpg"
-              alt="A Pink Astronaut Cat"
-            />
           </Col>
           <Col>
             {/* DISPLAY FILE DELETED STATUS*/}
