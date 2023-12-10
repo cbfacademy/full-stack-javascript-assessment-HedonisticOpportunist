@@ -1,13 +1,16 @@
-const app = require("../../app");
+const app = require("../app");
 const request = require("supertest");
+const { beforeAll, afterAll, afterEach } = require("./testDatabase");
 
 const createRequester = () => {
   return request(app);
 };
 
-describe("Testing the Space Cats backend server.", () => {
-  beforeEach(() => jest.resetModules());
+beforeAll;
+beforeEach;
+afterEach;
 
+describe("Testing the Space Cats backend server.", () => {
   // TEST APP GET ROUTES
   it("should return a valid response when the welcome get method is called", async () => {
     const requester = createRequester();
@@ -15,7 +18,7 @@ describe("Testing the Space Cats backend server.", () => {
     expect(response.status).toEqual(200);
     expect(response.type).toEqual(expect.stringContaining("json"));
 
-    // Get current year, month and day
+    // Get the current year, month and day
     let date_now = Date.now();
     let current_date = new Date(date_now);
     let date = current_date.getDate();
@@ -101,9 +104,16 @@ describe("Testing the Space Cats backend server.", () => {
   });
 
   // DELETE APP ROUTES
-  it("should return a valid response when the post add subscriber method is called with no credentials", async () => {
+  it("should return a valid response when the delete subscriber method is called with no credentials", async () => {
     const requester = createRequester();
     const response = await requester.delete("/delete/:email");
+    expect(response.status).toEqual(201);
+    expect(response.body).toEqual(expect.objectContaining({}));
+  });
+
+  it("should return a valid response when the delete file method is called with no credentials", async () => {
+    const requester = createRequester();
+    const response = await requester.delete("/delete/:title");
     expect(response.status).toEqual(201);
     expect(response.body).toEqual(expect.objectContaining({}));
   });

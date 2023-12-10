@@ -1,15 +1,12 @@
 const mongoose = require("mongoose");
 const { MongoMemoryServer } = require("mongodb-memory-server");
 
-// Credit: @https://github.com/Adeku5080/task-manager-with-express/blob/master/tests/bootstrap.js
-// Any modifications or errors are mine and mine alone
-
 let mongoDatabase;
 
 beforeAll(async () => {
-  mongod = await MongoMemoryServer.create();
+  await mongoose.disconnect();
+  mongoDatabase = await MongoMemoryServer.create();
   const uri = mongoDatabase.getUri();
-
   await mongoose.connect(uri);
 });
 
@@ -24,7 +21,12 @@ afterEach(async () => {
 
   for (const key in collections) {
     const collection = collections[key];
-
     await collection.deleteMany();
   }
 });
+
+module.exports = {
+  beforeAll,
+  afterAll,
+  afterEach,
+};
