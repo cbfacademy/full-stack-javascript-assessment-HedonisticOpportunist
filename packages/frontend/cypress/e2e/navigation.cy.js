@@ -1,6 +1,6 @@
 describe("navigation spec", () => {
   it("allows the user to navigate", () => {
-    cy.visit("http://localhost:3000");
+    cy.visit("https://space-cats.vercel.app");
     cy.get("a").contains("Credits").click();
     cy.get("a").contains("Return to Homepage").click();
     cy.get("a").contains("Games").click();
