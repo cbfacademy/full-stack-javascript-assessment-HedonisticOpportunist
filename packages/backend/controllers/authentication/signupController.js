@@ -17,7 +17,7 @@ module.exports.signup = async (req, res, next) => {
     const token = createSecretToken(user._id);
     user.token = token;
     res.status(201).json({
-      message: "User signed in successfully.",
+      message: "User created and signed in successfully.",
       success: true,
       token: token,
     });

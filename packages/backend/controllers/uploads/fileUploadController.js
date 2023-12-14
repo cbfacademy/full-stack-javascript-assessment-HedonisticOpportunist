@@ -14,7 +14,7 @@ module.exports.uploadFile = async (req, res, next) => {
     }
     const file = await File.create({ title, description, url, createdAt });
     res.status(201).json({
-      message: "File added successfully.",
+      message: "File uploaded successfully.",
       success: true,
       file: file,
     });

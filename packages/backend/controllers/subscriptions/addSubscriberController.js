@@ -14,7 +14,7 @@ module.exports.addSubscriber = async (req, res, next) => {
     }
     const subscriber = await Subscriber.create({ email, createdAt });
     res.status(201).json({
-      message: "Subscriber subscribed successfully.",
+      message: "Subscriber added successfully.",
       success: true,
       subscriber: subscriber,
     });

@@ -7,7 +7,7 @@ const createRequester = () => {
 };
 
 beforeAll;
-beforeEach;
+afterAll;
 afterEach;
 
 describe("Testing the Space Cats backend server.", () => {
@@ -89,6 +89,20 @@ describe("Testing the Space Cats backend server.", () => {
     );
   });
 
+  it("should return a valid response when the post login method is called with an incorrect password and email", async () => {
+    const requester = createRequester();
+    const response = await requester.post("/login").send({
+      email: "ghost@dummy.com",
+      password: "dummmyPassword",
+    });
+    expect(response.status).toEqual(200);
+    expect(response.body).toEqual(
+      expect.objectContaining({
+        message: "Incorrect email.",
+      })
+    );
+  });
+
   it("should return a valid response when the post dashboard method is called with no credentials", async () => {
     const requester = createRequester();
     const response = await requester.post("/dashboard");
@@ -96,7 +110,7 @@ describe("Testing the Space Cats backend server.", () => {
     expect(response.body).toEqual(expect.objectContaining({}));
   });
 
-  it("should return a valid response when the post file uploads method is called with no credentials", async () => {
+  it("should return a valid response when the post file uploads method is called with no arguments", async () => {
     const requester = createRequester();
     const response = await requester.post("/uploads");
     expect(response.status).toEqual(500);
@@ -104,14 +118,14 @@ describe("Testing the Space Cats backend server.", () => {
   });
 
   // DELETE APP ROUTES
-  it("should return a valid response when the delete subscriber method is called with no credentials", async () => {
+  it("should return a valid response when the delete subscriber method is called with no arguments", async () => {
     const requester = createRequester();
     const response = await requester.delete("/delete/:email");
     expect(response.status).toEqual(201);
     expect(response.body).toEqual(expect.objectContaining({}));
   });
 
-  it("should return a valid response when the delete file method is called with no credentials", async () => {
+  it("should return a valid response when the delete file method is called with no arguments", async () => {
     const requester = createRequester();
     const response = await requester.delete("/delete/:title");
     expect(response.status).toEqual(201);
