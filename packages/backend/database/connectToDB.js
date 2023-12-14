@@ -1,7 +1,7 @@
-const logger = require("pino")();
-const mongoose = require("mongoose");
 require("dotenv").config();
+const mongoose = require("mongoose");
 const { MONGO_URL } = process.env;
+const logger = require("pino")();
 
 function connectToMongoDB() {
   mongoose

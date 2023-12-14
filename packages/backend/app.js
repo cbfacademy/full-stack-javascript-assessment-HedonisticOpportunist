@@ -1,3 +1,4 @@
+const bodyParser = require("body-parser");
 const { connectToMongoDB } = require("./database/connectToDB");
 const cookieParser = require("cookie-parser");
 const cors = require("cors");
@@ -36,6 +37,8 @@ app.use(
     ],
   })
 );
+
+app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.json());
 

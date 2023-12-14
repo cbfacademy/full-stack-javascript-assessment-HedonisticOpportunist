@@ -19,7 +19,7 @@ describe("<CreditsPage />", () => {
     );
   });
 
-  it("renders the 'Other credits...' partialtext", () => {
+  it("renders the 'Other credits...' partial text", () => {
     cy.mount(<CreditsPage />);
     cy.contains(
       "p",
