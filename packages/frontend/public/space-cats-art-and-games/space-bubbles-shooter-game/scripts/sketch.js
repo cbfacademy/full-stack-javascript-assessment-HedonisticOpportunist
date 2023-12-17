@@ -1,11 +1,15 @@
 // CLASS VARIABLES
 let spaceShip;
+let returnToGamesPageButton;
 
 // PRELOAD FUNCTION
 function preload() {
   // Set up space ship
   spaceShip = new SpaceShip();
   spaceShip.preloadSpaceShip();
+
+  // preload return to game page button
+  returnToGamesPageButton = new ReturnToGamesPageButton();
 }
 
 // SETUP FUNCTION

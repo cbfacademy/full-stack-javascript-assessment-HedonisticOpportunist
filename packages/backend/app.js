@@ -4,7 +4,7 @@ const cookieParser = require("cookie-parser");
 const cors = require("cors");
 require("dotenv").config();
 const express = require("express");
-require("dotenv").config();
+const helmet = require("helmet");
 const { getDate, welcomeMessage } = require("./util/landingPageMessages");
 const userRoute = require("./routes/users/userRoute");
 const subscriberRoute = require("./routes/subscriptions/subscriberRoute");
@@ -41,6 +41,7 @@ app.use(
 app.use(bodyParser.json());
 app.use(cookieParser());
 app.use(express.json());
+app.use(helmet());
 
 // HOMEPAGE GET ROUTE
 app.get("/", (_request, response) => {

@@ -13,10 +13,10 @@ const CreditsBreadcrumbs = () => {
           <Col>
             <ul className="breadcrumb">
               <li>
-                <Link to="/">🐾Return to Homepage</Link>
+                <Link to="/">🌑Return to Homepage</Link>
               </li>
               <li>
-                <Link to="/credits">🐾Return to Credits</Link>
+                <Link to="/credits">🌑Return to Credits</Link>
               </li>
             </ul>
           </Col>

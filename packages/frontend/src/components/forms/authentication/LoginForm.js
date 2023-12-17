@@ -28,7 +28,7 @@ const LoginForm = () => {
     setPassword(password);
 
     //Credit: @ https://medium.com/@furqanistic/decoding-jwt-secure-authentication-in-mern-applications-23cd7141e2f
-    localStorage.setItem("token", response.token);
+    sessionStorage.setItem("token", response.token);
   };
 
   // SUBMIT FUNCTION
