@@ -6,7 +6,6 @@ const logger = require("pino")();
 // LOGOUT CONTROLLER //
 module.exports.logout = async (_req, res, next) => {
   try {
-    res.clearCookie("token");
     res
       .status(201)
       .json({ message: "User logged out successfully.", success: true });

@@ -8,6 +8,6 @@ describe("<HomeBreadcrumbs />", () => {
 
   it("renders the 'Return to Homepage' link text", () => {
     cy.mount(<HomeBreadcrumbs />);
-    cy.contains("a", "🐾Return to Homepage");
+    cy.contains("a", "🌑Return to Homepage");
   });
 });

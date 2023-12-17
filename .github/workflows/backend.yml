@@ -5,9 +5,7 @@ on:
       - main
 jobs:
   build:
-    # Run workflow on the latest version of Ubuntu
     runs-on: ubuntu-latest
-    # Adding Continuous Integration
     steps:
       - name: Checkout Code
         uses: actions/checkout@v4

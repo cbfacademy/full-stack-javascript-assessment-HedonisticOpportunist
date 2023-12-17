@@ -15,8 +15,13 @@ let cat;
 let stars;
 let game_score_display;
 
+// CANVAS
+let canvas;
+
 function setUpGame() {
-  createCanvas(windowWidth, windowHeight);
+  // Set up the canvas
+  canvas = createCanvas(windowWidth / 2, windowHeight / 2);
+  canvas.position(windowWidth / 4, windowHeight / 4);
 
   // Game score is set to 0 so that the player can start the game with a carte blanche
   score = 0;
@@ -33,7 +38,7 @@ function setUpGame() {
   // Set up bubbles
   bubbles = [];
 
-  for (let i = 0; i < 80; i++) {
+  for (let i = 0; i < 30; i++) {
     bubbles.push(new Bubble(random(0, windowWidth), random(0, windowHeight)));
   }
 
@@ -45,4 +50,13 @@ function setUpGame() {
 
   // Set up game score display
   game_score_display = new GameScore();
+
+  // Set up button
+  returnToGamesPageButton.setUpButton();
+}
+
+// RESIZE CANVAS
+function windowResized() {
+  resizeCanvas(windowWidth / 2, windowHeight / 2);
+  canvas.position(windowWidth / 4, windowHeight / 4);
 }

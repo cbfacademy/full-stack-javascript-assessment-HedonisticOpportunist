@@ -8,11 +8,11 @@ describe("<CreditsBreadcrumbs />", () => {
 
   it("renders the link text for the 'Return to Homepage' navigation", () => {
     cy.mount(<CreditsBreadcrumbs />);
-    cy.contains("a", "🐾Return to Homepage");
+    cy.contains("a", "🌑Return to Homepage");
   });
 
   it("renders the link text for the 'Return to Credits' navigation", () => {
     cy.mount(<CreditsBreadcrumbs />);
-    cy.contains("a", "🐾Return to Credits");
+    cy.contains("a", "🌑Return to Credits");
   });
 });

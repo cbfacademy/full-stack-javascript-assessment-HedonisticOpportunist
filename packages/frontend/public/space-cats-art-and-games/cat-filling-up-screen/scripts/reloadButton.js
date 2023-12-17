@@ -3,7 +3,7 @@ class ReloadButton {
   // CONSTRUCTOR
   constructor() {
     this.button;
-    this.buttonText = "RELOAD ME";
+    this.buttonText = "RELOAD SCENE";
     this.buttonPosition = 150;
   }
 

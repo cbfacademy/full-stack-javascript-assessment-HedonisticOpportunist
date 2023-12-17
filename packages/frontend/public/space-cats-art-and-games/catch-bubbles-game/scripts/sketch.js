@@ -1,3 +1,12 @@
+// CLASS VARIABLES
+let returnToGamesPageButton;
+
+// PRELOAD FUNCTION
+function preload() {
+  // preload return to game page button
+  returnToGamesPageButton = new ReturnToGamesPageButton();
+}
+
 // SETUP FUNCTION
 function setup() {
   setUpGame();

@@ -63,7 +63,7 @@ export async function logout() {
 export async function getUserData() {
   try {
     const dashboardUrl = getURL("DASHBOARD");
-    const token = localStorage.getItem("token");
+    const token = sessionStorage.getItem("token");
     const { data } = await axios.post(
       dashboardUrl,
       {
