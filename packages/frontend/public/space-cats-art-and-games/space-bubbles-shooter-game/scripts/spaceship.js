@@ -6,8 +6,8 @@ class SpaceShip {
   // CONSTRUCTOR
   constructor() {
     this.spaceShip;
-    this.x = 550;
-    this.y = 750;
+    this.x = 100;
+    this.y = 100;
     this.speed = 5;
     this.rotation = 0;
     this.imgSize = 100;
