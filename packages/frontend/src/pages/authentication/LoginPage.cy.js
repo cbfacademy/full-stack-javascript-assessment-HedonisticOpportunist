@@ -23,6 +23,6 @@ describe("<LoginPage />", () => {
 
   it("renders the 'Login Here' h4 header", () => {
     cy.mount(<LoginPage />);
-    cy.contains("h4", "Login Here: ⋆⭒˚｡⋆ ");
+    cy.contains("h4", "Login Here: ⋆⭒˚｡⋆ ♡");
   });
 });

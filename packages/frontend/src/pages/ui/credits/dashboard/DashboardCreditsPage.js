@@ -1,6 +1,6 @@
 import { Card, Container, Col, Row } from "react-bootstrap";
 import CreditsBreadcrumbs from "../../../../components/navigation/home/CreditsBreadcrumbs";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import CopyrightCard from "../../../../components/cards/CopyrightCard";
 
 const DashboardCreditsPage = () => {
   return (
@@ -26,54 +26,30 @@ const DashboardCreditsPage = () => {
             </Card>
           </Col>
           <Col>
-            <Card>
-              <Card.Body>
-                <Card.Text>
-                  {/* IMAGE */}
-                  <LazyLoadImage
-                    className="mini-logo"
-                    src="images/cat_scientist.jpg"
-                    alt="A Cat Scientist"
-                  />
-                  <a href="https://www.facebook.com/Freepik/">
-                    Credit: freepik.
-                  </a>
-                </Card.Text>
-                <Card.Text>
-                  {/* IMAGE */}
-                  <LazyLoadImage
-                    className="mini-logo"
-                    src="images/laptop_cat.png"
-                    alt="A Laptop Cat"
-                  />
-                  <a href="https://www.facebook.com/Freepik/">
-                    Credit: freepik.
-                  </a>
-                </Card.Text>
-                <Card.Text>
-                  {/* IMAGE */}
-                  <LazyLoadImage
-                    className="mini-logo"
-                    src="images/black_cat.png"
-                    alt="A Black Cat"
-                  />
-                  <a href="https://www.facebook.com/Freepik/">
-                    Credit: smashicons.
-                  </a>
-                </Card.Text>
-                <Card.Text>
-                  {/* IMAGE */}
-                  <LazyLoadImage
-                    className="mini-logo"
-                    src="images/pencil_cat.png"
-                    alt="A Pencil Cat"
-                  />
-                  <a href="https://www.facebook.com/Freepik/">
-                    Credit: smashicons.
-                  </a>
-                </Card.Text>
-              </Card.Body>
-            </Card>
+            <CopyrightCard
+              imageUrl="images/cat_scientist.jpg"
+              alt="A Cat Scientist"
+              url="https://www.facebook.com/Freepik/"
+              creator="freepik"
+            ></CopyrightCard>
+            <CopyrightCard
+              imageUrl="images/laptop_cat.png"
+              alt="A Laptop Cat"
+              url="https://www.facebook.com/Freepik/"
+              creator="freepik"
+            ></CopyrightCard>
+            <CopyrightCard
+              imageUrl="images/black_cat.png"
+              alt="A Black Cat"
+              url="https://www.facebook.com/Freepik/"
+              creator="smashicons"
+            ></CopyrightCard>
+            <CopyrightCard
+              imageUrl="images/pencil_cat.png"
+              alt="A Pencil Cat"
+              url="https://www.facebook.com/Freepik/"
+              creator="smashicons"
+            ></CopyrightCard>
           </Col>
         </Row>
       </Container>

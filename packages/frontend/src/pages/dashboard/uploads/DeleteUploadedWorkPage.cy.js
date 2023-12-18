@@ -18,6 +18,6 @@ describe("<DeleupteUploadedWorkPage />", () => {
 
   it("renders the 'Title to Your Interactive Art / Game' h4 header", () => {
     cy.mount(<DeleupteUploadedWorkPage />);
-    cy.contains("h4", "Title to Your Interactive Art / Game ᓚᘏᗢ");
+    cy.contains("h4", "Title to Your Interactive Art / Game ᓚᘏᗢ ♡");
   });
 });

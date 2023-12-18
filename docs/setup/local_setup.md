@@ -2,7 +2,7 @@
 
 **_Space Cats_** is set up to deploy the application locally or via a hosting service.
 
-_.env_ files in both the _frontend_ and _backend_ packages ditate the behaviour of **_Space Cat_**.
+_.env_ files in both the _frontend_ and _backend_ packages dictate the behaviour of **_Space Cat_**.
 
 ## 🐈‍⬛ SPACE CATS - BACKEND ENVIRONMENT VARIABLES
 

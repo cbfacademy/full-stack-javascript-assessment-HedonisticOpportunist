@@ -1,8 +1,8 @@
 import { Button, Container, Col, Form, Row } from "react-bootstrap";
 import { messageConstants } from "../../../constants/messageConstants";
 import { signup } from "../../../services/authentication-services/authenticationService";
+import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 
 const SignupForm = () => {
   // NAVIGATE TO DASHBOARD
@@ -15,7 +15,7 @@ const SignupForm = () => {
   const [message, setMessage] = useState("");
 
   // HANDLE SIGN UP FUNCTION
-  const handleSignup = async () => {
+  const handleSignup = useCallback(async () => {
     let response = await signup(username, email, password);
     if (response.success) {
       setMessage(messageConstants.SIGN_UP_SUCCESS);
@@ -31,17 +31,20 @@ const SignupForm = () => {
 
     //Credit: @ https://medium.com/@furqanistic/decoding-jwt-secure-authentication-in-mern-applications-23cd7141e2f
     sessionStorage.setItem("token", response.token);
-  };
+  }, [navigate, username, email, password]);
 
   // SUBMIT FUNCTION
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (username === "" || email === "" || password === "") {
-      setMessage(messageConstants.SIGN_UP_ERROR);
-    } else {
-      handleSignup();
-    }
-  };
+  const handleSubmit = useCallback(
+    async (e) => {
+      e.preventDefault();
+      if (username === "" || email === "" || password === "") {
+        setMessage(messageConstants.SIGN_UP_ERROR);
+      } else {
+        handleSignup();
+      }
+    },
+    [username, email, password, handleSignup]
+  );
 
   return (
     <>

@@ -6,9 +6,9 @@ describe("<UploadedFilesPage />", () => {
     cy.mount(<UploadedFilesPage />);
   });
 
-  it("renders the 'Uploaded Files' h3 header", () => {
+  it("renders the 'Uploaded Files' h4 header", () => {
     cy.mount(<UploadedFilesPage />);
-    cy.contains("h3", "Uploaded Files ᓚᘏᗢ");
+    cy.contains("h4", "Uploaded Files ᓚᘏᗢ ♡");
   });
 
   it("renders the 'View uploaded ...' text", () => {

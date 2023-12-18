@@ -1,8 +1,8 @@
 import { Button, Container, Col, Form, Row } from "react-bootstrap";
 import { messageConstants } from "../../../constants/messageConstants";
 import { login } from "../../../services/authentication-services/authenticationService";
+import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
-import { useState } from "react";
 
 const LoginForm = () => {
   // NAVIGATE TO DASHBOARD
@@ -14,7 +14,7 @@ const LoginForm = () => {
   const [message, setMessage] = useState("");
 
   // HANDLE LOGIN FUNCTION
-  const handleLogin = async () => {
+  const handleLogin = useCallback(async () => {
     let response = await login(email, password);
     if (response.success) {
       setMessage(messageConstants.LOGIN_SUCCESS);
@@ -29,17 +29,20 @@ const LoginForm = () => {
 
     //Credit: @ https://medium.com/@furqanistic/decoding-jwt-secure-authentication-in-mern-applications-23cd7141e2f
     sessionStorage.setItem("token", response.token);
-  };
+  }, [email, navigate, password]);
 
   // SUBMIT FUNCTION
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (email === "" || password === "") {
-      setMessage(messageConstants.LOGIN_ERROR);
-    } else {
-      handleLogin();
-    }
-  };
+  const handleSubmit = useCallback(
+    async (e) => {
+      e.preventDefault();
+      if (email === "" || password === "") {
+        setMessage(messageConstants.LOGIN_ERROR);
+      } else {
+        handleLogin();
+      }
+    },
+    [email, password, handleLogin]
+  );
 
   return (
     <>

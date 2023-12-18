@@ -1,6 +1,6 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
+import FormCard from "../../components/cards/FormCard";
 import HomeBreadcrumbs from "../../components/navigation/home/HomeBreadcrumbs";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import SignupForm from "../../components/forms/authentication/SignupForm";
 
@@ -39,17 +39,11 @@ const SignupPage = () => {
             <hr className="dashed"></hr>
           </Col>
           <Col>
-            <Card.Body>
-              <h4>Sign Up Here: ♫₊˚.🎧 ✩｡</h4>
-              <Card.Title>
-                {/* CAT IMAGE */}
-                <LazyLoadImage
-                  className="image"
-                  src="images/cat_and_fish.jpg"
-                  alt="A Cat and a Fish"
-                />
-              </Card.Title>
-            </Card.Body>
+            <FormCard
+              title="Sign Up Here: ♫₊˚.🎧 ✩｡"
+              imageUrl="images/cat_and_fish.jpg"
+              alt="A Cat and a Fish"
+            ></FormCard>
           </Col>
           <Col>
             {/* SIGN UP FORM */}

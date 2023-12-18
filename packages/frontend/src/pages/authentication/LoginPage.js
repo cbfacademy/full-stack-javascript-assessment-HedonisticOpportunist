@@ -1,6 +1,6 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
+import FormCard from "../../components/cards/FormCard";
 import HomeBreadcrumbs from "../../components/navigation/home/HomeBreadcrumbs";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import LoginForm from "../../components/forms/authentication/LoginForm";
 
@@ -38,22 +38,11 @@ const LoginPage = () => {
             {/* DIVIDER */}
             <hr className="dashed"></hr>
           </Col>
-          <Card>
-            <Card.Body>
-              <Card.Title>
-                {/* LOGIN FORM TITLE*/}
-                <h4>Login Here: ⋆⭒˚｡⋆ </h4>
-              </Card.Title>
-              <Card.Text>
-                {/* CAT IMAGE */}
-                <LazyLoadImage
-                  className="image"
-                  src="images/pink_astro_cat.jpg"
-                  alt="A Pink Astronaut Cat"
-                />
-              </Card.Text>
-            </Card.Body>
-          </Card>
+          <FormCard
+            title="Login Here: ⋆⭒˚｡⋆ "
+            imageUrl="images/pink_astro_cat.jpg"
+            alt="A Pink Astronaut Cat"
+          ></FormCard>
           <Col>
             {/* LOGIN FORM */}
             <LoginForm></LoginForm>

@@ -26,6 +26,6 @@ describe("<UploadWorkPage />", () => {
 
   it("renders the 'Upload Your Work' h4 header", () => {
     cy.mount(<UploadWorkPage />);
-    cy.contains("h4", "Upload Your Work ^•^*");
+    cy.contains("h4", "Upload Your Work ^•^* ♡");
   });
 });

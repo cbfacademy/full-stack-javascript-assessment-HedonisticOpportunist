@@ -1,5 +1,5 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import FormCard from "../../../components/cards/FormCard";
 import { Link } from "react-router-dom";
 import ReturnToDashboardBreadcrumbs from "../../../components/navigation/dashboard/ReturnToDashboardBreadcrumbs";
 import SubscribeForm from "../../../components/forms/subscriptions/SubscribeForm";
@@ -40,22 +40,11 @@ const SubscribePage = () => {
             <hr className="dashed"></hr>
           </Col>
           <Col>
-            <Card>
-              <Card.Body>
-                <Card.Title>
-                  {/* SUBSCRIBE FORM TITLE */}
-                  <h4>Subscribe To Our Internal Newsletter ᓚᘏᗢ</h4>
-                </Card.Title>
-                <Col>
-                  {/* CAT IMAGE */}
-                  <LazyLoadImage
-                    className="mini-logo"
-                    src="images/black_cat.png"
-                    alt="A Black Cat"
-                  />
-                </Col>
-              </Card.Body>
-            </Card>
+            <FormCard
+              title="Subscribe To Our Internal Newsletter ᓚᘏᗢ"
+              imageUrl="images/black_cat.pn"
+              alt="A Black Cat"
+            ></FormCard>
           </Col>
           <Col>
             {/* SUBSCRIBE FORM */}

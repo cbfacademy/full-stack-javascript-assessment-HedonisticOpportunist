@@ -1,8 +1,10 @@
 import { Container, Col, Row } from "react-bootstrap";
-import React, { useState } from "react";
+import React, { useMemo } from "react";
 
 const Copyright = () => {
-  const [year] = useState(new Date().getFullYear());
+  const year = useMemo(function () {
+    return new Date().getFullYear();
+  }, []);
   return (
     <>
       <Container fluid>

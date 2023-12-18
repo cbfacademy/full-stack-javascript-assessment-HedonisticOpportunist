@@ -18,6 +18,6 @@ describe("<UnsubscribePage />", () => {
 
   it("renders the 'Unsubscribe From Our Internal Newsletter' h4 header", () => {
     cy.mount(<UnsubscribePage />);
-    cy.contains("h4", "Unsubscribe From Our Internal Newsletter ᓚᘏᗢ");
+    cy.contains("h4", "Unsubscribe From Our Internal Newsletter ᓚᘏᗢ ♡");
   });
 });
