@@ -31,7 +31,7 @@ class Bullets {
 
   // DRAW BULLETS
   drawBullets() {
-    fill(220, 20, 60); // Red colour bullets
+    fill("aliceblue");
     for (let i = 0; i < this.bullets.length; i++) {
       rect(this.bullets[i].x, this.bullets[i].y, this.diam, this.diam);
     }

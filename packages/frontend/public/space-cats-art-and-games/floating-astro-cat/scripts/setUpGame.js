@@ -6,7 +6,7 @@ let canvas;
 function setUpGame() {
   // Set up canvas
   canvas = createCanvas(windowWidth / 2, windowHeight / 2);
-  canvas.position(windowWidth / 4, windowHeight / 4);
+
   noCursor();
 
   // Set up galaxy
@@ -19,5 +19,4 @@ function setUpGame() {
 // RESIZE CANVAS
 function windowResized() {
   resizeCanvas(windowWidth / 2, windowHeight / 2);
-  canvas.position(windowWidth / 4, windowHeight / 4);
 }
