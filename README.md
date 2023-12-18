@@ -2,7 +2,7 @@
 
 ## PURPOSE
 
-_**Space Cats**_ is a game web application similar to _Newgrounds_ [1], where users can play games and view interactive art. Unlike _Newgrounds_, to play games or view art, the user does not require an account; however, to upload their work for review, they must sign up.
+_**Space Cats**_ is a game web application similar to _Newgrounds_ [1], where users can play games and view interactive art. Unlike _Newgrounds_, to play games or view art, the user does not require an account; the user does not require an account; however, to upload their work for review, they do have to sign up.
 
 Ultimately, _**Space Cats**_ aims to unite people who enjoy simple and cute games.
 
@@ -30,9 +30,11 @@ URL: https://space-cats.vercel.app/
 
 🦄 [Considered Tech Stack](docs/tech/stack/considered_tech.md)
 
-#### CHALLENGES
+#### CHALLENGES / FEEDBACK
 
 🦄 [Authentication Challenges](docs/tech/authentication/authentication.md)
+
+🦄 [Feedback](docs/feedback/feedback.md)
 
 #### TESTING
 

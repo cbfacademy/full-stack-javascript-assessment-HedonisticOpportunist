@@ -1,6 +1,6 @@
 import { Button, Container, Col, Form, Row } from "react-bootstrap";
 import { messageConstants } from "../../../constants/messageConstants";
-import React, { useState } from "react";
+import React, { useCallback, useState } from "react";
 import { upload } from "../../../services/upload-services/uploadService";
 
 const UploadWorkForm = () => {
@@ -11,7 +11,7 @@ const UploadWorkForm = () => {
   const [url, setURL] = useState("");
 
   // HANDLE UPLOAD FUNCTION
-  const handleUpload = async () => {
+  const handleUpload = useCallback(async () => {
     let response = await upload(title, description, url);
     if (response) {
       setMessage(messageConstants.UPLOAD_SUCCESS);
@@ -21,17 +21,20 @@ const UploadWorkForm = () => {
     setTitle(title);
     setDescription(description);
     setURL(url);
-  };
+  }, [title, description, url]);
 
   // HANDLE SUBMIT FUNCTION
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (description === "" || title === "" || url === "") {
-      setMessage(messageConstants.UPLOAD_ERROR);
-    } else {
-      handleUpload();
-    }
-  };
+  const handleSubmit = useCallback(
+    async (e) => {
+      e.preventDefault();
+      if (description === "" || title === "" || url === "") {
+        setMessage(messageConstants.UPLOAD_ERROR);
+      } else {
+        handleUpload();
+      }
+    },
+    [description, title, url, handleUpload]
+  );
 
   return (
     <>

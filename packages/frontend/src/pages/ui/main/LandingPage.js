@@ -2,18 +2,20 @@ import { Card, Container, Col, Row } from "react-bootstrap";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { Link } from "react-router-dom";
 import { getWelcomeMessage } from "../../../services/ui/uiServices";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const LandingPage = () => {
   const [data, setData] = useState(null);
 
-  async function fetchData() {
+  const fetchData = useCallback(async () => {
     const message = await getWelcomeMessage();
     setData(message);
-  }
+  }, [setData]);
+
   useEffect(() => {
     fetchData();
-  }, []);
+  }, [fetchData]);
+
   return (
     <>
       <Container fluid>

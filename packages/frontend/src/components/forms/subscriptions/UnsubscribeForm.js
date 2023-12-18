@@ -1,7 +1,7 @@
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
 import { messageConstants } from "../../../constants/messageConstants";
+import { useCallback, useState } from "react";
 import { unsubscribe } from "../../../services/subscription-services/subscribersService";
-import { useState } from "react";
 
 const UnsubscribeForm = () => {
   // STATES
@@ -9,7 +9,7 @@ const UnsubscribeForm = () => {
   const [message, setMessage] = useState("");
 
   // UNSUBSCRIBE FUNCTION
-  const handleUnsubscribe = async () => {
+  const handleUnsubscribe = useCallback(async () => {
     let response = await unsubscribe(email);
     if (response) {
       setMessage(messageConstants.UNSUBSCRIBE_SUCCESS);
@@ -17,17 +17,20 @@ const UnsubscribeForm = () => {
       setMessage(messageConstants.UNSUBSCRIBE_ERROR);
     }
     setEmail(email);
-  };
+  }, [email]);
 
   // SUBMIT FUNCTION
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (email === "" || !email.includes("@") || email === null) {
-      setMessage(messageConstants.UNSUBSCRIBE_ERROR);
-    } else {
-      handleUnsubscribe();
-    }
-  };
+  const handleSubmit = useCallback(
+    async (e) => {
+      e.preventDefault();
+      if (email === "" || !email.includes("@") || email === null) {
+        setMessage(messageConstants.UNSUBSCRIBE_ERROR);
+      } else {
+        handleUnsubscribe();
+      }
+    },
+    [email, handleUnsubscribe]
+  );
 
   return (
     <>

@@ -1,7 +1,7 @@
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
 import { messageConstants } from "../../../constants/messageConstants";
 import { subscribe } from "../../../services/subscription-services/subscribersService";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 const SubscribeForm = () => {
   // STATES
@@ -9,7 +9,7 @@ const SubscribeForm = () => {
   const [message, setMessage] = useState("");
 
   // HANDLE SUBSCRIBE FUNCTION
-  const handleSubscribeResponse = async () => {
+  const handleSubscribeResponse = useCallback(async () => {
     let response = await subscribe(email);
     if (response) {
       setMessage(messageConstants.SUBSCRIBE_SUCCESS);
@@ -17,17 +17,20 @@ const SubscribeForm = () => {
       setMessage(messageConstants.SUBSCRIBE_ERROR);
     }
     setEmail(email);
-  };
+  }, [email]);
 
   // SUBMIT SUBSCRIBE FUNCTION
-  const handleSubscribe = async (e) => {
-    e.preventDefault();
-    if (email === "" || !email.includes("@") || email === null) {
-      setMessage(messageConstants.SUBSCRIBE_ERROR);
-    } else {
-      handleSubscribeResponse();
-    }
-  };
+  const handleSubscribe = useCallback(
+    async (e) => {
+      e.preventDefault();
+      if (email === "" || !email.includes("@") || email === null) {
+        setMessage(messageConstants.SUBSCRIBE_ERROR);
+      } else {
+        handleSubscribeResponse();
+      }
+    },
+    [email, handleSubscribeResponse]
+  );
 
   return (
     <>

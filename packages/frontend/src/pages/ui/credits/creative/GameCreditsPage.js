@@ -1,6 +1,6 @@
 import { Card, Container, Col, Row } from "react-bootstrap";
 import CreditsBreadcrumbs from "../../../../components/navigation/home/CreditsBreadcrumbs";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import CopyrightCard from "../../../../components/cards/CopyrightCard";
 
 const GameCreditsPage = () => {
   return (
@@ -26,28 +26,18 @@ const GameCreditsPage = () => {
             </Card>
           </Col>
           <Col>
-            <Card>
-              <Card.Body>
-                <Card.Text>
-                  {/* IMAGE */}
-                  <LazyLoadImage
-                    className="mini-logo"
-                    src="images/kitty.png"
-                    alt="A Cat Hero"
-                  />
-                  <a href="https://www.flaticon.com//">Credit: Flaticon.</a>
-                </Card.Text>
-                <Card.Text>
-                  {/* IMAGE */}
-                  <LazyLoadImage
-                    className="mini-logo"
-                    src="images/pet.png"
-                    alt="A Playtful Cat"
-                  />
-                  <a href="https://www.flaticon.com//">Credit: Flaticon.</a>
-                </Card.Text>
-              </Card.Body>
-            </Card>
+            <CopyrightCard
+              imageUrl="images/kitty.png"
+              alt="A Cat Hero"
+              url="https://www.flaticon.com/"
+              creator="Flaticon"
+            ></CopyrightCard>
+            <CopyrightCard
+              imageUrl="images/pet.png"
+              alt="A Playful Cat"
+              url="https://www.flaticon.com/"
+              creator="Flaticon"
+            ></CopyrightCard>
           </Col>
         </Row>
       </Container>

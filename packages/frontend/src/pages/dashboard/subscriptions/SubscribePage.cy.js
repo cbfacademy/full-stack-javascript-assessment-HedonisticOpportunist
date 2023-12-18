@@ -37,6 +37,6 @@ describe("<SubscribePage />", () => {
 
   it("renders the 'Subscribe To Our Internal Newsletter' h4 header", () => {
     cy.mount(<SubscribePage />);
-    cy.contains("h4", "Subscribe To Our Internal Newsletter ᓚᘏᗢ");
+    cy.contains("h4", "Subscribe To Our Internal Newsletter ᓚᘏᗢ ♡");
   });
 });

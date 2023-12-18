@@ -23,6 +23,6 @@ describe("<SignupPage />", () => {
 
   it("renders the 'Sign Up Here' h4 header", () => {
     cy.mount(<SignupPage />);
-    cy.contains("h4", "Sign Up Here: ♫₊˚.🎧 ✩｡");
+    cy.contains("h4", "Sign Up Here: ♫₊˚.🎧 ✩｡ ♡");
   });
 });

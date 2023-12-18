@@ -1,22 +1,23 @@
-import { Card, Col, Container, Row, Table } from "react-bootstrap";
+import { Col, Container, Row, Table } from "react-bootstrap";
+import FormCard from "../../../components/cards/FormCard";
 import { getFiles } from "../../../services/upload-services/uploadService";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 import ReturnToDashboardBreadcrumbs from "../../../components/navigation/dashboard/ReturnToDashboardBreadcrumbs";
-import { useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from "react";
 
 const UploadedFilesPage = () => {
   // STATES
   const [data, setData] = useState([]);
 
-  useEffect(() => {
-    async function getFileData() {
-      let data = await getFiles();
-      if (data.success) {
-        setData(data.files);
-      }
+  const getFileData = useCallback(async () => {
+    let response = await getFiles();
+    if (response.success) {
+      setData(response.files);
     }
+  }, []);
+
+  useEffect(() => {
     getFileData();
-  }, [data]);
+  }, [getFileData]);
 
   return (
     <>
@@ -27,25 +28,14 @@ const UploadedFilesPage = () => {
             <ReturnToDashboardBreadcrumbs></ReturnToDashboardBreadcrumbs>
           </Col>
           <Col>
-            <Card>
-              <Card.Body>
-                <Card.Title>
-                  {/* PAGE TITLE */}
-                  <h3>Uploaded Files ᓚᘏᗢ</h3>
-                </Card.Title>
-                <Card.Text>View uploaded files here 🐍.</Card.Text>
-                <Card.Text>
-                  {/* CAT IMAGE */}
-                  <LazyLoadImage
-                    className="mini-logo"
-                    src="images/cat_rocket.jpg"
-                    alt="A Cat and Its Rocket"
-                  />
-                </Card.Text>
-              </Card.Body>
-            </Card>
+            <FormCard
+              title="Uploaded Files ᓚᘏᗢ"
+              imageUrl="images/cat_rocket.jpg"
+              alt="A Cat and Its Rocket"
+            ></FormCard>
           </Col>
           <Col>
+            <p>View uploaded files here 🐍.</p>
             {/* TABLE */}
             <Table striped="columns">
               <thead>

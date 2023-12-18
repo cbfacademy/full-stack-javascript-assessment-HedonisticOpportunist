@@ -1,5 +1,5 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
-import { LazyLoadImage } from "react-lazy-load-image-component";
+import FormCard from "../../../components/cards/FormCard";
 import ReturnToDashboardBreadcrumbs from "../../../components/navigation/dashboard/ReturnToDashboardBreadcrumbs";
 import UploadWorkForm from "../../../components/forms/upload/UploadWorkForm";
 
@@ -28,20 +28,14 @@ const UploadWorkPage = () => {
               </Card.Body>
             </Card>
           </Col>
-          <Card>
-            <Card.Body>
-              <h4> Upload Your Work ^•^* </h4>
-              <Card.Text>
-                {/* CAT IMAGE */}
-                <LazyLoadImage
-                  className="mini-logo"
-                  src="images/laptop_cat.png"
-                  alt="A Laptop Cat"
-                />
-              </Card.Text>
-              <UploadWorkForm></UploadWorkForm>
-            </Card.Body>
-          </Card>
+          <FormCard
+            title="Upload Your Work ^•^*"
+            imageUrl="images/laptop_cat.png"
+            alt="A Laptop Cat"
+          ></FormCard>
+          <Col>
+            <UploadWorkForm></UploadWorkForm>
+          </Col>
         </Row>
       </Container>
     </>

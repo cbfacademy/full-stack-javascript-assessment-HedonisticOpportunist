@@ -1,7 +1,7 @@
 import { Button, Form, Container, Col, Row } from "react-bootstrap";
 import { deleteFile } from "../../../services/upload-services/uploadService";
 import { messageConstants } from "../../../constants/messageConstants";
-import { useState } from "react";
+import { useCallback, useState } from "react";
 
 const DeleteFileForm = () => {
   // STATES
@@ -9,7 +9,7 @@ const DeleteFileForm = () => {
   const [message, setMessage] = useState("");
 
   // HANDLE DELETE FUNCTION
-  const handleDelete = async () => {
+  const handleDelete = useCallback(async () => {
     let response = await deleteFile(title);
     if (response) {
       setMessage(messageConstants.DELETE_FILE_SUCCESS);
@@ -17,17 +17,20 @@ const DeleteFileForm = () => {
       setMessage(messageConstants.DELETE_FILE_ERROR);
     }
     setTitle(title);
-  };
+  }, [title]);
 
   // HANDLE SUBMIT FUNCTION
-  const handleSubmit = async (e) => {
-    e.preventDefault();
-    if (title === "" || title === null || title.includes("@")) {
-      setMessage(messageConstants.DELETE_FILE_ERROR);
-    } else {
-      handleDelete();
-    }
-  };
+  const handleSubmit = useCallback(
+    async (e) => {
+      e.preventDefault();
+      if (title === "" || title === null || title.includes("@")) {
+        setMessage(messageConstants.DELETE_FILE_ERROR);
+      } else {
+        handleDelete();
+      }
+    },
+    [title, handleDelete]
+  );
 
   return (
     <>
