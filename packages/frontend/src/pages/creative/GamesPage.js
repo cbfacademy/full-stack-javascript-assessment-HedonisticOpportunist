@@ -1,6 +1,6 @@
 import { Card, Container, Col, Row } from "react-bootstrap";
+import CreativeCard from "../../components/cards/CreativeCard";
 import HomeBreadcrumbs from "../../components/navigation/home/HomeBreadcrumbs";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 const GamesPage = () => {
   return (
@@ -31,51 +31,27 @@ const GamesPage = () => {
             <hr className="divider"></hr>
           </Col>
           <Col>
-            <Card>
-              <Card.Body>
-                <Card.Title>
-                  {/* GAME TITLE */}
-                  <h4>Chase Bubbles Game ♡</h4>
-                </Card.Title>
-                <Col>
-                  {/* CAT IMAGE LINK */}
-                  <a href="space-cats-art-and-games/catch-bubbles-game/index.html">
-                    <LazyLoadImage
-                      className="mini-logo"
-                      src="images/kitty.png"
-                      alt="A Cat Hero"
-                    />
-                  </a>
-                </Col>
-                {/* GAME DESCRIPTION */}
-                <Card.Text>Try and catch ten bubbles 🫧.</Card.Text>
-              </Card.Body>
-            </Card>
+            <CreativeCard
+              title="Chase Bubbles Game"
+              url="space-cats-art-and-games/catch-bubbles-game/index.html"
+              imageUrl="images/kitty.png"
+              alt="A Cat Hero"
+              description="Try and catch ten bubbles 🫧."
+            ></CreativeCard>
           </Col>
           <Col>
             {/* DIVIDER */}
             <hr className="divider"></hr>
           </Col>
-          <Card>
-            <Card.Body>
-              <Card.Title>
-                {/* GAME TITLE */}
-                <h4>Space Bubble Shooter Game ♡</h4>
-              </Card.Title>
-              <Col>
-                {/* CAT IMAGE LINK */}
-                <a href="space-cats-art-and-games/space-bubbles-shooter-game/index.html">
-                  <LazyLoadImage
-                    className="mini-logo"
-                    src="images/pet.png"
-                    alt="A Cat Hero"
-                  />
-                </a>
-              </Col>
-              <Card.Text>Shoot or catch twenty bubbles 🫧👾.</Card.Text>
-            </Card.Body>
-          </Card>
-          <Col></Col>
+          <Col>
+            <CreativeCard
+              title="Space Bubble Shooter Game"
+              url="space-cats-art-and-games/space-bubbles-shooter-game/index.html"
+              imageUrl="images/pet.png"
+              alt="A Cat"
+              description="Shoot or catch twenty bubbles 🫧👾."
+            ></CreativeCard>
+          </Col>
         </Row>
       </Container>
     </>

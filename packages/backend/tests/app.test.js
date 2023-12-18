@@ -84,12 +84,12 @@ describe("Testing the Space Cats backend server.", () => {
     expect(response.status).toEqual(200);
     expect(response.body).toEqual(
       expect.objectContaining({
-        message: "Incorrect email.",
+        message: "The email is not valid.",
       })
     );
   });
 
-  it("should return a valid response when the post login method is called with an incorrect password and email", async () => {
+  it("should return a valid response when the post login method is called with an incorrect password", async () => {
     const requester = createRequester();
     const response = await requester.post("/login").send({
       email: "ghost@dummy.com",
@@ -98,7 +98,7 @@ describe("Testing the Space Cats backend server.", () => {
     expect(response.status).toEqual(200);
     expect(response.body).toEqual(
       expect.objectContaining({
-        message: "Incorrect email.",
+        message: "The password is not valid.",
       })
     );
   });

@@ -19,8 +19,8 @@ class SpaceCat {
   drawSpaceCat() {
     // Move the space cat according to mouse directions
     this.spaceCat.position(
-      constrain(mouseX, 200, 800),
-      constrain(mouseY, 300, 500)
+      constrain(mouseX, -windowWidth / 2, windowWidth / 2 - 100),
+      constrain(mouseY, -windowHeight / 2, windowHeight / 2 - 100)
     );
   }
 }
