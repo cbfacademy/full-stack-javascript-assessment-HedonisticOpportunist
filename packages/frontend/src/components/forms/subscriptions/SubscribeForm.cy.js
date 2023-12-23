@@ -15,4 +15,9 @@ describe("<SubscribeForm />", () => {
     cy.mount(<SubscribeForm />);
     cy.contains("button", "🐻‍❄️Suscribe to our newsletter.");
   });
+
+  it("renders the 'Reset Form' button text", () => {
+    cy.mount(<SubscribeForm />);
+    cy.contains("button", "🐻‍❄️Reset Form.");
+  });
 });

@@ -13,6 +13,11 @@ describe("<DeleteFileForm />", () => {
 
   it("renders the 'Delete Files' button text", () => {
     cy.mount(<DeleteFileForm />);
-    cy.contains("button", "🐻‍❄️Delete Files");
+    cy.contains("button", "🐻‍❄️Delete Files.");
+  });
+
+  it("renders the 'Reset Form' button text", () => {
+    cy.mount(<DeleteFileForm />);
+    cy.contains("button", "🐻‍❄️Reset Form.");
   });
 });

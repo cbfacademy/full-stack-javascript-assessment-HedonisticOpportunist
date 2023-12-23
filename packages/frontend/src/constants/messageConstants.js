@@ -27,4 +27,22 @@ export const messageConstants = {
   // LOGOUT TOAST MESSAGES
   LOGOUT_ERROR: "🧸🧸 Error. Please try logging out again.",
   LOGOUT_SUCCESS: "❄️❄️Success! You have logged out successfully.",
+
+  // EMAIL MESSAGES
+  EMAIL_NOT_VALID: "🦑🦑 Error. Your email is not valid.",
+
+  // PASSWORD MESSAGES
+  PASSWORD_TOO_SHORT:
+    "🦐🦐 Error. Your password is too short. It should contain six characters or more.",
+
+  // USERNAME MESSAGES
+  USERNAME_TOO_SHORT:
+    "🦈🦈 Error. Your username is too short. It should contain eight characters or more.",
+
+  // TITLE OR DESCRIPTION MESSAGES
+  TEXT_NOT_VALID:
+    "🐀🐀Error. Your title or description should only contain letters.",
+
+  // URL MESSAGES
+  URL_NOT_VALID: "🐳🐳 Error. Your URL is not valid.",
 };
