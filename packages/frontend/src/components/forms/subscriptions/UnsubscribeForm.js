@@ -1,12 +1,19 @@
-import { Button, Form, Container, Col, Row } from "react-bootstrap";
+import { Form, Container, Col, Row } from "react-bootstrap";
+import FormButton from "../../buttons/FormButton";
+import ErrorMessage from "../../messages/ErrorMessages";
 import { messageConstants } from "../../../constants/messageConstants";
+import MessageDisplay from "../../messages/MessageDisplay";
 import { useCallback, useState } from "react";
 import { unsubscribe } from "../../../services/subscription-services/subscribersService";
+import { validateEmail } from "../../../validation/validators";
 
 const UnsubscribeForm = () => {
   // STATES
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+
+  // ERROR STATES
+  const [invalidEmail, setInvalidEmailError] = useState("");
 
   // UNSUBSCRIBE FUNCTION
   const handleUnsubscribe = useCallback(async () => {
@@ -19,18 +26,33 @@ const UnsubscribeForm = () => {
     setEmail(email);
   }, [email]);
 
+  // HANDLE EMAIL VALIDATION
+  const handleEmailValidation = useCallback((email) => {
+    if (!validateEmail(email)) {
+      setInvalidEmailError(messageConstants.EMAIL_NOT_VALID);
+    }
+  }, []);
+
   // SUBMIT FUNCTION
   const handleSubmit = useCallback(
     async (e) => {
       e.preventDefault();
+      handleEmailValidation(email);
       if (email === "" || !email.includes("@") || email === null) {
         setMessage(messageConstants.UNSUBSCRIBE_ERROR);
       } else {
         handleUnsubscribe();
       }
     },
-    [email, handleUnsubscribe]
+    [handleEmailValidation, email, handleUnsubscribe]
   );
+
+  // RESET BUTTON FUNCTION
+  const resetForm = () => {
+    setEmail("");
+    setInvalidEmailError("");
+    setMessage("");
+  };
 
   return (
     <>
@@ -47,21 +69,20 @@ const UnsubscribeForm = () => {
                   required
                   onChange={(e) => setEmail(e.target.value)}
                 />
+                <ErrorMessage error={invalidEmail}></ErrorMessage>
               </Form.Group>
             </Form>
-            {/* UNSUBSCRIBE BUTTON */}
-            <Button
-              className="btn-grad"
-              variant="outline-dark"
-              size="lg"
-              onClick={handleSubmit}
-            >
-              🐻‍❄️Unsubscribe from our newsletter.
-            </Button>
+            <FormButton
+              submitFunction={handleSubmit}
+              buttonText="🐻‍❄️Unsubscribe from our newsletter."
+            ></FormButton>
+            <FormButton
+              submitFunction={resetForm}
+              buttonText="🐻‍❄️Reset Form."
+            ></FormButton>
           </Col>
           <Col>
-            {/* DISPLAY UNSUBSCRIBE STATUS*/}
-            <p>{message}</p>
+            <MessageDisplay message={message}></MessageDisplay>
           </Col>
         </Row>
       </Container>

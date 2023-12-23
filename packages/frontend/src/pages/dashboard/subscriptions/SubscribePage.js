@@ -42,7 +42,7 @@ const SubscribePage = () => {
           <Col>
             <FormCard
               title="Subscribe To Our Internal Newsletter ᓚᘏᗢ"
-              imageUrl="images/black_cat.pn"
+              imageUrl="images/black_cat.png"
               alt="A Black Cat"
             ></FormCard>
           </Col>

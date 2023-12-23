@@ -1,7 +1,14 @@
-import { Button, Container, Col, Form, Row } from "react-bootstrap";
+import { Container, Col, Form, Row } from "react-bootstrap";
+import FormButton from "../../buttons/FormButton";
+import ErrorMessage from "../../messages/ErrorMessages";
 import { messageConstants } from "../../../constants/messageConstants";
+import MessageDisplay from "../../messages/MessageDisplay";
 import React, { useCallback, useState } from "react";
 import { upload } from "../../../services/upload-services/uploadService";
+import {
+  validateTitleOrDescription,
+  validateURL,
+} from "../../../validation/validators";
 
 const UploadWorkForm = () => {
   // STATES
@@ -9,6 +16,10 @@ const UploadWorkForm = () => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [url, setURL] = useState("");
+
+  // ERROR STATES
+  const [invalidText, setInvalidText] = useState("");
+  const [invalidURL, setInvalidUrl] = useState("");
 
   // HANDLE UPLOAD FUNCTION
   const handleUpload = useCallback(async () => {
@@ -23,18 +34,42 @@ const UploadWorkForm = () => {
     setURL(url);
   }, [title, description, url]);
 
+  // VALIDATE TITLE AND DESCRIPTION FUNCTION
+  const validateUploadDetails = useCallback((title, description, url) => {
+    if (!validateTitleOrDescription(title)) {
+      setInvalidText(messageConstants.TEXT_NOT_VALID);
+    }
+    if (!validateTitleOrDescription(description)) {
+      setInvalidText(messageConstants.TEXT_NOT_VALID);
+    }
+    if (!validateURL(url)) {
+      setInvalidUrl(messageConstants.URL_NOT_VALID);
+    }
+  }, []);
+
   // HANDLE SUBMIT FUNCTION
   const handleSubmit = useCallback(
     async (e) => {
       e.preventDefault();
+      validateUploadDetails(title, description, url);
       if (description === "" || title === "" || url === "") {
         setMessage(messageConstants.UPLOAD_ERROR);
       } else {
         handleUpload();
       }
     },
-    [description, title, url, handleUpload]
+    [validateUploadDetails, description, title, url, handleUpload]
   );
+
+  // RESET BUTTON FUNCTION
+  const resetForm = () => {
+    setTitle("");
+    setDescription("");
+    setURL("");
+    setInvalidText("");
+    setInvalidUrl("");
+    setMessage("");
+  };
 
   return (
     <>
@@ -54,6 +89,7 @@ const UploadWorkForm = () => {
                     onChange={(e) => setTitle(e.target.value)}
                     required
                   />
+                  <ErrorMessage error={invalidText}></ErrorMessage>
                 </Form.Group>
                 {/* SET DESCRIPTION */}
                 <Form.Group controlId="description">
@@ -66,6 +102,7 @@ const UploadWorkForm = () => {
                     onChange={(e) => setDescription(e.target.value)}
                     required
                   />
+                  <ErrorMessage error={invalidText}></ErrorMessage>
                 </Form.Group>
                 {/* SET URL */}
                 <Form.Group controlId="url">
@@ -78,22 +115,21 @@ const UploadWorkForm = () => {
                     onChange={(e) => setURL(e.target.value)}
                     required
                   />
+                  <ErrorMessage error={invalidURL}></ErrorMessage>
                 </Form.Group>
               </Form.Group>
             </Form>
-            {/* UPLOAD WORK BUTTON */}
-            <Button
-              className="btn-grad"
-              variant="outline-dark"
-              size="lg"
-              onClick={handleSubmit}
-            >
-              🐻‍❄️Upload Work.
-            </Button>
+            <FormButton
+              submitFunction={handleSubmit}
+              buttonText="🐻‍❄️Upload Work."
+            ></FormButton>
+            <FormButton
+              submitFunction={resetForm}
+              buttonText="🐻‍❄️Reset Form."
+            ></FormButton>
           </Col>
           <Col>
-            {/* UPLOAD WORK STATUS MESSAGE */}
-            <p>{message}</p>
+            <MessageDisplay message={message}></MessageDisplay>
           </Col>
         </Row>
       </Container>

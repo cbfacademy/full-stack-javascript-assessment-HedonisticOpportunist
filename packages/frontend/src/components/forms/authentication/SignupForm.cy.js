@@ -23,6 +23,11 @@ describe("<SignupForm />", () => {
 
   it("renders the 'Sign Up' button text", () => {
     cy.mount(<SignupForm />);
-    cy.contains("button", "🐾Sign Up");
+    cy.contains("button", "🐾Sign Up.");
+  });
+
+  it("renders the 'Reset Form' button text", () => {
+    cy.mount(<SignupForm />);
+    cy.contains("button", "🐾Reset Form.");
   });
 });

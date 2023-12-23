@@ -15,4 +15,9 @@ describe("<UnsubscribeForm />", () => {
     cy.mount(<UnsubscribeForm />);
     cy.contains("button", "🐻‍❄️Unsubscribe from our newsletter.");
   });
+
+  it("renders the 'Reset Form' button text", () => {
+    cy.mount(<UnsubscribeForm />);
+    cy.contains("button", "🐻‍❄️Reset Form.");
+  });
 });

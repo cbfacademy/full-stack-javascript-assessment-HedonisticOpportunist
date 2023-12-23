@@ -1,7 +1,9 @@
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { Card, Col, Container, Row } from "react-bootstrap";
+import FormButton from "../../../components/buttons/FormButton";
 import DashboardBreadcrumbs from "../../../components/navigation/dashboard/DashboardBreadcrumbs";
 import { LazyLoadImage } from "react-lazy-load-image-component";
 import { messageConstants } from "../../../constants/messageConstants";
+import MessageDisplay from "../../../components/messages/MessageDisplay";
 import {
   getUserData,
   logout,
@@ -95,20 +97,13 @@ const UserDashboard = () => {
             </Card>
           </Col>
           <Col>
-            {/* LOGOUT BUTTON */}
-            <Button
-              className="btn-grad"
-              variant="outline-dark"
-              type="submit"
-              size="lg"
-              onClick={handleSubmit}
-            >
-              🐻‍❄️LOGOUT
-            </Button>
+            <FormButton
+              submitFunction={handleSubmit}
+              buttonText="🐻‍❄️LOGOUT"
+            ></FormButton>
           </Col>
           <Col>
-            {/* LOGOUT STATUS MESSAGE */}
-            <p>{logoutMessage}</p>
+            <MessageDisplay message={logoutMessage}></MessageDisplay>
           </Col>
         </Row>
       </Container>

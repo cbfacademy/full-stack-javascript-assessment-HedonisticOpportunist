@@ -25,4 +25,9 @@ describe("<UploadWorkForm />", () => {
     cy.mount(<UploadWorkForm />);
     cy.contains("button", "🐻‍❄️Upload Work.");
   });
+
+  it("renders the 'Reset Form' button text", () => {
+    cy.mount(<UploadWorkForm />);
+    cy.contains("button", "🐻‍❄️Reset Form.");
+  });
 });

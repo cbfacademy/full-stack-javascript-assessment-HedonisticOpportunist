@@ -1,8 +1,15 @@
-import { Button, Container, Col, Form, Row } from "react-bootstrap";
+import { Container, Col, Form, Row } from "react-bootstrap";
+import FormButton from "../../buttons/FormButton";
+import ErrorMessage from "../../messages/ErrorMessages";
 import { messageConstants } from "../../../constants/messageConstants";
+import MessageDisplay from "../../messages/MessageDisplay";
 import { login } from "../../../services/authentication-services/authenticationService";
 import { useCallback, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import {
+  validateEmail,
+  validatePassword,
+} from "../../../validation/validators";
 
 const LoginForm = () => {
   // NAVIGATE TO DASHBOARD
@@ -12,6 +19,10 @@ const LoginForm = () => {
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
   const [message, setMessage] = useState("");
+
+  // ERROR STATES
+  const [invalidEmail, setInvalidEmailError] = useState("");
+  const [passwordTooShort, setPasswordTooShortError] = useState("");
 
   // HANDLE LOGIN FUNCTION
   const handleLogin = useCallback(async () => {
@@ -31,18 +42,38 @@ const LoginForm = () => {
     sessionStorage.setItem("token", response.token);
   }, [email, navigate, password]);
 
+  // HANDLE VALIDATION FUNCTION
+  const validateUserCredentials = useCallback((email, password) => {
+    if (!validateEmail(email)) {
+      setInvalidEmailError(messageConstants.EMAIL_NOT_VALID);
+    }
+    if (!validatePassword(password)) {
+      setPasswordTooShortError(messageConstants.PASSWORD_TOO_SHORT);
+    }
+  }, []);
+
   // SUBMIT FUNCTION
-  const handleSubmit = useCallback(
+  const handleFormSubmit = useCallback(
     async (e) => {
       e.preventDefault();
+      validateUserCredentials(email, password);
       if (email === "" || password === "") {
         setMessage(messageConstants.LOGIN_ERROR);
       } else {
         handleLogin();
       }
     },
-    [email, password, handleLogin]
+    [validateUserCredentials, email, password, handleLogin]
   );
+
+  // RESET BUTTON FUNCTION
+  const resetForm = () => {
+    setEmail("");
+    setPassword("");
+    setInvalidEmailError("");
+    setPasswordTooShortError("");
+    setMessage("");
+  };
 
   return (
     <>
@@ -59,8 +90,8 @@ const LoginForm = () => {
                   placeholder="Email"
                   required
                 />
+                <ErrorMessage error={invalidEmail}></ErrorMessage>
               </Form.Group>
-
               <Form.Group className="mb-3" controlId="formBasicPassword">
                 <Form.Label>Password: </Form.Label>
                 <Form.Control
@@ -70,22 +101,20 @@ const LoginForm = () => {
                   placeholder="Password"
                   required
                 />
+                <ErrorMessage error={passwordTooShort}></ErrorMessage>
               </Form.Group>
-              {/* LOGIN BUTTON */}
-              <Button
-                className="btn-grad"
-                variant="outline-dark"
-                type="submit"
-                size="lg"
-                onClick={handleSubmit}
-              >
-                🐾Login
-              </Button>
+              <FormButton
+                submitFunction={handleFormSubmit}
+                buttonText="🐾Login."
+              ></FormButton>
+              <FormButton
+                submitFunction={resetForm}
+                buttonText="🐾Reset Form."
+              ></FormButton>
             </Form>
           </Col>
           <Col>
-            {/* LOGIN STATUS MESSAGE */}
-            <p>{message}</p>
+            <MessageDisplay message={message}></MessageDisplay>
           </Col>
         </Row>
       </Container>

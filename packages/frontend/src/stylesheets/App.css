@@ -130,3 +130,17 @@ ul.breadcrumb li a:hover {
 hr.dashed {
   border-left: 2px dashed #bbb;
 }
+
+/* ERROR MESSAGES 
+Credit: @https://codepen.io/DobsonDev/pen/GgRJwv
+*/
+.error-msg {
+  color: #571b48;
+  font-weight: bolder;
+  text-transform: uppercase;
+}
+
+.msg {
+  color: #23103b;
+  font-weight: bold;
+}
