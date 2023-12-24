@@ -13,7 +13,9 @@ beforeAll(async () => {
 afterAll(async () => {
   await mongoose.connection.dropDatabase();
   await mongoose.connection.close();
+  await mongoose.disconnect();
   await mongoDatabase.stop();
+  await new Promise((resolve) => setTimeout(() => resolve(""), 1000));
 });
 
 afterEach(async () => {

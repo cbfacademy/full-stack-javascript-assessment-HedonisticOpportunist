@@ -8,13 +8,13 @@ export const prodUrlConstants = {
 
   // SUBSCRIBER ENDPOINTS
   SUBSCRIBE_ENDPOINT: `${process.env.REACT_APP_BACKEND_URL}/subscribe`,
-  UNSUBSCRIBE_ENDPOINT: `${process.env.REACT_APP_BACKEND_URL}/delete/:`,
+  UNSUBSCRIBE_ENDPOINT: `${process.env.REACT_APP_BACKEND_URL}/deleteSubscriber:`,
   GET_SUBSCRIBERS_ENDPOINT: `${process.env.REACT_APP_BACKEND_URL}/subscribers`,
 
   // UPLOAD ENDPOINTS
   UPLOAD_ENDPOINT: `${process.env.REACT_APP_BACKEND_URL}/uploads`,
   GET_FILES_ENDPOINT: `${process.env.REACT_APP_BACKEND_URL}/files`,
-  DELETE_FILE_ENDPOINT: `${process.env.REACT_APP_BACKEND_URL}/delete:`,
+  DELETE_FILE_ENDPOINT: `${process.env.REACT_APP_BACKEND_URL}/deleteFile:`,
 
   // DASHBOARD ENDPOINT
   DASHBOARD_ENDPOINT: `${process.env.REACT_APP_BACKEND_URL}/dashboard`,

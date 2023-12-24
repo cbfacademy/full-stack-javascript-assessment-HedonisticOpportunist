@@ -13,6 +13,11 @@ module.exports.deleteFile = async (req, res, next) => {
     const existingFile = await File.findOneAndDelete({
       title: { $eq: alteredTitle },
     });
+    if (!existingFile) {
+      return res.json({
+        message: "The file does not exist.",
+      });
+    }
     res.status(201).json({
       message: "File deleted successfully.",
       success: true,
@@ -21,6 +26,5 @@ module.exports.deleteFile = async (req, res, next) => {
     next();
   } catch (error) {
     logger.error(error);
-    res.status(500).send(error.message);
   }
 };

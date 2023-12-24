@@ -17,6 +17,6 @@ router.get("/files", getFiles);
 router.post("/uploads", uploadFile);
 
 // DELETE ROUTES
-router.delete("/delete:title", deleteFile);
+router.delete("/deleteFile:title", deleteFile);
 
 module.exports = router;

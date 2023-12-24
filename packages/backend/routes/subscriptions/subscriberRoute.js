@@ -19,6 +19,6 @@ router.get("/subscribers", getSubscribers);
 router.post("/subscribe", addSubscriber);
 
 // DELETE ROUTES
-router.delete("/delete/:email", deleteSubscriber);
+router.delete("/deleteSubscriber:email", deleteSubscriber);
 
 module.exports = router;
