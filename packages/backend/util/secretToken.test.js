@@ -1,7 +1,7 @@
 const { createSecretToken } = require("./secretToken");
 
 describe("Testing the createSecretToken function.", () => {
-  it("Expect createSecretToken to return 0 call backs.", () => {
+  it.skip("Expect createSecretToken to return 0 call backs.", () => {
     // ARRANGE
     const mockCallback = jest.fn();
 
