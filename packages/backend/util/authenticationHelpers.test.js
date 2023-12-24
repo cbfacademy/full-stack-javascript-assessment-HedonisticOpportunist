@@ -1,6 +1,6 @@
 const { validateEmail, validatePassword } = require("./authenticationHelpers");
 
-describe("Validating emails.", () => {
+describe("Testing the validateEmail and validatePassword functions.", () => {
   it("Expect validateEmail to return false for an email missing the @ sign.", () => {
     // ARRANGE
     let invalid_email = "notanemail.com";

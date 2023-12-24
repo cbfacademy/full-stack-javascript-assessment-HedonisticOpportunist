@@ -10,13 +10,13 @@ export const localUrlConstants = {
 
   // SUBSCRIBER ENDPOINTS
   SUBSCRIBE_ENDPOINT: `${hostUrl}/subscribe`,
-  UNSUBSCRIBE_ENDPOINT: `${hostUrl}/delete:`,
+  UNSUBSCRIBE_ENDPOINT: `${hostUrl}/deleteSubscriber:`,
   GET_SUBSCRIBERS_ENDPOINT: `${hostUrl}/subscribers`,
 
   // UPLOAD up
   UPLOAD_ENDPOINT: `${hostUrl}/uploads`,
   GET_FILES_ENDPOINT: `${hostUrl}/files`,
-  DELETE_FILE_ENDPOINT: `${hostUrl}/delete:`,
+  DELETE_FILE_ENDPOINT: `${hostUrl}/deleteFile:`,
 
   // DASHBOARD ENDPOINT
   DASHBOARD_ENDPOINT: `${hostUrl}/dashboard`,

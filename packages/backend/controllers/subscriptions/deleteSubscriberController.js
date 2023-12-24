@@ -13,6 +13,11 @@ module.exports.deleteSubscriber = async (req, res, next) => {
     const existingSubscriber = await Subscriber.findOneAndDelete({
       email: { $eq: alteredMail },
     });
+    if (!existingSubscriber) {
+      return res.json({
+        message: "The subscriber does not exist.",
+      });
+    }
     res.status(201).json({
       message: "Subscriber deleted successfully.",
       success: true,
