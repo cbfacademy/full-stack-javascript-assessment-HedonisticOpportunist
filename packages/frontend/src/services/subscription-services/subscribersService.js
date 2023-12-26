@@ -1,6 +1,10 @@
 // SUBSCRIBER SERVICE //
 import axios from "axios";
-import { filterAndReturn, handleResponse } from "../helpers/serviceHelpers";
+import {
+  filterAndReturn,
+  handleResponse,
+  getToken,
+} from "../helpers/serviceHelpers";
 import { getURL } from "../helpers/urlHelpers";
 import log from "loglevel";
 
@@ -8,10 +12,16 @@ import log from "loglevel";
 export async function subscribe(email) {
   try {
     const subscribeUrl = getURL("SUBSCRIBE");
+    const token = getToken();
     const { data } = await axios.post(
       subscribeUrl,
       {
         email,
+      },
+      {
+        headers: {
+          Authorization: `${token}`,
+        },
       },
       { withCredentials: true }
     );
@@ -26,9 +36,18 @@ export async function unsubscribe(userEmail) {
   try {
     const unsubscribeURL = getURL("UNSUBSCRIBE");
     let email = await getSubscribers(userEmail);
-    const { data } = await axios.delete(unsubscribeURL + email, {
-      withCredentials: true,
-    });
+    const token = getToken();
+    const { data } = await axios.delete(
+      unsubscribeURL + email,
+      {
+        headers: {
+          Authorization: `${token}`,
+        },
+      },
+      {
+        withCredentials: true,
+      }
+    );
     return handleResponse(data);
   } catch (error) {
     log.error(error);

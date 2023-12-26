@@ -5,10 +5,9 @@ const User = require("../models/user/userModel");
 
 // Credit: @ https://medium.com/@furqanistic/decoding-jwt-secure-authentication-in-mern-applications-23cd7141e2f
 // Any further modifications are mine and mine alone.
-module.exports.userVerification = (req, res) => {
+module.exports.checkUserIsAuthorised = (req, res) => {
   try {
     const token = req.body.headers["Authorization"];
-    console.log(token);
     if (!token) {
       return res.json({ status: false, message: "No token could be found." });
     }
@@ -37,3 +36,26 @@ async function getUsername(res, data) {
     });
   else return res.json({ status: false });
 }
+
+// CODE REUSE DUE TO HEADERS SET AFTER SENT TO CLIENT ERROR
+// @ https://www.golinuxcloud.com/cannot-set-headers-after-they-are-sent-to-client/
+module.exports.checkUserHasToken = (req, res) => {
+  const token = req.headers.authorization;
+  if (!token) {
+    logger.error("No token could be found.");
+  }
+  jwt.verify(token, process.env.TOKEN_KEY, async (err, data) => {
+    if (err) {
+      return res.status(401);
+    } else {
+      const user = await User.findById(data.id);
+      if (user) {
+        logger.info("The user is authorised and authenticated.");
+        return res.status(200);
+      } else {
+        logger.error("The user is unauthorised and unauthenticated.");
+        return res.status(401);
+      }
+    }
+  });
+};

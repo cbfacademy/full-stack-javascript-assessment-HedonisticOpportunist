@@ -82,12 +82,5 @@ export function getURL(userAction) {
         : localUrlConstants.LOGOUT_ENDPOINT;
   }
 
-  if (userAction === "AUTO_LOGIN") {
-    url =
-      process.env.REACT_APP_ENV === "PRODUCTION"
-        ? prodUrlConstants.AUTO_LOGIN_ENDPOINT
-        : localUrlConstants.AUTO_LOGIN_ENDPOINT;
-  }
-
   return url;
 }

@@ -1,6 +1,7 @@
 const {
   addSubscriber,
 } = require("../../controllers/subscriptions/addSubscriberController");
+const { checkUserHasToken } = require("../../middleware/userMiddleware");
 const router = require("express").Router();
 const {
   deleteSubscriber,
@@ -16,9 +17,9 @@ const {
 router.get("/subscribers", getSubscribers);
 
 // POST ROUTES
-router.post("/subscribe", addSubscriber);
+router.post("/subscribe", addSubscriber, checkUserHasToken);
 
 // DELETE ROUTES
-router.delete("/deleteSubscriber:email", deleteSubscriber);
+router.delete("/deleteSubscriber:email", deleteSubscriber, checkUserHasToken);
 
 module.exports = router;

@@ -1,8 +1,9 @@
-const router = require("express").Router();
+const { checkUserHasToken } = require("../../middleware/userMiddleware");
 const {
   deleteFile,
 } = require("../../controllers/uploads/deleteFileController");
 const { getFiles } = require("../../controllers/uploads/getFilesController");
+const router = require("express").Router();
 const {
   uploadFile,
 } = require("../../controllers/uploads/fileUploadController");
@@ -11,12 +12,12 @@ const {
 // Any further modifications and errors are mine and mine alone.
 
 // GET ROUTES
-router.get("/files", getFiles);
+router.get("/files", getFiles, checkUserHasToken);
 
 // POST ROUTES
-router.post("/uploads", uploadFile);
+router.post("/uploads", uploadFile, checkUserHasToken);
 
 // DELETE ROUTES
-router.delete("/deleteFile:title", deleteFile);
+router.delete("/deleteFile:title", deleteFile, checkUserHasToken);
 
 module.exports = router;
