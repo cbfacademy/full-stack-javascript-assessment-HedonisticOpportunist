@@ -1,6 +1,10 @@
 // AUTHENTICATION SERVICES //
 import axios from "axios";
-import { handleResponse, getResponseData } from "../helpers/serviceHelpers";
+import {
+  handleResponse,
+  getResponseData,
+  getToken,
+} from "../helpers/serviceHelpers";
 import { getURL } from "../helpers/urlHelpers";
 import log from "loglevel";
 
@@ -63,7 +67,7 @@ export async function logout() {
 export async function getUserData() {
   try {
     const dashboardUrl = getURL("DASHBOARD");
-    const token = sessionStorage.getItem("token");
+    const token = getToken();
     const { data } = await axios.post(
       dashboardUrl,
       {

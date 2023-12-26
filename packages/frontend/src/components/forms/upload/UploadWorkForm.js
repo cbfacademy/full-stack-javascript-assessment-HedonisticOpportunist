@@ -45,6 +45,10 @@ const UploadWorkForm = () => {
     if (!validateURL(url)) {
       setInvalidUrl(messageConstants.URL_NOT_VALID);
     }
+
+    if (!validateTitleOrDescription(title) && !validateURL(url)) {
+      setInvalidUrl(messageConstants.URL_NOT_VALID);
+    }
   }, []);
 
   // HANDLE SUBMIT FUNCTION

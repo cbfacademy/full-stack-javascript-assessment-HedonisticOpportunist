@@ -4,6 +4,7 @@ import {
   filterAndReturn,
   handleResponse,
   getResponseData,
+  getToken,
 } from "../helpers/serviceHelpers";
 import { getURL } from "../helpers/urlHelpers";
 import log from "loglevel";
@@ -12,12 +13,18 @@ import log from "loglevel";
 export async function upload(title, description, url) {
   try {
     const uploadUrl = getURL("UPLOAD");
+    const token = getToken();
     const { data } = await axios.post(
       uploadUrl,
       {
         title,
         description,
         url,
+      },
+      {
+        headers: {
+          Authorization: `${token}`,
+        },
       },
       { withCredentials: true }
     );
@@ -31,7 +38,16 @@ export async function upload(title, description, url) {
 export async function getFiles() {
   try {
     const getFilesUrl = getURL("GET_FILES");
-    const { data } = await axios.get(getFilesUrl, { withCredentials: true });
+    const token = getToken();
+    const { data } = await axios.get(
+      getFilesUrl,
+      {
+        headers: {
+          Authorization: `${token}`,
+        },
+      },
+      { withCredentials: true }
+    );
     return await getResponseData(data);
   } catch (error) {
     log.error(error);
@@ -43,9 +59,18 @@ export async function deleteFile(userTitle) {
   try {
     const deleteFileUrl = getURL("DELETE_FILES");
     let title = await getFileToDelete(userTitle);
-    const { data } = await axios.delete(deleteFileUrl + title, {
-      withCredentials: true,
-    });
+    const token = getToken();
+    const { data } = await axios.delete(
+      deleteFileUrl + title,
+      {
+        headers: {
+          Authorization: `${token}`,
+        },
+      },
+      {
+        withCredentials: true,
+      }
+    );
     return await handleResponse(data);
   } catch (error) {
     log.error(error);

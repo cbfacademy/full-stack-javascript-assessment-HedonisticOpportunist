@@ -8,6 +8,7 @@ export async function handleResponse(responseData) {
   return responseFlag;
 }
 
+// GET RESPONSE DATA FUNCTION
 export async function getResponseData(responseData) {
   if (handleResponse(responseData)) {
     return responseData;
@@ -24,4 +25,9 @@ export function filterAndReturn(dataArray, dataToFilter, field) {
     }
   }
   return matchedResult;
+}
+
+// RETURN TOKEN FUNCTION
+export function getToken() {
+  return sessionStorage.getItem("token");
 }
