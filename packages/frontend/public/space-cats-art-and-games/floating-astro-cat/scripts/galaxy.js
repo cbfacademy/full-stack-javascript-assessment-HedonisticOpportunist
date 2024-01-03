@@ -8,7 +8,7 @@ class Galaxy {
     this.galaxy = {};
   }
 
-  // DRAW GALAXY
+  // DRAW GALAXY FUNCTION
   drawGalaxy() {
     background(0, 0, 35, 25);
     this.galaxy = {

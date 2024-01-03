@@ -23,7 +23,7 @@ class Bubble {
     this.touched = false;
   }
 
-  // MOVE BUBBLES
+  // MOVE BUBBLES FUNCTION
   moveBubbles() {
     this.xOffset += 0.01;
     this.yOffset += 0.01;
@@ -32,7 +32,7 @@ class Bubble {
     this.y = noise(this.yOffset) * height;
   }
 
-  // CHECK CONTACT
+  // CHECK CONTACT FUNCTION
   checkBubblesIfTouched(x, y, score) {
     const distance = dist(x, y, this.x, this.y);
     if (distance < this.radius) {
@@ -42,7 +42,7 @@ class Bubble {
     return score;
   }
 
-  // DISPLAY BUBBLES
+  // DISPLAY BUBBLES FUNCTION
   displayBubbles() {
     if (this.touched) {
       fill("ghostwhite");

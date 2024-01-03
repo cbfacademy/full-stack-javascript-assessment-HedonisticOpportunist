@@ -8,7 +8,7 @@ describe("Testing the deleteSubscriber function.", () => {
     // ACT
     deleteSubscriber(mockCallback);
 
-    // ARRANGE
+    // ASSERT
     expect(mockCallback.mock.calls).toHaveLength(0);
   });
 });

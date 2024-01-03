@@ -62,7 +62,7 @@ export async function logout() {
   }
 }
 
-// CHECK USER VERIFIED
+// CHECK USER-VERIFIED
 // Any further modifications and errors are mine and mine alone.
 export async function getUserData() {
   try {

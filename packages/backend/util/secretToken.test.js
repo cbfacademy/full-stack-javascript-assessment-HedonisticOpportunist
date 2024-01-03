@@ -8,7 +8,7 @@ describe("Testing the createSecretToken function.", () => {
     // ACT
     createSecretToken(mockCallback);
 
-    // ARRANGE
+    // ASSERT
     expect(mockCallback.mock.calls).toHaveLength(0);
   });
 });

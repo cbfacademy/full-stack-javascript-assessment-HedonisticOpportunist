@@ -37,8 +37,9 @@ async function getUsername(res, data) {
   else return res.json({ status: false });
 }
 
-// CODE REUSE DUE TO HEADERS SET AFTER SENT TO CLIENT ERROR
+// CODE REUSE DUE TO THE 'HEADERS SET AFTER SENT TO CLIENT' ERROR
 // @ https://www.golinuxcloud.com/cannot-set-headers-after-they-are-sent-to-client/
+// Code is needed for token verfication for pages other than the dashboard.
 module.exports.checkUserHasToken = (req, res) => {
   const token = req.headers.authorization;
   if (!token) {

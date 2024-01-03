@@ -8,7 +8,7 @@ describe("Testing the connectToMongoDB function.", () => {
     // ACT
     connectToMongoDB(mockCallback);
 
-    // ARRANGE
+    // ASSERT
     expect(mockCallback.mock.calls).toHaveLength(0);
   });
 });

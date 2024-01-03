@@ -8,7 +8,7 @@ class Bullets {
   constructor() {
     this.bullets = [];
     this.velocity = new createVector(0, -15);
-    this.diam = 25;
+    this.diam = 15;
   }
 
   // RUN BULLETS

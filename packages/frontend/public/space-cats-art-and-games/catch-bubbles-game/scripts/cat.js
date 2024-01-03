@@ -28,7 +28,7 @@ class Cat {
     }
   }
 
-  // DRAW CAT
+  // DRAW CAT FUNCTION
   drawCatCharacter() {
     // DRAW THE CAT'S FACE
     fill("#faf3dd");
@@ -65,7 +65,7 @@ class Cat {
     endShape();
   }
 
-  // DEAL WITH EDGES
+  // DEAL WITH EDGES FUNCTION
   // @Credit: https://github.com/Gregory-Eales/uol-graphics-programming/blob/master/Asteroid-Game-Clone/spaceship.js
   dealWithEdges() {
     if (this.x < 0) {

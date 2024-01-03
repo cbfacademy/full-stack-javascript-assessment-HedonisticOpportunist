@@ -8,7 +8,7 @@ The motivation was to create simple yet immersive scenes that show the power of 
 
 <img src="../images/floating_space_cat.png" width="200" height="200">
 
-The scene is simple: the space cat [2] moves according to the user's mouse coordinates against a blue star-filled background [3].
+The scene is simple: the space cat [2] moves according to the user's mouse coordinates against a blue star-filled background [3]. The canvas restricts the movements.
 
 ## MANY CATS
 

@@ -8,7 +8,7 @@ describe("Testing the login function.", () => {
     // ACT
     login(mockCallback);
 
-    // ARRANGE
+    // ASSERT
     expect(mockCallback.mock.calls).toHaveLength(0);
   });
 });

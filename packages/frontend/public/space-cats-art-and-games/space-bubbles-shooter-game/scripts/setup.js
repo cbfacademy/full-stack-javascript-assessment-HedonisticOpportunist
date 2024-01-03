@@ -15,7 +15,8 @@ let bubbles;
 
 function startGame() {
   // Set up canvas
-  canvas = createCanvas(windowWidth, windowHeight);
+  canvas = createCanvas(windowWidth / 2, windowHeight / 2);
+  canvas.position(windowWidth / 4, windowHeight / 4);
 
   // Game score set to 0 so that player can start the game with a carte blanche
   score = 0;
@@ -45,4 +46,10 @@ function startGame() {
 
   // Set up button
   returnToGamesPageButton.setUpButton();
+}
+
+// RESIZE CANVAS
+function windowResized() {
+  resizeCanvas(windowWidth / 2, windowHeight / 2);
+  canvas.position(windowWidth / 4, windowHeight / 4);
 }

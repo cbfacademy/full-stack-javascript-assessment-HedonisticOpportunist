@@ -8,7 +8,7 @@ describe("Testing the signup function.", () => {
     // ACT
     signup(mockCallback);
 
-    // ARRANGE
+    // ASSERT
     expect(mockCallback.mock.calls).toHaveLength(0);
   });
 });

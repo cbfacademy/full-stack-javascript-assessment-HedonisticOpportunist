@@ -29,10 +29,7 @@ describe("<SubscribePage />", () => {
 
   it("renders the 'Of course...' text", () => {
     cy.mount(<SubscribePage />);
-    cy.contains(
-      "p",
-      "Of course, you are welcome to unsubscribe at any time ♡🐾."
-    );
+    cy.contains("p", "Of course, you are welcome to unsubscribe anytime ♡🐾.");
   });
 
   it("renders the 'Subscribe To Our Internal Newsletter' h4 header", () => {

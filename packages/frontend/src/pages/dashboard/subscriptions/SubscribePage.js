@@ -30,7 +30,7 @@ const SubscribePage = () => {
               </Card.Text>
               <Card.Text>
                 <Link to="/unsubscribe">
-                  Of course, you are welcome to unsubscribe at any time ♡🐾.
+                  Of course, you are welcome to unsubscribe anytime ♡🐾.
                 </Link>
               </Card.Text>
             </Card.Body>

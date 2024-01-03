@@ -1,5 +1,6 @@
 // VALIDATORS //
 
+// VALIDATE EMAIL FUNCTION
 export function validateEmail(email) {
   if (email.match(/^([\w.%+-]+)@([\w-]+\.)+([\w]{2,})$/i)) {
     return true;
@@ -8,6 +9,7 @@ export function validateEmail(email) {
   }
 }
 
+// VALIDATE PASSWORD FUNCTION
 export function validatePassword(password) {
   if (password.length >= 6) {
     return true;
@@ -16,6 +18,7 @@ export function validatePassword(password) {
   }
 }
 
+// VALIDATE USERNAME FUNCTION
 export function validateUsername(username) {
   if (username.length >= 8) {
     return true;
@@ -24,6 +27,7 @@ export function validateUsername(username) {
   }
 }
 
+// VALIDATE TITLE OR DESCRIPTION FUNCTION
 export function validateTitleOrDescription(text) {
   if (text.match("^[a-zA-Z()]+$")) {
     return true;
@@ -32,6 +36,7 @@ export function validateTitleOrDescription(text) {
   }
 }
 
+// VALIDATE URL FUNCTION
 export function validateURL(url) {
   // Credit: @ https://www.freecodecamp.org/news/how-to-validate-urls-in-javascript/
   const pattern = new RegExp(

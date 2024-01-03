@@ -2,7 +2,7 @@
 let galaxy;
 let canvas;
 
-// SET UP GAME
+// SET UP GAME FUNCTION
 function setUpGame() {
   // Set up canvas
   canvas = createCanvas(windowWidth / 2, windowHeight / 2);
@@ -16,7 +16,7 @@ function setUpGame() {
   returnToArtPageButton.setUpButton();
 }
 
-// RESIZE CANVAS
+// RESIZE CANVAS FUNCTION
 function windowResized() {
   resizeCanvas(windowWidth / 2, windowHeight / 2);
 }

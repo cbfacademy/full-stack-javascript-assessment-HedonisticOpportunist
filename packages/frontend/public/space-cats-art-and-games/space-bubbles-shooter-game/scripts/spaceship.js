@@ -6,8 +6,8 @@ class SpaceShip {
   // CONSTRUCTOR
   constructor() {
     this.spaceShip;
-    this.x = 100;
-    this.y = 100;
+    this.x = 480;
+    this.y = 465;
     this.speed = 5;
     this.rotation = 0;
     this.imgSize = 100;
@@ -15,7 +15,7 @@ class SpaceShip {
     this.bullets = new Bullets();
   }
 
-  // PRELOAD SPACE SHIP
+  // PRELOAD SPACE SHIP FUNCTION
   preloadSpaceShip() {
     // Create an image and determine its size and style
     this.spaceShip = createImg(this.imgUrl);
@@ -23,7 +23,7 @@ class SpaceShip {
     this.spaceShip.style("border-radius", "50%");
   }
 
-  // DRAW SPACE SHIP
+  // DRAW SPACE SHIP FUNCTION
   drawSpaceShip() {
     this.bullets.runBullets();
     push();
@@ -33,7 +33,7 @@ class SpaceShip {
     pop();
   }
 
-  // MOVE SPACE SHIP
+  // MOVE SPACE SHIP FUNCTION
   moveShip(direction) {
     if (direction === "LEFT") {
       this.x -= 10 * this.speed;
@@ -52,27 +52,14 @@ class SpaceShip {
     }
   }
 
-  // FIRE BULLETS
+  // FIRE BULLETS FUNCTION
   fireBullets() {
-    this.bullets.fireBullets(this.x + 10, this.y);
+    this.bullets.fireBullets(this.x - 200, this.y + 40);
   }
 
-  // DEAL WITH EDGES
-  dealWithEdges() {
-    if (this.x < 0) {
-      this.x = width;
-    }
-
-    if (this.x > width) {
-      this.x = 0;
-    }
-
-    if (this.y < 0) {
-      this.y = height;
-    }
-
-    if (this.y > height) {
-      this.y = 0;
-    }
+  // CONSTRAINT COORDINATES FUNCTION
+  constrainCoordinates() {
+    this.x = constrain(this.x, 420, width + 250);
+    this.y = constrain(this.y, 250, height + 150);
   }
 }

@@ -38,7 +38,6 @@ const RoutesComponent = () => {
           path="/art-image-credits"
           element={<ArtsCreditsPage></ArtsCreditsPage>}
         />
-        {/* INDIVIDUAL ROUTES */}
         <Route exact path="/credits" element={<CreditsPage></CreditsPage>} />
         <Route
           exact

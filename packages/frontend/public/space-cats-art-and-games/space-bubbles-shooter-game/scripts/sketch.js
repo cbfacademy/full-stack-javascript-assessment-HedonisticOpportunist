@@ -30,17 +30,17 @@ function draw() {
     push();
     bubbles[i].moveBubbles();
 
-    // Check if space ship has come into contact with the bubbles
+    // Check if the ship has come into contact with the bubbles
     score = bubbles[i].checkBubblesIfTouched(spaceShip.x, spaceShip.y, score);
     bubbles[i].displayBubbles();
     pop();
   }
 
-  // Draw spaceship
+  // Draw a spaceship
   spaceShip.drawSpaceShip();
-  spaceShip.dealWithEdges();
+  spaceShip.constrainCoordinates();
 
-  // Check if the space ship bullets have come into contact with the bubbles
+  // Check if the spaceship bullets have come into contact with the bubbles
   for (i = 0; i < bubbles.length; i++) {
     for (j = 0; j < spaceShip.bullets.bullets.length; j++) {
       score = bubbles[i].checkBubblesIfTouched(
@@ -81,7 +81,7 @@ function keyPressed() {
     spaceShip.moveShip("UP");
   }
 
-  // if this key is pressed, the space ship fires bullets
+  // if this key is pressed, the spaceship fires bullets
   if (keyCode === 32) {
     spaceShip.fireBullets();
   }

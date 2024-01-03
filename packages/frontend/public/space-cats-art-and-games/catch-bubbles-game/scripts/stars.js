@@ -8,7 +8,7 @@ class Stars {
     this.galaxy = {};
   }
 
-  // DRAW STARS
+  // DRAW STARS FUNCTION
   drawStars() {
     this.galaxy = {
       locationX: random(width),

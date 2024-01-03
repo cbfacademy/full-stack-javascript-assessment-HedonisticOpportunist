@@ -7,7 +7,7 @@ class ReloadButton {
     this.buttonPosition = 150;
   }
 
-  // SET UP BUTTON
+  // SET UP BUTTON FUNCTION
   setUpButton() {
     // Create a button that reloads the scene
     this.button = createButton(this.buttonText);
@@ -15,7 +15,7 @@ class ReloadButton {
     this.button.mousePressed(this.reloadScene);
   }
 
-  // RELOAD SCENE
+  // RELOAD SCENE FUNCTION
   reloadScene() {
     // Reload scene
     window.location.reload();

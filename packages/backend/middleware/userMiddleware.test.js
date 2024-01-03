@@ -11,7 +11,7 @@ describe("Testing the checkUserIsAuthorised and checkUserHasToken functions.", (
     // ACT
     checkUserIsAuthorised(mockCallback);
 
-    // ARRANGE
+    // ASSERT
     expect(mockCallback.mock.calls).toHaveLength(0);
   });
 });

@@ -2,7 +2,7 @@
 
 ## FRONTEND
 
-The front end of _**Space Cats**_ uses React - a library for web and native interfaces [1]. It also uses _React Bootstrap_ [2] to create a better user experience without sacrificing custom CSS.
+The front end of _**Space Cats**_ uses React - a library for web and native interfaces [1]. It also employs _React Bootstrap_ [2] to create a better user experience without sacrificing custom CSS.
 
 ## BACKEND
 
