@@ -22,7 +22,7 @@ The scene builds upon the game above, but -- instead of a cat -- the player is a
 
 The spaceship fires bullets [7] but gains points if it comes into contact with a bubble [5].
 
-Like in the previous game, the player stays within the boundaries of the canvas [8] [9].
+Similarly to the previous game, the player stays within the boundaries of the canvas by constraining its coordinates [10].
 
 ### REFERENCES
 
@@ -43,3 +43,5 @@ Like in the previous game, the player stays within the boundaries of the canvas 
 [8] https://github.com/Gregory-Eales/uol-graphics-programming/blob/master/Asteroid-Game-Clone/sketch.js
 
 [9] https://github.com/world-class/REPL/tree/master/modules/level-5/cm-2030-graphics-programming
+
+[10] https://p5js.org/reference/#/p5/constrain

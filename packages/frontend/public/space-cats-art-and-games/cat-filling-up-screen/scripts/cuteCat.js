@@ -8,7 +8,7 @@ class CuteCats {
     this.cuteCats = [];
   }
 
-  // PRELOAD CUTE CATS
+  // PRELOAD CUTE CATS FUNCTION
   preloadCuteCats() {
     {
       // Fill up the previously empty cuteCats array with individual cute cats
@@ -27,7 +27,7 @@ class CuteCats {
     }
   }
 
-  // DRAW CUTE CATS
+  // DRAW CUTE CATS FUNCTION
   drawCuteCats() {
     /* Inspired by: 
     @ https://editor.p5js.org/KevinWorkman/sketches/XklOOiqXa

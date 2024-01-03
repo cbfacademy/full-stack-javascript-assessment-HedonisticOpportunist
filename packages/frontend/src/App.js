@@ -7,9 +7,9 @@ function App() {
   return (
     <>
       <BrowserRouter>
-        {/* ROUTES */}
+        {/* ROUTES COMPONENT */}
         <RoutesComponent></RoutesComponent>
-        {/* COPYRIGHT*/}
+        {/* COPYRIGHT COMPONENT*/}
         <Copyright />
       </BrowserRouter>
     </>

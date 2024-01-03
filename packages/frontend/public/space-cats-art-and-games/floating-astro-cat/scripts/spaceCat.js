@@ -7,7 +7,7 @@ class SpaceCat {
     this.imgUrl = "../images/astro_cat.jpg"; //@ catalyststuff on Freepik.
   }
 
-  // PRELOAD SPACE CAT
+  // PRELOAD SPACE CAT FUNCTION
   preloadSpaceCat() {
     // Create an image and determine its size and style
     this.spaceCat = createImg(this.imgUrl);
@@ -15,7 +15,7 @@ class SpaceCat {
     this.spaceCat.style("border-radius", "50%");
   }
 
-  // DRAW SPACE CAT
+  // DRAW SPACE CAT FUNCTION
   drawSpaceCat() {
     // Move the space cat according to mouse directions
     this.spaceCat.position(

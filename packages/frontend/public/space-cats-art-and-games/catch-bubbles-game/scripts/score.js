@@ -7,7 +7,7 @@ class GameScore {
     this.size = 25;
   }
 
-  // DRAW GAME SCORE
+  // DRAW GAME SCORE FUNCTION
   drawGameScore(game_score) {
     // DISPLAY GAME SCORE
     fill(255, 255, 255);
@@ -19,7 +19,7 @@ class GameScore {
     text("Bubbles Caught: " + game_score, this.x, this.y + 25);
   }
 
-  // END GAME
+  // END GAME FUNCTION
   endGame(score) {
     if (score >= 10) {
       // Reset score to zero

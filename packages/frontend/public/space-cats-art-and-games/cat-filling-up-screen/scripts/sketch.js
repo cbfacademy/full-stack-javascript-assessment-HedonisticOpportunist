@@ -32,7 +32,7 @@ function draw() {
   cuteCats.drawCuteCats();
 }
 
-// RESIZE CANVAS
+// RESIZE CANVAS FUNCTION
 function windowResized() {
   resizeCanvas(windowWidth / 2, windowHeight / 2);
   canvas.position(windowWidth / 4, windowHeight / 4);

@@ -8,7 +8,7 @@ describe("Testing the addSubscriber function.", () => {
     // ACT
     addSubscriber(mockCallback);
 
-    // ARRANGE
+    // ASSERT
     expect(mockCallback.mock.calls).toHaveLength(0);
   });
 });

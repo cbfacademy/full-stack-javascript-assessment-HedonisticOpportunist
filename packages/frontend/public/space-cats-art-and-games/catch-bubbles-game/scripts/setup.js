@@ -18,6 +18,7 @@ let game_score_display;
 // CANVAS
 let canvas;
 
+// SET UP GAME FUNCTION
 function setUpGame() {
   // Set up the canvas
   canvas = createCanvas(windowWidth / 2, windowHeight / 2);
@@ -55,7 +56,7 @@ function setUpGame() {
   returnToGamesPageButton.setUpButton();
 }
 
-// RESIZE CANVAS
+// RESIZE CANVAS FUNCTION
 function windowResized() {
   resizeCanvas(windowWidth / 2, windowHeight / 2);
   canvas.position(windowWidth / 4, windowHeight / 4);

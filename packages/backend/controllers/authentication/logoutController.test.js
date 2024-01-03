@@ -8,7 +8,7 @@ describe("Testing the logout function.", () => {
     // ACT
     logout(mockCallback);
 
-    // ARRANGE
+    // ASSERT
     expect(mockCallback.mock.calls).toHaveLength(0);
   });
 });

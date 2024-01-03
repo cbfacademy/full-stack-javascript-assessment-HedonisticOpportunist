@@ -8,7 +8,7 @@ describe("Testing the getSubscribers function.", () => {
     // ACT
     getSubscribers(mockCallback);
 
-    // ARRANGE
+    // ASSERT
     expect(mockCallback.mock.calls).toHaveLength(0);
   });
 });

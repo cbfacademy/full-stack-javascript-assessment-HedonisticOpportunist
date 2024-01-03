@@ -10,7 +10,7 @@ Due to cookies not being set in a deployed environment, some adjustments were ma
 
 Then, on the client's side, the token is stored in session storage [3] to verify that -- once logged in -- the user's token matches the one that has been saved. On logging out, the token is deleted from session storage. Session storage was selected due to local storage posing more significant security concerns [3].
 
-There are better solutions than the above, but it is necessary due to the restriction set by deploying the code base on different servers.
+There are better solutions than the above, but this one proved necessary due to the restriction set by deploying the code base on different servers.
 
 ### REFERENCES
 

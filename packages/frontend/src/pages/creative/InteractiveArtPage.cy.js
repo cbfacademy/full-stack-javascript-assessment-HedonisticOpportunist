@@ -20,7 +20,7 @@ describe("<InteractiveArtPage />", () => {
     cy.mount(<InteractiveArtPage />);
     cy.contains(
       "p",
-      "So that you know, the interactive art loads on a new page. To return to the homepage, hit the browser's back button."
+      "So that you know, the interactive art loads on a new page. To return to the homepage, and hit the browser's back button."
     );
   });
 

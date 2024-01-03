@@ -23,7 +23,7 @@ const InteractiveArtPage = () => {
                 </Card.Text>
                 <Card.Text>
                   So that you know, the interactive art loads on a new page. To
-                  return to the homepage, hit the browser's back button.
+                  return to the homepage, and hit the browser's back button.
                 </Card.Text>
               </Card.Body>
             </Card>
