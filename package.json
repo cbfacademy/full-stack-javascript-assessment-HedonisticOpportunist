@@ -1,5 +1,5 @@
 {
-  "name": "full-stack-javascript",
+  "name": "space-cats-full-stack",
   "version": "1.0.0",
   "private": true,
   "description": "",
@@ -7,7 +7,8 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test:frontend": "cd packages/frontend && npm test",
+    "test:backend": "cd packages/backend && npm test",
     "start:frontend": "cd packages/frontend && npm start",
     "start:backend": "cd packages/backend && npm start",
     "install:all": "npm install && cd packages/frontend && npm install && cd ../backend && npm install"
