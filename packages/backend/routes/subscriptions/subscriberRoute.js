@@ -1,7 +1,7 @@
 const {
   addSubscriber,
 } = require("../../controllers/subscriptions/addSubscriberController");
-const { checkUserHasToken } = require("../../middleware/userMiddleware");
+const { checkUserHasToken } = require("../../middleware/checkUserToken");
 const router = require("express").Router();
 const {
   deleteSubscriber,

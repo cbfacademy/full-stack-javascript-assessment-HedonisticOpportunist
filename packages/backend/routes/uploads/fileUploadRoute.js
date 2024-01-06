@@ -1,4 +1,4 @@
-const { checkUserHasToken } = require("../../middleware/userMiddleware");
+const { checkUserHasToken } = require("../../middleware/checkUserToken");
 const {
   deleteFile,
 } = require("../../controllers/uploads/deleteFileController");

@@ -59,13 +59,16 @@ const DeleteFileForm = () => {
       <Container fluid>
         <Row>
           <Col>
+            <MessageDisplay message={message}></MessageDisplay>
+          </Col>
+          <Col>
             <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Uploaded Work Title: </Form.Label>
                 <Form.Control
                   type="url"
                   value={title}
-                  placeholder="Enter URL"
+                  placeholder="Enter Title of Work."
                   required
                   onChange={(e) => setTitle(e.target.value)}
                 />
@@ -82,9 +85,6 @@ const DeleteFileForm = () => {
               submitFunction={resetForm}
               buttonText="🐻‍❄️Reset Form."
             ></FormButton>
-          </Col>
-          <Col>
-            <MessageDisplay message={message}></MessageDisplay>
           </Col>
         </Row>
       </Container>

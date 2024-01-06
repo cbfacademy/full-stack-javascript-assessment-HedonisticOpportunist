@@ -1,9 +1,6 @@
-const {
-  checkUserIsAuthorised,
-  checkUserHasToken,
-} = require("./userMiddleware");
+const { checkUserIsAuthorised } = require("./checkUserAuthorisation");
 
-describe("Testing the checkUserIsAuthorised and checkUserHasToken functions.", () => {
+describe("Testing the checkUserIsAuthorised functions.", () => {
   it("Expect checkUserAuthorisation to return 0 call backs.", () => {
     // ARRANGE
     const mockCallback = jest.fn();
