@@ -1,4 +1,6 @@
-const { checkUserIsAuthorised } = require("../../middleware/userMiddleware");
+const {
+  checkUserIsAuthorised,
+} = require("../../middleware/checkUserAuthorisation");
 const { login } = require("../../controllers/authentication/loginController");
 const { logout } = require("../../controllers/authentication/logoutController");
 const router = require("express").Router();

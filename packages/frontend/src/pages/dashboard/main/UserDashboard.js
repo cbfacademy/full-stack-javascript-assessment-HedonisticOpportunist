@@ -97,13 +97,13 @@ const UserDashboard = () => {
             </Card>
           </Col>
           <Col>
+            <MessageDisplay message={logoutMessage}></MessageDisplay>
+          </Col>
+          <Col>
             <FormButton
               submitFunction={handleSubmit}
               buttonText="🐻‍❄️LOGOUT"
             ></FormButton>
-          </Col>
-          <Col>
-            <MessageDisplay message={logoutMessage}></MessageDisplay>
           </Col>
         </Row>
       </Container>

@@ -56,7 +56,12 @@ const UploadWorkForm = () => {
     async (e) => {
       e.preventDefault();
       validateUploadDetails(title, description, url);
-      if (description === "" || title === "" || url === "") {
+      if (
+        description === "" ||
+        title === "" ||
+        url === "" ||
+        !validateURL(url)
+      ) {
         setMessage(messageConstants.UPLOAD_ERROR);
       } else {
         handleUpload();
@@ -79,6 +84,9 @@ const UploadWorkForm = () => {
     <>
       <Container fluid>
         <Row>
+          <Col>
+            <MessageDisplay message={message}></MessageDisplay>
+          </Col>
           <Col>
             <Form>
               <Form.Group controlId="formFileLg" className="mb-3">
@@ -131,9 +139,6 @@ const UploadWorkForm = () => {
               submitFunction={resetForm}
               buttonText="🐻‍❄️Reset Form."
             ></FormButton>
-          </Col>
-          <Col>
-            <MessageDisplay message={message}></MessageDisplay>
           </Col>
         </Row>
       </Container>

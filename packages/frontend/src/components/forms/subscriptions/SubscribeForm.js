@@ -59,6 +59,9 @@ const SubscribeForm = () => {
       <Container fluid>
         <Row>
           <Col>
+            <MessageDisplay message={message}></MessageDisplay>
+          </Col>
+          <Col>
             <Form>
               <Form.Group className="mb-3" controlId="formBasicEmail">
                 <Form.Label>Email address: </Form.Label>
@@ -80,9 +83,6 @@ const SubscribeForm = () => {
               submitFunction={resetForm}
               buttonText="🐻‍❄️Reset Form."
             ></FormButton>
-          </Col>
-          <Col>
-            <MessageDisplay message={message}></MessageDisplay>
           </Col>
         </Row>
       </Container>

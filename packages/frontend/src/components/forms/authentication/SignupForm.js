@@ -93,6 +93,9 @@ const SignupForm = () => {
       <Container fluid>
         <Row>
           <Col>
+            <MessageDisplay message={message}></MessageDisplay>
+          </Col>
+          <Col>
             <Form>
               <Form.Group
                 className="mb-3"
@@ -140,9 +143,6 @@ const SignupForm = () => {
                 buttonText="🐾Reset Form."
               ></FormButton>
             </Form>
-          </Col>
-          <Col>
-            <MessageDisplay message={message}></MessageDisplay>
           </Col>
         </Row>
       </Container>
