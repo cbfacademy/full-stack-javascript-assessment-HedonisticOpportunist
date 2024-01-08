@@ -10,7 +10,7 @@ Ultimately, _**Space Cats**_ aims to unite people who enjoy simple and cute game
 
 URL: https://space-cats.vercel.app/
 
-[Other Deployments](docs/setup/deployments.md)
+🦄 [Other Deployments](docs/setup/deployments.md)
 
 ## OTHER DOCUMENTATION
 
