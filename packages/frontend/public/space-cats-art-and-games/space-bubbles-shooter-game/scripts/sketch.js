@@ -29,9 +29,6 @@ function draw() {
   for (i = 0; i < bubbles.length; i++) {
     push();
     bubbles[i].moveBubbles();
-
-    // Check if the ship has come into contact with the bubbles
-    score = bubbles[i].checkBubblesIfTouched(spaceShip.x, spaceShip.y, score);
     bubbles[i].displayBubbles();
     pop();
   }

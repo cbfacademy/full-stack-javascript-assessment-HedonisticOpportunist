@@ -41,6 +41,6 @@ describe("<GamesPage />", () => {
 
   it("renders the 'Space Bubble Shooter Game' description text", () => {
     cy.mount(<GamesPage />);
-    cy.contains("p", "Shoot or catch twenty bubbles 🫧👾.");
+    cy.contains("p", "Shoot twenty bubbles 🫧👾.");
   });
 });

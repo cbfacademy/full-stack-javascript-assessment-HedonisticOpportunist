@@ -37,7 +37,7 @@ function startGame() {
   // Set up bubbles
   bubbles = [];
 
-  for (let i = 0; i < 25; i++) {
+  for (let i = 0; i < 80; i++) {
     bubbles.push(new Bubble(random(0, windowWidth), random(0, windowHeight)));
   }
 
