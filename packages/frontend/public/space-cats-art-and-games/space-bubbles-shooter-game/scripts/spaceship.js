@@ -54,7 +54,7 @@ class SpaceShip {
 
   // FIRE BULLETS FUNCTION
   fireBullets() {
-    this.bullets.fireBullets(this.x - 200, this.y + 40);
+    this.bullets.fireBullets(this.x - 450, this.y + 40);
   }
 
   // CONSTRAINT COORDINATES FUNCTION

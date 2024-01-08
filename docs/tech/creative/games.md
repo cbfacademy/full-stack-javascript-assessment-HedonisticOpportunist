@@ -20,7 +20,7 @@ Catching bubbles increments the score by one, and the game resets once the score
 
 The scene builds upon the game above, but -- instead of a cat -- the player is a spaceship [6].
 
-The spaceship fires bullets [7] but gains points if it comes into contact with a bubble [5].
+The spaceship fires bullets [7] and gains points if a bubble has been hit [5].
 
 Similarly to the previous game, the player stays within the boundaries of the canvas by constraining its coordinates [10].
 

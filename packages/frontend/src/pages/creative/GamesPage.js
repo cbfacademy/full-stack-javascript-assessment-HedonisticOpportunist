@@ -49,7 +49,7 @@ const GamesPage = () => {
               url="space-cats-art-and-games/space-bubbles-shooter-game/index.html"
               imageUrl="images/pet.png"
               alt="A Cat"
-              description="Shoot or catch twenty bubbles 🫧👾."
+              description="Shoot twenty bubbles 🫧👾."
             ></CreativeCard>
           </Col>
         </Row>
