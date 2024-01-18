@@ -6,7 +6,7 @@ Most of the feedback was from university colleagues [1] [2].
 
 ## BACKEND
 
-In response to the feedback, validation was added to prevent erroneous user input to emails and passwords, but the suggestion to use a refresh token [2] was not taken on board due to CORS issues.
+In response to the feedback, validation was added to prevent erroneous user input to emails and passwords, but the suggestion to use a refresh token [2] was not taken on board due to CORS issues, which it would have required.
 
 ## FRONTEND
 
@@ -20,7 +20,7 @@ However, the suggestion to use Redux [2] was disregarded due to its [complexity]
 
 The games were described as wonky, with lots of mouse scrolling and missed hits [1].
 
-For that reason, changes were made to the canvas size for both the interactive art pieces and games.
+For that reason, changes were made to the canvas size for both the interactive art pieces and games. Subtle changes to the gameplay were made as well to improve their general playability.
 
 ## FEEDBACK
 

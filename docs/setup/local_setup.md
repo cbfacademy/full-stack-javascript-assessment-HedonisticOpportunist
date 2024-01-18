@@ -1,6 +1,6 @@
 # 🐈‍⬛ SPACE CATS - LOCAL SETUP
 
-**_Space Cats_** is set up to deploy the application locally or via a hosting service.
+**_Space Cats_** is set up to deploy the application locally or via hosting services.
 
 _.env_ files in both the _frontend_ and _backend_ packages dictate the behaviour of **_Space Cats_**.
 
@@ -34,7 +34,7 @@ REACT_APP_ENV=PRODUCTION
 
 The application will run locally if the _REACT_APP_ENV_ variable does not equal _production_.
 
-If the web server URL does not work, please use [backup web server](deployments.md) instead.
+If the web server URL above does not work, please use [backup web server](deployments.md) instead.
 
 ## 🐈‍⬛ SPACE CATS - BUILDING THE APPLICATION
 
