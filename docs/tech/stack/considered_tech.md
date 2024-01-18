@@ -10,11 +10,11 @@ As the purpose of _Space Cats_ is simplicity, _Three.js_ proved unsuitable.
 
 ## @P5-WRAPPER-REACT
 
-Although interesting, _@P5-wrapper/react_ [3] requires considerable React knowledge, and the project time frame needed to be more significant to accommodate that.
+Although interesting, _@P5-wrapper/react_ [3] requires considerable React knowledge, and there was not enough time for me to pick up the required knowledge.
 
 ## REACT-THREE-FIBER
 
-Similarly to _Three.js_ [1], _react-three_fiber_ [4] comes with a steep learning curve that would have posed a risk to the project's development.
+Like _Three.js_ [1], _react-three_fiber_ [4] comes with a steep learning curve that would have posed a risk to the project's development.
 
 ## REDUX
 
@@ -22,7 +22,7 @@ _Redux_ [5] is an intricate and daunting library that, while not fully incorpora
 
 ## NETLIFY
 
-_Netlify_ [6] seemed like a natural choice for hosting the front end; however, creating an account proved annoying due to suspension after sign-up and needing an identity verification to reactivate it.
+_Netlify_ [6] seemed like a natural choice for hosting the front end; however, creating an account proved annoying due to suspension after sign-up and needing to provide identity verification to reactivate it.
 
 ### REFERENCES
 

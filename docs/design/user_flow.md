@@ -1,6 +1,6 @@
 # 🐈‍⬛ SPACE CATS - USER FLOWS
 
-The user flow for _**Space Cats**_ consists of two processes – a user journey where the user does not sign up but plays a game or views 2D art, and another where they sign up to perform other actions, such as to view a user dashboard.
+The user flow for _**Space Cats**_ consists of two processes – a user journey where the user does not sign up but plays a game or views 2D art, and another where they sign up to perform other actions, such as viewing a user dashboard.
 
 ## NOT LOGGED IN
 
