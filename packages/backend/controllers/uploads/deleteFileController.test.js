@@ -8,7 +8,7 @@ describe("Testing the deleteFile function.", () => {
     // ACT
     deleteFile(mockCallback);
 
-    // ARRANGE
+    // ASSERT
     expect(mockCallback.mock.calls).toHaveLength(0);
   });
 });
