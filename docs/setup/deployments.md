@@ -4,7 +4,7 @@ The backend and frontend deployments were handled separately, making the process
 
 ## BACKEND DEPLOYMENT
 
-_**Space Cats**_ uses _railway_ for frontend deployment [2].
+_**Space Cats**_ uses _railway_ for backend deployment [2].
 
 _render_ [3] serves as a backup.
 
