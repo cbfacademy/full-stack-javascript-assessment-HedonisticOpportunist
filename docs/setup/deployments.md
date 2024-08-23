@@ -4,11 +4,7 @@ The backend and frontend deployments were handled separately, making the process
 
 ## BACKEND DEPLOYMENT
 
-_**Space Cats**_ uses _railway_ for backend deployment [2].
-
-_render_ [3] serves as a backup.
-
-WEB SERVER URL: https://space-cats-production.up.railway.app ✔️
+_**Space Cats**_ uses _render_ for backend deployment [2].
 
 BACKUP WEB SERVER URL: https://space-cats-backend-rfpo.onrender.com ✔️
 
@@ -22,8 +18,6 @@ STATIC SITE URL: https://space-cats.vercel.app/ ✔️
 
 [1] https://blog.elaniin.com/is-it-truly-necessary-to-separate-backend-and-frontend/
 
-[2] https://railway.app/dashboard
+[2] https://dashboard.render.com/
 
-[3] https://dashboard.render.com/
-
-[4] https://vercel.com/
+[3] https://vercel.com/
