@@ -1,11 +1,18 @@
+import { BrowserRouter } from "react-router-dom";
+import Copyright from "./components/ui/main/Copyright";
 import React from "react";
-
+import RoutesComponent from "./components/routes/RoutesComponent";
+import "./stylesheets/App.css";
 function App() {
   return (
-    <div className="App">
-      <h1>Full Stack JavaScript</h1>
-      <p>Welcome to your final assessment 🚀</p>
-    </div>
+    <>
+      <BrowserRouter>
+        {/* ROUTES COMPONENT */}
+        <RoutesComponent></RoutesComponent>
+        {/* COPYRIGHT COMPONENT*/}
+        <Copyright />
+      </BrowserRouter>
+    </>
   );
 }
 
